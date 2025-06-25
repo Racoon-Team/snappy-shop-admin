@@ -55,14 +55,27 @@ const CustomerTable = ({ customers }) => {
               <div className="flex justify-end text-right">
                 <div className="p-2 cursor-pointer text-gray-400 hover:text-emerald-600">
                   {" "}
-                  <Link to={`/customer-order/${user._id}`}>
-                    <Tooltip
-                      id="view"
-                      Icon={FiZoomIn}
-                      title={t("ViewOrder")}
-                      bgColor="#34D399"
-                    />
-                  </Link>
+
+                  
+                  {user.ordersCount > 0 ? (
+                      <Link to={`/customer-order/${user._id}`}>
+                        <Tooltip
+                          id={`view-${user._id}`}
+                          Icon={FiZoomIn}
+                          title={t("ViewOrder")}
+                          bgColor="#34D399"
+                        />
+                      </Link>
+                    ) : (
+                      <div style={{ opacity: 0.4, pointerEvents: 'none', cursor: 'not-allowed' }}>
+                        <Tooltip
+                          id={`view-disabled-${user._id}`}
+                          Icon={FiZoomIn}
+                          title={t("NoOrders")}
+                          bgColor="#D1D5DB"
+                        />
+                      </div>
+                    )}
                 </div>
 
                 <EditDeleteButton
