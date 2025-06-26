@@ -14,7 +14,6 @@ import CustomerDrawer from "@/components/drawer/CustomerDrawer";
 import EditDeleteButton from "@/components/table/EditDeleteButton";
 
 // internal imports
-
 const CustomerTable = ({ customers }) => {
   const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer();
 
