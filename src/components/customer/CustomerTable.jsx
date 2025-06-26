@@ -6,7 +6,6 @@ import { FiZoomIn } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 //internal import
-
 import MainDrawer from "@/components/drawer/MainDrawer";
 import DeleteModal from "@/components/modal/DeleteModal";
 import useToggleDrawer from "@/hooks/useToggleDrawer";
@@ -28,66 +27,68 @@ const CustomerTable = ({ customers }) => {
       </MainDrawer>
 
       <TableBody>
-        {customers?.map((user) => (
-          <TableRow key={user._id}>
-            <TableCell>
-              <span className="font-semibold uppercase text-xs">
-                {" "}
-                {user?._id?.substring(20, 24)}
-              </span>
-            </TableCell>
-            <TableCell>
-              <span className="text-sm">
-                {dayjs(user.createdAt).format("MMM D, YYYY")}
-              </span>
-            </TableCell>
-            <TableCell>
-              <span className="text-sm">{user.name}</span>
-            </TableCell>
-            <TableCell>
-              <span className="text-sm">{user.email}</span>{" "}
-            </TableCell>
-            <TableCell>
-              <span className="text-sm font-medium">{user.phone}</span>
-            </TableCell>
+        {customers?.map((user) => {
+          const hasOrders = user.ordersCount > 0;
 
-            <TableCell>
-              <div className="flex justify-end text-right">
-                <div className="p-2 cursor-pointer text-gray-400 hover:text-emerald-600">
-                  {" "}
+          const tooltipProps = {
+            id: hasOrders ? `view-${user._id}` : `view-disabled-${user._id}`,
+            Icon: FiZoomIn,
+            title: hasOrders ? t("ViewOrder") : t("NoOrders"),
+            bgColor: hasOrders ? "#34D399" : "#D1D5DB",
+          };
 
-                  
-                  {user.ordersCount > 0 ? (
-                      <Link to={`/customer-order/${user._id}`}>
-                        <Tooltip
-                          id={`view-${user._id}`}
-                          Icon={FiZoomIn}
-                          title={t("ViewOrder")}
-                          bgColor="#34D399"
-                        />
-                      </Link>
-                    ) : (
-                      <div style={{ opacity: 0.4, pointerEvents: 'none', cursor: 'not-allowed' }}>
-                        <Tooltip
-                          id={`view-disabled-${user._id}`}
-                          Icon={FiZoomIn}
-                          title={t("NoOrders")}
-                          bgColor="#D1D5DB"
-                        />
-                      </div>
-                    )}
+          const Wrapper = hasOrders ? Link : "div";
+          const wrapperProps = hasOrders
+            ? { to: `/customer-order/${user._id}` }
+            : {
+                style: {
+                  opacity: 0.4,
+                  pointerEvents: "none",
+                  cursor: "not-allowed",
+                },
+              };
+
+          return (
+            <TableRow key={user._id}>
+              <TableCell>
+                <span className="font-semibold uppercase text-xs">
+                  {user?._id?.substring(20, 24)}
+                </span>
+              </TableCell>
+              <TableCell>
+                <span className="text-sm">
+                  {dayjs(user.createdAt).format("MMM D, YYYY")}
+                </span>
+              </TableCell>
+              <TableCell>
+                <span className="text-sm">{user.name}</span>
+              </TableCell>
+              <TableCell>
+                <span className="text-sm">{user.email}</span>
+              </TableCell>
+              <TableCell>
+                <span className="text-sm font-medium">{user.phone}</span>
+              </TableCell>
+
+              <TableCell>
+                <div className="flex justify-end text-right">
+                  <div className="p-2 cursor-pointer text-gray-400 hover:text-emerald-600">
+                    <Wrapper {...wrapperProps}>
+                      <Tooltip {...tooltipProps} />
+                    </Wrapper>
+                  </div>
+
+                  <EditDeleteButton
+                    title={user.name}
+                    id={user._id}
+                    handleUpdate={handleUpdate}
+                    handleModalOpen={handleModalOpen}
+                  />
                 </div>
-
-                <EditDeleteButton
-                  title={user.name}
-                  id={user._id}
-                  handleUpdate={handleUpdate}
-                  handleModalOpen={handleModalOpen}
-                />
-              </div>
-            </TableCell>
-          </TableRow>
-        ))}
+              </TableCell>
+            </TableRow>
+          );
+        })}
       </TableBody>
     </>
   );
