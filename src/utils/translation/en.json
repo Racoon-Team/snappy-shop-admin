@@ -416,6 +416,7 @@
   "OrderStatusTbl": "Status",
   "OrderActionsTbl": "Actions",
   "ViewOrder": "View Order",
+  "NoOrders": "Don't Order",
   "LoginTitle": "Login",
   "labelEmail": "Email",
   "labelPassword": "Password",
