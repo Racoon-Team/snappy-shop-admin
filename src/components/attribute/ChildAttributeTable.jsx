@@ -1,36 +1,30 @@
-import { TableBody, TableCell, TableRow } from "@windmill/react-ui";
-import React from "react";
+import { TableBody, TableCell, TableRow } from '@windmill/react-ui'
+import React from 'react'
 
 //internal import
-import useToggleDrawer from "@/hooks/useToggleDrawer";
-import useUtilsFunction from "@/hooks/useUtilsFunction";
-import MainDrawer from "@/components/drawer/MainDrawer";
-import CheckBox from "@/components/form/others/CheckBox";
-import DeleteModal from "@/components/modal/DeleteModal";
-import EditDeleteButton from "@/components/table/EditDeleteButton";
-import ShowHideButton from "@/components/table/ShowHideButton";
-import AttributeChildDrawer from "@/components/drawer/AttributeChildDrawer";
+import useToggleDrawer from '@/hooks/useToggleDrawer'
+import useUtilsFunction from '@/hooks/useUtilsFunction'
+import MainDrawer from '@/components/drawer/MainDrawer'
+import CheckBox from '@/components/form/others/CheckBox'
+import DeleteModal from '@/components/modal/DeleteModal'
+import EditDeleteButton from '@/components/table/EditDeleteButton'
+import ShowHideButton from '@/components/table/ShowHideButton'
+import AttributeChildDrawer from '@/components/drawer/AttributeChildDrawer'
 
-const ChildAttributeTable = ({
-  att,
-  loading,
-  isCheck,
-  setIsCheck,
-  childAttributes,
-}) => {
+const ChildAttributeTable = ({ att, loading, isCheck, setIsCheck, childAttributes }) => {
   // console.log(lang);
   // console.log("att", childAttributes);
 
-  const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer();
-  const { showingTranslateValue } = useUtilsFunction();
+  const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer()
+  const { showingTranslateValue } = useUtilsFunction()
 
   const handleClick = (e) => {
-    const { id, checked } = e.target;
-    setIsCheck([...isCheck, id]);
+    const { id, checked } = e.target
+    setIsCheck([...isCheck, id])
     if (!checked) {
-      setIsCheck(isCheck.filter((item) => item !== id));
+      setIsCheck(isCheck.filter((item) => item !== id))
     }
-  };
+  }
 
   return (
     <>
@@ -54,13 +48,9 @@ const ChildAttributeTable = ({
                 isChecked={isCheck?.includes(attribute._id)}
               />
             </TableCell>
-            <TableCell className="font-semibold uppercase text-xs">
-              {attribute?._id?.substring(20, 24)}
-            </TableCell>
+            <TableCell className="font-semibold uppercase text-xs">{attribute?._id?.substring(20, 24)}</TableCell>
 
-            <TableCell className="font-medium text-sm">
-              {showingTranslateValue(attribute?.name)}
-            </TableCell>
+            <TableCell className="font-medium text-sm">{showingTranslateValue(attribute?.name)}</TableCell>
 
             <TableCell className="font-medium text-sm">{att?.option}</TableCell>
 
@@ -82,7 +72,7 @@ const ChildAttributeTable = ({
         ))}
       </TableBody>
     </>
-  );
-};
+  )
+}
 
-export default ChildAttributeTable;
+export default ChildAttributeTable

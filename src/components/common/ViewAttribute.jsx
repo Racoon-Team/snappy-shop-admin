@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { FiX, FiZoomIn } from "react-icons/fi";
-import { Modal } from "react-responsive-modal";
-import "react-responsive-modal/styles.css";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react'
+import { FiX, FiZoomIn } from 'react-icons/fi'
+import { Modal } from 'react-responsive-modal'
+import 'react-responsive-modal/styles.css'
+import { Link } from 'react-router-dom'
 
 //internal import
-import Tooltip from "@/components/tooltip/Tooltip";
+import Tooltip from '@/components/tooltip/Tooltip'
 
 const ViewAttribute = ({ attribute }) => {
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState(false)
 
-  const onCloseModal = () => setOpenModal(false);
+  const onCloseModal = () => setOpenModal(false)
 
   // console.log('attribute', attribute);
 
@@ -30,8 +30,7 @@ const ViewAttribute = ({ attribute }) => {
           {attribute.variants.map((att, i) => (
             <ul key={att._id}>
               <li className="text-sm">
-                {i + 1}){" "}
-                <span className="ml-2 hover:text-emerald-500">{att.name}</span>
+                {i + 1}) <span className="ml-2 hover:text-emerald-500">{att.name}</span>
               </li>
             </ul>
           ))}
@@ -51,16 +50,11 @@ const ViewAttribute = ({ attribute }) => {
         onClick={() => setOpenModal(true)}
         className="flex justify-center text-center cursor-pointer text-gray-400 hover:text-emerald-600"
       >
-        {" "}
-        <Tooltip
-          id="view"
-          Icon={FiZoomIn}
-          title="View Attribute"
-          bgColor="#34D399"
-        />
+        {' '}
+        <Tooltip id="view" Icon={FiZoomIn} title="View Attribute" bgColor="#34D399" />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ViewAttribute;
+export default ViewAttribute

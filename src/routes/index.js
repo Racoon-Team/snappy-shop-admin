@@ -1,29 +1,31 @@
-import { lazy } from "react";
+import { lazy } from 'react'
 
 // use lazy for better code splitting
-const Dashboard = lazy(() => import("@/pages/Dashboard"));
-const Attributes = lazy(() => import("@/pages/Attributes"));
-const ChildAttributes = lazy(() => import("@/pages/ChildAttributes"));
-const Products = lazy(() => import("@/pages/Products"));
-const ProductDetails = lazy(() => import("@/pages/ProductDetails"));
-const Category = lazy(() => import("@/pages/Category"));
-const ChildCategory = lazy(() => import("@/pages/ChildCategory"));
-const Staff = lazy(() => import("@/pages/Staff"));
-const Customers = lazy(() => import("@/pages/Customers"));
-const CustomerOrder = lazy(() => import("@/pages/CustomerOrder"));
-const Orders = lazy(() => import("@/pages/Orders"));
-const OrderInvoice = lazy(() => import("@/pages/OrderInvoice"));
-const Coupons = lazy(() => import("@/pages/Coupons"));
+const Dashboard = lazy(() => import('@/pages/Dashboard'))
+const Attributes = lazy(() => import('@/pages/Attributes'))
+const ChildAttributes = lazy(() => import('@/pages/ChildAttributes'))
+const Products = lazy(() => import('@/pages/Products'))
+const ProductDetails = lazy(() => import('@/pages/ProductDetails'))
+const Category = lazy(() => import('@/pages/Category'))
+const ChildCategory = lazy(() => import('@/pages/ChildCategory'))
+const Staff = lazy(() => import('@/pages/Staff'))
+const Customers = lazy(() => import('@/pages/Customers'))
+const CustomerOrder = lazy(() => import('@/pages/CustomerOrder'))
+const Orders = lazy(() => import('@/pages/Orders'))
+const OrderInvoice = lazy(() => import('@/pages/OrderInvoice'))
+const Coupons = lazy(() => import('@/pages/Coupons'))
 // const Setting = lazy(() => import("@/pages/Setting"));
-const Page404 = lazy(() => import("@/pages/404"));
-const ComingSoon = lazy(() => import("@/pages/ComingSoon"));
-const EditProfile = lazy(() => import("@/pages/EditProfile"));
-const Languages = lazy(() => import("@/pages/Languages"));
-const Currencies = lazy(() => import("@/pages/Currencies"));
-const Setting = lazy(() => import("@/pages/Setting"));
-const StoreHome = lazy(() => import("@/pages/StoreHome"));
-const StoreSetting = lazy(() => import("@/pages/StoreSetting"));
-const Notifications = lazy(() => import("@/pages/Notifications"));
+const Page404 = lazy(() => import('@/pages/404'))
+const ComingSoon = lazy(() => import('@/pages/ComingSoon'))
+const EditProfile = lazy(() => import('@/pages/EditProfile'))
+const Languages = lazy(() => import('@/pages/Languages'))
+const Currencies = lazy(() => import('@/pages/Currencies'))
+const Setting = lazy(() => import('@/pages/Setting'))
+const StoreHome = lazy(() => import('@/pages/StoreHome'))
+const DeliveryPoints = lazy(() => import('@/pages/DeliveryPoints'))
+const RoleSettings = lazy(() => import('@/pages/RoleSettings'))
+const StoreSetting = lazy(() => import('@/pages/StoreSetting'))
+const Notifications = lazy(() => import('@/pages/Notifications'))
 /*
 //  * ⚠ These are internal routes!
 //  * They will be rendered inside the app, using the default `containers/Layout`.
@@ -37,121 +39,129 @@ const Notifications = lazy(() => import("@/pages/Notifications"));
 
 const routes = [
   {
-    path: "/dashboard",
+    path: '/dashboard',
     component: Dashboard,
   },
   {
-    path: "/products",
+    path: '/products',
     component: Products,
   },
   {
-    path: "/attributes",
+    path: '/attributes',
     component: Attributes,
   },
   {
-    path: "/attributes/:id",
+    path: '/attributes/:id',
     component: ChildAttributes,
   },
   {
-    path: "/product/:id",
+    path: '/product/:id',
     component: ProductDetails,
   },
   {
-    path: "/categories",
+    path: '/categories',
     component: Category,
   },
   {
-    path: "/languages",
+    path: '/languages',
     component: Languages,
   },
   {
-    path: "/currencies",
+    path: '/currencies',
     component: Currencies,
   },
 
   {
-    path: "/categories/:id",
+    path: '/categories/:id',
     component: ChildCategory,
   },
   {
-    path: "/customers",
+    path: '/customers',
     component: Customers,
   },
   {
-    path: "/customer-order/:id",
+    path: '/customer-order/:id',
     component: CustomerOrder,
   },
   {
-    path: "/our-staff",
+    path: '/our-staff',
     component: Staff,
   },
   {
-    path: "/orders",
+    path: '/orders',
     component: Orders,
   },
   {
-    path: "/order/:id",
+    path: '/order/:id',
     component: OrderInvoice,
   },
   {
-    path: "/coupons",
+    path: '/coupons',
     component: Coupons,
   },
-  { path: "/settings", component: Setting },
+  { path: '/settings', component: Setting },
   {
-    path: "/store/customization",
+    path: '/store/customization',
     component: StoreHome,
   },
   {
-    path: "/store/store-settings",
+    path: '/store/store-settings',
     component: StoreSetting,
   },
   {
-    path: "/404",
+    path: '/store/delivery-points',
+    component: DeliveryPoints,
+  },
+  {
+    path: '/settings/roles',
+    component: RoleSettings,
+  },
+  {
+    path: '/404',
     component: Page404,
   },
   {
-    path: "/coming-soon",
+    path: '/coming-soon',
     component: ComingSoon,
   },
   {
-    path: "/edit-profile",
+    path: '/edit-profile',
     component: EditProfile,
   },
   {
-    path: "/notifications",
+    path: '/notifications',
     component: Notifications,
   },
-];
+]
 
 const routeAccessList = [
   // {
   //   label: "Root",
   //   value: "/",
   // },
-  { label: "Dashboard", value: "dashboard" },
-  { label: "Products", value: "products" },
-  { label: "Categories", value: "categories" },
-  { label: "Attributes", value: "attributes" },
-  { label: "Coupons", value: "coupons" },
-  { label: "Customers", value: "customers" },
-  { label: "Orders", value: "orders" },
-  { label: "Staff", value: "our-staff" },
-  { label: "Settings", value: "settings" },
-  { label: "Languages", value: "languages" },
-  { label: "Currencies", value: "currencies" },
-  { label: "ViewStore", value: "store" },
-  { label: "StoreCustomization", value: "customization" },
-  { label: "StoreSettings", value: "store-settings" },
-  { label: "Product Details", value: "product" },
-  { label: "Order Invoice", value: "order" },
-  { label: "Edit Profile", value: "edit-profile" },
+  { label: 'Dashboard', value: 'dashboard' },
+  { label: 'Products', value: 'products' },
+  { label: 'Categories', value: 'categories' },
+  { label: 'Attributes', value: 'attributes' },
+  { label: 'Coupons', value: 'coupons' },
+  { label: 'Customers', value: 'customers' },
+  { label: 'Orders', value: 'orders' },
+  { label: 'Staff', value: 'ourStaff' },
+  { label: 'Settings', value: 'settings' },
+  { label: 'Languages', value: 'languages' },
+  { label: 'Currencies', value: 'currencies' },
+  { label: 'ViewStore', value: 'store' },
+  { label: 'StoreCustomization', value: 'customization' },
+  { label: 'StoreSettings', value: 'storeSettings' },
+  { label: 'Product Details', value: 'product' },
+  { label: 'Order Invoice', value: 'order' },
+  { label: 'Edit Profile', value: 'editProfile' },
   {
-    label: "Customer Order",
-    value: "customer-order",
+    label: 'Customer Order',
+    value: 'customerOrder',
   },
-  { label: "Notification", value: "notifications" },
-  { label: "Coming Soon", value: "coming-soon" },
-];
+  { label: 'Notification', value: 'notifications' },
+  { label: 'Coming Soon', value: 'comingSoon' },
+]
 
-export { routeAccessList, routes };
+export { routeAccessList, routes }

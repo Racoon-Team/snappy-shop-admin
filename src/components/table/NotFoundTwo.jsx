@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const NotFoundTwo = ({ title }) => {
   return (
@@ -10,7 +10,7 @@ const NotFoundTwo = ({ title }) => {
         </span>
       </h2>
     </div>
-  );
-};
+  )
+}
 
-export default NotFoundTwo;
+export default NotFoundTwo

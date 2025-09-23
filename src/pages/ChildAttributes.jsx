@@ -8,90 +8,81 @@ import {
   TableContainer,
   TableFooter,
   TableHeader,
-} from "@windmill/react-ui";
-import React, { useContext, useEffect, useState } from "react";
-import { FiChevronRight, FiEdit, FiPlus, FiTrash2 } from "react-icons/fi";
-import { Link, useParams } from "react-router-dom";
+} from '@windmill/react-ui'
+import React, { useContext, useEffect, useState } from 'react'
+import { FiChevronRight, FiEdit, FiPlus, FiTrash2 } from 'react-icons/fi'
+import { Link, useParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 //internal import
-import ChildAttributeTable from "@/components/attribute/ChildAttributeTable";
-import AttributeChildDrawer from "@/components/drawer/AttributeChildDrawer";
-import BulkActionDrawer from "@/components/drawer/BulkActionDrawer";
-import MainDrawer from "@/components/drawer/MainDrawer";
-import CheckBox from "@/components/form/others/CheckBox";
-import DeleteModal from "@/components/modal/DeleteModal";
-import Loading from "@/components/preloader/Loading";
-import NotFound from "@/components/table/NotFound";
-import PageTitle from "@/components/Typography/PageTitle";
-import { SidebarContext } from "@/context/SidebarContext";
-import useAsync from "@/hooks/useAsync";
-import useFilter from "@/hooks/useFilter";
-import useToggleDrawer from "@/hooks/useToggleDrawer";
-import AttributeServices from "@/services/AttributeServices";
-import useUtilsFunction from "@/hooks/useUtilsFunction";
-import AnimatedContent from "@/components/common/AnimatedContent";
+import ChildAttributeTable from '@/components/attribute/ChildAttributeTable'
+import AttributeChildDrawer from '@/components/drawer/AttributeChildDrawer'
+import BulkActionDrawer from '@/components/drawer/BulkActionDrawer'
+import MainDrawer from '@/components/drawer/MainDrawer'
+import CheckBox from '@/components/form/others/CheckBox'
+import DeleteModal from '@/components/modal/DeleteModal'
+import Loading from '@/components/preloader/Loading'
+import NotFound from '@/components/table/NotFound'
+import PageTitle from '@/components/Typography/PageTitle'
+import { SidebarContext } from '@/context/SidebarContext'
+import useAsync from '@/hooks/useAsync'
+import useFilter from '@/hooks/useFilter'
+import useToggleDrawer from '@/hooks/useToggleDrawer'
+import AttributeServices from '@/services/AttributeServices'
+import useUtilsFunction from '@/hooks/useUtilsFunction'
+import AnimatedContent from '@/components/common/AnimatedContent'
 
 const ChildAttributes = () => {
-  let { id } = useParams();
+  const { t } = useTranslation()
 
-  const { handleDeleteMany, allId, serviceId, handleUpdateMany } =
-    useToggleDrawer();
-  const { toggleDrawer, lang } = useContext(SidebarContext);
-  const { data, loading, error } = useAsync(() =>
-    AttributeServices.getAttributeById(id)
-  );
+  let { id } = useParams()
 
-  const { showingTranslateValue } = useUtilsFunction();
+  const { handleDeleteMany, allId, serviceId, handleUpdateMany } = useToggleDrawer()
+  const { toggleDrawer, lang } = useContext(SidebarContext)
+  const { data, loading, error } = useAsync(() => AttributeServices.getAttributeById(id))
+
+  const { showingTranslateValue } = useUtilsFunction()
 
   const { data: attributes } = useAsync(() =>
     AttributeServices.getAllAttributes({
-      type: "attribute",
-      option: "Dropdown",
-      option1: "Radio",
+      type: 'attribute',
+      option: 'Dropdown',
+      option1: 'Radio',
     })
-  );
+  )
 
-  const {
-    totalResults,
-    resultsPerPage,
-    dataTable,
-    serviceData,
-    handleChangePage,
-  } = useFilter(data?.variants);
+  const { totalResults, resultsPerPage, dataTable, serviceData, handleChangePage } = useFilter(data?.variants)
 
   // react hook
-  const [isCheckAll, setIsCheckAll] = useState(false);
-  const [isCheck, setIsCheck] = useState([]);
-  const [attributeData, setAttributeData] = useState([]);
+  const [isCheckAll, setIsCheckAll] = useState(false)
+  const [isCheck, setIsCheck] = useState([])
+  const [attributeData, setAttributeData] = useState([])
 
   const handleSelectAll = () => {
-    setIsCheckAll(!isCheckAll);
-    setIsCheck(data?.variants?.map((value) => value._id));
+    setIsCheckAll(!isCheckAll)
+    setIsCheck(data?.variants?.map((value) => value._id))
     if (isCheckAll) {
-      setIsCheck([]);
+      setIsCheck([])
     }
-  };
+  }
 
   // attributes filtering except this id
   useEffect(() => {
-    const data = attributes?.filter((value) => value._id !== id);
-    setAttributeData(data);
-  }, [attributes, id]);
+    const data = attributes?.filter((value) => value._id !== id)
+    setAttributeData(data)
+  }, [attributes, id])
 
   return (
     <>
-      <PageTitle>Attributes Values</PageTitle>
+      <PageTitle>{t('attributesScreen.editionValues.label')}</PageTitle>
 
-      <DeleteModal
-        ids={allId}
-        setIsCheck={setIsCheck}
-        title="Selected Attribute Value(s)"
-      />
+      <DeleteModal ids={allId} setIsCheck={setIsCheck} />
 
       <BulkActionDrawer
         attributes={attributeData}
         ids={allId}
         title="Attribute Value(s)"
+        label={t('attributesScreen.labelValues')}
         childId={id}
       />
 
@@ -104,14 +95,14 @@ const ChildAttributes = () => {
           <ol className="flex items-center w-full overflow-hidden font-serif">
             <li className="text-sm pr-1 transition duration-200 ease-in cursor-pointer hover:text-emerald-500 font-semibold">
               <Link className="text-blue-700" to={`/attributes`}>
-                Attributes
+                {t('attributesScreen.label')}
               </Link>
             </li>
 
             <span className="flex items-center font-serif dark:text-gray-400">
               <li className="text-sm mt-[1px]">
-                {" "}
-                <FiChevronRight />{" "}
+                {' '}
+                <FiChevronRight />{' '}
               </li>
 
               <li className="text-sm pl-1 font-semibold dark:text-gray-400">
@@ -128,7 +119,7 @@ const ChildAttributes = () => {
                 <span className="mr-3">
                   <FiPlus />
                 </span>
-                Add Value
+                {t('attributesScreen.editionValues.add')}
               </Button>
             </div>
 
@@ -139,7 +130,7 @@ const ChildAttributes = () => {
                 className="w-full rounded-md h-12"
               >
                 <FiEdit />
-                Bulk Action
+                {t('common.bulkAction.label')}
               </Button>
             </div>
 
@@ -151,7 +142,7 @@ const ChildAttributes = () => {
               <span className="mr-3">
                 <FiTrash2 />
               </span>
-              Delete
+              {t('common.delete')}
             </Button>
           </CardBody>
         </Card>
@@ -175,11 +166,11 @@ const ChildAttributes = () => {
                     isChecked={isCheckAll}
                   />
                 </TableCell>
-                <TableCell>Id</TableCell>
-                <TableCell>Name</TableCell>
-                <TableCell>Type</TableCell>
-                <TableCell className="text-center">Status</TableCell>
-                <TableCell className="text-right">Actions</TableCell>
+                <TableCell>{t('attributesScreen.table.id')}</TableCell>
+                <TableCell>{t('attributesScreen.table.name')}</TableCell>
+                <TableCell>{t('attributesScreen.table.type')}</TableCell>
+                <TableCell className="text-center">{t('attributesScreen.table.status')}</TableCell>
+                <TableCell className="text-right">{t('attributesScreen.table.action')}</TableCell>
               </tr>
             </TableHeader>
 
@@ -205,7 +196,7 @@ const ChildAttributes = () => {
         <NotFound title="Sorry, There are no attributes right now." />
       )}
     </>
-  );
-};
+  )
+}
 
-export default ChildAttributes;
+export default ChildAttributes

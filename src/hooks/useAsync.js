@@ -1,13 +1,13 @@
-import axios from "axios";
+import axios from 'axios'
 // import Cookies from 'js-cookie';
-import { useContext, useEffect, useState } from "react";
-import { SidebarContext } from "@/context/SidebarContext";
+import { SidebarContext } from '@/context/SidebarContext'
+import { useContext, useEffect, useState } from 'react'
 
 const useAsync = (asyncFunction) => {
-  const [data, setData] = useState([] || {});
-  const [error, setError] = useState("");
+  const [data, setData] = useState([])
+  const [error, setError] = useState('')
   // const [errCode, setErrCode] = useState('');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true)
   const {
     invoice,
     status,
@@ -24,42 +24,41 @@ const useAsync = (asyncFunction) => {
     category,
     searchText,
     sortedField,
-  } = useContext(SidebarContext);
+  } = useContext(SidebarContext)
 
   useEffect(() => {
-    let unmounted = false;
-    let source = axios.CancelToken.source();
-    (async () => {
+    let unmounted = false
+    let source = axios.CancelToken.source()
+    ;(async () => {
       try {
-        const res = await asyncFunction({ cancelToken: source.token });
+        const res = await asyncFunction({ cancelToken: source.token })
         if (!unmounted) {
-          setData(res);
-          setError("");
-          setLoading(false);
+          setData(res)
+          setError('')
+          setLoading(false)
         }
       } catch (err) {
         if (!unmounted) {
-          setError(err.message);
+          setError(err.message)
           if (axios.isCancel(err)) {
-            setError(err.message);
-            setLoading(false);
-            setData([]);
+            setError(err.message)
+            setLoading(false)
+            setData([])
           } else {
-            setError(err.message);
-            setLoading(false);
-            setData([]);
+            setError(err.message)
+            setLoading(false)
+            setData([])
           }
         }
       }
-    })();
+    })()
 
-    setIsUpdate(false);
+    setIsUpdate(false)
 
     return () => {
-      unmounted = true;
-      source.cancel("Cancelled in cleanup");
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+      unmounted = true
+      source.cancel('Cancelled in cleanup')
+    }
   }, [
     invoice,
     status,
@@ -75,13 +74,13 @@ const useAsync = (asyncFunction) => {
     category,
     searchText,
     sortedField,
-  ]);
+  ])
 
   return {
     data,
     error,
     loading,
-  };
-};
+  }
+}
 
-export default useAsync;
+export default useAsync

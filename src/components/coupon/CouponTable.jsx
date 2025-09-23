@@ -1,52 +1,47 @@
-import {
-  Avatar,
-  Badge,
-  TableBody,
-  TableCell,
-  TableRow,
-} from "@windmill/react-ui";
-import dayjs from "dayjs";
-import { useEffect, useState } from "react";
+import { Avatar, Badge, TableBody, TableCell, TableRow } from '@windmill/react-ui'
+import dayjs from 'dayjs'
+import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 //internal import
-import useUtilsFunction from "@/hooks/useUtilsFunction";
-import CheckBox from "@/components/form/others/CheckBox";
-import useToggleDrawer from "@/hooks/useToggleDrawer";
-import DeleteModal from "@/components/modal/DeleteModal";
-import MainDrawer from "@/components/drawer/MainDrawer";
-import CouponDrawer from "@/components/drawer/CouponDrawer";
-import ShowHideButton from "@/components/table/ShowHideButton";
-import EditDeleteButton from "@/components/table/EditDeleteButton";
+import useUtilsFunction from '@/hooks/useUtilsFunction'
+import CheckBox from '@/components/form/others/CheckBox'
+import useToggleDrawer from '@/hooks/useToggleDrawer'
+import DeleteModal from '@/components/modal/DeleteModal'
+import MainDrawer from '@/components/drawer/MainDrawer'
+import CouponDrawer from '@/components/drawer/CouponDrawer'
+import ShowHideButton from '@/components/table/ShowHideButton'
+import EditDeleteButton from '@/components/table/EditDeleteButton'
 
 const CouponTable = ({ isCheck, coupons, setIsCheck }) => {
-  const [updatedCoupons, setUpdatedCoupons] = useState([]);
+  const { t } = useTranslation()
+  const [updatedCoupons, setUpdatedCoupons] = useState([])
 
-  const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer();
+  const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer()
 
-  const { currency, showDateFormat, globalSetting, showingTranslateValue } =
-    useUtilsFunction();
+  const { currency, showDateFormat, globalSetting, showingTranslateValue } = useUtilsFunction()
 
   const handleClick = (e) => {
-    const { id, checked } = e.target;
-    setIsCheck([...isCheck, id]);
+    const { id, checked } = e.target
+    setIsCheck([...isCheck, id])
     if (!checked) {
-      setIsCheck(isCheck.filter((item) => item !== id));
+      setIsCheck(isCheck.filter((item) => item !== id))
     }
-  };
+  }
 
   useEffect(() => {
     const result = coupons?.map((el) => {
-      const newDate = new Date(el?.updatedAt).toLocaleString("en-US", {
+      const newDate = new Date(el?.updatedAt).toLocaleString('en-US', {
         timeZone: globalSetting?.default_time_zone,
-      });
+      })
       const newObj = {
         ...el,
         updatedDate: newDate,
-      };
-      return newObj;
-    });
-    setUpdatedCoupons(result);
-  }, [coupons, globalSetting?.default_time_zone]);
+      }
+      return newObj
+    })
+    setUpdatedCoupons(result)
+  }, [coupons, globalSetting?.default_time_zone])
 
   return (
     <>
@@ -86,32 +81,30 @@ const CouponTable = ({ isCheck, coupons, setIsCheck }) => {
                   />
                 )}
                 <div>
-                  <span className="text-sm">
-                    {showingTranslateValue(coupon?.title)}
-                  </span>{" "}
+                  <span className="text-sm">{showingTranslateValue(coupon?.title)}</span>{' '}
                 </div>
-              </div>{" "}
+              </div>{' '}
             </TableCell>
 
             <TableCell>
-              {" "}
-              <span className="text-sm"> {coupon.couponCode}</span>{" "}
+              {' '}
+              <span className="text-sm"> {coupon.couponCode}</span>{' '}
             </TableCell>
 
             {coupon?.discountType?.type ? (
               <TableCell>
-                {" "}
+                {' '}
                 <span className="text-sm font-semibold">
-                  {" "}
-                  {coupon?.discountType?.type === "percentage"
+                  {' '}
+                  {coupon?.discountType?.type === 'percentage'
                     ? `${coupon?.discountType?.value}%`
                     : `${currency}${coupon?.discountType?.value}`}
-                </span>{" "}
+                </span>{' '}
               </TableCell>
             ) : (
               <TableCell>
-                {" "}
-                <span className="text-sm font-semibold"> </span>{" "}
+                {' '}
+                <span className="text-sm font-semibold"> </span>{' '}
               </TableCell>
             )}
 
@@ -135,9 +128,9 @@ const CouponTable = ({ isCheck, coupons, setIsCheck }) => {
 
             <TableCell className="align-middle ">
               {dayjs().isAfter(dayjs(coupon.endTime)) ? (
-                <Badge type="danger">Expired</Badge>
+                <Badge type="danger">{t('couponsScreen.table.expired')}</Badge>
               ) : (
-                <Badge type="success">Active</Badge>
+                <Badge type="success">{t('couponsScreen.table.active')}</Badge>
               )}
             </TableCell>
 
@@ -154,7 +147,7 @@ const CouponTable = ({ isCheck, coupons, setIsCheck }) => {
         ))}
       </TableBody>
     </>
-  );
-};
+  )
+}
 
-export default CouponTable;
+export default CouponTable

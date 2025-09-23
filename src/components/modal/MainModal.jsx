@@ -1,77 +1,77 @@
-import React, { useContext } from "react";
-import { useLocation } from "react-router-dom";
-import { Modal, ModalBody, ModalFooter, Button } from "@windmill/react-ui";
-import { FiTrash2 } from "react-icons/fi";
+import React, { useContext } from 'react'
+import { useLocation } from 'react-router-dom'
+import { Modal, ModalBody, ModalFooter, Button } from '@windmill/react-ui'
+import { FiTrash2 } from 'react-icons/fi'
 
 //internal import
-import CustomerServices from "@/services/CustomerServices";
-import AdminServices from "@/services/AdminServices";
-import CouponServices from "@/services/CouponServices";
-import ProductServices from "@/services/ProductServices";
-import CategoryServices from "@/services/CategoryServices";
-import { SidebarContext } from "@/context/SidebarContext";
-import { notifySuccess, notifyError } from "@/utils/toast";
-import useToggleDrawer from "@/hooks/useToggleDrawer";
+import CustomerServices from '@/services/CustomerServices'
+import AdminServices from '@/services/AdminServices'
+import CouponServices from '@/services/CouponServices'
+import ProductServices from '@/services/ProductServices'
+import CategoryServices from '@/services/CategoryServices'
+import { SidebarContext } from '@/context/SidebarContext'
+import { notifySuccess, notifyError } from '@/utils/toast'
+import useToggleDrawer from '@/hooks/useToggleDrawer'
 
 const MainModal = ({ id, title }) => {
-  const { isModalOpen, closeModal, setIsUpdate } = useContext(SidebarContext);
-  const { setServiceId } = useToggleDrawer();
-  const location = useLocation();
+  const { isModalOpen, closeModal, setIsUpdate } = useContext(SidebarContext)
+  const { setServiceId } = useToggleDrawer()
+  const location = useLocation()
 
   const handleDelete = () => {
-    if (location.pathname === "/products") {
+    if (location.pathname === '/products') {
       ProductServices.deleteProduct(id)
         .then((res) => {
-          setIsUpdate(true);
-          notifySuccess(res.message);
+          setIsUpdate(true)
+          notifySuccess(res.message)
         })
-        .catch((err) => notifyError(err.message));
-      closeModal();
-      setServiceId();
+        .catch((err) => notifyError(err.message))
+      closeModal()
+      setServiceId()
     }
 
-    if (location.pathname === "/category") {
+    if (location.pathname === '/category') {
       CategoryServices.deleteCategory(id)
         .then((res) => {
-          setIsUpdate(true);
-          notifySuccess(res.message);
+          setIsUpdate(true)
+          notifySuccess(res.message)
         })
-        .catch((err) => notifyError(err.message));
-      closeModal();
-      setServiceId();
+        .catch((err) => notifyError(err.message))
+      closeModal()
+      setServiceId()
     }
-    if (location.pathname === "/customers") {
+    if (location.pathname === '/customers') {
       CustomerServices.deleteCustomer(id)
         .then((res) => {
-          setIsUpdate(true);
-          notifySuccess(res.message);
+          setIsUpdate(true)
+          notifySuccess(res.message)
         })
-        .catch((err) => notifyError(err.message));
-      closeModal();
-      setServiceId();
+        .catch((err) => notifyError(err.message))
+      closeModal()
+      setServiceId()
     }
 
-    if (location.pathname === "/coupons") {
+    if (location.pathname === '/coupons') {
       CouponServices.deleteCoupon(id)
         .then((res) => {
-          setIsUpdate(true);
-          notifySuccess(res.message);
+          setIsUpdate(true)
+          notifySuccess(res.message)
         })
-        .catch((err) => notifyError(err.message));
-      closeModal();
-      setServiceId();
+        .catch((err) => notifyError(err.message))
+      closeModal()
+      setServiceId()
     }
-    if (location.pathname === "/our-staff") {
+    if (location.pathname === '/our-staff') {
       AdminServices.deleteStaff(id)
         .then((res) => {
-          setIsUpdate(true);
-          notifySuccess(res.message);
+          setIsUpdate(true)
+          notifySuccess(res.message)
         })
-        .catch((err) => notifyError(err.message));
-      closeModal();
-      setServiceId();
+        .catch((err) => notifyError(err.message))
+      closeModal()
+      setServiceId()
     }
-  };
+  }
 
   return (
     <>
@@ -81,13 +81,9 @@ const MainModal = ({ id, title }) => {
             <FiTrash2 />
           </span>
           <h2 className="text-xl font-medium mb-1">
-            Are You Sure! Want to Delete{" "}
-            <span className="text-red-500">{title}</span> Record?
+            Are You Sure! Want to Delete <span className="text-red-500">{title}</span> Record?
           </h2>
-          <p>
-            Do you really want to delete these records? You can't view this in
-            your list anymore if you delete!
-          </p>
+          <p>Do you really want to delete these records? You can't view this in your list anymore if you delete!</p>
         </ModalBody>
         <ModalFooter className="justify-center">
           <Button
@@ -103,7 +99,7 @@ const MainModal = ({ id, title }) => {
         </ModalFooter>
       </Modal>
     </>
-  );
-};
+  )
+}
 
-export default React.memo(MainModal);
+export default React.memo(MainModal)

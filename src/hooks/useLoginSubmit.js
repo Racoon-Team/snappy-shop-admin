@@ -1,75 +1,77 @@
-import Cookies from "js-cookie";
-import { useContext, useState } from "react";
-import { useForm } from "react-hook-form";
-import { useHistory, useLocation } from "react-router-dom";
+import Cookies from 'js-cookie'
+import { useContext, useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { useHistory, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 //internal import
-import { AdminContext } from "@/context/AdminContext";
-import AdminServices from "@/services/AdminServices";
-import { notifyError, notifySuccess } from "@/utils/toast";
+import { AdminContext } from '@/context/AdminContext'
+import AdminServices from '@/services/AdminServices'
+import { notifyError, notifySuccess } from '@/utils/toast'
 
 const useLoginSubmit = () => {
-  const [loading, setLoading] = useState(false);
-  const { dispatch } = useContext(AdminContext);
-  const history = useHistory();
-  const location = useLocation();
+  const { t } = useTranslation()
+  const [loading, setLoading] = useState(false)
+  const { dispatch } = useContext(AdminContext)
+  const history = useHistory()
+  const location = useLocation()
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm()
 
   const onSubmit = async ({ name, email, verifyEmail, password, role }) => {
-    setLoading(true);
-    const cookieTimeOut = 0.5;
+    setLoading(true)
+    const cookieTimeOut = 0.5
 
     try {
-      if (location.pathname === "/login") {
-        const res = await AdminServices.loginAdmin({ email, password });
+      if (location.pathname === '/login') {
+        const res = await AdminServices.loginAdmin({ email, password })
 
         if (res) {
-          notifySuccess("Login Success!");
-          dispatch({ type: "USER_LOGIN", payload: res });
-          Cookies.set("adminInfo", JSON.stringify(res), {
+          notifySuccess(t('loginScreen.message.login'))
+          dispatch({ type: 'USER_LOGIN', payload: res })
+          Cookies.set('adminInfo', JSON.stringify(res), {
             expires: cookieTimeOut,
-            sameSite: "None",
+            sameSite: 'None',
             secure: true,
-          });
-          history.replace("/dashboard");
+          })
+          history.replace('/dashboard')
         }
       }
 
-      if (location.pathname === "/signup") {
+      if (location.pathname === '/signup') {
         const res = await AdminServices.registerAdmin({
           name,
           email,
           password,
           role,
-        });
+        })
 
         if (res) {
-          notifySuccess("Register Success!");
-          dispatch({ type: "USER_LOGIN", payload: res });
-          Cookies.set("adminInfo", JSON.stringify(res), {
+          notifySuccess('Register Success!')
+          dispatch({ type: 'USER_LOGIN', payload: res })
+          Cookies.set('adminInfo', JSON.stringify(res), {
             expires: cookieTimeOut,
-            sameSite: "None",
+            sameSite: 'None',
             secure: true,
-          });
-          history.replace("/");
+          })
+          history.replace('/')
         }
       }
 
-      if (location.pathname === "/forgot-password") {
-        const res = await AdminServices.forgetPassword({ verifyEmail });
+      if (location.pathname === '/forgot-password') {
+        const res = await AdminServices.forgetPassword({ verifyEmail })
 
-        notifySuccess(res.message);
+        notifySuccess(res.message)
       }
     } catch (err) {
-      notifyError(err?.response?.data?.message || err?.message);
+      notifyError(err?.response?.data?.message || err?.message)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return {
     onSubmit,
@@ -77,7 +79,7 @@ const useLoginSubmit = () => {
     handleSubmit,
     errors,
     loading,
-  };
-};
+  }
+}
 
-export default useLoginSubmit;
+export default useLoginSubmit

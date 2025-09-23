@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react'
 
 //internal import
-import { SidebarContext } from "@/context/SidebarContext";
-import useUtilsFunction from "@/hooks/useUtilsFunction";
+import { SidebarContext } from '@/context/SidebarContext'
+import useUtilsFunction from '@/hooks/useUtilsFunction'
 
 const SelectLanguageTwo = ({ handleSelectLanguage, register }) => {
-  const { languages, langError, langLoading } = useUtilsFunction();
-  const { lang } = useContext(SidebarContext);
+  const { languages, langError, langLoading } = useUtilsFunction()
+  const { lang } = useContext(SidebarContext)
 
   // console.log("lang", lang, "data", data);
 
@@ -27,12 +27,12 @@ const SelectLanguageTwo = ({ handleSelectLanguage, register }) => {
           !langLoading &&
           languages?.map((lang) => (
             <option key={lang._id} value={lang.iso_code}>
-              {lang.iso_code}{" "}
+              {lang.iso_code}{' '}
             </option>
           ))}
       </select>
     </>
-  );
-};
+  )
+}
 
-export default SelectLanguageTwo;
+export default SelectLanguageTwo

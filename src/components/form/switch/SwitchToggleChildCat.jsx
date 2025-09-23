@@ -1,15 +1,13 @@
-import Switch from "react-switch";
-import { useTranslation } from "react-i18next";
+import Switch from 'react-switch'
+import { useTranslation } from 'react-i18next'
 
 const SwitchToggleChildCat = ({ title, handleProcess, processOption }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   return (
     <>
-      <div className={`${"mb-3"}`}>
+      <div className={`${'mb-3'}`}>
         <div className="flex flex-wrap items-center float-right">
-          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">
-            {title}
-          </label>
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">{title}</label>
 
           <Switch
             onChange={handleProcess}
@@ -18,19 +16,19 @@ const SwitchToggleChildCat = ({ title, handleProcess, processOption }) => {
             uncheckedIcon={
               <div
                 style={{
-                  display: "flex",
-                  justifyContent: "left",
-                  alignItems: "center",
-                  height: "100%",
+                  display: 'flex',
+                  justifyContent: 'left',
+                  alignItems: 'center',
+                  height: '100%',
                   fontSize: 12,
-                  color: "white",
+                  color: 'white',
                   paddingRight: 50,
                   paddingTop: 1,
                   marginLeft: -40,
-                  whiteSpace: "nowrap",
+                  whiteSpace: 'nowrap',
                 }}
               >
-                {t("ParentsOnly")}
+                {t('categoriesScreen.parentsOnly')}
               </div>
             }
             width={115}
@@ -41,24 +39,24 @@ const SwitchToggleChildCat = ({ title, handleProcess, processOption }) => {
             checkedIcon={
               <div
                 style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: "100%",
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  height: '100%',
                   fontSize: 12,
-                  color: "white",
+                  color: 'white',
                   paddingLeft: 8,
                   paddingTop: 1,
                 }}
               >
-                {t("All")}
+                {t('categoriesScreen.all')}
               </div>
             }
           />
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default SwitchToggleChildCat;
+export default SwitchToggleChildCat

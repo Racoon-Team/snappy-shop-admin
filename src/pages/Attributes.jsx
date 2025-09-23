@@ -9,44 +9,44 @@ import {
   TableContainer,
   TableFooter,
   TableHeader,
-} from "@windmill/react-ui";
-import React, { useContext, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { FiEdit, FiPlus, FiTrash2 } from "react-icons/fi";
+} from '@windmill/react-ui'
+import React, { useContext, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { FiEdit, FiPlus, FiTrash2 } from 'react-icons/fi'
 
 //internal import
-import AttributeTable from "@/components/attribute/AttributeTable";
-import UploadMany from "@/components/common/UploadMany";
-import AttributeDrawer from "@/components/drawer/AttributeDrawer";
-import BulkActionDrawer from "@/components/drawer/BulkActionDrawer";
-import MainDrawer from "@/components/drawer/MainDrawer";
-import CheckBox from "@/components/form/others/CheckBox";
-import DeleteModal from "@/components/modal/DeleteModal";
-import TableLoading from "@/components/preloader/TableLoading";
-import NotFound from "@/components/table/NotFound";
-import PageTitle from "@/components/Typography/PageTitle";
-import { SidebarContext } from "@/context/SidebarContext";
-import useAsync from "@/hooks/useAsync";
-import useFilter from "@/hooks/useFilter";
-import useToggleDrawer from "@/hooks/useToggleDrawer";
-import AttributeServices from "@/services/AttributeServices";
-import AnimatedContent from "@/components/common/AnimatedContent";
+import AttributeTable from '@/components/attribute/AttributeTable'
+import UploadMany from '@/components/common/UploadMany'
+import AttributeDrawer from '@/components/drawer/AttributeDrawer'
+import BulkActionDrawer from '@/components/drawer/BulkActionDrawer'
+import MainDrawer from '@/components/drawer/MainDrawer'
+import CheckBox from '@/components/form/others/CheckBox'
+import DeleteModal from '@/components/modal/DeleteModal'
+import TableLoading from '@/components/preloader/TableLoading'
+import NotFound from '@/components/table/NotFound'
+import PageTitle from '@/components/Typography/PageTitle'
+import { SidebarContext } from '@/context/SidebarContext'
+import useAsync from '@/hooks/useAsync'
+import useFilter from '@/hooks/useFilter'
+import useToggleDrawer from '@/hooks/useToggleDrawer'
+import AttributeServices from '@/services/AttributeServices'
+import AnimatedContent from '@/components/common/AnimatedContent'
 
 //internal import
 
 const Attributes = () => {
-  const { toggleDrawer, lang } = useContext(SidebarContext);
+  const { toggleDrawer, lang } = useContext(SidebarContext)
   const { data, loading, error } = useAsync(() =>
     AttributeServices.getAllAttributes({
-      type: "attribute",
-      option: "Dropdown",
-      option1: "Radio",
+      type: 'attribute',
+      option: 'Dropdown',
+      option1: 'Radio',
     })
-  );
+  )
 
-  const { handleDeleteMany, allId, handleUpdateMany } = useToggleDrawer();
+  const { handleDeleteMany, allId, handleUpdateMany } = useToggleDrawer()
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   const {
     filename,
@@ -62,34 +62,30 @@ const Attributes = () => {
     handleSubmitAttribute,
     handleUploadMultiple,
     handleRemoveSelectFile,
-  } = useFilter(data);
+  } = useFilter(data)
 
   // react hooks
-  const [isCheckAll, setIsCheckAll] = useState(false);
-  const [isCheck, setIsCheck] = useState([]);
+  const [isCheckAll, setIsCheckAll] = useState(false)
+  const [isCheck, setIsCheck] = useState([])
 
   const handleSelectAll = () => {
-    setIsCheckAll(!isCheckAll);
-    setIsCheck(data.map((value) => value._id));
+    setIsCheckAll(!isCheckAll)
+    setIsCheck(data.map((value) => value._id))
     if (isCheckAll) {
-      setIsCheck([]);
+      setIsCheck([])
     }
-  };
+  }
   // handle reset field function
   const handleResetField = () => {
-    setAttributeTitle("");
-    attributeRef.current.value = "";
-  };
+    setAttributeTitle('')
+    attributeRef.current.value = ''
+  }
 
   return (
     <>
-      <PageTitle>{t("AttributeTitle")}</PageTitle>
-      <DeleteModal
-        ids={allId}
-        setIsCheck={setIsCheck}
-        title="Selected Attributes"
-      />
-      <BulkActionDrawer ids={allId} title="Attributes" />
+      <PageTitle>{t('attributesScreen.label')}</PageTitle>
+      <DeleteModal ids={allId} setIsCheck={setIsCheck} />
+      <BulkActionDrawer ids={allId} title="Attributes" label={t('attributesScreen.label')} />
       <MainDrawer>
         <AttributeDrawer />
       </MainDrawer>
@@ -97,10 +93,7 @@ const Attributes = () => {
       <AnimatedContent>
         <Card className="min-w-0 shadow-xs overflow-hidden bg-white dark:bg-gray-800 mb-5">
           <CardBody>
-            <form
-              onSubmit={handleSubmitAttribute}
-              className="py-3  grid gap-4 lg:gap-6 xl:gap-6  xl:flex"
-            >
+            <form onSubmit={handleSubmitAttribute} className="py-3  grid gap-4 lg:gap-6 xl:gap-6  xl:flex">
               <div className="flex justify-start xl:w-1/2  md:w-full">
                 <UploadMany
                   title="Attribute"
@@ -124,7 +117,7 @@ const Attributes = () => {
                       <FiEdit />
                     </span>
 
-                    {t("BulkAction")}
+                    {t('common.bulkAction.label')}
                   </Button>
                 </div>
                 <div className="w-full md:w-32 lg:w-32 xl:w-32 mr-3 mb-3 lg:mb-0">
@@ -136,18 +129,15 @@ const Attributes = () => {
                     <span className="mr-2">
                       <FiTrash2 />
                     </span>
-                    {t("Delete")}
+                    {t('common.delete')}
                   </Button>
                 </div>
                 <div className="w-full md:w-48 lg:w-48 xl:w-48">
-                  <Button
-                    onClick={toggleDrawer}
-                    className="w-full rounded-md h-12 "
-                  >
+                  <Button onClick={toggleDrawer} className="w-full rounded-md h-12 ">
                     <span className="mr-2">
                       <FiPlus />
                     </span>
-                    {t("CouponsAddAttributeBtn")}
+                    {t('attributesScreen.addBtn')}
                   </Button>
                 </div>
               </div>
@@ -156,21 +146,14 @@ const Attributes = () => {
         </Card>
         <Card className="min-w-0 shadow-xs overflow-hidden bg-white dark:bg-gray-800 mb-5">
           <CardBody>
-            <form
-              onSubmit={handleSubmitAttribute}
-              className="py-3 grid gap-4 lg:gap-6 xl:gap-6 md:flex xl:flex"
-            >
+            <form onSubmit={handleSubmitAttribute} className="py-3 grid gap-4 lg:gap-6 xl:gap-6 md:flex xl:flex">
               <div className="flex-grow-0 md:flex-grow lg:flex-grow xl:flex-grow">
-                <Input
-                  ref={attributeRef}
-                  type="search"
-                  placeholder={t("SearchAttributePlaceholder")}
-                />
+                <Input ref={attributeRef} type="search" placeholder={t('attributesScreen.searchPh')} />
               </div>
               <div className="flex items-center gap-2 flex-grow-0 md:flex-grow lg:flex-grow xl:flex-grow">
                 <div className="w-full mx-1">
                   <Button type="submit" className="h-12 w-full bg-emerald-700">
-                    Filter
+                    {t('common.filter')}
                   </Button>
                 </div>
 
@@ -181,7 +164,7 @@ const Attributes = () => {
                     type="reset"
                     className="px-4 md:py-1 py-2 h-12 text-sm dark:bg-gray-700"
                   >
-                    <span className="text-black dark:text-gray-200">Reset</span>
+                    <span className="text-black dark:text-gray-200">{t('common.reset')}</span>
                   </Button>
                 </div>
               </div>
@@ -208,27 +191,20 @@ const Attributes = () => {
                     isChecked={isCheckAll}
                   />
                 </TableCell>
-                <TableCell> {t("Id")} </TableCell>
-                <TableCell> {t("AName")}</TableCell>
-                <TableCell> {t("ADisplayName")}</TableCell>
-                <TableCell>{t("AOption")}</TableCell>
+                <TableCell> {t('attributesScreen.table.id')} </TableCell>
+                <TableCell> {t('attributesScreen.table.name')}</TableCell>
+                <TableCell> {t('attributesScreen.table.displayName')}</TableCell>
+                <TableCell>{t('attributesScreen.table.option')}</TableCell>
 
-                <TableCell className="text-center">
-                  {t("catPublishedTbl")}
-                </TableCell>
+                <TableCell className="text-center">{t('attributesScreen.table.published')}</TableCell>
 
-                <TableCell className="text-center">{t("Avalues")}</TableCell>
+                <TableCell className="text-center">{t('attributesScreen.table.values')}</TableCell>
 
-                <TableCell className="text-right">{t("AAction")}</TableCell>
+                <TableCell className="text-right">{t('attributesScreen.table.action')}</TableCell>
               </tr>
             </TableHeader>
 
-            <AttributeTable
-              lang={lang}
-              isCheck={isCheck}
-              setIsCheck={setIsCheck}
-              attributes={dataTable}
-            />
+            <AttributeTable lang={lang} isCheck={isCheck} setIsCheck={setIsCheck} attributes={dataTable} />
           </Table>
           <TableFooter>
             <Pagination
@@ -243,7 +219,7 @@ const Attributes = () => {
         <NotFound title="Sorry, There are no attributes right now." />
       )}
     </>
-  );
-};
+  )
+}
 
-export default Attributes;
+export default Attributes

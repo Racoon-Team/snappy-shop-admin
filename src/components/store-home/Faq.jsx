@@ -1,15 +1,15 @@
-import { Button } from "@windmill/react-ui";
-import { useTranslation } from "react-i18next";
-import { FiSettings } from "react-icons/fi";
+import { Button } from '@windmill/react-ui'
+import { useTranslation } from 'react-i18next'
+import { FiSettings } from 'react-icons/fi'
 
 //internal import
 
-import Error from "@/components/form/others/Error";
-import spinnerLoadingImage from "@/assets/img/spinner.gif";
-import InputAreaTwo from "@/components/form/input/InputAreaTwo";
-import SwitchToggle from "@/components/form/switch/SwitchToggle";
-import TextAreaCom from "@/components/form/others/TextAreaCom";
-import Uploader from "@/components/image-uploader/Uploader";
+import Error from '@/components/form/others/Error'
+import spinnerLoadingImage from '@/assets/img/spinner.gif'
+import InputAreaTwo from '@/components/form/input/InputAreaTwo'
+import SwitchToggle from '@/components/form/switch/SwitchToggle'
+import TextAreaCom from '@/components/form/others/TextAreaCom'
+import Uploader from '@/components/image-uploader/Uploader'
 
 const Faq = ({
   isSave,
@@ -27,7 +27,7 @@ const Faq = ({
   faqRightColStatus,
   isSubmitting,
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <>
@@ -35,63 +35,50 @@ const Faq = ({
         <div className="sticky top-0 z-20 flex justify-end">
           {isSubmitting ? (
             <Button disabled={true} type="button" className="h-10 px-6">
-              <img
-                src={spinnerLoadingImage}
-                alt="Loading"
-                width={20}
-                height={10}
-              />{" "}
-              <span className="font-serif ml-2 font-light">
-                {" "}
-                {t("Processing")}
-              </span>
+              <img src={spinnerLoadingImage} alt="Loading" width={20} height={10} />{' '}
+              <span className="font-serif ml-2 font-light"> {t('Processing')}</span>
             </Button>
           ) : (
             <Button type="submit" className="h-10 px-6 ">
-              {" "}
-              {isSave ? t("SaveBtn") : t("UpdateBtn")}
+              {' '}
+              {isSave ? t('common.saveBtn') : t('common.updateBtn')}
             </Button>
           )}
         </div>
 
         <div className="inline-flex text-lg text-gray-800 font-semibold dark:text-gray-400 md:mb-3 mb-1">
           <FiSettings className="mt-1 mr-2" />
-          {t("FAQSetting")}
+          {t('storeCustomizationScreen.faQs.title')}
         </div>
         <hr className="md:mb-10 mb-3" />
 
         <div className="xl:px-10 flex-grow scrollbar-hide w-full max-h-full pb-0">
           <div className="inline-flex md:text-md text-sm mb-3 text-gray-500 dark:text-gray-400">
-            <strong>{t("FAQPageHeader")}</strong>
+            <strong>{t('storeCustomizationScreen.faQs.subTitle.titleFaQs')}</strong>
           </div>
           <hr className="md:mb-12 mb-3" />
 
           <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
             <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-              {t("EnableThisBlock")}
+              {t('common.enableThisBlock')}
             </label>
             <div className="sm:col-span-4">
-              <SwitchToggle
-                title=""
-                handleProcess={setFaqStatus}
-                processOption={faqStatus}
-                name={faqStatus}
-              />
+              <SwitchToggle title="" handleProcess={setFaqStatus} processOption={faqStatus} name={faqStatus} />
             </div>
           </div>
 
           <div
             className="mb-height-0"
             style={{
-              height: faqStatus ? "auto" : 0,
-              transition: "all 0.5s",
-              visibility: !faqStatus ? "hidden" : "visible",
-              opacity: !faqStatus ? "0" : "1",
+              height: faqStatus ? 'auto' : 0,
+              transition: 'all 0.5s',
+              visibility: !faqStatus ? 'hidden' : 'visible',
+              opacity: !faqStatus ? '0' : '1',
             }}
           >
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("PageHeaderBg")}
+                {t('common.pageHeaderBg')}
               </label>
               <div className="sm:col-span-4">
                 <Uploader imageUrl={faqHeaderBg} setImageUrl={setFaqHeaderBg} />
@@ -100,7 +87,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("PageTitle")}
+                {t('common.pageTitle')}
               </label>
               <div className="sm:col-span-4">
                 <InputAreaTwo
@@ -108,7 +95,7 @@ const Faq = ({
                   label="Page Title"
                   name="faq_page_title"
                   type="text"
-                  placeholder={t("PageTitle")}
+                  placeholder={t('common.pageTitle')}
                 />
                 <Error errorName={errors.faq_page_title} />
               </div>
@@ -116,13 +103,13 @@ const Faq = ({
           </div>
 
           <div className="inline-flex md:text-md text-sm mb-3 text-gray-500 dark:text-gray-400">
-            <strong>{t("FaqLeftCol")}</strong>
+            <strong>{t('storeCustomizationScreen.faQs.LeftColumn.faqLeftCol')}</strong>
           </div>
           <hr className="md:mb-12 mb-3" />
 
           <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
             <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-              {t("EnableThisBlock")}
+              {t('common.enableThisBlock')}
             </label>
             <div className="sm:col-span-4">
               <SwitchToggle
@@ -136,32 +123,29 @@ const Faq = ({
 
           <div
             style={{
-              height: faqLeftColStatus ? "auto" : 0,
-              transition: "all 0.5s",
-              visibility: !faqLeftColStatus ? "hidden" : "visible",
-              opacity: !faqLeftColStatus ? "0" : "1",
+              height: faqLeftColStatus ? 'auto' : 0,
+              transition: 'all 0.5s',
+              visibility: !faqLeftColStatus ? 'hidden' : 'visible',
+              opacity: !faqLeftColStatus ? '0' : '1',
             }}
             className="mb-height-0 grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3 relative"
           >
             <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-              {t("LeftImage")}
+              {t('storeCustomizationScreen.faQs.LeftColumn.leftImage')}
             </label>
             <div className="sm:col-span-4">
-              <Uploader
-                imageUrl={faqLeftColImage}
-                setImageUrl={setFaqLeftColImage}
-              />
+              <Uploader imageUrl={faqLeftColImage} setImageUrl={setFaqLeftColImage} />
             </div>
           </div>
 
           <div className="inline-flex md:text-md text-sm mb-3 text-gray-500 dark:text-gray-400">
-            <strong>{t("FAQS")}</strong>
+            <strong>{t('storeCustomizationScreen.tabsSettings.faq')}</strong>
           </div>
           <hr className="md:mb-12 mb-3" />
 
           <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
             <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-              {t("EnableThisBlock")}
+              {t('common.enableThisBlock')}
             </label>
             <div className="sm:col-span-4">
               <SwitchToggle
@@ -175,15 +159,15 @@ const Faq = ({
 
           <div
             style={{
-              height: faqRightColStatus ? "auto" : 0,
-              transition: "all 0.5s",
-              visibility: !faqRightColStatus ? "hidden" : "visible",
-              opacity: !faqRightColStatus ? "0" : "1",
+              height: faqRightColStatus ? 'auto' : 0,
+              transition: 'all 0.5s',
+              visibility: !faqRightColStatus ? 'hidden' : 'visible',
+              opacity: !faqRightColStatus ? '0' : '1',
             }}
           >
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3 relative">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqTitleOne")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqTitleOne')}
               </label>
               <div className="sm:col-span-4">
                 <InputAreaTwo
@@ -191,7 +175,7 @@ const Faq = ({
                   label="FAQ Title"
                   name="faq_title_one"
                   type="text"
-                  placeholder="FAQ Title"
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.title')}
                 />
                 <Error errorName={errors.faq_title_one} />
               </div>
@@ -199,7 +183,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqDescriptionOne")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionOne')}
               </label>
               <div className="sm:col-span-4">
                 <TextAreaCom
@@ -207,7 +191,7 @@ const Faq = ({
                   label="Faq Description"
                   name="faq_description_one"
                   type="text"
-                  placeholder={t("FaqDescriptionOne")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionOne')}
                 />
                 <Error errorName={errors.faq_description_one} />
               </div>
@@ -215,7 +199,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqTitleTwo")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqTitleTwo')}
               </label>
               <div className="sm:col-span-4">
                 <InputAreaTwo
@@ -223,7 +207,7 @@ const Faq = ({
                   label="FAQ Title"
                   name="faq_title_two"
                   type="text"
-                  placeholder={t("FaqTitleTwo")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqTitleTwo')}
                 />
                 <Error errorName={errors.faq_title_two} />
               </div>
@@ -231,7 +215,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqDescriptionTwo")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionTwo')}
               </label>
               <div className="sm:col-span-4">
                 <TextAreaCom
@@ -239,7 +223,7 @@ const Faq = ({
                   label="Faq Description"
                   name="faq_description_two"
                   type="text"
-                  placeholder={t("FaqDescriptionTwo")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionTwo')}
                 />
                 <Error errorName={errors.faq_description_two} />
               </div>
@@ -247,7 +231,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqTitleThree")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqTitleThree')}
               </label>
               <div className="sm:col-span-4">
                 <InputAreaTwo
@@ -255,7 +239,7 @@ const Faq = ({
                   label="FAQ Title"
                   name="faq_title_three"
                   type="text"
-                  placeholder={t("FaqTitleThree")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqTitleThree')}
                 />
                 <Error errorName={errors.faq_title_three} />
               </div>
@@ -263,7 +247,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqDescriptionThree")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionThree')}
               </label>
               <div className="sm:col-span-4">
                 <TextAreaCom
@@ -271,7 +255,7 @@ const Faq = ({
                   label="Faq Description"
                   name="faq_description_three"
                   type="text"
-                  placeholder={t("FaqDescriptionThree")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionThree')}
                 />
                 <Error errorName={errors.faq_description_three} />
               </div>
@@ -279,7 +263,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqTitleFour")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqTitleFour')}
               </label>
               <div className="sm:col-span-4">
                 <InputAreaTwo
@@ -287,7 +271,7 @@ const Faq = ({
                   label="FAQ Title"
                   name="faq_title_four"
                   type="text"
-                  placeholder={t("FaqTitleFour")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqTitleFour')}
                 />
                 <Error errorName={errors.faq_title_four} />
               </div>
@@ -295,7 +279,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqDescriptionFour")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionFour')}
               </label>
               <div className="sm:col-span-4">
                 <TextAreaCom
@@ -303,7 +287,7 @@ const Faq = ({
                   label="Faq Description"
                   name="faq_description_four"
                   type="text"
-                  placeholder={t("FaqDescriptionFour")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionFour')}
                 />
                 <Error errorName={errors.faq_description_four} />
               </div>
@@ -311,7 +295,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqTitleFive")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqTitleFive')}
               </label>
               <div className="sm:col-span-4">
                 <InputAreaTwo
@@ -319,7 +303,7 @@ const Faq = ({
                   label="FAQ Title"
                   name="faq_title_five"
                   type="text"
-                  placeholder={t("FaqTitleFive")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqTitleFive')}
                 />
                 <Error errorName={errors.faq_title_five} />
               </div>
@@ -327,7 +311,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqDescriptionFive")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionFive')}
               </label>
               <div className="sm:col-span-4">
                 <TextAreaCom
@@ -335,7 +319,7 @@ const Faq = ({
                   label="Faq Description"
                   name="faq_description_five"
                   type="text"
-                  placeholder={t("FaqDescriptionFive")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionFive')}
                 />
                 <Error errorName={errors.faq_description_five} />
               </div>
@@ -343,7 +327,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqTitleSix")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqTitleSix')}
               </label>
               <div className="sm:col-span-4">
                 <InputAreaTwo
@@ -351,7 +335,7 @@ const Faq = ({
                   label="FAQ Title"
                   name="faq_title_six"
                   type="text"
-                  placeholder={t("FaqTitleSix")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqTitleSix')}
                 />
                 <Error errorName={errors.faq_title_six} />
               </div>
@@ -359,7 +343,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqDescriptionSix")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionSix')}
               </label>
               <div className="sm:col-span-4">
                 <TextAreaCom
@@ -367,7 +351,7 @@ const Faq = ({
                   label="Faq Description"
                   name="faq_description_six"
                   type="text"
-                  placeholder={t("FaqDescriptionSix")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionSix')}
                 />
                 <Error errorName={errors.faq_description_six} />
               </div>
@@ -375,7 +359,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqTitleSeven")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqTitleSeven')}
               </label>
               <div className="sm:col-span-4">
                 <InputAreaTwo
@@ -383,7 +367,7 @@ const Faq = ({
                   label="FAQ Title"
                   name="faq_title_seven"
                   type="text"
-                  placeholder={t("FaqTitleSeven")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqTitleSeven')}
                 />
                 <Error errorName={errors.faq_title_seven} />
               </div>
@@ -391,7 +375,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqDescriptionSeven")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionSeven')}
               </label>
               <div className="sm:col-span-4">
                 <TextAreaCom
@@ -399,7 +383,7 @@ const Faq = ({
                   label="Faq Description"
                   name="faq_description_seven"
                   type="text"
-                  placeholder={t("FaqDescriptionSeven")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionSeven')}
                 />
                 <Error errorName={errors.faq_description_seven} />
               </div>
@@ -407,7 +391,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqTitleEight")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqTitleEight')}
               </label>
               <div className="sm:col-span-4">
                 <InputAreaTwo
@@ -415,7 +399,7 @@ const Faq = ({
                   label="FAQ Title"
                   name="faq_title_eight"
                   type="text"
-                  placeholder={t("FaqTitleEight")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqTitleEight')}
                 />
                 <Error errorName={errors.faq_title_eight} />
               </div>
@@ -423,7 +407,7 @@ const Faq = ({
 
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-3">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("FaqDescriptionEight")}
+                {t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionEight')}
               </label>
               <div className="sm:col-span-4">
                 <TextAreaCom
@@ -431,7 +415,7 @@ const Faq = ({
                   label="Faq Description"
                   name="faq_description_eight"
                   type="text"
-                  placeholder={t("FaqDescriptionEight")}
+                  placeholder={t('storeCustomizationScreen.faQs.LeftColumn.faqDescriptionEight')}
                 />
                 <Error errorName={errors.faq_description_eight} />
               </div>
@@ -440,7 +424,7 @@ const Faq = ({
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Faq;
+export default Faq

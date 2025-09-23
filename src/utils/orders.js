@@ -3978,8 +3978,7 @@ const orders = [
         slug: 'pantene-shampoo',
         parent: 'Beauty & Health',
         children: 'Hair Care',
-        image:
-          'https://i.ibb.co/X4pdPwn/Pantene-Expert-Pro-V-Intense-Hydration-Shampoo-3-9-fl-oz.jpg',
+        image: 'https://i.ibb.co/X4pdPwn/Pantene-Expert-Pro-V-Intense-Hydration-Shampoo-3-9-fl-oz.jpg',
         originalPrice: 8,
         unit: '12fl oz',
         quantity: 2,
@@ -4064,8 +4063,7 @@ const orders = [
         slug: 'huggies-diaper',
         parent: 'Baby Care',
         children: 'Baby Accessories',
-        image:
-          'https://i.ibb.co/4Pfnj7x/Huggies-Diaper-Dry-S-Up-To-7-Kg-36-Pcs.jpg',
+        image: 'https://i.ibb.co/4Pfnj7x/Huggies-Diaper-Dry-S-Up-To-7-Kg-36-Pcs.jpg',
         originalPrice: 9,
         unit: '36pcs',
         quantity: 2,
@@ -4086,8 +4084,7 @@ const orders = [
         slug: 'huggies-pant',
         parent: 'Baby Care',
         children: 'Baby Accessories',
-        image:
-          'https://i.ibb.co/q7Lc0z6/Huggies-Wonder-Pant-L-9-14kg-32-Pcs.jpg',
+        image: 'https://i.ibb.co/q7Lc0z6/Huggies-Wonder-Pant-L-9-14kg-32-Pcs.jpg',
         originalPrice: 10,
         unit: '32pcs',
         quantity: 1,
@@ -4404,8 +4401,7 @@ const orders = [
         slug: 'sunflower-oil',
         parent: 'Cooking Essentials',
         children: 'Oil',
-        image:
-          'https://i.ibb.co/YjrL1zH/Oillina-High-Oleic-Sunflower-Oil-5-Ltr.jpg',
+        image: 'https://i.ibb.co/YjrL1zH/Oillina-High-Oleic-Sunflower-Oil-5-Ltr.jpg',
         originalPrice: 10,
         unit: '5ltr',
         quantity: 1,
@@ -4426,8 +4422,7 @@ const orders = [
         slug: 'olitalia-olive-oil',
         parent: 'Cooking Essentials',
         children: 'Oil',
-        image:
-          'https://i.ibb.co/py905fW/Olitalia-Extra-Virgin-Olive-Oil-250ml.jpg',
+        image: 'https://i.ibb.co/py905fW/Olitalia-Extra-Virgin-Olive-Oil-250ml.jpg',
         originalPrice: 10,
         unit: '250ml',
         quantity: 2,
@@ -4448,8 +4443,7 @@ const orders = [
         slug: 'katari-nazirshail-rice',
         parent: 'Cooking Essentials',
         children: 'Rice',
-        image:
-          'https://i.ibb.co/RQxVHyC/Katari-Nazirshail-Rice-Loose-Kg-1-Kg.jpg',
+        image: 'https://i.ibb.co/RQxVHyC/Katari-Nazirshail-Rice-Loose-Kg-1-Kg.jpg',
         originalPrice: 10,
         unit: '1kg',
         quantity: 1,
@@ -4512,8 +4506,7 @@ const orders = [
         slug: 'chinigura-premium-rice',
         parent: 'Cooking Essentials',
         children: 'Rice',
-        image:
-          'https://i.ibb.co/Rc1RX0F/Chinigura-Premium-Rice-Loose-Kg-1-Kg.jpg',
+        image: 'https://i.ibb.co/Rc1RX0F/Chinigura-Premium-Rice-Loose-Kg-1-Kg.jpg',
         originalPrice: 10,
         unit: '5kg',
         quantity: 1,
@@ -4597,8 +4590,7 @@ const orders = [
         slug: 'dan-cake-pound-cake',
         parent: 'Biscuits & Cakes',
         children: 'Cakes',
-        image:
-          'https://i.ibb.co/w6Z4T7d/Dan-Cake-Chocolate-Pound-Cake-300g.jpg',
+        image: 'https://i.ibb.co/w6Z4T7d/Dan-Cake-Chocolate-Pound-Cake-300g.jpg',
         originalPrice: 10,
         unit: '1box',
         quantity: 1,
@@ -4619,8 +4611,7 @@ const orders = [
         slug: 'dan-cake-layer-cake',
         parent: 'Biscuits & Cakes',
         children: 'Cakes',
-        image:
-          'https://i.ibb.co/WgXQg7Y/Dan-Cake-Vanilla-Layer-Cake-25-5-Gm.jpg',
+        image: 'https://i.ibb.co/WgXQg7Y/Dan-Cake-Vanilla-Layer-Cake-25-5-Gm.jpg',
         originalPrice: 10,
         unit: '1box',
         quantity: 3,
@@ -4683,8 +4674,7 @@ const orders = [
         slug: 'ifad-butter-biscuit',
         parent: 'Biscuits & Cakes',
         children: 'Biscuits',
-        image:
-          'https://i.ibb.co/K7YQMLF/IFAD-Butter-Delight-Biscuit-260-10g.jpg',
+        image: 'https://i.ibb.co/K7YQMLF/IFAD-Butter-Delight-Biscuit-260-10g.jpg',
         originalPrice: 10,
         unit: '1pac',
         quantity: 1,
@@ -4726,8 +4716,7 @@ const orders = [
         slug: 'dan-cake',
         parent: 'Biscuits & Cakes',
         children: 'Cakes',
-        image:
-          'https://i.ibb.co/B47kJ3H/Dan-Cake-Chocolate-Layer-Cake-12-X30g-Box.jpg',
+        image: 'https://i.ibb.co/B47kJ3H/Dan-Cake-Chocolate-Layer-Cake-12-X30g-Box.jpg',
         originalPrice: 10,
         unit: '1box',
         quantity: 3,
@@ -4770,8 +4759,7 @@ const orders = [
         slug: 'nestle-optipro-2',
         parent: 'Baby Care',
         children: 'Baby Food',
-        image:
-          'https://i.ibb.co/mCMttNb/Nestle-Nan-Optipro-2-Milk-Powder-350g.jpg',
+        image: 'https://i.ibb.co/mCMttNb/Nestle-Nan-Optipro-2-Milk-Powder-350g.jpg',
         originalPrice: 16,
         unit: '350gm',
         quantity: 1,
@@ -4855,8 +4843,7 @@ const orders = [
         slug: 'cerelac-cherry',
         parent: 'Baby Care',
         children: 'Baby Food',
-        image:
-          'https://i.ibb.co/R9Pn8XN/Cerelac-Wheat-Apple-Cherry-400-Gm-BIB.jpg',
+        image: 'https://i.ibb.co/R9Pn8XN/Cerelac-Wheat-Apple-Cherry-400-Gm-BIB.jpg',
         originalPrice: 17,
         unit: '400gm',
         quantity: 1,
@@ -4877,8 +4864,7 @@ const orders = [
         slug: 'cerelac-cornflakes',
         parent: 'Baby Care',
         children: 'Baby Food',
-        image:
-          'https://i.ibb.co/yYsskBN/Cerelac-Wheat-Apple-Cornflakes-400-Gm-BIB.jpg',
+        image: 'https://i.ibb.co/yYsskBN/Cerelac-Wheat-Apple-Cornflakes-400-Gm-BIB.jpg',
         originalPrice: 17,
         unit: '400gm',
         quantity: 1,
@@ -5047,8 +5033,7 @@ const orders = [
         slug: 'katari-nazirshail-rice',
         parent: 'Cooking Essentials',
         children: 'Rice',
-        image:
-          'https://i.ibb.co/RQxVHyC/Katari-Nazirshail-Rice-Loose-Kg-1-Kg.jpg',
+        image: 'https://i.ibb.co/RQxVHyC/Katari-Nazirshail-Rice-Loose-Kg-1-Kg.jpg',
         originalPrice: 10,
         unit: '1kg',
         quantity: 1,
@@ -5111,8 +5096,7 @@ const orders = [
         slug: 'dan-cake-lemon',
         parent: 'Biscuits & Cakes',
         children: 'Cakes',
-        image:
-          'https://i.ibb.co/XZKnnM0/Dan-Cake-Vanilla-Muffin-25g-X-12-Pcs.jpg',
+        image: 'https://i.ibb.co/XZKnnM0/Dan-Cake-Vanilla-Muffin-25g-X-12-Pcs.jpg',
         originalPrice: 10,
         unit: '1box',
         quantity: 3,
@@ -5154,8 +5138,7 @@ const orders = [
         slug: 'erin-face-wash',
         parent: 'Beauty & Health',
         children: 'Skin Care',
-        image:
-          'https://i.ibb.co/FWP2RdG/Earthly-Remedies-by-Erin-Face-Wash-each.jpg',
+        image: 'https://i.ibb.co/FWP2RdG/Earthly-Remedies-by-Erin-Face-Wash-each.jpg',
         originalPrice: 8,
         unit: 'each',
         quantity: 1,
@@ -5176,8 +5159,7 @@ const orders = [
         slug: 'goddess-garden-sunscreen',
         parent: 'Beauty & Health',
         children: 'Skin Care',
-        image:
-          'https://i.ibb.co/N7CV3Kk/Goddess-Garden-Broad-Spectrum-Spf-30-Natural-Mineral-Sunscreen-3-4-oz.jpg',
+        image: 'https://i.ibb.co/N7CV3Kk/Goddess-Garden-Broad-Spectrum-Spf-30-Natural-Mineral-Sunscreen-3-4-oz.jpg',
         originalPrice: 8,
         unit: '4oz',
         quantity: 1,
@@ -5219,8 +5201,7 @@ const orders = [
         slug: 'eurofresh-toothpaste',
         parent: 'Beauty & Health',
         children: 'Oral Care',
-        image:
-          'https://i.ibb.co/4Ppsjsb/Eurofresh-S-Toothpaste-Strawb-Flv-50g.jpg',
+        image: 'https://i.ibb.co/4Ppsjsb/Eurofresh-S-Toothpaste-Strawb-Flv-50g.jpg',
         originalPrice: 8,
         unit: '50g',
         quantity: 1,
@@ -5285,8 +5266,7 @@ const orders = [
         slug: 'herbal-soap',
         parent: 'Beauty & Health',
         children: 'Bath',
-        image:
-          'https://i.ibb.co/Y8tzM78/Yong-Chin-Cucumber-Herbal-Soap-100g.jpg',
+        image: 'https://i.ibb.co/Y8tzM78/Yong-Chin-Cucumber-Herbal-Soap-100g.jpg',
         originalPrice: 11,
         unit: '100g',
         quantity: 4,
@@ -5307,8 +5287,7 @@ const orders = [
         slug: 'avalon-organics-gel',
         parent: 'Beauty & Health',
         children: 'Body Care',
-        image:
-          'https://i.ibb.co/3NqJ10Q/Avalon-Organics-Bath-Shower-Gel-Gluten-Free-Cucumber-12-oz.jpg',
+        image: 'https://i.ibb.co/3NqJ10Q/Avalon-Organics-Bath-Shower-Gel-Gluten-Free-Cucumber-12-oz.jpg',
         originalPrice: 8,
         unit: '12oz',
         quantity: 1,
@@ -5351,8 +5330,7 @@ const orders = [
         slug: 'katari-nazirshail-rice',
         parent: 'Cooking Essentials',
         children: 'Rice',
-        image:
-          'https://i.ibb.co/RQxVHyC/Katari-Nazirshail-Rice-Loose-Kg-1-Kg.jpg',
+        image: 'https://i.ibb.co/RQxVHyC/Katari-Nazirshail-Rice-Loose-Kg-1-Kg.jpg',
         originalPrice: 10,
         unit: '1kg',
         quantity: 1,
@@ -5373,8 +5351,7 @@ const orders = [
         slug: 'romania-chocobiz-biscuit',
         parent: 'Biscuits & Cakes',
         children: 'Biscuits',
-        image:
-          'https://i.ibb.co/d7sdYCF/Romania-Chocobiz-C-S-Biscuit-300-20g.jpg',
+        image: 'https://i.ibb.co/d7sdYCF/Romania-Chocobiz-C-S-Biscuit-300-20g.jpg',
         originalPrice: 10,
         unit: '1pac',
         quantity: 1,
@@ -5395,8 +5372,7 @@ const orders = [
         slug: 'erin-face-wash',
         parent: 'Beauty & Health',
         children: 'Skin Care',
-        image:
-          'https://i.ibb.co/FWP2RdG/Earthly-Remedies-by-Erin-Face-Wash-each.jpg',
+        image: 'https://i.ibb.co/FWP2RdG/Earthly-Remedies-by-Erin-Face-Wash-each.jpg',
         originalPrice: 8,
         unit: 'each',
         quantity: 1,
@@ -5438,8 +5414,7 @@ const orders = [
         slug: 'banana-boat-lotion',
         parent: 'Beauty & Health',
         children: 'Skin Care',
-        image:
-          'https://i.ibb.co/jzRftZC/Banana-Boat-for-Men-Triple-Defense-SPF-30-Sunscreen-Lotion-2fl-oz.jpg',
+        image: 'https://i.ibb.co/jzRftZC/Banana-Boat-for-Men-Triple-Defense-SPF-30-Sunscreen-Lotion-2fl-oz.jpg',
         originalPrice: 8,
         unit: '2fl oz',
         quantity: 1,
@@ -5565,8 +5540,7 @@ const orders = [
         slug: 'pepsodent-toothbrush',
         parent: 'Beauty & Health',
         children: 'Oral Care',
-        image:
-          'https://i.ibb.co/sFgkd5X/Pepsodent-Action-Toothbrush-Medium.jpg',
+        image: 'https://i.ibb.co/sFgkd5X/Pepsodent-Action-Toothbrush-Medium.jpg',
         originalPrice: 5,
         unit: '1pcs',
         quantity: 4,
@@ -5587,8 +5561,7 @@ const orders = [
         slug: 'colgate-mouthwash',
         parent: 'Beauty & Health',
         children: 'Oral Care',
-        image:
-          'https://i.ibb.co/0ngPGNp/Colgate-Plax-Complete-Care-Mouthwash-250ml.jpg',
+        image: 'https://i.ibb.co/0ngPGNp/Colgate-Plax-Complete-Care-Mouthwash-250ml.jpg',
         originalPrice: 8,
         unit: '250ml',
         quantity: 2,
@@ -5631,8 +5604,7 @@ const orders = [
         slug: 'pantene-shampoo',
         parent: 'Beauty & Health',
         children: 'Hair Care',
-        image:
-          'https://i.ibb.co/X4pdPwn/Pantene-Expert-Pro-V-Intense-Hydration-Shampoo-3-9-fl-oz.jpg',
+        image: 'https://i.ibb.co/X4pdPwn/Pantene-Expert-Pro-V-Intense-Hydration-Shampoo-3-9-fl-oz.jpg',
         originalPrice: 8,
         unit: '12fl oz',
         quantity: 1,
@@ -5653,8 +5625,7 @@ const orders = [
         slug: 'savlon-soap',
         parent: 'Beauty & Health',
         children: 'Bath',
-        image:
-          'https://i.ibb.co/XL8Dmw5/Savlon-Fresh-Antiseptic-Soap-100-Gm.jpg',
+        image: 'https://i.ibb.co/XL8Dmw5/Savlon-Fresh-Antiseptic-Soap-100-Gm.jpg',
         originalPrice: 12,
         unit: '100gm',
         quantity: 2,
@@ -5718,8 +5689,7 @@ const orders = [
         slug: 'olitalia-olive-oil',
         parent: 'Cooking Essentials',
         children: 'Oil',
-        image:
-          'https://i.ibb.co/py905fW/Olitalia-Extra-Virgin-Olive-Oil-250ml.jpg',
+        image: 'https://i.ibb.co/py905fW/Olitalia-Extra-Virgin-Olive-Oil-250ml.jpg',
         originalPrice: 10,
         unit: '250ml',
         quantity: 2,
@@ -5740,8 +5710,7 @@ const orders = [
         slug: 'dan-cake',
         parent: 'Biscuits & Cakes',
         children: 'Cakes',
-        image:
-          'https://i.ibb.co/B47kJ3H/Dan-Cake-Chocolate-Layer-Cake-12-X30g-Box.jpg',
+        image: 'https://i.ibb.co/B47kJ3H/Dan-Cake-Chocolate-Layer-Cake-12-X30g-Box.jpg',
         originalPrice: 10,
         unit: '1box',
         quantity: 2,
@@ -5762,8 +5731,7 @@ const orders = [
         slug: 'erin-face-wash',
         parent: 'Beauty & Health',
         children: 'Skin Care',
-        image:
-          'https://i.ibb.co/FWP2RdG/Earthly-Remedies-by-Erin-Face-Wash-each.jpg',
+        image: 'https://i.ibb.co/FWP2RdG/Earthly-Remedies-by-Erin-Face-Wash-each.jpg',
         originalPrice: 8,
         unit: 'each',
         quantity: 2,
@@ -5805,8 +5773,7 @@ const orders = [
         slug: 'dove-creme',
         parent: 'Beauty & Health',
         children: 'Body Care',
-        image:
-          'https://i.ibb.co/C0Rvgzs/Dove-Creme-Mousse-Sensitive-Skin-Nourishing-Body-Wash-18-fl-oz.jpg',
+        image: 'https://i.ibb.co/C0Rvgzs/Dove-Creme-Mousse-Sensitive-Skin-Nourishing-Body-Wash-18-fl-oz.jpg',
         originalPrice: 8,
         unit: '18fl oz',
         quantity: 3,
@@ -6018,8 +5985,7 @@ const orders = [
         slug: 'organic-pinkerton-avocado',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/DZdkFCgd/Organic-Pinkerton-Avocado-each.jpg',
+        image: 'https://i.postimg.cc/DZdkFCgd/Organic-Pinkerton-Avocado-each.jpg',
         originalPrice: 15,
         unit: 'each',
         quantity: 1,
@@ -6040,8 +6006,7 @@ const orders = [
         slug: 'organic-purple-cauliflower',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
+        image: 'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
         originalPrice: 15,
         unit: '1lb',
         quantity: 1,
@@ -6083,8 +6048,7 @@ const orders = [
         slug: 'organic-green-cauliflower',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/rmScsy84/Organic-Green-Cauliflower-1lb.jpg',
+        image: 'https://i.postimg.cc/rmScsy84/Organic-Green-Cauliflower-1lb.jpg',
         originalPrice: 15,
         unit: '1lb',
         quantity: 1,
@@ -6105,8 +6069,7 @@ const orders = [
         slug: 'potatoes',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/0jnsGtK2/Old-Oak-Farm-Small-Potatoes-each.jpg',
+        image: 'https://i.postimg.cc/0jnsGtK2/Old-Oak-Farm-Small-Potatoes-each.jpg',
         originalPrice: 15,
         unit: '2lb',
         quantity: 1,
@@ -6717,8 +6680,7 @@ const orders = [
         slug: 'golden-garden-plueberry-plum',
         parent: 'Fruits & Vegetable',
         children: 'Dry Fruits',
-        image:
-          'https://i.postimg.cc/jjM3hGZ1/Golden-Garden-Blueberry-Plum-220g.jpg',
+        image: 'https://i.postimg.cc/jjM3hGZ1/Golden-Garden-Blueberry-Plum-220g.jpg',
         originalPrice: 12,
         unit: '220g',
         quantity: 5,
@@ -6782,8 +6744,7 @@ const orders = [
         slug: 'organic-black-grapes',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Fruits',
-        image:
-          'https://i.postimg.cc/y62f8hDw/Organic-Black-Grapes-Package-2lb.jpg',
+        image: 'https://i.postimg.cc/y62f8hDw/Organic-Black-Grapes-Package-2lb.jpg',
         originalPrice: 13,
         unit: '2lb',
         quantity: 1,
@@ -6867,8 +6828,7 @@ const orders = [
         slug: 'wild-king-salmon-steak',
         parent: 'Fish & Meat',
         children: 'Fish',
-        image:
-          'https://i.postimg.cc/63Mm1Pw8/Fresh-Wild-King-Salmon-Steak-1lb.jpg',
+        image: 'https://i.postimg.cc/63Mm1Pw8/Fresh-Wild-King-Salmon-Steak-1lb.jpg',
         originalPrice: 12,
         unit: '1lb',
         quantity: 1,
@@ -6973,8 +6933,7 @@ const orders = [
         slug: 'rs-olive-oil',
         parent: 'Cooking Essentials',
         children: 'Oil',
-        image:
-          'https://i.ibb.co/svWRddH/RS-Olive-Oil-Pomace-Pet-Bottle-175ml.jpg',
+        image: 'https://i.ibb.co/svWRddH/RS-Olive-Oil-Pomace-Pet-Bottle-175ml.jpg',
         originalPrice: 10,
         unit: '1ltr',
         quantity: 3,
@@ -6995,8 +6954,7 @@ const orders = [
         slug: 'olitalia-olive-oil',
         parent: 'Cooking Essentials',
         children: 'Oil',
-        image:
-          'https://i.ibb.co/py905fW/Olitalia-Extra-Virgin-Olive-Oil-250ml.jpg',
+        image: 'https://i.ibb.co/py905fW/Olitalia-Extra-Virgin-Olive-Oil-250ml.jpg',
         originalPrice: 10,
         unit: '250ml',
         quantity: 1,
@@ -7017,8 +6975,7 @@ const orders = [
         slug: 'kalijira-premium-rice',
         parent: 'Cooking Essentials',
         children: 'Rice',
-        image:
-          'https://i.ibb.co/j4DjzJb/Kalijira-Premium-Rice-Loose-Kg-1-Kg.jpg',
+        image: 'https://i.ibb.co/j4DjzJb/Kalijira-Premium-Rice-Loose-Kg-1-Kg.jpg',
         originalPrice: 10,
         unit: '5kg',
         quantity: 6,
@@ -7378,8 +7335,7 @@ const orders = [
         slug: 'organic-green-cauliflower',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/rmScsy84/Organic-Green-Cauliflower-1lb.jpg',
+        image: 'https://i.postimg.cc/rmScsy84/Organic-Green-Cauliflower-1lb.jpg',
         originalPrice: 15,
         unit: '1lb',
         quantity: 3,
@@ -7695,8 +7651,7 @@ const orders = [
         slug: 'sysco diced pears',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Fruits',
-        image:
-          'https://i.postimg.cc/zXnkDsZg/Sysco-Diced-Chopped-Extra-LS-Pacific-Pears-106oz.jpg',
+        image: 'https://i.postimg.cc/zXnkDsZg/Sysco-Diced-Chopped-Extra-LS-Pacific-Pears-106oz.jpg',
         originalPrice: 13,
         unit: '106oz',
         quantity: 5,
@@ -7907,8 +7862,7 @@ const orders = [
         slug: 'golden-garden-plueberry-plum',
         parent: 'Fruits & Vegetable',
         children: 'Dry Fruits',
-        image:
-          'https://i.postimg.cc/jjM3hGZ1/Golden-Garden-Blueberry-Plum-220g.jpg',
+        image: 'https://i.postimg.cc/jjM3hGZ1/Golden-Garden-Blueberry-Plum-220g.jpg',
         originalPrice: 12,
         unit: '220g',
         quantity: 1,
@@ -7971,8 +7925,7 @@ const orders = [
         slug: 'dates-iranian-loose',
         parent: 'Fruits & Vegetable',
         children: 'Dry Fruits',
-        image:
-          'https://i.postimg.cc/CxHQRZDS/Dates-Iranian-Maryam-Loose-Kg-1-Kg.jpg',
+        image: 'https://i.postimg.cc/CxHQRZDS/Dates-Iranian-Maryam-Loose-Kg-1-Kg.jpg',
         originalPrice: 12,
         unit: '1kg',
         quantity: 3,
@@ -8162,8 +8115,7 @@ const orders = [
         slug: 'figaro-green-olives',
         parent: 'Snacks & Instant',
         children: 'Canned Food',
-        image:
-          'https://i.postimg.cc/br7qD8Rb/Figaro-Plain-Green-Olives-340g.jpg',
+        image: 'https://i.postimg.cc/br7qD8Rb/Figaro-Plain-Green-Olives-340g.jpg',
         originalPrice: 13,
         unit: '340gm',
         quantity: 1,
@@ -8184,8 +8136,7 @@ const orders = [
         slug: 'american-mushroom',
         parent: 'Snacks & Instant',
         children: 'Canned Food',
-        image:
-          'https://i.postimg.cc/hjGDN2jJ/American-Garden-Mushroom-Whole-Can-425g.jpg',
+        image: 'https://i.postimg.cc/hjGDN2jJ/American-Garden-Mushroom-Whole-Can-425g.jpg',
         originalPrice: 12,
         unit: '425gm',
         quantity: 1,
@@ -8206,8 +8157,7 @@ const orders = [
         slug: 'hosen-mushroom',
         parent: 'Snacks & Instant',
         children: 'Canned Food',
-        image:
-          'https://i.postimg.cc/fRjMLGSt/Hosen-Mushroom-Choice-Whole-Can-184g.jpg',
+        image: 'https://i.postimg.cc/fRjMLGSt/Hosen-Mushroom-Choice-Whole-Can-184g.jpg',
         originalPrice: 13,
         unit: '184gm',
         quantity: 1,
@@ -8270,8 +8220,7 @@ const orders = [
         slug: 'pack-beef',
         parent: 'Fish & Meat',
         children: 'Meat',
-        image:
-          'https://i.postimg.cc/pLDhYbYJ/Wow-Pack-Beef-Spare-Ribs-per-lb.jpg',
+        image: 'https://i.postimg.cc/pLDhYbYJ/Wow-Pack-Beef-Spare-Ribs-per-lb.jpg',
         originalPrice: 16,
         unit: '1lb',
         quantity: 1,
@@ -8376,8 +8325,7 @@ const orders = [
         slug: 'caffe-kimbo-coffee',
         parent: 'Drinks',
         children: 'Coffee',
-        image:
-          'https://i.postimg.cc/ZKsvbMXx/Caffe-Kimbo-Aroma-Espresso-8-8-oz.jpg',
+        image: 'https://i.postimg.cc/ZKsvbMXx/Caffe-Kimbo-Aroma-Espresso-8-8-oz.jpg',
         originalPrice: 7,
         unit: '8oz',
         quantity: 4,
@@ -8419,8 +8367,7 @@ const orders = [
         slug: 'caffe-perruci-coffee',
         parent: 'Drinks',
         children: 'Coffee',
-        image:
-          'https://i.postimg.cc/hPt7qBZG/Caffe-Perruci-Lungo-Dolce-Single-Serve-Coffee-Pack-10-ct.jpg',
+        image: 'https://i.postimg.cc/hPt7qBZG/Caffe-Perruci-Lungo-Dolce-Single-Serve-Coffee-Pack-10-ct.jpg',
         originalPrice: 10,
         unit: '12oz',
         quantity: 10,
@@ -8462,8 +8409,7 @@ const orders = [
         slug: 'slimming-slender-tea',
         parent: 'Drinks',
         children: 'Tea',
-        image:
-          'https://i.postimg.cc/bwzSv7RZ/Now-Slimming-Slender-Chai-Tea-24-ct.jpg',
+        image: 'https://i.postimg.cc/bwzSv7RZ/Now-Slimming-Slender-Chai-Tea-24-ct.jpg',
         originalPrice: 7,
         unit: '24ct',
         quantity: 11,
@@ -8569,8 +8515,7 @@ const orders = [
         slug: 'figaro-green-olives',
         parent: 'Snacks & Instant',
         children: 'Canned Food',
-        image:
-          'https://i.postimg.cc/br7qD8Rb/Figaro-Plain-Green-Olives-340g.jpg',
+        image: 'https://i.postimg.cc/br7qD8Rb/Figaro-Plain-Green-Olives-340g.jpg',
         originalPrice: 13,
         unit: '340gm',
         quantity: 1,
@@ -8591,8 +8536,7 @@ const orders = [
         slug: 'american-mushroom',
         parent: 'Snacks & Instant',
         children: 'Canned Food',
-        image:
-          'https://i.postimg.cc/hjGDN2jJ/American-Garden-Mushroom-Whole-Can-425g.jpg',
+        image: 'https://i.postimg.cc/hjGDN2jJ/American-Garden-Mushroom-Whole-Can-425g.jpg',
         originalPrice: 12,
         unit: '425gm',
         quantity: 1,
@@ -8613,8 +8557,7 @@ const orders = [
         slug: 'hosen-mushroom',
         parent: 'Snacks & Instant',
         children: 'Canned Food',
-        image:
-          'https://i.postimg.cc/fRjMLGSt/Hosen-Mushroom-Choice-Whole-Can-184g.jpg',
+        image: 'https://i.postimg.cc/fRjMLGSt/Hosen-Mushroom-Choice-Whole-Can-184g.jpg',
         originalPrice: 13,
         unit: '184gm',
         quantity: 1,
@@ -8677,8 +8620,7 @@ const orders = [
         slug: 'pack-beef',
         parent: 'Fish & Meat',
         children: 'Meat',
-        image:
-          'https://i.postimg.cc/pLDhYbYJ/Wow-Pack-Beef-Spare-Ribs-per-lb.jpg',
+        image: 'https://i.postimg.cc/pLDhYbYJ/Wow-Pack-Beef-Spare-Ribs-per-lb.jpg',
         originalPrice: 16,
         unit: '1lb',
         quantity: 1,
@@ -8783,8 +8725,7 @@ const orders = [
         slug: 'caffe-kimbo-coffee',
         parent: 'Drinks',
         children: 'Coffee',
-        image:
-          'https://i.postimg.cc/ZKsvbMXx/Caffe-Kimbo-Aroma-Espresso-8-8-oz.jpg',
+        image: 'https://i.postimg.cc/ZKsvbMXx/Caffe-Kimbo-Aroma-Espresso-8-8-oz.jpg',
         originalPrice: 7,
         unit: '8oz',
         quantity: 4,
@@ -8826,8 +8767,7 @@ const orders = [
         slug: 'caffe-perruci-coffee',
         parent: 'Drinks',
         children: 'Coffee',
-        image:
-          'https://i.postimg.cc/hPt7qBZG/Caffe-Perruci-Lungo-Dolce-Single-Serve-Coffee-Pack-10-ct.jpg',
+        image: 'https://i.postimg.cc/hPt7qBZG/Caffe-Perruci-Lungo-Dolce-Single-Serve-Coffee-Pack-10-ct.jpg',
         originalPrice: 10,
         unit: '12oz',
         quantity: 10,
@@ -8869,8 +8809,7 @@ const orders = [
         slug: 'slimming-slender-tea',
         parent: 'Drinks',
         children: 'Tea',
-        image:
-          'https://i.postimg.cc/bwzSv7RZ/Now-Slimming-Slender-Chai-Tea-24-ct.jpg',
+        image: 'https://i.postimg.cc/bwzSv7RZ/Now-Slimming-Slender-Chai-Tea-24-ct.jpg',
         originalPrice: 7,
         unit: '24ct',
         quantity: 11,
@@ -8955,8 +8894,7 @@ const orders = [
         slug: 'caramel-candy',
         parent: 'Snacks & Instant',
         children: 'Chocolate',
-        image:
-          'https://i.postimg.cc/VkpXfZpC/Alpenliebe-Smooth-Caramel-Candy-225g.jpg',
+        image: 'https://i.postimg.cc/VkpXfZpC/Alpenliebe-Smooth-Caramel-Candy-225g.jpg',
         originalPrice: 10,
         unit: '225g',
         quantity: 1,
@@ -8977,8 +8915,7 @@ const orders = [
         slug: 'assorted-chocolate-box',
         parent: 'Snacks & Instant',
         children: 'Chocolate',
-        image:
-          'https://i.postimg.cc/j2MJGMyC/CHIKO-Assorted-Chocolate-Box-200g.jpg',
+        image: 'https://i.postimg.cc/j2MJGMyC/CHIKO-Assorted-Chocolate-Box-200g.jpg',
         originalPrice: 10,
         unit: '200gm',
         quantity: 1,
@@ -8999,8 +8936,7 @@ const orders = [
         slug: 'passiar-mints',
         parent: 'Snacks & Instant',
         children: 'Chocolate',
-        image:
-          'https://i.postimg.cc/ydXRT1dm/Foxs-Crystal-Clear-Passiar-Mints-180g.jpg',
+        image: 'https://i.postimg.cc/ydXRT1dm/Foxs-Crystal-Clear-Passiar-Mints-180g.jpg',
         originalPrice: 10,
         unit: '180g',
         quantity: 1,
@@ -9021,8 +8957,7 @@ const orders = [
         slug: 'Nestle Kit Kat',
         parent: 'Snacks & Instant',
         children: 'Chocolate',
-        image:
-          'https://i.postimg.cc/QNm59dvs/Nestle-Kit-Kat-Chocolate-41-5-Gm.jpg',
+        image: 'https://i.postimg.cc/QNm59dvs/Nestle-Kit-Kat-Chocolate-41-5-Gm.jpg',
         originalPrice: 10,
         unit: '5gm',
         quantity: 1,
@@ -9043,8 +8978,7 @@ const orders = [
         slug: 'pack-beef',
         parent: 'Fish & Meat',
         children: 'Meat',
-        image:
-          'https://i.postimg.cc/pLDhYbYJ/Wow-Pack-Beef-Spare-Ribs-per-lb.jpg',
+        image: 'https://i.postimg.cc/pLDhYbYJ/Wow-Pack-Beef-Spare-Ribs-per-lb.jpg',
         originalPrice: 17,
         unit: '1lb',
         quantity: 3,
@@ -9128,8 +9062,7 @@ const orders = [
         slug: 'whole-chicken',
         parent: 'Fish & Meat',
         children: 'Meat',
-        image:
-          'https://i.postimg.cc/wM7Rh101/Open-Nature-Whole-Natural-Chicken-per-lb.jpg',
+        image: 'https://i.postimg.cc/wM7Rh101/Open-Nature-Whole-Natural-Chicken-per-lb.jpg',
         originalPrice: 17,
         unit: '1lb',
         quantity: 2,
@@ -9150,8 +9083,7 @@ const orders = [
         slug: 'boneless-beef',
         parent: 'Fish & Meat',
         children: 'Meat',
-        image:
-          'https://i.postimg.cc/28gh7xpr/Boneless-Beef-Chuck-Roast-per-lb.jpg',
+        image: 'https://i.postimg.cc/28gh7xpr/Boneless-Beef-Chuck-Roast-per-lb.jpg',
         originalPrice: 18,
         unit: '1lb',
         quantity: 1,
@@ -9172,8 +9104,7 @@ const orders = [
         slug: 'spike-hardcore-drinks',
         parent: 'Drinks',
         children: 'Energy Drinks',
-        image:
-          'https://i.postimg.cc/Bn8p4D7t/Spike-Hardcore-Energy-Orange-Gold-16-o.jpg',
+        image: 'https://i.postimg.cc/Bn8p4D7t/Spike-Hardcore-Energy-Orange-Gold-16-o.jpg',
         originalPrice: 9,
         unit: '16oz',
         quantity: 1,
@@ -9194,8 +9125,7 @@ const orders = [
         slug: 'positive-energy-drink',
         parent: 'Drinks',
         children: 'Energy Drinks',
-        image:
-          'https://i.postimg.cc/7YZXtjg3/Positive-Energy-Energy-Drink-Organic-Coconut-Water-12-oz.jpg',
+        image: 'https://i.postimg.cc/7YZXtjg3/Positive-Energy-Energy-Drink-Organic-Coconut-Water-12-oz.jpg',
         originalPrice: 9,
         unit: '12oz',
         quantity: 5,
@@ -9216,8 +9146,7 @@ const orders = [
         slug: 'red-bull-energy-drink',
         parent: 'Drinks',
         children: 'Energy Drinks',
-        image:
-          'https://i.postimg.cc/wT42CFVS/Red-Bull-Energy-Drink-Plum-Twist-250ml.jpg',
+        image: 'https://i.postimg.cc/wT42CFVS/Red-Bull-Energy-Drink-Plum-Twist-250ml.jpg',
         originalPrice: 9,
         unit: '250ml',
         quantity: 5,
@@ -9259,8 +9188,7 @@ const orders = [
         slug: 'slimming-slender-tea',
         parent: 'Drinks',
         children: 'Tea',
-        image:
-          'https://i.postimg.cc/bwzSv7RZ/Now-Slimming-Slender-Chai-Tea-24-ct.jpg',
+        image: 'https://i.postimg.cc/bwzSv7RZ/Now-Slimming-Slender-Chai-Tea-24-ct.jpg',
         originalPrice: 7,
         unit: '24ct',
         quantity: 3,
@@ -9281,8 +9209,7 @@ const orders = [
         slug: 'fresh-thyme-water',
         parent: 'Drinks',
         children: 'Water',
-        image:
-          'https://i.postimg.cc/DyqFNmLG/Fresh-Thyme-High-Alkaline-Water-3-Lt.jpg',
+        image: 'https://i.postimg.cc/DyqFNmLG/Fresh-Thyme-High-Alkaline-Water-3-Lt.jpg',
         originalPrice: 5,
         unit: '3ltr',
         quantity: 3,
@@ -9303,8 +9230,7 @@ const orders = [
         slug: 'deer-park-water',
         parent: 'Drinks',
         children: 'Water',
-        image:
-          'https://i.postimg.cc/VN7zFTMH/Deer-Park-Sport-Bottle-with-Flip-Cap-Natural-Spring-Water-700ml.jpg',
+        image: 'https://i.postimg.cc/VN7zFTMH/Deer-Park-Sport-Bottle-with-Flip-Cap-Natural-Spring-Water-700ml.jpg',
         originalPrice: 5,
         unit: '700ml',
         quantity: 3,
@@ -9410,8 +9336,7 @@ const orders = [
         slug: 'potatoes',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/0jnsGtK2/Old-Oak-Farm-Small-Potatoes-each.jpg',
+        image: 'https://i.postimg.cc/0jnsGtK2/Old-Oak-Farm-Small-Potatoes-each.jpg',
         originalPrice: 11,
         unit: '2lb',
         quantity: 1,
@@ -9495,8 +9420,7 @@ const orders = [
         slug: 'organic-black-grapes',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Fruits',
-        image:
-          'https://i.postimg.cc/y62f8hDw/Organic-Black-Grapes-Package-2lb.jpg',
+        image: 'https://i.postimg.cc/y62f8hDw/Organic-Black-Grapes-Package-2lb.jpg',
         originalPrice: 12,
         unit: '2lb',
         quantity: 3,
@@ -9665,8 +9589,7 @@ const orders = [
         slug: 'foster-clark-jam',
         parent: 'Honey & Jam',
         children: 'Jam & Jelly',
-        image:
-          'https://i.postimg.cc/HLRkffJr/Foster-Clark-Jam-Raspberry-450gm.jpg',
+        image: 'https://i.postimg.cc/HLRkffJr/Foster-Clark-Jam-Raspberry-450gm.jpg',
         originalPrice: 13,
         unit: '450gm',
         quantity: 1,
@@ -9835,8 +9758,7 @@ const orders = [
         slug: 'organic-pinkerton-avocado',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/DZdkFCgd/Organic-Pinkerton-Avocado-each.jpg',
+        image: 'https://i.postimg.cc/DZdkFCgd/Organic-Pinkerton-Avocado-each.jpg',
         originalPrice: 14,
         unit: 'each',
         quantity: 3,
@@ -9963,8 +9885,7 @@ const orders = [
         slug: 'best-choice-soap',
         parent: 'Beauty & Health',
         children: 'Skin Care',
-        image:
-          'https://i.ibb.co/WvcHzmk/Best-Choice-Absorbing-Moisturizing-Soap-7-5-oz.jpg',
+        image: 'https://i.ibb.co/WvcHzmk/Best-Choice-Absorbing-Moisturizing-Soap-7-5-oz.jpg',
         originalPrice: 8,
         unit: '5fl oz',
         quantity: 4,
@@ -9985,8 +9906,7 @@ const orders = [
         slug: 'kaytee-bird-food',
         parent: 'Pet Care',
         children: 'Bird Care',
-        image:
-          'https://i.postimg.cc/rp5Bwxd8/Kaytee-Forti-Diet-Pro-Health-Bird-Food-For-Parrots-8lb.jpg',
+        image: 'https://i.postimg.cc/rp5Bwxd8/Kaytee-Forti-Diet-Pro-Health-Bird-Food-For-Parrots-8lb.jpg',
         originalPrice: 13,
         unit: '8lb',
         quantity: 9,
@@ -10007,8 +9927,7 @@ const orders = [
         slug: 'bird-toy',
         parent: 'Pet Care',
         children: 'Bird Care',
-        image:
-          'https://i.postimg.cc/0jyFn4VQ/Super-Bird-Creations-Foraging-Pouch-Bird-Toy-each.jpg',
+        image: 'https://i.postimg.cc/0jyFn4VQ/Super-Bird-Creations-Foraging-Pouch-Bird-Toy-each.jpg',
         originalPrice: 13,
         unit: 'each',
         quantity: 9,
@@ -10029,8 +9948,7 @@ const orders = [
         slug: 'positive-energy-drink',
         parent: 'Drinks',
         children: 'Energy Drinks',
-        image:
-          'https://i.postimg.cc/7YZXtjg3/Positive-Energy-Energy-Drink-Organic-Coconut-Water-12-oz.jpg',
+        image: 'https://i.postimg.cc/7YZXtjg3/Positive-Energy-Energy-Drink-Organic-Coconut-Water-12-oz.jpg',
         originalPrice: 9,
         unit: '12oz',
         quantity: 10,
@@ -10051,8 +9969,7 @@ const orders = [
         slug: 'caffe-kimbo-coffee',
         parent: 'Drinks',
         children: 'Coffee',
-        image:
-          'https://i.postimg.cc/ZKsvbMXx/Caffe-Kimbo-Aroma-Espresso-8-8-oz.jpg',
+        image: 'https://i.postimg.cc/ZKsvbMXx/Caffe-Kimbo-Aroma-Espresso-8-8-oz.jpg',
         originalPrice: 7,
         unit: '8oz',
         quantity: 4,
@@ -10243,8 +10160,7 @@ const orders = [
         slug: 'organic-purple-cauliflower',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
+        image: 'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
         originalPrice: 11,
         unit: '1lb',
         quantity: 1,
@@ -10413,8 +10329,7 @@ const orders = [
         slug: 'organic-greens-red-kale',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/htfBx1Dc/Organic-Greens-Red-Kale-per-lb.jpg',
+        image: 'https://i.postimg.cc/htfBx1Dc/Organic-Greens-Red-Kale-per-lb.jpg',
         originalPrice: 14,
         unit: '1lb',
         quantity: 7,
@@ -10478,8 +10393,7 @@ const orders = [
         slug: 'golden-garden-prune-plum',
         parent: 'Fruits & Vegetable',
         children: 'Dry Fruits',
-        image:
-          'https://i.postimg.cc/RhHP4q4r/Golden-Garden-Prune-Plum-230g.jpg',
+        image: 'https://i.postimg.cc/RhHP4q4r/Golden-Garden-Prune-Plum-230g.jpg',
         originalPrice: 12,
         unit: '220g',
         quantity: 1,
@@ -10521,8 +10435,7 @@ const orders = [
         slug: 'organic-black-grapes',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Fruits',
-        image:
-          'https://i.postimg.cc/y62f8hDw/Organic-Black-Grapes-Package-2lb.jpg',
+        image: 'https://i.postimg.cc/y62f8hDw/Organic-Black-Grapes-Package-2lb.jpg',
         originalPrice: 12,
         unit: '2lb',
         quantity: 16,
@@ -10606,8 +10519,7 @@ const orders = [
         slug: 'mama-hot-spicy-noodles',
         parent: 'Snacks & Instant',
         children: 'Noodles',
-        image:
-          'https://i.postimg.cc/fbWFjLBs/Mama-Hot-Spicy-Flovour-Noodles-248g.jpg',
+        image: 'https://i.postimg.cc/fbWFjLBs/Mama-Hot-Spicy-Flovour-Noodles-248g.jpg',
         originalPrice: 15,
         unit: '248g',
         quantity: 2,
@@ -10923,8 +10835,7 @@ const orders = [
         slug: 'foster-clark-jam',
         parent: 'Honey & Jam',
         children: 'Jam & Jelly',
-        image:
-          'https://i.postimg.cc/HLRkffJr/Foster-Clark-Jam-Raspberry-450gm.jpg',
+        image: 'https://i.postimg.cc/HLRkffJr/Foster-Clark-Jam-Raspberry-450gm.jpg',
         originalPrice: 13,
         unit: '450gm',
         quantity: 1,
@@ -10967,8 +10878,7 @@ const orders = [
         slug: 'organic-green-cauliflower',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/rmScsy84/Organic-Green-Cauliflower-1lb.jpg',
+        image: 'https://i.postimg.cc/rmScsy84/Organic-Green-Cauliflower-1lb.jpg',
         originalPrice: 13,
         unit: '1lb',
         quantity: 1,
@@ -11241,8 +11151,7 @@ const orders = [
         slug: 'lays-american-chips',
         parent: 'Snacks & Instant',
         children: 'Chips & Nuts',
-        image:
-          'https://i.postimg.cc/3xHDzHHd/Lays-American-Style-Cream-And-Onion-Chips-25g.jpg',
+        image: 'https://i.postimg.cc/3xHDzHHd/Lays-American-Style-Cream-And-Onion-Chips-25g.jpg',
         originalPrice: 10,
         unit: '25gm',
         quantity: 1,
@@ -11284,8 +11193,7 @@ const orders = [
         slug: 'pringles-original-chips',
         parent: 'Snacks & Instant',
         children: 'Chips & Nuts',
-        image:
-          'https://i.postimg.cc/fLk3YzYg/Pringles-Original-Chips-42-Gm.jpg',
+        image: 'https://i.postimg.cc/fLk3YzYg/Pringles-Original-Chips-42-Gm.jpg',
         originalPrice: 10,
         unit: '42gm',
         quantity: 1,
@@ -11306,8 +11214,7 @@ const orders = [
         slug: 'blue-diamond-almonds',
         parent: 'Snacks & Instant',
         children: 'Chips & Nuts',
-        image:
-          'https://i.postimg.cc/RhknMk6p/Blue-Diamond-Almonds-Smokehouse-43g.jpg',
+        image: 'https://i.postimg.cc/RhknMk6p/Blue-Diamond-Almonds-Smokehouse-43g.jpg',
         originalPrice: 10,
         unit: '40gm',
         quantity: 1,
@@ -11624,8 +11531,7 @@ const orders = [
         slug: 'organic-purple-cauliflower',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
+        image: 'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
         originalPrice: 11,
         unit: '1lb',
         quantity: 2,
@@ -12343,8 +12249,7 @@ const orders = [
         slug: 'dan-cake-layer-cake',
         parent: 'Biscuits & Cakes',
         children: 'Cakes',
-        image:
-          'https://i.ibb.co/WgXQg7Y/Dan-Cake-Vanilla-Layer-Cake-25-5-Gm.jpg',
+        image: 'https://i.ibb.co/WgXQg7Y/Dan-Cake-Vanilla-Layer-Cake-25-5-Gm.jpg',
         originalPrice: 8,
         unit: '1box',
         quantity: 2,
@@ -12365,8 +12270,7 @@ const orders = [
         slug: 'dan-cake-pound-cake',
         parent: 'Biscuits & Cakes',
         children: 'Cakes',
-        image:
-          'https://i.ibb.co/w6Z4T7d/Dan-Cake-Chocolate-Pound-Cake-300g.jpg',
+        image: 'https://i.ibb.co/w6Z4T7d/Dan-Cake-Chocolate-Pound-Cake-300g.jpg',
         originalPrice: 9,
         unit: '1box',
         quantity: 1,
@@ -12408,8 +12312,7 @@ const orders = [
         slug: 'dan-cake',
         parent: 'Biscuits & Cakes',
         children: 'Cakes',
-        image:
-          'https://i.ibb.co/B47kJ3H/Dan-Cake-Chocolate-Layer-Cake-12-X30g-Box.jpg',
+        image: 'https://i.ibb.co/B47kJ3H/Dan-Cake-Chocolate-Layer-Cake-12-X30g-Box.jpg',
         originalPrice: 11,
         unit: '1box',
         quantity: 3,
@@ -12535,8 +12438,7 @@ const orders = [
         slug: 'aci-nutrilife-flour',
         parent: 'Cooking Essentials',
         children: 'Flour',
-        image:
-          'https://i.ibb.co/7yJhZq5/ACI-Nutrilife-Multi-Grain-Atta-1-Kg.jpg',
+        image: 'https://i.ibb.co/7yJhZq5/ACI-Nutrilife-Multi-Grain-Atta-1-Kg.jpg',
         originalPrice: 12,
         unit: '1kg',
         quantity: 1,
@@ -12683,8 +12585,7 @@ const orders = [
         slug: 'organic-purple-cauliflower',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
+        image: 'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
         originalPrice: 11,
         unit: '1lb',
         quantity: 1,
@@ -12852,8 +12753,7 @@ const orders = [
         slug: 'organic-pinkerton-avocado',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/DZdkFCgd/Organic-Pinkerton-Avocado-each.jpg',
+        image: 'https://i.postimg.cc/DZdkFCgd/Organic-Pinkerton-Avocado-each.jpg',
         originalPrice: 14,
         unit: 'each',
         quantity: 1,
@@ -12874,8 +12774,7 @@ const orders = [
         slug: 'organic-green-cauliflower',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/rmScsy84/Organic-Green-Cauliflower-1lb.jpg',
+        image: 'https://i.postimg.cc/rmScsy84/Organic-Green-Cauliflower-1lb.jpg',
         originalPrice: 13,
         unit: '1lb',
         quantity: 1,
@@ -12896,8 +12795,7 @@ const orders = [
         slug: 'organic-greens-red-kale',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/htfBx1Dc/Organic-Greens-Red-Kale-per-lb.jpg',
+        image: 'https://i.postimg.cc/htfBx1Dc/Organic-Greens-Red-Kale-per-lb.jpg',
         originalPrice: 14,
         unit: '1lb',
         quantity: 1,
@@ -12982,8 +12880,7 @@ const orders = [
         slug: 'fresh-rainbow-trout',
         parent: 'Fish & Meat',
         children: 'Fish',
-        image:
-          'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
+        image: 'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
         originalPrice: 12,
         unit: '1lb',
         quantity: 4,
@@ -13025,8 +12922,7 @@ const orders = [
         slug: 'salmon-filet-portion',
         parent: 'Fish & Meat',
         children: 'Fish',
-        image:
-          'https://i.postimg.cc/G3QLb33D/Black-Pearls-Salmon-Filet-Portion-6-oz.jpg',
+        image: 'https://i.postimg.cc/G3QLb33D/Black-Pearls-Salmon-Filet-Portion-6-oz.jpg',
         originalPrice: 12,
         unit: '6oz',
         quantity: 4,
@@ -13047,8 +12943,7 @@ const orders = [
         slug: 'wild-king-salmon-steak',
         parent: 'Fish & Meat',
         children: 'Fish',
-        image:
-          'https://i.postimg.cc/63Mm1Pw8/Fresh-Wild-King-Salmon-Steak-1lb.jpg',
+        image: 'https://i.postimg.cc/63Mm1Pw8/Fresh-Wild-King-Salmon-Steak-1lb.jpg',
         originalPrice: 12,
         unit: '1lb',
         quantity: 4,
@@ -13069,8 +12964,7 @@ const orders = [
         slug: 'pack-beef',
         parent: 'Fish & Meat',
         children: 'Meat',
-        image:
-          'https://i.postimg.cc/pLDhYbYJ/Wow-Pack-Beef-Spare-Ribs-per-lb.jpg',
+        image: 'https://i.postimg.cc/pLDhYbYJ/Wow-Pack-Beef-Spare-Ribs-per-lb.jpg',
         originalPrice: 17,
         unit: '1lb',
         quantity: 4,
@@ -13091,8 +12985,7 @@ const orders = [
         slug: 'peeled-deveined-shrimp',
         parent: 'Fish & Meat',
         children: 'Fish',
-        image:
-          'https://i.postimg.cc/RhVzWfCH/Cooked-Peeled-Deveined-Shrimp-2lb.jpg',
+        image: 'https://i.postimg.cc/RhVzWfCH/Cooked-Peeled-Deveined-Shrimp-2lb.jpg',
         originalPrice: 12,
         unit: '2lb',
         quantity: 4,
@@ -13345,8 +13238,7 @@ const orders = [
         slug: 'organic-purple-cauliflower',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
+        image: 'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
         originalPrice: 11,
         unit: '1lb',
         quantity: 3,
@@ -13852,8 +13744,7 @@ const orders = [
         slug: 'orange',
         parent: 'Organic Food',
         children: 'Organic Food',
-        image:
-          'https://i.postimg.cc/yNpW3y8J/komola-orange-imported-50-gm-1-kg.webp',
+        image: 'https://i.postimg.cc/yNpW3y8J/komola-orange-imported-50-gm-1-kg.webp',
         originalPrice: 10,
         unit: '1kg',
         quantity: 4,
@@ -14128,8 +14019,7 @@ const orders = [
         slug: 'romania-chocobiz-biscuit',
         parent: 'Biscuits & Cakes',
         children: 'Biscuits',
-        image:
-          'https://i.ibb.co/d7sdYCF/Romania-Chocobiz-C-S-Biscuit-300-20g.jpg',
+        image: 'https://i.ibb.co/d7sdYCF/Romania-Chocobiz-C-S-Biscuit-300-20g.jpg',
         originalPrice: 10,
         unit: '1pac',
         quantity: 4,
@@ -14192,8 +14082,7 @@ const orders = [
         slug: 'danish-orange-biscuit',
         parent: 'Biscuits & Cakes',
         children: 'Biscuits',
-        image:
-          'https://i.ibb.co/hW9Y78d/Danish-Florida-Orange-Biscuits-210-45g.jpg',
+        image: 'https://i.ibb.co/hW9Y78d/Danish-Florida-Orange-Biscuits-210-45g.jpg',
         originalPrice: 8,
         unit: '1pac',
         quantity: 3,
@@ -14214,8 +14103,7 @@ const orders = [
         slug: 'danish-soft-white-toastie',
         parent: 'Breakfast',
         children: 'Bread',
-        image:
-          'https://i.postimg.cc/XN5Ftq8R/the-village-bakery-danish-Soft-White-Toastie.jpg',
+        image: 'https://i.postimg.cc/XN5Ftq8R/the-village-bakery-danish-Soft-White-Toastie.jpg',
         originalPrice: 5,
         unit: '1pc',
         quantity: 1,
@@ -14236,8 +14124,7 @@ const orders = [
         slug: 'soft-wholemeal-bread',
         parent: 'Breakfast',
         children: 'Bread',
-        image:
-          'https://i.postimg.cc/mgLHcws4/the-village-bakery-Soft-Wholemeal-Bread.jpg',
+        image: 'https://i.postimg.cc/mgLHcws4/the-village-bakery-Soft-Wholemeal-Bread.jpg',
         originalPrice: 8,
         unit: '1pc',
         quantity: 3,
@@ -14427,8 +14314,7 @@ const orders = [
         slug: 'watermelon',
         parent: 'Organic Food',
         children: 'Organic Food',
-        image:
-          'https://i.postimg.cc/7h8HSs8L/watermelon-large-5-kg-tormuj-1-pcs.webp',
+        image: 'https://i.postimg.cc/7h8HSs8L/watermelon-large-5-kg-tormuj-1-pcs.webp',
         originalPrice: 14,
         unit: '1pcs',
         quantity: 6,
@@ -14449,8 +14335,7 @@ const orders = [
         slug: 'sugar-free-gum-spearmint',
         parent: 'Organic Food',
         children: 'Organic Food',
-        image:
-          'https://i.postimg.cc/1Rw5yQwV/trident-sugar-free-gum-spearmint-flavor-266-gm.webp',
+        image: 'https://i.postimg.cc/1Rw5yQwV/trident-sugar-free-gum-spearmint-flavor-266-gm.webp',
         originalPrice: 12,
         unit: '266gm',
         quantity: 3,
@@ -14661,8 +14546,7 @@ const orders = [
         slug: 'orange',
         parent: 'Organic Food',
         children: 'Organic Food',
-        image:
-          'https://i.postimg.cc/yNpW3y8J/komola-orange-imported-50-gm-1-kg.webp',
+        image: 'https://i.postimg.cc/yNpW3y8J/komola-orange-imported-50-gm-1-kg.webp',
         originalPrice: 10,
         unit: '1kg',
         quantity: 9,
@@ -14810,8 +14694,7 @@ const orders = [
         slug: 'crown-peanut-butter',
         parent: 'Milk & Dairy',
         children: 'Butter & Ghee',
-        image:
-          'https://i.postimg.cc/02dGyd7y/Crown-Peanut-Butter-Chunky-340-Gm.jpg',
+        image: 'https://i.postimg.cc/02dGyd7y/Crown-Peanut-Butter-Chunky-340-Gm.jpg',
         originalPrice: 11,
         unit: '340gm',
         quantity: 3,
@@ -14895,8 +14778,7 @@ const orders = [
         slug: 'pack-beef',
         parent: 'Fish & Meat',
         children: 'Meat',
-        image:
-          'https://i.postimg.cc/pLDhYbYJ/Wow-Pack-Beef-Spare-Ribs-per-lb.jpg',
+        image: 'https://i.postimg.cc/pLDhYbYJ/Wow-Pack-Beef-Spare-Ribs-per-lb.jpg',
         originalPrice: 17,
         unit: '1lb',
         quantity: 3,
@@ -14980,8 +14862,7 @@ const orders = [
         slug: 'beef-stew',
         parent: 'Fish & Meat',
         children: 'Meat',
-        image:
-          'https://i.postimg.cc/Px68pWzG/Niman-Ranch-Angus-Beef-Stew-Meat-per-lb.jpg',
+        image: 'https://i.postimg.cc/Px68pWzG/Niman-Ranch-Angus-Beef-Stew-Meat-per-lb.jpg',
         originalPrice: 18,
         unit: '1lb',
         quantity: 3,
@@ -15002,8 +14883,7 @@ const orders = [
         slug: 'boneless-beef',
         parent: 'Fish & Meat',
         children: 'Meat',
-        image:
-          'https://i.postimg.cc/28gh7xpr/Boneless-Beef-Chuck-Roast-per-lb.jpg',
+        image: 'https://i.postimg.cc/28gh7xpr/Boneless-Beef-Chuck-Roast-per-lb.jpg',
         originalPrice: 19,
         unit: '1lb',
         quantity: 4,
@@ -15151,8 +15031,7 @@ const orders = [
         slug: 'organic-black-grapes',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Fruits',
-        image:
-          'https://i.postimg.cc/y62f8hDw/Organic-Black-Grapes-Package-2lb.jpg',
+        image: 'https://i.postimg.cc/y62f8hDw/Organic-Black-Grapes-Package-2lb.jpg',
         originalPrice: 12,
         unit: '2lb',
         quantity: 3,
@@ -15827,8 +15706,7 @@ const orders = [
         slug: 'crown-peanut-butter',
         parent: 'Milk & Dairy',
         children: 'Butter & Ghee',
-        image:
-          'https://i.postimg.cc/02dGyd7y/Crown-Peanut-Butter-Chunky-340-Gm.jpg',
+        image: 'https://i.postimg.cc/02dGyd7y/Crown-Peanut-Butter-Chunky-340-Gm.jpg',
         originalPrice: 11,
         unit: '340gm',
         quantity: 3,
@@ -15891,8 +15769,7 @@ const orders = [
         slug: 'balducci-australian-cheddar',
         parent: 'Milk & Dairy',
         children: 'Dairy',
-        image:
-          'https://i.postimg.cc/gc7QKp7Z/Balducci-AUSTRALIAN-CHEDDAR-per-lb.jpg',
+        image: 'https://i.postimg.cc/gc7QKp7Z/Balducci-AUSTRALIAN-CHEDDAR-per-lb.jpg',
         originalPrice: 10,
         unit: '1lb',
         quantity: 3,
@@ -15934,8 +15811,7 @@ const orders = [
         slug: 'dan-cake-layer-cake',
         parent: 'Biscuits & Cakes',
         children: 'Cakes',
-        image:
-          'https://i.ibb.co/WgXQg7Y/Dan-Cake-Vanilla-Layer-Cake-25-5-Gm.jpg',
+        image: 'https://i.ibb.co/WgXQg7Y/Dan-Cake-Vanilla-Layer-Cake-25-5-Gm.jpg',
         originalPrice: 8,
         unit: '1box',
         quantity: 4,
@@ -15956,8 +15832,7 @@ const orders = [
         slug: 'dan-cake-pound-cake',
         parent: 'Biscuits & Cakes',
         children: 'Cakes',
-        image:
-          'https://i.ibb.co/w6Z4T7d/Dan-Cake-Chocolate-Pound-Cake-300g.jpg',
+        image: 'https://i.ibb.co/w6Z4T7d/Dan-Cake-Chocolate-Pound-Cake-300g.jpg',
         originalPrice: 9,
         unit: '1box',
         quantity: 4,
@@ -15978,8 +15853,7 @@ const orders = [
         slug: 'dan-cake',
         parent: 'Biscuits & Cakes',
         children: 'Cakes',
-        image:
-          'https://i.ibb.co/B47kJ3H/Dan-Cake-Chocolate-Layer-Cake-12-X30g-Box.jpg',
+        image: 'https://i.ibb.co/B47kJ3H/Dan-Cake-Chocolate-Layer-Cake-12-X30g-Box.jpg',
         originalPrice: 11,
         unit: '1box',
         quantity: 3,
@@ -16000,8 +15874,7 @@ const orders = [
         slug: 'dan-cake-chocolate-muffin',
         parent: 'Biscuits & Cakes',
         children: 'Cakes',
-        image:
-          'https://i.ibb.co/6Ygfpmr/Dan-Cake-Chocolate-Muffin-25g-X-12-Pcs.jpg',
+        image: 'https://i.ibb.co/6Ygfpmr/Dan-Cake-Chocolate-Muffin-25g-X-12-Pcs.jpg',
         originalPrice: 10,
         unit: '1box',
         quantity: 4,
@@ -16044,8 +15917,7 @@ const orders = [
         slug: 'goddess-garden-sunscreen',
         parent: 'Beauty & Health',
         children: 'Skin Care',
-        image:
-          'https://i.ibb.co/N7CV3Kk/Goddess-Garden-Broad-Spectrum-Spf-30-Natural-Mineral-Sunscreen-3-4-oz.jpg',
+        image: 'https://i.ibb.co/N7CV3Kk/Goddess-Garden-Broad-Spectrum-Spf-30-Natural-Mineral-Sunscreen-3-4-oz.jpg',
         originalPrice: 11,
         unit: '4oz',
         quantity: 5,
@@ -16066,8 +15938,7 @@ const orders = [
         slug: 'best-choice-soap',
         parent: 'Beauty & Health',
         children: 'Skin Care',
-        image:
-          'https://i.ibb.co/WvcHzmk/Best-Choice-Absorbing-Moisturizing-Soap-7-5-oz.jpg',
+        image: 'https://i.ibb.co/WvcHzmk/Best-Choice-Absorbing-Moisturizing-Soap-7-5-oz.jpg',
         originalPrice: 9,
         unit: '5fl oz',
         quantity: 5,
@@ -16088,8 +15959,7 @@ const orders = [
         slug: 'banana-boat-lotion',
         parent: 'Beauty & Health',
         children: 'Skin Care',
-        image:
-          'https://i.ibb.co/jzRftZC/Banana-Boat-for-Men-Triple-Defense-SPF-30-Sunscreen-Lotion-2fl-oz.jpg',
+        image: 'https://i.ibb.co/jzRftZC/Banana-Boat-for-Men-Triple-Defense-SPF-30-Sunscreen-Lotion-2fl-oz.jpg',
         originalPrice: 8,
         unit: '2fl oz',
         quantity: 5,
@@ -16131,8 +16001,7 @@ const orders = [
         slug: 'pepsodent-toothbrush',
         parent: 'Beauty & Health',
         children: 'Oral Care',
-        image:
-          'https://i.ibb.co/sFgkd5X/Pepsodent-Action-Toothbrush-Medium.jpg',
+        image: 'https://i.ibb.co/sFgkd5X/Pepsodent-Action-Toothbrush-Medium.jpg',
         originalPrice: 5,
         unit: '1pcs',
         quantity: 5,
@@ -16195,8 +16064,7 @@ const orders = [
         slug: 'pack-beef',
         parent: 'Fish & Meat',
         children: 'Meat',
-        image:
-          'https://i.postimg.cc/pLDhYbYJ/Wow-Pack-Beef-Spare-Ribs-per-lb.jpg',
+        image: 'https://i.postimg.cc/pLDhYbYJ/Wow-Pack-Beef-Spare-Ribs-per-lb.jpg',
         originalPrice: 17,
         unit: '1lb',
         quantity: 4,
@@ -16259,8 +16127,7 @@ const orders = [
         slug: 'beef-stew',
         parent: 'Fish & Meat',
         children: 'Meat',
-        image:
-          'https://i.postimg.cc/Px68pWzG/Niman-Ranch-Angus-Beef-Stew-Meat-per-lb.jpg',
+        image: 'https://i.postimg.cc/Px68pWzG/Niman-Ranch-Angus-Beef-Stew-Meat-per-lb.jpg',
         originalPrice: 18,
         unit: '1lb',
         quantity: 4,
@@ -16408,8 +16275,7 @@ const orders = [
         slug: 'organic-pitta-tea',
         parent: 'Drinks',
         children: 'Tea',
-        image:
-          'https://i.postimg.cc/kXPt066F/Maharishi-Ayurveda-Organic-Pitta-Tea-16-ct.jpg',
+        image: 'https://i.postimg.cc/kXPt066F/Maharishi-Ayurveda-Organic-Pitta-Tea-16-ct.jpg',
         originalPrice: 8,
         unit: '16ct',
         quantity: 3,
@@ -16430,8 +16296,7 @@ const orders = [
         slug: 'deer-park-water',
         parent: 'Drinks',
         children: 'Water',
-        image:
-          'https://i.postimg.cc/VN7zFTMH/Deer-Park-Sport-Bottle-with-Flip-Cap-Natural-Spring-Water-700ml.jpg',
+        image: 'https://i.postimg.cc/VN7zFTMH/Deer-Park-Sport-Bottle-with-Flip-Cap-Natural-Spring-Water-700ml.jpg',
         originalPrice: 7,
         unit: '700ml',
         quantity: 2,
@@ -17044,8 +16909,7 @@ const orders = [
         slug: 'organic-purple-cauliflower',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
+        image: 'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
         originalPrice: 11,
         unit: '1lb',
         quantity: 3,
@@ -17193,8 +17057,7 @@ const orders = [
         slug: 'organic-purple-cauliflower',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
+        image: 'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
         originalPrice: 11,
         unit: '1lb',
         quantity: 1,
@@ -17679,8 +17542,7 @@ const orders = [
         slug: 'orange-imported',
         parent: 'Organic Food',
         children: 'Organic Food',
-        image:
-          'https://i.postimg.cc/yNpW3y8J/komola-orange-imported-50-gm-1-kg.webp',
+        image: 'https://i.postimg.cc/yNpW3y8J/komola-orange-imported-50-gm-1-kg.webp',
         originalPrice: 10,
         unit: '1kg',
         quantity: 4,
@@ -17765,8 +17627,7 @@ const orders = [
         slug: 'original-breakfast-cereal',
         parent: 'Breakfast',
         children: 'Cereal',
-        image:
-          'https://i.postimg.cc/NfS0tkjb/kelloggs-corn-flakes-original-breakfast-cereal-250-gm.webp',
+        image: 'https://i.postimg.cc/NfS0tkjb/kelloggs-corn-flakes-original-breakfast-cereal-250-gm.webp',
         originalPrice: 8,
         unit: '250gm',
         quantity: 1,
@@ -17787,8 +17648,7 @@ const orders = [
         slug: 'breakfast-cereal-box',
         parent: 'Breakfast',
         children: 'Cereal',
-        image:
-          'https://i.postimg.cc/d0mQ8MmS/nestle-milo-breakfast-cereal-box-330-gm.webp',
+        image: 'https://i.postimg.cc/d0mQ8MmS/nestle-milo-breakfast-cereal-box-330-gm.webp',
         originalPrice: 9,
         unit: '330gm',
         quantity: 1,
@@ -17809,8 +17669,7 @@ const orders = [
         slug: 'honey-breakfast-cereal',
         parent: 'Breakfast',
         children: 'Cereal',
-        image:
-          'https://i.postimg.cc/ydLVbFGm/kelloggs-corn-flakes-real-honey-breakfast-cereal-300gm.webp',
+        image: 'https://i.postimg.cc/ydLVbFGm/kelloggs-corn-flakes-real-honey-breakfast-cereal-300gm.webp',
         originalPrice: 10,
         unit: '300gm',
         quantity: 1,
@@ -17999,8 +17858,7 @@ const orders = [
         slug: 'organic-pinkerton-avocado',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/DZdkFCgd/Organic-Pinkerton-Avocado-each.jpg',
+        image: 'https://i.postimg.cc/DZdkFCgd/Organic-Pinkerton-Avocado-each.jpg',
         originalPrice: 14,
         unit: 'each',
         quantity: 1,
@@ -18042,8 +17900,7 @@ const orders = [
         slug: 'organic-greens-red-kale',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/htfBx1Dc/Organic-Greens-Red-Kale-per-lb.jpg',
+        image: 'https://i.postimg.cc/htfBx1Dc/Organic-Greens-Red-Kale-per-lb.jpg',
         originalPrice: 14,
         unit: '1lb',
         quantity: 8,
@@ -18064,8 +17921,7 @@ const orders = [
         slug: 'organic-green-cauliflower',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/rmScsy84/Organic-Green-Cauliflower-1lb.jpg',
+        image: 'https://i.postimg.cc/rmScsy84/Organic-Green-Cauliflower-1lb.jpg',
         originalPrice: 13,
         unit: '1lb',
         quantity: 12,
@@ -18637,8 +18493,7 @@ const orders = [
         slug: 'banana-boat-lotion',
         parent: 'Beauty & Health',
         children: 'Skin Care',
-        image:
-          'https://i.ibb.co/jzRftZC/Banana-Boat-for-Men-Triple-Defense-SPF-30-Sunscreen-Lotion-2fl-oz.jpg',
+        image: 'https://i.ibb.co/jzRftZC/Banana-Boat-for-Men-Triple-Defense-SPF-30-Sunscreen-Lotion-2fl-oz.jpg',
         originalPrice: 8,
         unit: '2fl oz',
         quantity: 1,
@@ -18808,8 +18663,7 @@ const orders = [
         slug: 'nestle-optipro-2',
         parent: 'Baby Care',
         children: 'Baby Food',
-        image:
-          'https://i.ibb.co/mCMttNb/Nestle-Nan-Optipro-2-Milk-Powder-350g.jpg',
+        image: 'https://i.ibb.co/mCMttNb/Nestle-Nan-Optipro-2-Milk-Powder-350g.jpg',
         originalPrice: 16,
         unit: '350gm',
         quantity: 3,
@@ -18830,8 +18684,7 @@ const orders = [
         slug: 'glory-diaper-medium',
         parent: 'Baby Care',
         children: 'Baby Accessories',
-        image:
-          'https://i.ibb.co/184tsYv/Glory-Adult-Diaper-Medium-10-Packet.jpg',
+        image: 'https://i.ibb.co/184tsYv/Glory-Adult-Diaper-Medium-10-Packet.jpg',
         originalPrice: 15,
         unit: '8pcs',
         quantity: 3,
@@ -18852,8 +18705,7 @@ const orders = [
         slug: 'cerelac-cherry',
         parent: 'Baby Care',
         children: 'Baby Food',
-        image:
-          'https://i.ibb.co/R9Pn8XN/Cerelac-Wheat-Apple-Cherry-400-Gm-BIB.jpg',
+        image: 'https://i.ibb.co/R9Pn8XN/Cerelac-Wheat-Apple-Cherry-400-Gm-BIB.jpg',
         originalPrice: 17,
         unit: '400gm',
         quantity: 3,
@@ -18976,8 +18828,7 @@ const orders = [
     ],
     discount: 0,
     name: 'Rajkumar Duraisamy',
-    address:
-      '4th Floor, Janaki Complex, No.20/9, Sardar Patel Rd Nethaji Colony, Kasturba Nagar,',
+    address: '4th Floor, Janaki Complex, No.20/9, Sardar Patel Rd Nethaji Colony, Kasturba Nagar,',
     contact: '+919840800694',
     email: 'contact@codetez.com',
     city: 'Chennai',
@@ -19154,8 +19005,7 @@ const orders = [
         slug: 'balducci-coffee',
         parent: 'Drinks',
         children: 'Coffee',
-        image:
-          'https://i.ibb.co/5KFrFPv/Balducci-s-Southern-Pecan-Flavor-Ground-Cofee-12oz.jpg',
+        image: 'https://i.ibb.co/5KFrFPv/Balducci-s-Southern-Pecan-Flavor-Ground-Cofee-12oz.jpg',
         originalPrice: 8,
         unit: '12oz',
         quantity: 3,
@@ -19305,8 +19155,7 @@ const orders = [
         slug: 'heinz-apple-cider-vinegar',
         parent: 'Sauces & Pickles',
         children: 'Pickles & Condiments',
-        image:
-          'https://i.ibb.co/smYNMJB/Heinz-Apple-Cider-Vinegar-473ml-US.jpg',
+        image: 'https://i.ibb.co/smYNMJB/Heinz-Apple-Cider-Vinegar-473ml-US.jpg',
         originalPrice: 14,
         unit: '473ml',
         quantity: 3,
@@ -19475,8 +19324,7 @@ const orders = [
         slug: 'discovery-apple-cider-vinegar',
         parent: 'Sauces & Pickles',
         children: 'Pickles & Condiments',
-        image:
-          'https://i.ibb.co/4Y4G0JR/Discovery-Apple-Cider-Vinegar-473ml.jpg',
+        image: 'https://i.ibb.co/4Y4G0JR/Discovery-Apple-Cider-Vinegar-473ml.jpg',
         originalPrice: 15,
         unit: '500ml',
         quantity: 1,
@@ -19497,8 +19345,7 @@ const orders = [
         slug: 'heinz-apple-cider-vinegar',
         parent: 'Sauces & Pickles',
         children: 'Pickles & Condiments',
-        image:
-          'https://i.ibb.co/smYNMJB/Heinz-Apple-Cider-Vinegar-473ml-US.jpg',
+        image: 'https://i.ibb.co/smYNMJB/Heinz-Apple-Cider-Vinegar-473ml-US.jpg',
         originalPrice: 14,
         unit: '473ml',
         quantity: 13,
@@ -20866,8 +20713,7 @@ const orders = [
         slug: 'whole-chicken',
         parent: 'Fish & Meat',
         children: 'Meat',
-        image:
-          'https://i.postimg.cc/wM7Rh101/Open-Nature-Whole-Natural-Chicken-per-lb.jpg',
+        image: 'https://i.postimg.cc/wM7Rh101/Open-Nature-Whole-Natural-Chicken-per-lb.jpg',
         originalPrice: 17,
         unit: '1lb',
         quantity: 4,
@@ -20912,8 +20758,7 @@ const orders = [
         slug: 'soft-wholemeal-bread',
         parent: 'Breakfast',
         children: 'Bread',
-        image:
-          'https://i.postimg.cc/mgLHcws4/the-village-bakery-Soft-Wholemeal-Bread.jpg',
+        image: 'https://i.postimg.cc/mgLHcws4/the-village-bakery-Soft-Wholemeal-Bread.jpg',
         originalPrice: 8,
         unit: '1pc',
         quantity: 5,
@@ -20935,8 +20780,7 @@ const orders = [
         slug: 'fresh-rainbow-trout',
         parent: 'Fresh Seafood',
         children: 'Fresh Seafood',
-        image:
-          'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
+        image: 'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
         originalPrice: 12,
         unit: '1lb',
         quantity: 2,
@@ -21469,8 +21313,7 @@ const orders = [
         slug: 'thai-dressing-sauce',
         parent: 'Sauces & Pickles',
         children: 'Sauces',
-        image:
-          'https://i.postimg.cc/mghPL98m/Thai-Choice-Salad-Dressing-Sauce-200g.jpg',
+        image: 'https://i.postimg.cc/mghPL98m/Thai-Choice-Salad-Dressing-Sauce-200g.jpg',
         originalPrice: 10,
         unit: '200ml',
         quantity: 1,
@@ -21492,8 +21335,7 @@ const orders = [
         slug: 'american-apple-cider-vinegar',
         parent: 'Sauces & Pickles',
         children: 'Pickles & Condiments',
-        image:
-          'https://i.postimg.cc/ZnkzvWtt/American-Garden-OV-Apple-Cider-473ml.jpg',
+        image: 'https://i.postimg.cc/ZnkzvWtt/American-Garden-OV-Apple-Cider-473ml.jpg',
         originalPrice: 14,
         unit: '473ml',
         quantity: 7,
@@ -21691,8 +21533,7 @@ const orders = [
         slug: 'seeded-bloomer',
         parent: 'Breakfast',
         children: 'Bread',
-        image:
-          'https://i.postimg.cc/RVzfmmpN/roberts-Seriously-Seeded-Bloomer.jpg',
+        image: 'https://i.postimg.cc/RVzfmmpN/roberts-Seriously-Seeded-Bloomer.jpg',
         originalPrice: 8,
         unit: '1pc',
         quantity: 1,
@@ -21780,8 +21621,7 @@ const orders = [
         slug: 'breakfast-cereal-box',
         parent: 'Breakfast',
         children: 'Cereal',
-        image:
-          'https://i.postimg.cc/d0mQ8MmS/nestle-milo-breakfast-cereal-box-330-gm.webp',
+        image: 'https://i.postimg.cc/d0mQ8MmS/nestle-milo-breakfast-cereal-box-330-gm.webp',
         originalPrice: 9,
         unit: '330gm',
         quantity: 1,
@@ -21803,8 +21643,7 @@ const orders = [
         slug: 'foraging-pouch-bird-toy',
         parent: 'Pet Care',
         children: 'Bird Care',
-        image:
-          'https://i.postimg.cc/0jyFn4VQ/Super-Bird-Creations-Foraging-Pouch-Bird-Toy-each.jpg',
+        image: 'https://i.postimg.cc/0jyFn4VQ/Super-Bird-Creations-Foraging-Pouch-Bird-Toy-each.jpg',
         originalPrice: 13,
         unit: 'each',
         quantity: 1,
@@ -22091,8 +21930,7 @@ const orders = [
         slug: 'canada-salmon',
         parent: 'Fish & Meat',
         children: 'Fish',
-        image:
-          'https://i.postimg.cc/5tqG80Rq/Fresh-Whole-Canada-Salmon-25-5-oz.jpg',
+        image: 'https://i.postimg.cc/5tqG80Rq/Fresh-Whole-Canada-Salmon-25-5-oz.jpg',
         originalPrice: 12,
         unit: '5oz',
         quantity: 1,
@@ -22159,8 +21997,7 @@ const orders = [
         slug: 'fresh-rainbow-trout',
         parent: 'Fresh Seafood',
         children: 'Fresh Seafood',
-        image:
-          'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
+        image: 'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
         originalPrice: 12,
         unit: '1lb',
         quantity: 4,
@@ -22314,8 +22151,7 @@ const orders = [
         slug: 'fresh-rainbow-trout',
         parent: 'Fish & Meat',
         children: 'Fish',
-        image:
-          'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
+        image: 'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
         originalPrice: 12,
         unit: '1lb',
         quantity: 1,
@@ -22495,8 +22331,7 @@ const orders = [
         slug: 'soft-wholemeal-bread',
         parent: 'Breakfast',
         children: 'Bread',
-        image:
-          'https://i.postimg.cc/mgLHcws4/the-village-bakery-Soft-Wholemeal-Bread.jpg',
+        image: 'https://i.postimg.cc/mgLHcws4/the-village-bakery-Soft-Wholemeal-Bread.jpg',
         originalPrice: 8,
         unit: '1pc',
         quantity: 2,
@@ -22518,8 +22353,7 @@ const orders = [
         slug: 'danish-soft-white-toastie',
         parent: 'Breakfast',
         children: 'Bread',
-        image:
-          'https://i.postimg.cc/XN5Ftq8R/the-village-bakery-danish-Soft-White-Toastie.jpg',
+        image: 'https://i.postimg.cc/XN5Ftq8R/the-village-bakery-danish-Soft-White-Toastie.jpg',
         originalPrice: 7,
         unit: '1pc',
         quantity: 3,
@@ -22563,8 +22397,7 @@ const orders = [
         slug: 'fresh-rainbow-trout',
         parent: 'Fish & Meat',
         children: 'Fish',
-        image:
-          'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
+        image: 'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
         originalPrice: 12,
         unit: '1lb',
         quantity: 1,
@@ -22608,8 +22441,7 @@ const orders = [
         slug: 'salmon-filet-portion',
         parent: 'Fish & Meat',
         children: 'Fish',
-        image:
-          'https://i.postimg.cc/G3QLb33D/Black-Pearls-Salmon-Filet-Portion-6-oz.jpg',
+        image: 'https://i.postimg.cc/G3QLb33D/Black-Pearls-Salmon-Filet-Portion-6-oz.jpg',
         originalPrice: 12,
         unit: '6oz',
         quantity: 1,
@@ -22836,8 +22668,7 @@ const orders = [
         slug: 'dates-iranian-loose',
         parent: 'Fruits & Vegetable',
         children: 'Dry Fruits',
-        image:
-          'https://i.postimg.cc/CxHQRZDS/Dates-Iranian-Maryam-Loose-Kg-1-Kg.jpg',
+        image: 'https://i.postimg.cc/CxHQRZDS/Dates-Iranian-Maryam-Loose-Kg-1-Kg.jpg',
         originalPrice: 15,
         unit: '1kg',
         quantity: 1,
@@ -22950,8 +22781,7 @@ const orders = [
         slug: 'kalijira-premium-rice',
         parent: 'Cooking Essentials',
         children: 'Rice',
-        image:
-          'https://i.ibb.co/j4DjzJb/Kalijira-Premium-Rice-Loose-Kg-1-Kg.jpg',
+        image: 'https://i.ibb.co/j4DjzJb/Kalijira-Premium-Rice-Loose-Kg-1-Kg.jpg',
         originalPrice: 12,
         unit: '5kg',
         quantity: 1,
@@ -23018,8 +22848,7 @@ const orders = [
         slug: 'fresh-rainbow-trout',
         parent: 'Fresh Seafood',
         children: 'Fresh Seafood',
-        image:
-          'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
+        image: 'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
         originalPrice: 12,
         unit: '1lb',
         quantity: 1,
@@ -23107,8 +22936,7 @@ const orders = [
         slug: 'wild-king-salmon-steak',
         parent: 'Fresh Seafood',
         children: 'Fresh Seafood',
-        image:
-          'https://i.postimg.cc/63Mm1Pw8/Fresh-Wild-King-Salmon-Steak-1lb.jpg',
+        image: 'https://i.postimg.cc/63Mm1Pw8/Fresh-Wild-King-Salmon-Steak-1lb.jpg',
         originalPrice: 12,
         unit: '1lb',
         quantity: 2,
@@ -23446,8 +23274,7 @@ const orders = [
         slug: 'watermelon-large',
         parent: 'Organic Food',
         children: 'Organic Food',
-        image:
-          'https://i.postimg.cc/7h8HSs8L/watermelon-large-5-kg-tormuj-1-pcs.webp',
+        image: 'https://i.postimg.cc/7h8HSs8L/watermelon-large-5-kg-tormuj-1-pcs.webp',
         originalPrice: 14,
         unit: '1pcs',
         quantity: 10,
@@ -23469,8 +23296,7 @@ const orders = [
         slug: 'sugar-free-gum-spearmint',
         parent: 'Organic Food',
         children: 'Organic Food',
-        image:
-          'https://i.postimg.cc/1Rw5yQwV/trident-sugar-free-gum-spearmint-flavor-266-gm.webp',
+        image: 'https://i.postimg.cc/1Rw5yQwV/trident-sugar-free-gum-spearmint-flavor-266-gm.webp',
         originalPrice: 12,
         unit: '266gm',
         quantity: 10,
@@ -23582,8 +23408,7 @@ const orders = [
         slug: 'fresh-rainbow-trout',
         parent: 'Fish & Meat',
         children: 'Fish',
-        image:
-          'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
+        image: 'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
         originalPrice: 12,
         unit: '1lb',
         quantity: 1,
@@ -23900,8 +23725,7 @@ const orders = [
         slug: 'organic-purple-cauliflower',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
+        image: 'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
         originalPrice: 11,
         unit: '1lb',
         quantity: 1,
@@ -24129,8 +23953,7 @@ const orders = [
         slug: 'dekko-ovaltine-cookie',
         parent: 'Biscuits & Cakes',
         children: 'Biscuits',
-        image:
-          'https://i.ibb.co/LkncfJj/Dekko-Ovaltine-Cookies-Biscuits-330g.jpg',
+        image: 'https://i.ibb.co/LkncfJj/Dekko-Ovaltine-Cookies-Biscuits-330g.jpg',
         originalPrice: 9,
         unit: '1pac',
         quantity: 6,
@@ -24175,8 +23998,7 @@ const orders = [
         slug: 'orange-imported',
         parent: 'Organic Food',
         children: 'Organic Food',
-        image:
-          'https://i.postimg.cc/yNpW3y8J/komola-orange-imported-50-gm-1-kg.webp',
+        image: 'https://i.postimg.cc/yNpW3y8J/komola-orange-imported-50-gm-1-kg.webp',
         originalPrice: 10,
         unit: '1kg',
         quantity: 5,
@@ -24267,8 +24089,7 @@ const orders = [
         slug: 'organic-purple-cauliflower',
         parent: 'Fruits & Vegetable',
         children: 'Fresh Vegetable',
-        image:
-          'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
+        image: 'https://i.postimg.cc/9FN3WwGS/Organic-Purple-Cauliflower-1lb.jpg',
         originalPrice: 11,
         unit: '1lb',
         quantity: 1,
@@ -24314,8 +24135,7 @@ const orders = [
         slug: 'glade-air-freshener',
         parent: 'Household Tools',
         children: 'Air Freshener',
-        image:
-          'https://i.postimg.cc/pXQcjq0n/Glade-Be-At-Peace-Automatic-Spray-Refill-Air-Freshener-6-2oz.jpg',
+        image: 'https://i.postimg.cc/pXQcjq0n/Glade-Be-At-Peace-Automatic-Spray-Refill-Air-Freshener-6-2oz.jpg',
         originalPrice: 5,
         unit: '2oz',
         quantity: 1,
@@ -24338,8 +24158,7 @@ const orders = [
         slug: 'eurofresh-toothpaste',
         parent: 'Beauty & Health',
         children: 'Oral Care',
-        image:
-          'https://i.ibb.co/4Ppsjsb/Eurofresh-S-Toothpaste-Strawb-Flv-50g.jpg',
+        image: 'https://i.ibb.co/4Ppsjsb/Eurofresh-S-Toothpaste-Strawb-Flv-50g.jpg',
         originalPrice: 7,
         unit: '50g',
         quantity: 1,
@@ -24861,8 +24680,7 @@ const orders = [
         slug: 'lavender-orange-blossom',
         parent: 'Household Tools',
         children: 'Air Freshener',
-        image:
-          'https://i.postimg.cc/7P0KvKrQ/Pure-Plant-Home-Lavender-Orange-Blossom-Candle-7oz.jpg',
+        image: 'https://i.postimg.cc/7P0KvKrQ/Pure-Plant-Home-Lavender-Orange-Blossom-Candle-7oz.jpg',
         originalPrice: 8,
         unit: '7oz',
         quantity: 1,
@@ -24909,8 +24727,7 @@ const orders = [
         slug: 'pure-citrus-cleaner',
         parent: 'Household Tools',
         children: 'Cleaner',
-        image:
-          'https://i.postimg.cc/L84DFTbJ/Pure-Citrus-Cleaner-Orange-32oz.jpg',
+        image: 'https://i.postimg.cc/L84DFTbJ/Pure-Citrus-Cleaner-Orange-32oz.jpg',
         originalPrice: 7,
         unit: '32oz',
         quantity: 5,
@@ -24955,8 +24772,7 @@ const orders = [
         slug: 'fresh-rainbow-trout',
         parent: 'Fish & Meat',
         children: 'Fish',
-        image:
-          'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
+        image: 'https://i.postimg.cc/43NMbZkD/USDC-Fresh-Rainbow-Trout-per-lb.jpg',
         originalPrice: 12,
         unit: '1lb',
         quantity: 1,
@@ -24988,8 +24804,8 @@ const orders = [
     createdAt: '2022-01-17T14:16:16.956Z',
     updatedAt: '2022-01-18T19:22:20.297Z',
   },
-];
+]
 
-const orderData = orders.sort((a, b) => -1);
+const orderData = orders.sort((a, b) => -1)
 
-export default orderData;
+export default orderData

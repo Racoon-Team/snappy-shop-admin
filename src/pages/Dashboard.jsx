@@ -6,245 +6,218 @@ import {
   TableFooter,
   TableHeader,
   WindmillContext,
-} from "@windmill/react-ui";
-import dayjs from "dayjs";
-import isBetween from "dayjs/plugin/isBetween";
-import isToday from "dayjs/plugin/isToday";
-import isYesterday from "dayjs/plugin/isYesterday";
-import { useContext, useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { FiCheck, FiRefreshCw, FiShoppingCart, FiTruck } from "react-icons/fi";
-import { ImCreditCard, ImStack } from "react-icons/im";
+} from '@windmill/react-ui'
+import dayjs from 'dayjs'
+import isBetween from 'dayjs/plugin/isBetween'
+import isToday from 'dayjs/plugin/isToday'
+import isYesterday from 'dayjs/plugin/isYesterday'
+import { useContext, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { FiCheck, FiRefreshCw, FiShoppingCart, FiTruck } from 'react-icons/fi'
+import { ImCreditCard, ImStack } from 'react-icons/im'
 
 //internal import
-import useAsync from "@/hooks/useAsync";
-import useFilter from "@/hooks/useFilter";
-import LineChart from "@/components/chart/LineChart/LineChart";
-import PieChart from "@/components/chart/Pie/PieChart";
-import CardItem from "@/components/dashboard/CardItem";
-import CardItemTwo from "@/components/dashboard/CardItemTwo";
-import ChartCard from "@/components/chart/ChartCard";
-import OrderTable from "@/components/order/OrderTable";
-import TableLoading from "@/components/preloader/TableLoading";
-import NotFound from "@/components/table/NotFound";
-import PageTitle from "@/components/Typography/PageTitle";
-import { SidebarContext } from "@/context/SidebarContext";
-import OrderServices from "@/services/OrderServices";
-import AnimatedContent from "@/components/common/AnimatedContent";
+import ChartCard from '@/components/chart/ChartCard'
+import LineChart from '@/components/chart/LineChart/LineChart'
+import PieChart from '@/components/chart/Pie/PieChart'
+import AnimatedContent from '@/components/common/AnimatedContent'
+import CardItem from '@/components/dashboard/CardItem'
+import CardItemTwo from '@/components/dashboard/CardItemTwo'
+import OrderTable from '@/components/order/OrderTable'
+import TableLoading from '@/components/preloader/TableLoading'
+import NotFound from '@/components/table/NotFound'
+import PageTitle from '@/components/Typography/PageTitle'
+import { SidebarContext } from '@/context/SidebarContext'
+import useAsync from '@/hooks/useAsync'
+import useFilter from '@/hooks/useFilter'
+import OrderServices from '@/services/OrderServices'
 
 const Dashboard = () => {
-  const { t } = useTranslation();
-  const { mode } = useContext(WindmillContext);
+  const { t } = useTranslation()
+  const { mode } = useContext(WindmillContext)
 
-  dayjs.extend(isBetween);
-  dayjs.extend(isToday);
-  dayjs.extend(isYesterday);
+  dayjs.extend(isBetween)
+  dayjs.extend(isToday)
+  dayjs.extend(isYesterday)
 
-  const { currentPage, handleChangePage } = useContext(SidebarContext);
+  const { currentPage, handleChangePage } = useContext(SidebarContext)
 
   // react hook
-  const [todayOrderAmount, setTodayOrderAmount] = useState(0);
-  const [yesterdayOrderAmount, setYesterdayOrderAmount] = useState(0);
-  const [salesReport, setSalesReport] = useState([]);
-  const [todayCashPayment, setTodayCashPayment] = useState(0);
-  const [todayCardPayment, setTodayCardPayment] = useState(0);
-  const [todayCreditPayment, setTodayCreditPayment] = useState(0);
-  const [yesterdayCashPayment, setYesterdayCashPayment] = useState(0);
-  const [yesterdayCardPayment, setYesterdayCardPayment] = useState(0);
-  const [yesterdayCreditPayment, setYesterdayCreditPayment] = useState(0);
+  const [todayOrderAmount, setTodayOrderAmount] = useState(0)
+  const [yesterdayOrderAmount, setYesterdayOrderAmount] = useState(0)
+  const [salesReport, setSalesReport] = useState([])
+  const [todayCashPayment, setTodayCashPayment] = useState(0)
+  const [todayCardPayment, setTodayCardPayment] = useState(0)
+  const [todayCreditPayment, setTodayCreditPayment] = useState(0)
+  const [yesterdayCashPayment, setYesterdayCashPayment] = useState(0)
+  const [yesterdayCardPayment, setYesterdayCardPayment] = useState(0)
+  const [yesterdayCreditPayment, setYesterdayCreditPayment] = useState(0)
 
   const {
     data: bestSellerProductChart,
     loading: loadingBestSellerProduct,
     error,
-  } = useAsync(OrderServices.getBestSellerProductChart);
+  } = useAsync(OrderServices.getBestSellerProductChart)
 
-  const { data: dashboardRecentOrder, loading: loadingRecentOrder } = useAsync(
-    () => OrderServices.getDashboardRecentOrder({ page: currentPage, limit: 8 })
-  );
+  const { data: dashboardRecentOrder, loading: loadingRecentOrder } = useAsync(() =>
+    OrderServices.getDashboardRecentOrder({ page: currentPage, limit: 8 })
+  )
 
-  const { data: dashboardOrderCount, loading: loadingOrderCount } = useAsync(
-    OrderServices.getDashboardCount
-  );
+  const { data: dashboardOrderCount, loading: loadingOrderCount } = useAsync(OrderServices.getDashboardCount)
 
-  const { data: dashboardOrderAmount, loading: loadingOrderAmount } = useAsync(
-    OrderServices.getDashboardAmount
-  );
+  const { data: dashboardOrderAmount, loading: loadingOrderAmount } = useAsync(OrderServices.getDashboardAmount)
 
   // console.log("dashboardOrderCount", dashboardOrderCount);
 
-  const { dataTable, serviceData } = useFilter(dashboardRecentOrder?.orders);
+  const { dataTable, serviceData } = useFilter(dashboardRecentOrder?.orders)
 
   useEffect(() => {
     // today orders show
-    const todayOrder = dashboardOrderAmount?.ordersData?.filter((order) =>
-      dayjs(order.updatedAt).isToday()
-    );
+    const todayOrder = dashboardOrderAmount?.ordersData?.filter((order) => dayjs(order.updatedAt).isToday())
     //  console.log('todayOrder',dashboardOrderAmount.ordersData)
-    const todayReport = todayOrder?.reduce((pre, acc) => pre + acc.total, 0);
-    setTodayOrderAmount(todayReport);
+    const todayReport = todayOrder?.reduce((pre, acc) => pre + acc.total, 0)
+    setTodayOrderAmount(todayReport)
 
     // yesterday orders
     const yesterdayOrder = dashboardOrderAmount?.ordersData?.filter((order) =>
-      dayjs(order.updatedAt).set(-1, "day").isYesterday()
-    );
+      dayjs(order.updatedAt).set(-1, 'day').isYesterday()
+    )
 
-    const yesterdayReport = yesterdayOrder?.reduce(
-      (pre, acc) => pre + acc.total,
-      0
-    );
-    setYesterdayOrderAmount(yesterdayReport);
+    const yesterdayReport = yesterdayOrder?.reduce((pre, acc) => pre + acc.total, 0)
+    setYesterdayOrderAmount(yesterdayReport)
 
     // sales orders chart data
-    const salesOrderChartData = dashboardOrderAmount?.ordersData?.filter(
-      (order) =>
-        dayjs(order.updatedAt).isBetween(
-          new Date().setDate(new Date().getDate() - 7),
-          new Date()
-        )
-    );
+    const salesOrderChartData = dashboardOrderAmount?.ordersData?.filter((order) =>
+      dayjs(order.updatedAt).isBetween(new Date().setDate(new Date().getDate() - 7), new Date())
+    )
 
     salesOrderChartData?.reduce((res, value) => {
-      let onlyDate = value.updatedAt.split("T")[0];
+      let onlyDate = value.updatedAt.split('T')[0]
 
       if (!res[onlyDate]) {
-        res[onlyDate] = { date: onlyDate, total: 0, order: 0 };
-        salesReport.push(res[onlyDate]);
+        res[onlyDate] = { date: onlyDate, total: 0, order: 0 }
+        salesReport.push(res[onlyDate])
       }
-      res[onlyDate].total += value.total;
-      res[onlyDate].order += 1;
-      return res;
-    }, {});
+      res[onlyDate].total += value.total
+      res[onlyDate].order += 1
+      return res
+    }, {})
 
-    setSalesReport(salesReport);
+    setSalesReport(salesReport)
 
-    const todayPaymentMethodData = [];
-    const yesterDayPaymentMethodData = [];
+    const todayPaymentMethodData = []
+    const yesterDayPaymentMethodData = []
 
     // today order payment method
     dashboardOrderAmount?.ordersData?.filter((item, value) => {
       if (dayjs(item.updatedAt).isToday()) {
-        if (item.paymentMethod === "Cash") {
+        if (item.paymentMethod === 'Cash') {
           let cashMethod = {
-            paymentMethod: "Cash",
+            paymentMethod: 'Cash',
             total: item.total,
-          };
-          todayPaymentMethodData.push(cashMethod);
+          }
+          todayPaymentMethodData.push(cashMethod)
         }
 
-        if (item.paymentMethod === "Credit") {
+        if (item.paymentMethod === 'Credit') {
           const cashMethod = {
-            paymentMethod: "Credit",
+            paymentMethod: 'Credit',
             total: item.total,
-          };
+          }
 
-          todayPaymentMethodData.push(cashMethod);
+          todayPaymentMethodData.push(cashMethod)
         }
 
-        if (item.paymentMethod === "Card") {
+        if (item.paymentMethod === 'Card') {
           const cashMethod = {
-            paymentMethod: "Card",
+            paymentMethod: 'Card',
             total: item.total,
-          };
+          }
 
-          todayPaymentMethodData.push(cashMethod);
+          todayPaymentMethodData.push(cashMethod)
         }
       }
 
-      return item;
-    });
+      return item
+    })
     // yesterday order payment method
     dashboardOrderAmount?.ordersData?.filter((item, value) => {
-      if (dayjs(item.updatedAt).set(-1, "day").isYesterday()) {
-        if (item.paymentMethod === "Cash") {
+      if (dayjs(item.updatedAt).set(-1, 'day').isYesterday()) {
+        if (item.paymentMethod === 'Cash') {
           let cashMethod = {
-            paymentMethod: "Cash",
+            paymentMethod: 'Cash',
             total: item.total,
-          };
-          yesterDayPaymentMethodData.push(cashMethod);
+          }
+          yesterDayPaymentMethodData.push(cashMethod)
         }
 
-        if (item.paymentMethod === "Credit") {
+        if (item.paymentMethod === 'Credit') {
           const cashMethod = {
-            paymentMethod: "Credit",
+            paymentMethod: 'Credit',
             total: item?.total,
-          };
+          }
 
-          yesterDayPaymentMethodData.push(cashMethod);
+          yesterDayPaymentMethodData.push(cashMethod)
         }
 
-        if (item.paymentMethod === "Card") {
+        if (item.paymentMethod === 'Card') {
           const cashMethod = {
-            paymentMethod: "Card",
+            paymentMethod: 'Card',
             total: item?.total,
-          };
+          }
 
-          yesterDayPaymentMethodData.push(cashMethod);
+          yesterDayPaymentMethodData.push(cashMethod)
         }
       }
 
-      return item;
-    });
+      return item
+    })
 
     const todayCsCdCit = Object.values(
       todayPaymentMethodData.reduce((r, { paymentMethod, total }) => {
         if (!r[paymentMethod]) {
-          r[paymentMethod] = { paymentMethod, total: 0 };
+          r[paymentMethod] = { paymentMethod, total: 0 }
         }
-        r[paymentMethod].total += total;
+        r[paymentMethod].total += total
 
-        return r;
+        return r
       }, {})
-    );
-    const today_cash_payment = todayCsCdCit.find(
-      (el) => el.paymentMethod === "Cash"
-    );
-    setTodayCashPayment(today_cash_payment?.total);
-    const today_card_payment = todayCsCdCit.find(
-      (el) => el.paymentMethod === "Card"
-    );
-    setTodayCardPayment(today_card_payment?.total);
-    const today_credit_payment = todayCsCdCit.find(
-      (el) => el.paymentMethod === "Credit"
-    );
-    setTodayCreditPayment(today_credit_payment?.total);
+    )
+    const today_cash_payment = todayCsCdCit.find((el) => el.paymentMethod === 'Cash')
+    setTodayCashPayment(today_cash_payment?.total)
+    const today_card_payment = todayCsCdCit.find((el) => el.paymentMethod === 'Card')
+    setTodayCardPayment(today_card_payment?.total)
+    const today_credit_payment = todayCsCdCit.find((el) => el.paymentMethod === 'Credit')
+    setTodayCreditPayment(today_credit_payment?.total)
 
     const yesterDayCsCdCit = Object.values(
       yesterDayPaymentMethodData.reduce((r, { paymentMethod, total }) => {
         if (!r[paymentMethod]) {
-          r[paymentMethod] = { paymentMethod, total: 0 };
+          r[paymentMethod] = { paymentMethod, total: 0 }
         }
-        r[paymentMethod].total += total;
+        r[paymentMethod].total += total
 
-        return r;
+        return r
       }, {})
-    );
-    const yesterday_cash_payment = yesterDayCsCdCit.find(
-      (el) => el.paymentMethod === "Cash"
-    );
-    setYesterdayCashPayment(yesterday_cash_payment?.total);
-    const yesterday_card_payment = yesterDayCsCdCit.find(
-      (el) => el.paymentMethod === "Card"
-    );
-    setYesterdayCardPayment(yesterday_card_payment?.total);
-    const yesterday_credit_payment = yesterDayCsCdCit.find(
-      (el) => el.paymentMethod === "Credit"
-    );
-    setYesterdayCreditPayment(yesterday_credit_payment?.total);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dashboardOrderAmount]);
+    )
+    const yesterday_cash_payment = yesterDayCsCdCit.find((el) => el.paymentMethod === 'Cash')
+    setYesterdayCashPayment(yesterday_cash_payment?.total)
+    const yesterday_card_payment = yesterDayCsCdCit.find((el) => el.paymentMethod === 'Card')
+    setYesterdayCardPayment(yesterday_card_payment?.total)
+    const yesterday_credit_payment = yesterDayCsCdCit.find((el) => el.paymentMethod === 'Credit')
+    setYesterdayCreditPayment(yesterday_credit_payment?.total)
+  }, [dashboardOrderAmount])
 
   return (
     <>
-      <PageTitle>{t("DashboardOverview")}</PageTitle>
+      <PageTitle>{t('dashboardScreen.title')}</PageTitle>
 
       <AnimatedContent>
         <div className="grid gap-2 mb-8 xl:grid-cols-5 md:grid-cols-2">
           <CardItemTwo
             mode={mode}
             title="Today Order"
-            title2="TodayOrder"
+            title2={t('dashboardScreen.cards.todayOrders')}
             Icon={ImStack}
             cash={todayCashPayment || 0}
             card={todayCardPayment || 0}
@@ -257,7 +230,7 @@ const Dashboard = () => {
           <CardItemTwo
             mode={mode}
             title="Yesterday Order"
-            title2="YesterdayOrder"
+            title2={t('dashboardScreen.cards.yesterdayOrders')}
             Icon={ImStack}
             cash={yesterdayCashPayment || 0}
             card={yesterdayCardPayment || 0}
@@ -269,7 +242,7 @@ const Dashboard = () => {
 
           <CardItemTwo
             mode={mode}
-            title2="ThisMonth"
+            title2={t('dashboardScreen.cards.thisMonth')}
             Icon={FiShoppingCart}
             price={dashboardOrderAmount?.thisMonthlyOrderAmount || 0}
             className="text-white dark:text-emerald-100 bg-blue-500"
@@ -278,7 +251,7 @@ const Dashboard = () => {
 
           <CardItemTwo
             mode={mode}
-            title2="LastMonth"
+            title2={t('dashboardScreen.cards.lastMonth')}
             Icon={ImCreditCard}
             loading={loadingOrderAmount}
             price={dashboardOrderAmount?.lastMonthOrderAmount || 0}
@@ -287,7 +260,7 @@ const Dashboard = () => {
 
           <CardItemTwo
             mode={mode}
-            title2="AllTimeSales"
+            title2={t('dashboardScreen.cards.totalSales')}
             Icon={ImCreditCard}
             price={dashboardOrderAmount?.totalAmount || 0}
             className="text-white dark:text-emerald-100 bg-emerald-600"
@@ -297,14 +270,14 @@ const Dashboard = () => {
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           <CardItem
-            title="Total Order"
+            title={t('dashboardScreen.cards.totalOrders')}
             Icon={FiShoppingCart}
             loading={loadingOrderCount}
             quantity={dashboardOrderCount?.totalOrder || 0}
             className="text-orange-600 dark:text-orange-100 bg-orange-100 dark:bg-orange-500"
           />
           <CardItem
-            title={t("OrderPending")}
+            title={t('dashboardScreen.cards.ordersPending')}
             Icon={FiRefreshCw}
             loading={loadingOrderCount}
             quantity={dashboardOrderCount?.totalPendingOrder?.count || 0}
@@ -312,14 +285,14 @@ const Dashboard = () => {
             className="text-blue-600 dark:text-blue-100 bg-blue-100 dark:bg-blue-500"
           />
           <CardItem
-            title={t("OrderProcessing")}
+            title={t('dashboardScreen.cards.ordersProcessing')}
             Icon={FiTruck}
             loading={loadingOrderCount}
             quantity={dashboardOrderCount?.totalProcessingOrder || 0}
             className="text-teal-600 dark:text-teal-100 bg-teal-100 dark:bg-teal-500"
           />
           <CardItem
-            title={t("OrderDelivered")}
+            title={t('dashboardScreen.cards.ordersDelivered')}
             Icon={FiCheck}
             loading={loadingOrderCount}
             quantity={dashboardOrderCount?.totalDeliveredOrder || 0}
@@ -328,25 +301,21 @@ const Dashboard = () => {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 my-8">
-          <ChartCard
-            mode={mode}
-            loading={loadingOrderAmount}
-            title={t("WeeklySales")}
-          >
+          <ChartCard mode={mode} loading={loadingOrderAmount} title={t('dashboardScreen.graphics.weeklySales')}>
             <LineChart salesReport={salesReport} />
           </ChartCard>
 
           <ChartCard
             mode={mode}
             loading={loadingBestSellerProduct}
-            title={t("BestSellingProducts")}
+            title={t('dashboardScreen.graphics.bestSellingProducts')}
           >
             <PieChart data={bestSellerProductChart} />
           </ChartCard>
         </div>
       </AnimatedContent>
 
-      <PageTitle>{t("RecentOrder")}</PageTitle>
+      <PageTitle>{t('dashboardScreen.titleOrders')}</PageTitle>
 
       {/* <Loading loading={loading} /> */}
 
@@ -359,14 +328,14 @@ const Dashboard = () => {
           <Table>
             <TableHeader>
               <tr>
-                <TableCell>{t("InvoiceNo")}</TableCell>
-                <TableCell>{t("TimeTbl")}</TableCell>
-                <TableCell>{t("CustomerName")} </TableCell>
-                <TableCell> {t("MethodTbl")} </TableCell>
-                <TableCell> {t("AmountTbl")} </TableCell>
-                <TableCell>{t("OderStatusTbl")}</TableCell>
-                <TableCell>{t("ActionTbl")}</TableCell>
-                <TableCell className="text-right">{t("InvoiceTbl")}</TableCell>
+                <TableCell>{t('ordersScreen.table.invoiceNoTbl')}</TableCell>
+                <TableCell>{t('ordersScreen.table.timeTbl')}</TableCell>
+                <TableCell>{t('ordersScreen.table.customerNameTbl')}</TableCell>
+                <TableCell>{t('ordersScreen.table.methodTbl')}</TableCell>
+                <TableCell>{t('ordersScreen.table.amountTbl')}</TableCell>
+                <TableCell>{t('ordersScreen.table.oderStatusTbl')}</TableCell>
+                <TableCell>{t('ordersScreen.table.actionTbl')}</TableCell>
+                <TableCell className="text-right">{t('ordersScreen.table.invoiceTbl')}</TableCell>
               </tr>
             </TableHeader>
 
@@ -385,7 +354,7 @@ const Dashboard = () => {
         <NotFound title="Sorry, There are no orders right now." />
       )}
     </>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard

@@ -1,5 +1,5 @@
-import { Select } from "@windmill/react-ui";
-import React from "react";
+import { Select } from '@windmill/react-ui'
+import React from 'react'
 // import { CODES } from 'currencies-map';
 
 const SelectProductLimit = ({ register, name, label, required }) => {
@@ -25,6 +25,6 @@ const SelectProductLimit = ({ register, name, label, required }) => {
         <option value="18">18</option>
       </Select>
     </>
-  );
-};
-export default SelectProductLimit;
+  )
+}
+export default SelectProductLimit

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useLayoutEffect, useMemo, createContext } from 'react'
+import { createContext, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 
 /**
  * Saves the old ThemeContext for future use
@@ -19,8 +19,7 @@ function usePrevious(theme) {
  * @return {array} getter and setter for user preferred theme
  */
 function useStorageTheme(key) {
-  const userPreference =
-    !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const userPreference = !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
 
   const [theme, setTheme] = useState(
     // use stored theme; fallback to user preference
@@ -59,7 +58,6 @@ export const ThemeProvider = ({ children }) => {
       theme,
       toggleTheme,
     }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [theme]
   )
 

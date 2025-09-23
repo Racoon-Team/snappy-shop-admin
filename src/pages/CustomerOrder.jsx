@@ -1,38 +1,28 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import {
-  Table,
-  TableHeader,
-  TableCell,
-  TableFooter,
-  TableContainer,
-  Pagination,
-} from "@windmill/react-ui";
-import { useTranslation } from "react-i18next";
-import { IoBagHandle } from "react-icons/io5";
+import React from 'react'
+import { useParams } from 'react-router-dom'
+import { Table, TableHeader, TableCell, TableFooter, TableContainer, Pagination } from '@windmill/react-ui'
+import { useTranslation } from 'react-i18next'
+import { IoBagHandle } from 'react-icons/io5'
 
 //internal import
-import useAsync from "@/hooks/useAsync";
-import OrderServices from "@/services/OrderServices";
-import useFilter from "@/hooks/useFilter";
-import PageTitle from "@/components/Typography/PageTitle";
-import Loading from "@/components/preloader/Loading";
-import CustomerOrderTable from "@/components/customer/CustomerOrderTable";
+import useAsync from '@/hooks/useAsync'
+import OrderServices from '@/services/OrderServices'
+import useFilter from '@/hooks/useFilter'
+import PageTitle from '@/components/Typography/PageTitle'
+import Loading from '@/components/preloader/Loading'
+import CustomerOrderTable from '@/components/customer/CustomerOrderTable'
 
 const CustomerOrder = () => {
-  const { id } = useParams();
-  const { t } = useTranslation();
+  const { id } = useParams()
+  const { t } = useTranslation()
 
-  const { data, loading, error } = useAsync(() =>
-    OrderServices.getOrderCustomer(id)
-  );
+  const { data, loading, error } = useAsync(() => OrderServices.getOrderCustomer(id))
 
-  const { handleChangePage, totalResults, resultsPerPage, dataTable } =
-    useFilter(data);
+  const { handleChangePage, totalResults, resultsPerPage, dataTable } = useFilter(data)
 
   return (
     <>
-      <PageTitle>{t("CustomerOrderList")}</PageTitle>
+      <PageTitle>{t('customerScreen.viewOrder.label')}</PageTitle>
 
       {loading && <Loading loading={loading} />}
       {!error && !loading && dataTable.length === 0 && (
@@ -41,9 +31,7 @@ const CustomerOrder = () => {
             <span className="flex justify-center my-30 text-red-500 font-semibold text-6xl">
               <IoBagHandle />
             </span>
-            <h2 className="font-medium text-base mt-4 text-gray-600">
-              {t("CustomerOrderEmpty")}
-            </h2>
+            <h2 className="font-medium text-base mt-4 text-gray-600">{t('CustomerOrderEmpty')}</h2>
           </div>
         </div>
       )}
@@ -53,19 +41,14 @@ const CustomerOrder = () => {
           <Table>
             <TableHeader>
               <tr>
-                <TableCell> {t("CustomerOrderId")} </TableCell>
-                <TableCell>{t("CustomerOrderTime")}</TableCell>
-                <TableCell>{t("CustomerShippingAddress")}</TableCell>
-                <TableCell>{t("Phone")} </TableCell>
-                <TableCell>{t("CustomerOrderMethod")} </TableCell>
-                <TableCell>{t("Amount")}</TableCell>
-                <TableCell className="text-center">
-                  {" "}
-                  {t("CustomerOrderStatus")}{" "}
-                </TableCell>
-                <TableCell className="text-center">
-                  {t("CustomerOrderAction")}
-                </TableCell>
+                <TableCell> {t('customerScreen.viewOrder.table.orderId')} </TableCell>
+                <TableCell>{t('customerScreen.viewOrder.table.time')}</TableCell>
+                <TableCell>{t('customerScreen.viewOrder.table.shippingAdress')}</TableCell>
+                <TableCell>{t('customerScreen.viewOrder.table.phone')} </TableCell>
+                <TableCell>{t('customerScreen.viewOrder.table.method')} </TableCell>
+                <TableCell>{t('customerScreen.viewOrder.table.amount')}</TableCell>
+                <TableCell className="text-center"> {t('customerScreen.viewOrder.table.status')} </TableCell>
+                <TableCell className="text-center">{t('customerScreen.viewOrder.table.action')}</TableCell>
               </tr>
             </TableHeader>
             <CustomerOrderTable orders={dataTable} />
@@ -81,7 +64,7 @@ const CustomerOrder = () => {
         </TableContainer>
       ) : null}
     </>
-  );
-};
+  )
+}
 
-export default CustomerOrder;
+export default CustomerOrder

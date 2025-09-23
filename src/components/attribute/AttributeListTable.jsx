@@ -1,11 +1,11 @@
-import { useTranslation } from "react-i18next";
-import { Avatar, TableBody, TableCell, TableRow } from "@windmill/react-ui";
+import { useTranslation } from 'react-i18next'
+import { Avatar, TableBody, TableCell, TableRow } from '@windmill/react-ui'
 
 //internal import
-import useUtilsFunction from "@/hooks/useUtilsFunction";
-import CombinationInput from "@/components/form/input/CombinationInput";
-import SkuBarcodeInput from "@/components/form/selectOption/SkuBarcodeInput";
-import EditDeleteButtonTwo from "@/components/table/EditDeleteButtonTwo";
+import useUtilsFunction from '@/hooks/useUtilsFunction'
+import CombinationInput from '@/components/form/input/CombinationInput'
+import SkuBarcodeInput from '@/components/form/selectOption/SkuBarcodeInput'
+import EditDeleteButtonTwo from '@/components/table/EditDeleteButtonTwo'
 
 const AttributeListTable = ({
   variants,
@@ -19,8 +19,8 @@ const AttributeListTable = ({
   handleQuantityPrice,
   handleSelectInlineImage,
 }) => {
-  const { t } = useTranslation();
-  const { showingTranslateValue } = useUtilsFunction();
+  const { t } = useTranslation()
+  const { showingTranslateValue } = useUtilsFunction()
 
   return (
     <>
@@ -36,11 +36,8 @@ const AttributeListTable = ({
                       src={variant.image}
                       alt="product"
                     />
-                    <p
-                      className="text-xs cursor-pointer"
-                      onClick={() => handleSelectInlineImage(i)}
-                    >
-                      {t("Change")}
+                    <p className="text-xs cursor-pointer" onClick={() => handleSelectInlineImage(i)}>
+                      {t('Change')}
                     </p>
                   </span>
                 ) : (
@@ -50,11 +47,8 @@ const AttributeListTable = ({
                       alt="product"
                       className="hidden p-1 mr-2 md:block bg-gray-50 shadow-none"
                     />
-                    <p
-                      className="text-xs cursor-pointer"
-                      onClick={() => handleSelectInlineImage(i)}
-                    >
-                      {t("Change")}
+                    <p className="text-xs cursor-pointer" onClick={() => handleSelectInlineImage(i)}>
+                      {t('Change')}
                     </p>
                   </span>
                 )}
@@ -67,29 +61,21 @@ const AttributeListTable = ({
                   <span>
                     {variantTitle
                       ?.map((att) => {
-                        const attributeData = att?.variants?.filter(
-                          (val) => val?.name !== "All"
-                        );
+                        const attributeData = att?.variants?.filter((val) => val?.name !== 'All')
 
-                        const attributeName = attributeData?.find(
-                          (v) => v._id === variant[att?._id]
-                        )?.name;
+                        const attributeName = attributeData?.find((v) => v._id === variant[att?._id])?.name
                         if (attributeName === undefined) {
-                          return attributeName?.en;
+                          return attributeName?.en
                         } else {
-                          return showingTranslateValue(attributeName);
+                          return showingTranslateValue(attributeName)
                         }
                       })
                       ?.filter(Boolean)
-                      .join(" ")}
+                      .join(' ')}
                   </span>
                 )}
 
-                {variant.productId && (
-                  <span className="text-xs productId text-gray-500">
-                    ({variant.productId})
-                  </span>
-                )}
+                {variant.productId && <span className="text-xs productId text-gray-500">({variant.productId})</span>}
               </div>
             </TableCell>
 
@@ -121,7 +107,7 @@ const AttributeListTable = ({
                 placeholder="Original Price"
                 variant={variant}
                 isBulkUpdate={isBulkUpdate}
-                value={variant.originalPrice || ""}
+                value={variant.originalPrice || ''}
                 handleQuantityPrice={handleQuantityPrice}
               />
             </TableCell>
@@ -133,7 +119,7 @@ const AttributeListTable = ({
                 placeholder="Sale price"
                 variant={variant}
                 isBulkUpdate={isBulkUpdate}
-                value={variant.price || ""}
+                value={variant.price || ''}
                 handleQuantityPrice={handleQuantityPrice}
               />
             </TableCell>
@@ -164,7 +150,7 @@ const AttributeListTable = ({
         ))}
       </TableBody>
     </>
-  );
-};
+  )
+}
 
-export default AttributeListTable;
+export default AttributeListTable

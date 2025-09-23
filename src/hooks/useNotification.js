@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 // import io from "socket.io-client";
 
 const useNotification = () => {
-  const dispatch = useDispatch();
-  const [socket, setSocket] = useState(null);
-  const [updated, setUpdated] = useState(false);
+  const dispatch = useDispatch()
+  const [socket, setSocket] = useState(null)
+  const [updated, setUpdated] = useState(false)
 
   // useEffect(() => {
   //   setSocket(io(import.meta.env.VITE_APP_API_SOCKET_URL));
@@ -40,7 +40,7 @@ const useNotification = () => {
     socket,
     updated,
     setUpdated,
-  };
-};
+  }
+}
 
-export default useNotification;
+export default useNotification

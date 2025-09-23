@@ -1,18 +1,11 @@
-import { Select } from "@windmill/react-ui";
+import { Select } from '@windmill/react-ui'
 
-const SelectReceiptSize = ({
-  setPosCustomer,
-  register,
-  name,
-  label,
-  pos,
-  required,
-}) => {
+const SelectReceiptSize = ({ setPosCustomer, register, name, label, pos, required }) => {
   return (
     <>
       <Select
         onChange={(e) => setPosCustomer(e.target.value)}
-        className={`${pos ? "h-10" : "h-12"}`}
+        className={`${pos ? 'h-10' : 'h-12'}`}
         name={name}
         {...register(`${name}`, {
           required: required ? `${label} is required!` : false,
@@ -30,7 +23,7 @@ const SelectReceiptSize = ({
         <option value="A4">A4</option>
       </Select>
     </>
-  );
-};
+  )
+}
 
-export default SelectReceiptSize;
+export default SelectReceiptSize

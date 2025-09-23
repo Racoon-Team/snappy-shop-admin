@@ -1,38 +1,32 @@
-import ReactTagInput from "@pathofdev/react-tag-input";
-import { Button, Input, Select } from "@windmill/react-ui";
-import Multiselect from "multiselect-react-dropdown";
-import Drawer from "rc-drawer";
-import Tree from "rc-tree";
-import React, { useContext } from "react";
-import { Scrollbars } from "react-custom-scrollbars-2";
-import { FiX } from "react-icons/fi";
+import ReactTagInput from '@pathofdev/react-tag-input'
+import { Button, Input, Select } from '@windmill/react-ui'
+import Multiselect from 'multiselect-react-dropdown'
+import Drawer from 'rc-drawer'
+import Tree from 'rc-tree'
+import React, { useContext } from 'react'
+import { Scrollbars } from 'react-custom-scrollbars-2'
+import { FiX } from 'react-icons/fi'
+import { useTranslation } from 'react-i18next'
 
 //internal import
 
-import Error from "@/components/form/others/Error";
-import { notifyError } from "@/utils/toast";
-import Title from "@/components/form/others/Title";
-import LabelArea from "@/components/form/selectOption/LabelArea";
-import SwitchToggle from "@/components/form/switch/SwitchToggle";
-import TextAreaCom from "@/components/form/input/TextAreaCom";
-import { SidebarContext } from "@/context/SidebarContext";
-import useBulkActionSubmit from "@/hooks/useBulkActionSubmit";
-import ParentCategory from "@/components/category/ParentCategory";
-import useUtilsFunction from "@/hooks/useUtilsFunction";
+import Error from '@/components/form/others/Error'
+import { notifyError } from '@/utils/toast'
+import Title from '@/components/form/others/Title'
+import LabelArea from '@/components/form/selectOption/LabelArea'
+import SwitchToggle from '@/components/form/switch/SwitchToggle'
+import TextAreaCom from '@/components/form/input/TextAreaCom'
+import { SidebarContext } from '@/context/SidebarContext'
+import useBulkActionSubmit from '@/hooks/useBulkActionSubmit'
+import ParentCategory from '@/components/category/ParentCategory'
+import useUtilsFunction from '@/hooks/useUtilsFunction'
 
-const BulkActionDrawer = ({
-  ids,
-  title,
-  lang,
-  data,
-  childId,
-  attributes,
-  isCheck,
-}) => {
-  const { toggleBulkDrawer, isBulkDrawerOpen, closeBulkDrawer } =
-    useContext(SidebarContext);
+const BulkActionDrawer = ({ type, ids, title, label, lang, data, childId, attributes, isCheck }) => {
+  const { t } = useTranslation()
 
-  const { showingTranslateValue } = useUtilsFunction();
+  const { toggleBulkDrawer, isBulkDrawerOpen, closeBulkDrawer } = useContext(SidebarContext)
+
+  const { showingTranslateValue } = useUtilsFunction()
 
   const {
     tag,
@@ -52,60 +46,54 @@ const BulkActionDrawer = ({
     setDefaultCategory,
     selectCategoryName,
     setSelectCategoryName,
-  } = useBulkActionSubmit(ids, lang, childId);
+  } = useBulkActionSubmit(ids, lang, childId)
 
   const motion = {
-    motionName: "node-motion",
+    motionName: 'node-motion',
     motionAppear: false,
     onAppearStart: (node) => {
-      return { height: 0 };
+      return { height: 0 }
     },
     onAppearActive: (node) => ({ height: node.scrollHeight }),
     onLeaveStart: (node) => ({ height: node.offsetHeight }),
     onLeaveActive: () => ({ height: 0 }),
-  };
+  }
 
   const renderCategories = (categories) => {
-    let myCategories = [];
+    let myCategories = []
     for (let category of categories) {
       myCategories.push({
         title: showingTranslateValue(category?.name),
         key: category._id,
-        children:
-          category.children.length > 0 && renderCategories(category.children),
-      });
+        children: category.children.length > 0 && renderCategories(category.children),
+      })
     }
 
-    return myCategories;
-  };
+    return myCategories
+  }
 
   const findObject = (obj, target) => {
-    return obj._id === target
-      ? obj
-      : obj?.children?.reduce(
-          (acc, obj) => acc ?? findObject(obj, target),
-          undefined
-        );
-  };
+    return obj._id === target ? obj : obj?.children?.reduce((acc, obj) => acc ?? findObject(obj, target), undefined)
+  }
 
   const handleSelect = (key) => {
-    const checkId = isCheck?.find((data) => data === key);
+    const checkId = isCheck?.find((data) => data === key)
 
     if (isCheck?.length === data[0]?.children?.length) {
-      return notifyError("This can't be select as a parent category!");
+      return notifyError("This can't be select as a parent category!")
     } else if (checkId !== undefined) {
-      return notifyError("This can't be select as a parent category!");
+      return notifyError("This can't be select as a parent category!")
     } else if (key === childId) {
-      return notifyError("This can't be select as a parent category!");
+      return notifyError("This can't be select as a parent category!")
     } else {
-      if (key === undefined) return;
-      setChecked(key);
+      if (key === undefined) return
+      setChecked(key)
 
-      const obj = data[0];
-      const result = findObject(obj, key);
-      setSelectCategoryName(showingTranslateValue(result?.name));
+      const obj = data[0]
+      const result = findObject(obj, key)
+      setSelectCategoryName(showingTranslateValue(result?.name))
     }
-  };
+  }
 
   const STYLE = `
   .rc-tree-child-tree {
@@ -115,17 +103,11 @@ const BulkActionDrawer = ({
     transition: all .3s;
     overflow-y: hidden;
   }
-`;
+`
 
   return (
     <>
-      <Drawer
-        open={isBulkDrawerOpen}
-        onClose={closeBulkDrawer}
-        parent={null}
-        level={null}
-        placement={"right"}
-      >
+      <Drawer open={isBulkDrawerOpen} onClose={closeBulkDrawer} parent={null} level={null} placement={'right'}>
         <button
           onClick={toggleBulkDrawer}
           className="absolute z-50 text-red-500 hover:bg-red-100 hover:text-gray-700 transition-colors duration-150 bg-white shadow-md mr-6 mt-6 right-0 left-auto w-10 h-10 rounded-full block text-center"
@@ -135,14 +117,14 @@ const BulkActionDrawer = ({
         <div className="flex flex-col w-full h-full justify-between">
           <div className="w-full relative p-6 border-b border-gray-100 bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">
             <Title
-              title={`Update Selected ${title}`}
-              description={`Apply changes to the selected ${title} from the list`}
+              title={t('common.bulkAction.titleUpdate', { label })}
+              description={t('common.bulkAction.descriptionUpdate', { label })}
             />
           </div>
           <Scrollbars className="w-full md:w-7/12 lg:w-8/12 xl:w-8/12 relative dark:bg-gray-700 dark:text-gray-200">
             <form onSubmit={handleSubmit(onSubmit)} className="block">
               <div className="px-6 pt-8 flex-grow w-full h-full max-h-full pb-40 md:pb-32 lg:pb-32 xl:pb-32">
-                {title === "Products" && (
+                {title === 'Products' && (
                   <>
                     <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                       <LabelArea label="Categorys" />
@@ -171,7 +153,7 @@ const BulkActionDrawer = ({
                           onSelect={(v) => setDefaultCategory(v)}
                           selectedValues={defaultCategory}
                           options={selectedCategory}
-                          placeholder={"Default Category"}
+                          placeholder={'Default Category'}
                         ></Multiselect>
                       </div>
                     </div>
@@ -179,10 +161,7 @@ const BulkActionDrawer = ({
                     <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                       <LabelArea label="Published" />
                       <div className="col-span-8 sm:col-span-4">
-                        <SwitchToggle
-                          handleProcess={setPublished}
-                          processOption={published}
-                        />
+                        <SwitchToggle handleProcess={setPublished} processOption={published} />
                         <Error errorName={errors.status} />
                       </div>
                     </div>
@@ -200,14 +179,14 @@ const BulkActionDrawer = ({
                   </>
                 )}
 
-                {title === "Coupons" && (
+                {type === 'Coupons' && (
                   <>
                     <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                      <LabelArea label="Start Time" />
+                      <LabelArea label={t('couponsScreen.couponDrawer.labelStart')} />
                       <div className="col-span-8 sm:col-span-4">
                         <Input
                           {...register(`startTime`, {
-                            required: "Coupon Validation Start Time",
+                            required: t('couponsScreen.couponDrawer.validationStart'),
                           })}
                           label="Coupon Validation Start Time"
                           name="startTime"
@@ -219,11 +198,11 @@ const BulkActionDrawer = ({
                       </div>
                     </div>
                     <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                      <LabelArea label="End Time" />
+                      <LabelArea label={t('couponsScreen.couponDrawer.labelEnd')} />
                       <div className="col-span-8 sm:col-span-4">
                         <Input
                           {...register(`endTime`, {
-                            required: "Coupon Validation End Time",
+                            required: t('couponsScreen.couponDrawer.validationEnd'),
                           })}
                           label="Coupon Validation End Time"
                           name="endTime"
@@ -235,49 +214,90 @@ const BulkActionDrawer = ({
                       </div>
                     </div>
                     <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                      <LabelArea label="Published" />
+                      <LabelArea label={t('couponsScreen.couponDrawer.labelPublished')} />
                       <div className="col-span-8 sm:col-span-4">
-                        <SwitchToggle
-                          handleProcess={setPublished}
-                          processOption={published}
-                        />
+                        <SwitchToggle handleProcess={setPublished} processOption={published} />
                         <Error errorName={errors.published} />
                       </div>
                     </div>
                   </>
                 )}
 
-                {title === "Languages" && (
+                {title === 'Languages' && (
                   <>
                     <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                       <LabelArea label="Published" />
                       <div className="col-span-8 sm:col-span-4">
-                        <SwitchToggle
-                          title={""}
-                          processOption={published}
-                          handleProcess={setPublished}
-                        />
+                        <SwitchToggle title={''} processOption={published} handleProcess={setPublished} />
                       </div>
                     </div>
                   </>
                 )}
 
-                {title === "Currencies" && (
+                {title === 'Currencies' && (
                   <>
                     <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                       <LabelArea label="Enabled" />
                       <div className="col-span-8 sm:col-span-4">
-                        <SwitchToggle
-                          title={""}
-                          processOption={published}
-                          handleProcess={setPublished}
-                        />
+                        <SwitchToggle title={''} processOption={published} handleProcess={setPublished} />
                       </div>
                     </div>
                   </>
                 )}
 
-                {title === "Categories" && (
+                {type === 'categories' && (
+                  <>
+                    <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
+                      <LabelArea label={t('categoriesScreen.categoryDrawer.labelDescription')} />
+                      <div className="col-span-8 sm:col-span-4">
+                        <TextAreaCom
+                          register={register}
+                          label="Description"
+                          name="description"
+                          type="text"
+                          placeholder={t('categoriesScreen.categoryDrawer.inputDescription')}
+                        />
+                        <Error errorName={errors.description} />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
+                      <LabelArea label={t('categoriesScreen.categoryDrawer.labelParentCategory')} />
+                      <div className="col-span-8 sm:col-span-4">
+                        <Input
+                          readOnly
+                          {...register(`parent`, {
+                            required: false,
+                          })}
+                          name="parent"
+                          value={selectCategoryName ? selectCategoryName : 'Home'}
+                          placeholder={t('categoriesScreen.categoryDrawer.labelParentCategory')}
+                          type="text"
+                        />
+
+                        <div className="draggable-demo capitalize">
+                          <style dangerouslySetInnerHTML={{ __html: STYLE }} />
+                          <Tree
+                            treeData={renderCategories(data)}
+                            selectedKeys={[checked]}
+                            onSelect={(v) => handleSelect(v[0])}
+                            motion={motion}
+                            animation="slide-up"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
+                      <LabelArea label={t('categoriesScreen.categoryDrawer.labelPublished')} />
+                      <div className="col-span-8 sm:col-span-4">
+                        <SwitchToggle title={''} processOption={published} handleProcess={setPublished} />
+                      </div>
+                    </div>
+                  </>
+                )}
+
+                {title === 'Child Categories' && (
                   <>
                     <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                       <LabelArea label="Description" />
@@ -302,9 +322,7 @@ const BulkActionDrawer = ({
                             required: false,
                           })}
                           name="parent"
-                          value={
-                            selectCategoryName ? selectCategoryName : "Home"
-                          }
+                          value={selectCategoryName ? selectCategoryName : 'Home'}
                           placeholder="parent category"
                           type="text"
                         />
@@ -325,90 +343,28 @@ const BulkActionDrawer = ({
                     <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                       <LabelArea label="Published" />
                       <div className="col-span-8 sm:col-span-4">
-                        <SwitchToggle
-                          title={""}
-                          processOption={published}
-                          handleProcess={setPublished}
-                        />
+                        <SwitchToggle title={''} processOption={published} handleProcess={setPublished} />
                       </div>
                     </div>
                   </>
                 )}
 
-                {title === "Child Categories" && (
+                {title === 'Attributes' && (
                   <>
                     <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                      <LabelArea label="Description" />
-                      <div className="col-span-8 sm:col-span-4">
-                        <TextAreaCom
-                          register={register}
-                          label="Description"
-                          name="description"
-                          type="text"
-                          placeholder="Category Description"
-                        />
-                        <Error errorName={errors.description} />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                      <LabelArea label="Parent Category" />
-                      <div className="col-span-8 sm:col-span-4">
-                        <Input
-                          readOnly
-                          {...register(`parent`, {
-                            required: false,
-                          })}
-                          name="parent"
-                          value={
-                            selectCategoryName ? selectCategoryName : "Home"
-                          }
-                          placeholder="parent category"
-                          type="text"
-                        />
-
-                        <div className="draggable-demo capitalize">
-                          <style dangerouslySetInnerHTML={{ __html: STYLE }} />
-                          <Tree
-                            treeData={renderCategories(data)}
-                            selectedKeys={[checked]}
-                            onSelect={(v) => handleSelect(v[0])}
-                            motion={motion}
-                            animation="slide-up"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                      <LabelArea label="Published" />
-                      <div className="col-span-8 sm:col-span-4">
-                        <SwitchToggle
-                          title={""}
-                          processOption={published}
-                          handleProcess={setPublished}
-                        />
-                      </div>
-                    </div>
-                  </>
-                )}
-
-                {title === "Attributes" && (
-                  <>
-                    <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                      <LabelArea label="Options" />
+                      <LabelArea label={t('attributesScreen.drawer.options')} />
                       <div className="col-span-8 sm:col-span-4">
                         <Select
                           name="option"
                           {...register(`option`, {
-                            required: `Option is required!`,
+                            required: t('attributesScreen.drawer.required'),
                           })}
                         >
                           <option value="" defaultValue hidden>
-                            Select type
+                            {t('attributesScreen.drawer.select')}
                           </option>
-                          <option value="Dropdown">Dropdown</option>
-                          <option value="Radio">Radio</option>
+                          <option value="Dropdown">{t('attributesScreen.drawer.dropDown')}</option>
+                          <option value="Radio">{t('attributesScreen.drawer.radio')}</option>
                           {/* <option value="Checkbox">Checkbox</option> */}
                         </Select>
                         <Error errorName={errors.option} />
@@ -416,22 +372,18 @@ const BulkActionDrawer = ({
                     </div>
 
                     <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                      <LabelArea label="Published" />
+                      <LabelArea label={t('common.published')} />
                       <div className="col-span-8 sm:col-span-4">
-                        <SwitchToggle
-                          title={""}
-                          processOption={published}
-                          handleProcess={setPublished}
-                        />
+                        <SwitchToggle title={''} processOption={published} handleProcess={setPublished} />
                       </div>
                     </div>
                   </>
                 )}
 
-                {title === "Attribute Value(s)" && (
+                {title === 'Attribute Value(s)' && (
                   <>
                     <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                      <LabelArea label="Change Attribute Group" />
+                      <LabelArea label={t('attributesScreen.drawer.changeGroupLbl')} />
                       <div className="col-span-8 sm:col-span-4">
                         <Select
                           name="groupName"
@@ -440,7 +392,7 @@ const BulkActionDrawer = ({
                           })}
                         >
                           <option value="" defaultValue hidden>
-                            Select Attribute Group
+                            {t('attributesScreen.drawer.selectGroup')}
                           </option>
 
                           {attributes?.map((value, index) => (
@@ -455,13 +407,9 @@ const BulkActionDrawer = ({
                     </div>
 
                     <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                      <LabelArea label="Published" />
+                      <LabelArea label={t('common.published')} />
                       <div className="col-span-8 sm:col-span-4">
-                        <SwitchToggle
-                          title={""}
-                          processOption={published}
-                          handleProcess={setPublished}
-                        />
+                        <SwitchToggle title={''} processOption={published} handleProcess={setPublished} />
                       </div>
                     </div>
                   </>
@@ -475,13 +423,13 @@ const BulkActionDrawer = ({
                     className=" text-red-500 hover:bg-red-50 hover:border-red-100 hover:text-red-600 dark:bg-gray-700 dark:border-gray-700 dark:text-gray-500 dark:hover:bg-gray-800 dark:hover:text-red-700"
                     layout="outline"
                   >
-                    Cancel
+                    {t('common.cancelBtn')}
                   </Button>
                 </div>
                 <div className="flex-grow-0 md:flex-grow lg:flex-grow xl:flex-grow">
                   <Button type="submit" className="h-12 w-full">
-                    {" "}
-                    Bulk Update {title}
+                    {' '}
+                    {t('common.updateBtn')} {label}
                   </Button>
                 </div>
               </div>
@@ -490,7 +438,7 @@ const BulkActionDrawer = ({
         </div>
       </Drawer>
     </>
-  );
-};
+  )
+}
 
-export default BulkActionDrawer;
+export default BulkActionDrawer

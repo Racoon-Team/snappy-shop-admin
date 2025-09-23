@@ -1,28 +1,28 @@
-import { TableBody, TableCell, TableRow } from "@windmill/react-ui";
-import React from "react";
+import { TableBody, TableCell, TableRow } from '@windmill/react-ui'
+import React from 'react'
 
 //internal import
-import CheckBox from "@/components/form/others/CheckBox";
-import useToggleDrawer from "@/hooks/useToggleDrawer";
-import DeleteModal from "@/components/modal/DeleteModal";
-import MainDrawer from "@/components/drawer/MainDrawer";
-import CurrencyDrawer from "@/components/drawer/CurrencyDrawer";
-import EditDeleteButton from "@/components/table/EditDeleteButton";
-import ShowHideButton from "@/components/table/ShowHideButton";
+import CheckBox from '@/components/form/others/CheckBox'
+import useToggleDrawer from '@/hooks/useToggleDrawer'
+import DeleteModal from '@/components/modal/DeleteModal'
+import MainDrawer from '@/components/drawer/MainDrawer'
+import CurrencyDrawer from '@/components/drawer/CurrencyDrawer'
+import EditDeleteButton from '@/components/table/EditDeleteButton'
+import ShowHideButton from '@/components/table/ShowHideButton'
 // import { SidebarContext } from '../context/SidebarContext';
 
 const CurrencyTable = ({ currency, isCheck, setIsCheck }) => {
-  const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer();
+  const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer()
   // console.log('currency',currency)
 
   const handleClick = (e) => {
-    const { id, checked } = e.target;
+    const { id, checked } = e.target
 
-    setIsCheck([...isCheck, id]);
+    setIsCheck([...isCheck, id])
     if (!checked) {
-      setIsCheck(isCheck.filter((item) => item !== id));
+      setIsCheck(isCheck.filter((item) => item !== id))
     }
-  };
+  }
 
   return (
     <>
@@ -58,11 +58,7 @@ const CurrencyTable = ({ currency, isCheck, setIsCheck }) => {
             </TableCell>
 
             <TableCell className="text-center">
-              <ShowHideButton
-                id={currency._id}
-                status={currency.status}
-                currencyStatusName="status"
-              />
+              <ShowHideButton id={currency._id} status={currency.status} currencyStatusName="status" />
             </TableCell>
 
             <TableCell>
@@ -77,7 +73,7 @@ const CurrencyTable = ({ currency, isCheck, setIsCheck }) => {
         ))}
       </TableBody>
     </>
-  );
-};
+  )
+}
 
-export default CurrencyTable;
+export default CurrencyTable

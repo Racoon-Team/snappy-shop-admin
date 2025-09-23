@@ -736,8 +736,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.214Z',
     description:
       'Most fresh vegetables are low in calories and have a water content in excess of 70 percent, with only about 3.5 percent protein and less than 1 percent fat. ... The root vegetables include beets, carrots, radishes, sweet potatoes, and turnips. Stem vegetables include asparagus and kohlrabi.',
-    image:
-      'https://i.postimg.cc/pXBTkCMj/Lacinato-Dinosaur-Kale-Box-per-lb.jpg',
+    image: 'https://i.postimg.cc/pXBTkCMj/Lacinato-Dinosaur-Kale-Box-per-lb.jpg',
     originalPrice: 13,
     parent: 'Fruits & Vegetable',
     quantity: 6,
@@ -1045,8 +1044,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.213Z',
     description:
       'Dried fruit is fruit from which the majority of the original water content has been removed either naturally, through sun drying, or through the use of specialized dryers or dehydrators. ... Nearly half of the dried fruits sold are raisins, followed by dates, prunes, figs, apricots, peaches, apples, and pears.',
-    image:
-      'https://i.postimg.cc/jjM3hGZ1/Golden-Garden-Blueberry-Plum-220g.jpg',
+    image: 'https://i.postimg.cc/jjM3hGZ1/Golden-Garden-Blueberry-Plum-220g.jpg',
     originalPrice: 13,
     parent: 'Fruits & Vegetable',
     quantity: 110,
@@ -1112,8 +1110,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.213Z',
     description:
       'Dried fruit is fruit from which the majority of the original water content has been removed either naturally, through sun drying, or through the use of specialized dryers or dehydrators. ... Nearly half of the dried fruits sold are raisins, followed by dates, prunes, figs, apricots, peaches, apples, and pears.',
-    image:
-      'https://i.postimg.cc/CxHQRZDS/Dates-Iranian-Maryam-Loose-Kg-1-Kg.jpg',
+    image: 'https://i.postimg.cc/CxHQRZDS/Dates-Iranian-Maryam-Loose-Kg-1-Kg.jpg',
     originalPrice: 15,
     parent: 'Fruits & Vegetable',
     quantity: 100,
@@ -1157,8 +1154,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.213Z',
     description:
       'Organic food is food produced by methods complying with the standards of organic farming. Standards vary worldwide, but organic farming features practices that cycle resources, promote ecological balance, and conserve biodiversity.',
-    image:
-      'https://i.postimg.cc/yNpW3y8J/komola-orange-imported-50-gm-1-kg.webp',
+    image: 'https://i.postimg.cc/yNpW3y8J/komola-orange-imported-50-gm-1-kg.webp',
     originalPrice: 10,
     parent: 'Organic Food',
     quantity: 70,
@@ -1224,8 +1220,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.213Z',
     description:
       'Organic food is food produced by methods complying with the standards of organic farming. Standards vary worldwide, but organic farming features practices that cycle resources, promote ecological balance, and conserve biodiversity.',
-    image:
-      'https://i.postimg.cc/2jbLvMvC/ahmed-sugar-free-orange-jelly-375-gm.webp',
+    image: 'https://i.postimg.cc/2jbLvMvC/ahmed-sugar-free-orange-jelly-375-gm.webp',
     originalPrice: 12,
     parent: 'Organic Food',
     quantity: 70,
@@ -1291,8 +1286,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.212Z',
     description:
       'Organic food is food produced by methods complying with the standards of organic farming. Standards vary worldwide, but organic farming features practices that cycle resources, promote ecological balance, and conserve biodiversity.',
-    image:
-      'https://i.postimg.cc/hhRB7fmQ/ahmed-sugar-free-guava-jelly-375-gm.webp',
+    image: 'https://i.postimg.cc/hhRB7fmQ/ahmed-sugar-free-guava-jelly-375-gm.webp',
     originalPrice: 11,
     parent: 'Organic Food',
     quantity: 70,
@@ -1336,8 +1330,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.212Z',
     description:
       'A fish is an animal which lives and breathes in water. All fish are vertebrates (have a backbone) and most breathe through gills and have fins and scales. ... There are three classes of fish: jawless, cartilaginous, and bony. All fish have a backbone.',
-    image:
-      'https://i.postimg.cc/5tqG80Rq/Fresh-Whole-Canada-Salmon-25-5-oz.jpg',
+    image: 'https://i.postimg.cc/5tqG80Rq/Fresh-Whole-Canada-Salmon-25-5-oz.jpg',
     originalPrice: 12,
     parent: 'Fish & Meat',
     quantity: 99,
@@ -1359,8 +1352,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.211Z',
     description:
       'A fish is an animal which lives and breathes in water. All fish are vertebrates (have a backbone) and most breathe through gills and have fins and scales. ... There are three classes of fish: jawless, cartilaginous, and bony. All fish have a backbone.',
-    image:
-      'https://i.postimg.cc/bvjWGb3w/Fresh-Whole-Atlantic-Salmon-Steaks-1lb.jpg',
+    image: 'https://i.postimg.cc/bvjWGb3w/Fresh-Whole-Atlantic-Salmon-Steaks-1lb.jpg',
     originalPrice: 15,
     parent: 'Fish & Meat',
     quantity: 6,
@@ -1382,8 +1374,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.211Z',
     description:
       'A fish is an animal which lives and breathes in water. All fish are vertebrates (have a backbone) and most breathe through gills and have fins and scales. ... There are three classes of fish: jawless, cartilaginous, and bony. All fish have a backbone.',
-    image:
-      'https://i.postimg.cc/G3QLb33D/Black-Pearls-Salmon-Filet-Portion-6-oz.jpg',
+    image: 'https://i.postimg.cc/G3QLb33D/Black-Pearls-Salmon-Filet-Portion-6-oz.jpg',
     originalPrice: 12,
     parent: 'Fish & Meat',
     quantity: 40,
@@ -1427,8 +1418,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.211Z',
     description:
       'A fish is an animal which lives and breathes in water. All fish are vertebrates (have a backbone) and most breathe through gills and have fins and scales. ... There are three classes of fish: jawless, cartilaginous, and bony. All fish have a backbone.',
-    image:
-      'https://i.postimg.cc/RhVzWfCH/Cooked-Peeled-Deveined-Shrimp-2lb.jpg',
+    image: 'https://i.postimg.cc/RhVzWfCH/Cooked-Peeled-Deveined-Shrimp-2lb.jpg',
     originalPrice: 12,
     parent: 'Fish & Meat',
     quantity: 70,
@@ -1472,8 +1462,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.211Z',
     description:
       'Beef, flesh of mature cattle, as distinguished from veal, the flesh of calves. The best beef is obtained from early maturing, special beef breeds. High-quality beef has firm, velvety, fine-grained lean, bright red in colour and well-marbled. The fat is smooth, creamy white, and well distributed.',
-    image:
-      'https://i.postimg.cc/Px68pWzG/Niman-Ranch-Angus-Beef-Stew-Meat-per-lb.jpg',
+    image: 'https://i.postimg.cc/Px68pWzG/Niman-Ranch-Angus-Beef-Stew-Meat-per-lb.jpg',
     originalPrice: 18,
     parent: 'Fish & Meat',
     quantity: 60,
@@ -1583,8 +1572,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.211Z',
     description:
       'Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species. ... Coffee is darkly colored, bitter, slightly acidic and has a stimulating effect in humans, primarily due to its caffeine content.',
-    image:
-      'https://i.postimg.cc/DwWJ8cTk/Marley-Coffee-Coffee-Whole-Beans-Medium-Dark-Espresso-8-oz.jpg',
+    image: 'https://i.postimg.cc/DwWJ8cTk/Marley-Coffee-Coffee-Whole-Beans-Medium-Dark-Espresso-8-oz.jpg',
     originalPrice: 6,
     parent: 'Drinks',
     quantity: 100,
@@ -1606,8 +1594,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.211Z',
     description:
       'Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species. ... Coffee is darkly colored, bitter, slightly acidic and has a stimulating effect in humans, primarily due to its caffeine content.',
-    image:
-      'https://i.postimg.cc/T29WSw9S/Cafe-Escapes-Caf-Caramel-K-Cup-Pods-Coffe-0-5-oz.jpg',
+    image: 'https://i.postimg.cc/T29WSw9S/Cafe-Escapes-Caf-Caramel-K-Cup-Pods-Coffe-0-5-oz.jpg',
     originalPrice: 9,
     parent: 'Drinks',
     quantity: 100,
@@ -1629,8 +1616,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.211Z',
     description:
       'Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species. ... Coffee is darkly colored, bitter, slightly acidic and has a stimulating effect in humans, primarily due to its caffeine content.',
-    image:
-      'https://i.postimg.cc/ZKsvbMXx/Caffe-Kimbo-Aroma-Espresso-8-8-oz.jpg',
+    image: 'https://i.postimg.cc/ZKsvbMXx/Caffe-Kimbo-Aroma-Espresso-8-8-oz.jpg',
     originalPrice: 7,
     parent: 'Drinks',
     quantity: 100,
@@ -1652,8 +1638,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.211Z',
     description:
       'Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species. ... Coffee is darkly colored, bitter, slightly acidic and has a stimulating effect in humans, primarily due to its caffeine content.',
-    image:
-      'https://i.postimg.cc/9fZDBF0L/Just-Coffee-Coop-Organic-Honduran-Honey-Processed-Coffee-12oz.jpg',
+    image: 'https://i.postimg.cc/9fZDBF0L/Just-Coffee-Coop-Organic-Honduran-Honey-Processed-Coffee-12oz.jpg',
     originalPrice: 8,
     parent: 'Drinks',
     quantity: 100,
@@ -1675,8 +1660,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.211Z',
     description:
       'Coffee is a brewed drink prepared from roasted coffee beans, the seeds of berries from certain Coffea species. ... Coffee is darkly colored, bitter, slightly acidic and has a stimulating effect in humans, primarily due to its caffeine content.',
-    image:
-      'https://i.postimg.cc/hPt7qBZG/Caffe-Perruci-Lungo-Dolce-Single-Serve-Coffee-Pack-10-ct.jpg',
+    image: 'https://i.postimg.cc/hPt7qBZG/Caffe-Perruci-Lungo-Dolce-Single-Serve-Coffee-Pack-10-ct.jpg',
     originalPrice: 10,
     parent: 'Drinks',
     quantity: 100,
@@ -1698,8 +1682,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.211Z',
     description:
       'Energy drink, any beverage that contains high levels of a stimulant ingredient, usually caffeine, as well as sugar and often supplements, such as vitamins or carnitine, and that is promoted as a product capable of enhancing mental alertness and physical performance.',
-    image:
-      'https://i.postimg.cc/7YZXtjg3/Positive-Energy-Energy-Drink-Organic-Coconut-Water-12-oz.jpg',
+    image: 'https://i.postimg.cc/7YZXtjg3/Positive-Energy-Energy-Drink-Organic-Coconut-Water-12-oz.jpg',
     originalPrice: 9,
     parent: 'Drinks',
     quantity: 100,
@@ -1743,8 +1726,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.210Z',
     description:
       'Energy drink, any beverage that contains high levels of a stimulant ingredient, usually caffeine, as well as sugar and often supplements, such as vitamins or carnitine, and that is promoted as a product capable of enhancing mental alertness and physical performance.',
-    image:
-      'https://i.postimg.cc/RCRXRvnC/Monster-Energy-Rehab-Orangeade-15-5-fl-oz.jpg',
+    image: 'https://i.postimg.cc/RCRXRvnC/Monster-Energy-Rehab-Orangeade-15-5-fl-oz.jpg',
     originalPrice: 7,
     parent: 'Drinks',
     quantity: 100,
@@ -1766,8 +1748,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.210Z',
     description:
       'Energy drink, any beverage that contains high levels of a stimulant ingredient, usually caffeine, as well as sugar and often supplements, such as vitamins or carnitine, and that is promoted as a product capable of enhancing mental alertness and physical performance.',
-    image:
-      'https://i.postimg.cc/rprfCW57/BING-Beverage-Made-with-Blackberry-Juice-12-fl-oz.jpg',
+    image: 'https://i.postimg.cc/rprfCW57/BING-Beverage-Made-with-Blackberry-Juice-12-fl-oz.jpg',
     originalPrice: 13,
     parent: 'Drinks',
     quantity: 100,
@@ -1811,8 +1792,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.210Z',
     description:
       'Juice is a drink made from the extraction or pressing of the natural liquid contained in fruit and vegetables. It can also refer to liquids that are flavored with concentrate or other biological food sources, such as meat or seafood, such as clam juice.',
-    image:
-      'https://i.postimg.cc/J4R7f5nc/Robinsons-Pink-Lemonade-Juice-Drink-10-fl-oz.jpg',
+    image: 'https://i.postimg.cc/J4R7f5nc/Robinsons-Pink-Lemonade-Juice-Drink-10-fl-oz.jpg',
     originalPrice: 11,
     parent: 'Drinks',
     quantity: 100,
@@ -1834,8 +1814,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.210Z',
     description:
       'Juice is a drink made from the extraction or pressing of the natural liquid contained in fruit and vegetables. It can also refer to liquids that are flavored with concentrate or other biological food sources, such as meat or seafood, such as clam juice.',
-    image:
-      'https://i.postimg.cc/yYn6s33q/Nature-s-Nectar-Strawberry-Lime-Agua-Fresca-33-floz.jpg',
+    image: 'https://i.postimg.cc/yYn6s33q/Nature-s-Nectar-Strawberry-Lime-Agua-Fresca-33-floz.jpg',
     originalPrice: 9,
     parent: 'Drinks',
     quantity: 100,
@@ -1857,8 +1836,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.210Z',
     description:
       'Juice is a drink made from the extraction or pressing of the natural liquid contained in fruit and vegetables. It can also refer to liquids that are flavored with concentrate or other biological food sources, such as meat or seafood, such as clam juice.',
-    image:
-      'https://i.postimg.cc/gcVktTY2/Musselman-s-Sparkling-Cider-750ml.jpg',
+    image: 'https://i.postimg.cc/gcVktTY2/Musselman-s-Sparkling-Cider-750ml.jpg',
     originalPrice: 10,
     parent: 'Drinks',
     quantity: 100,
@@ -1902,8 +1880,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.210Z',
     description:
       'Juice is a drink made from the extraction or pressing of the natural liquid contained in fruit and vegetables. It can also refer to liquids that are flavored with concentrate or other biological food sources, such as meat or seafood, such as clam juice.',
-    image:
-      'https://i.postimg.cc/wB1jWxBC/Evolution-Fresh-Orange-Cold-Pressed-Orange-Juice-325-mol.jpg',
+    image: 'https://i.postimg.cc/wB1jWxBC/Evolution-Fresh-Orange-Cold-Pressed-Orange-Juice-325-mol.jpg',
     originalPrice: 10,
     parent: 'Drinks',
     quantity: 100,
@@ -1947,8 +1924,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.210Z',
     description:
       'Tea is an aromatic beverage prepared by pouring hot or boiling water over cured or fresh leaves of Camellia sinensis, an evergreen shrub native to China and East Asia. After water, it is the most widely consumed drink in the world. ... Tea has a stimulating effect in humans primarily due to its caffeine content.',
-    image:
-      'https://i.postimg.cc/13JnVvWJ/Urban-Frgr-Organic-Calming-Herbal-Tea-15-ct.jpg',
+    image: 'https://i.postimg.cc/13JnVvWJ/Urban-Frgr-Organic-Calming-Herbal-Tea-15-ct.jpg',
     originalPrice: 5,
     parent: 'Drinks',
     quantity: 100,
@@ -1970,8 +1946,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.210Z',
     description:
       'Tea is an aromatic beverage prepared by pouring hot or boiling water over cured or fresh leaves of Camellia sinensis, an evergreen shrub native to China and East Asia. After water, it is the most widely consumed drink in the world. ... Tea has a stimulating effect in humans primarily due to its caffeine content.',
-    image:
-      'https://i.postimg.cc/bwzSv7RZ/Now-Slimming-Slender-Chai-Tea-24-ct.jpg',
+    image: 'https://i.postimg.cc/bwzSv7RZ/Now-Slimming-Slender-Chai-Tea-24-ct.jpg',
     originalPrice: 7,
     parent: 'Drinks',
     quantity: 100,
@@ -1993,8 +1968,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.210Z',
     description:
       'Tea is an aromatic beverage prepared by pouring hot or boiling water over cured or fresh leaves of Camellia sinensis, an evergreen shrub native to China and East Asia. After water, it is the most widely consumed drink in the world. ... Tea has a stimulating effect in humans primarily due to its caffeine content.',
-    image:
-      'https://i.postimg.cc/KYW1JRhT/Mt-Rose-Herb-Nepalese-Black-Tea-per-lb.jpg',
+    image: 'https://i.postimg.cc/KYW1JRhT/Mt-Rose-Herb-Nepalese-Black-Tea-per-lb.jpg',
     originalPrice: 7,
     parent: 'Drinks',
     quantity: 100,
@@ -2016,8 +1990,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.209Z',
     description:
       'Tea is an aromatic beverage prepared by pouring hot or boiling water over cured or fresh leaves of Camellia sinensis, an evergreen shrub native to China and East Asia. After water, it is the most widely consumed drink in the world. ... Tea has a stimulating effect in humans primarily due to its caffeine content.',
-    image:
-      'https://i.postimg.cc/kXPt066F/Maharishi-Ayurveda-Organic-Pitta-Tea-16-ct.jpg',
+    image: 'https://i.postimg.cc/kXPt066F/Maharishi-Ayurveda-Organic-Pitta-Tea-16-ct.jpg',
     originalPrice: 8,
     parent: 'Drinks',
     quantity: 100,
@@ -2061,8 +2034,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.209Z',
     description:
       'water, a substance composed of the chemical elements hydrogen and oxygen and existing in gaseous, liquid, and solid states. It is one of the most plentiful and essential of compounds. A tasteless and odourless liquid at room temperature, it has the important ability to dissolve many other substances.',
-    image:
-      'https://i.postimg.cc/VN7zFTMH/Deer-Park-Sport-Bottle-with-Flip-Cap-Natural-Spring-Water-700ml.jpg',
+    image: 'https://i.postimg.cc/VN7zFTMH/Deer-Park-Sport-Bottle-with-Flip-Cap-Natural-Spring-Water-700ml.jpg',
     originalPrice: 7,
     parent: 'Drinks',
     quantity: 100,
@@ -2084,8 +2056,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.209Z',
     description:
       'water, a substance composed of the chemical elements hydrogen and oxygen and existing in gaseous, liquid, and solid states. It is one of the most plentiful and essential of compounds. A tasteless and odourless liquid at room temperature, it has the important ability to dissolve many other substances.',
-    image:
-      'https://i.postimg.cc/nrmZphW6/Food-Club-Original-Seltzer-Water-33.jpg',
+    image: 'https://i.postimg.cc/nrmZphW6/Food-Club-Original-Seltzer-Water-33.jpg',
     originalPrice: 8,
     parent: 'Drinks',
     quantity: 10,
@@ -2107,8 +2078,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.209Z',
     description:
       'water, a substance composed of the chemical elements hydrogen and oxygen and existing in gaseous, liquid, and solid states. It is one of the most plentiful and essential of compounds. A tasteless and odourless liquid at room temperature, it has the important ability to dissolve many other substances.',
-    image:
-      'https://i.postimg.cc/DyqFNmLG/Fresh-Thyme-High-Alkaline-Water-3-Lt.jpg',
+    image: 'https://i.postimg.cc/DyqFNmLG/Fresh-Thyme-High-Alkaline-Water-3-Lt.jpg',
     originalPrice: 6,
     parent: 'Drinks',
     quantity: 100,
@@ -2130,8 +2100,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.209Z',
     description:
       'water, a substance composed of the chemical elements hydrogen and oxygen and existing in gaseous, liquid, and solid states. It is one of the most plentiful and essential of compounds. A tasteless and odourless liquid at room temperature, it has the important ability to dissolve many other substances.',
-    image:
-      'https://i.postimg.cc/k4BqYcvM/Smeraldina-Water-Natural-Artesian-16-9ml.jpg',
+    image: 'https://i.postimg.cc/k4BqYcvM/Smeraldina-Water-Natural-Artesian-16-9ml.jpg',
     originalPrice: 5,
     parent: 'Drinks',
     quantity: 100,
@@ -2175,8 +2144,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.209Z',
     description:
       'A fish is an animal which lives and breathes in water. All fish are vertebrates (have a backbone) and most breathe through gills and have fins and scales. ... There are three classes of fish: jawless, cartilaginous, and bony. All fish have a backbone.',
-    image:
-      'https://i.postimg.cc/5tqG80Rq/Fresh-Whole-Canada-Salmon-25-5-oz.jpg',
+    image: 'https://i.postimg.cc/5tqG80Rq/Fresh-Whole-Canada-Salmon-25-5-oz.jpg',
     originalPrice: 12,
     parent: 'Fresh Seafood',
     quantity: 100,
@@ -2198,8 +2166,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.209Z',
     description:
       'A fish is an animal which lives and breathes in water. All fish are vertebrates (have a backbone) and most breathe through gills and have fins and scales. ... There are three classes of fish: jawless, cartilaginous, and bony. All fish have a backbone.',
-    image:
-      'https://i.postimg.cc/bvjWGb3w/Fresh-Whole-Atlantic-Salmon-Steaks-1lb.jpg',
+    image: 'https://i.postimg.cc/bvjWGb3w/Fresh-Whole-Atlantic-Salmon-Steaks-1lb.jpg',
     originalPrice: 15,
     parent: 'Fresh Seafood',
     quantity: 6,
@@ -2221,8 +2188,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.209Z',
     description:
       'A fish is an animal which lives and breathes in water. All fish are vertebrates (have a backbone) and most breathe through gills and have fins and scales. ... There are three classes of fish: jawless, cartilaginous, and bony. All fish have a backbone.',
-    image:
-      'https://i.postimg.cc/G3QLb33D/Black-Pearls-Salmon-Filet-Portion-6-oz.jpg',
+    image: 'https://i.postimg.cc/G3QLb33D/Black-Pearls-Salmon-Filet-Portion-6-oz.jpg',
     originalPrice: 12,
     parent: 'Fresh Seafood',
     quantity: 40,
@@ -2266,8 +2232,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.209Z',
     description:
       'A fish is an animal which lives and breathes in water. All fish are vertebrates (have a backbone) and most breathe through gills and have fins and scales. ... There are three classes of fish: jawless, cartilaginous, and bony. All fish have a backbone.',
-    image:
-      'https://i.postimg.cc/RhVzWfCH/Cooked-Peeled-Deveined-Shrimp-2lb.jpg',
+    image: 'https://i.postimg.cc/RhVzWfCH/Cooked-Peeled-Deveined-Shrimp-2lb.jpg',
     originalPrice: 12,
     parent: 'Fresh Seafood',
     quantity: 70,
@@ -2839,8 +2804,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.207Z',
     description:
       'Cake is a form of sweet food made from flour, sugar, and other ingredients, that is usually baked. ... The most commonly used cake ingredients include flour, sugar, eggs, butter or oil or margarine, a liquid, and a leavening agent, such as baking soda or baking powder.',
-    image:
-      'https://i.ibb.co/6Ygfpmr/Dan-Cake-Chocolate-Muffin-25g-X-12-Pcs.jpg',
+    image: 'https://i.ibb.co/6Ygfpmr/Dan-Cake-Chocolate-Muffin-25g-X-12-Pcs.jpg',
     originalPrice: 10,
     parent: 'Biscuits & Cakes',
     quantity: 100,
@@ -2862,8 +2826,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.207Z',
     description:
       'Cake is a form of sweet food made from flour, sugar, and other ingredients, that is usually baked. ... The most commonly used cake ingredients include flour, sugar, eggs, butter or oil or margarine, a liquid, and a leavening agent, such as baking soda or baking powder.',
-    image:
-      'https://i.ibb.co/B47kJ3H/Dan-Cake-Chocolate-Layer-Cake-12-X30g-Box.jpg',
+    image: 'https://i.ibb.co/B47kJ3H/Dan-Cake-Chocolate-Layer-Cake-12-X30g-Box.jpg',
     originalPrice: 11,
     parent: 'Biscuits & Cakes',
     quantity: 100,
@@ -2907,8 +2870,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.207Z',
     description:
       'A biscuit is a flour-based baked food product. In most countries, particularly in the Commonwealth and Ireland, biscuits are typically hard, flat and unleavened. They are usually sweet and may be made with sugar, chocolate, icing, jam, ginger or cinnamon. They can also be savoury and similar to crackers.',
-    image:
-      'https://i.ibb.co/hW9Y78d/Danish-Florida-Orange-Biscuits-210-45g.jpg',
+    image: 'https://i.ibb.co/hW9Y78d/Danish-Florida-Orange-Biscuits-210-45g.jpg',
     originalPrice: 8,
     parent: 'Biscuits & Cakes',
     quantity: 100,
@@ -3084,8 +3046,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.206Z',
     description:
       'sauce, liquid or semiliquid mixture that is added to a food as it cooks or that is served with it. Sauces provide flavour, moisture, and a contrast in texture and colour. They may also serve as a medium in which food is contained, for example, the velouté sauce of creamed chicken.',
-    image:
-      'https://i.postimg.cc/5y3X0qhR/Calypso-Pure-Salad-Style-Mustard-200ml-Jar.jpg',
+    image: 'https://i.postimg.cc/5y3X0qhR/Calypso-Pure-Salad-Style-Mustard-200ml-Jar.jpg',
     originalPrice: 12,
     parent: 'Sauces & Pickles',
     quantity: 40,
@@ -3107,8 +3068,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.206Z',
     description:
       'The acetic acid in vinegar or the lactic acid produced by brine gives the pickle its salty, sour taste. ... Bread-and-butter pickles, for example, have a distinctly sweet taste because sugar and other sweeteners are added to the brine. Like tomatoes, cucumbers (and thus, pickles) are technically fruits.',
-    image:
-      'https://i.postimg.cc/FFc45V39/Heinz-Apple-Cider-Vinegar-473ml-US.jpg',
+    image: 'https://i.postimg.cc/FFc45V39/Heinz-Apple-Cider-Vinegar-473ml-US.jpg',
     originalPrice: 14,
     parent: 'Sauces & Pickles',
     quantity: 30,
@@ -3130,8 +3090,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.206Z',
     description:
       'The acetic acid in vinegar or the lactic acid produced by brine gives the pickle its salty, sour taste. ... Bread-and-butter pickles, for example, have a distinctly sweet taste because sugar and other sweeteners are added to the brine. Like tomatoes, cucumbers (and thus, pickles) are technically fruits.',
-    image:
-      'https://i.postimg.cc/pT5tdDSJ/Discovery-Apple-Cider-Vinegar-473ml.jpg',
+    image: 'https://i.postimg.cc/pT5tdDSJ/Discovery-Apple-Cider-Vinegar-473ml.jpg',
     originalPrice: 13,
     parent: 'Sauces & Pickles',
     quantity: 30,
@@ -3175,8 +3134,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.206Z',
     description:
       'The acetic acid in vinegar or the lactic acid produced by brine gives the pickle its salty, sour taste. ... Bread-and-butter pickles, for example, have a distinctly sweet taste because sugar and other sweeteners are added to the brine. Like tomatoes, cucumbers (and thus, pickles) are technically fruits.',
-    image:
-      'https://i.postimg.cc/SxV41Q8C/American-Garden-Apple-Cider-Vinegar-473g.jpg',
+    image: 'https://i.postimg.cc/SxV41Q8C/American-Garden-Apple-Cider-Vinegar-473g.jpg',
     originalPrice: 12,
     parent: 'Sauces & Pickles',
     quantity: 70,
@@ -3286,8 +3244,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.206Z',
     description:
       ' The definition of a breakfast food is a food that is eaten primarily for the first meal of the day commonly including: cereal, toast, eggs, pancakes, waffles, pastries, sausage or bacon. An example of a breakfast food is oatmeal. An example of a breakfast food is french toast with scrambled eggs.',
-    image:
-      'https://i.postimg.cc/02dS24hZ/Everyday-Essentials-Wholemeal-Bread.jpg',
+    image: 'https://i.postimg.cc/02dS24hZ/Everyday-Essentials-Wholemeal-Bread.jpg',
     originalPrice: 11,
     parent: 'Breakfast',
     quantity: 90,
@@ -3353,8 +3310,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.206Z',
     description:
       ' The definition of a breakfast food is a food that is eaten primarily for the first meal of the day commonly including: cereal, toast, eggs, pancakes, waffles, pastries, sausage or bacon. An example of a breakfast food is oatmeal. An example of a breakfast food is french toast with scrambled eggs.',
-    image:
-      'https://i.postimg.cc/d0KtkQdy/nestle-koko-krunch-breakfast-cereal-pouch-80-gm.webp',
+    image: 'https://i.postimg.cc/d0KtkQdy/nestle-koko-krunch-breakfast-cereal-pouch-80-gm.webp',
     originalPrice: 5,
     parent: 'Breakfast',
     quantity: 60,
@@ -3376,8 +3332,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.206Z',
     description:
       ' The definition of a breakfast food is a food that is eaten primarily for the first meal of the day commonly including: cereal, toast, eggs, pancakes, waffles, pastries, sausage or bacon. An example of a breakfast food is oatmeal. An example of a breakfast food is french toast with scrambled eggs.',
-    image:
-      'https://i.postimg.cc/ydLVbFGm/kelloggs-corn-flakes-real-honey-breakfast-cereal-300gm.webp',
+    image: 'https://i.postimg.cc/ydLVbFGm/kelloggs-corn-flakes-real-honey-breakfast-cereal-300gm.webp',
     originalPrice: 10,
     parent: 'Breakfast',
     quantity: 60,
@@ -3399,8 +3354,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.205Z',
     description:
       ' The definition of a breakfast food is a food that is eaten primarily for the first meal of the day commonly including: cereal, toast, eggs, pancakes, waffles, pastries, sausage or bacon. An example of a breakfast food is oatmeal. An example of a breakfast food is french toast with scrambled eggs.',
-    image:
-      'https://i.postimg.cc/ZnqqbfNs/kelloggs-chocos-fills-chocolate-breakfast-cereal-17gm.webp',
+    image: 'https://i.postimg.cc/ZnqqbfNs/kelloggs-chocos-fills-chocolate-breakfast-cereal-17gm.webp',
     originalPrice: 5,
     parent: 'Breakfast',
     quantity: 60,
@@ -3422,8 +3376,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.205Z',
     description:
       ' The definition of a breakfast food is a food that is eaten primarily for the first meal of the day commonly including: cereal, toast, eggs, pancakes, waffles, pastries, sausage or bacon. An example of a breakfast food is oatmeal. An example of a breakfast food is french toast with scrambled eggs.',
-    image:
-      'https://i.postimg.cc/pTWWC0sV/nestle-gold-corn-flakes-breakfast-cereal-box-275-gm.webp',
+    image: 'https://i.postimg.cc/pTWWC0sV/nestle-gold-corn-flakes-breakfast-cereal-box-275-gm.webp',
     originalPrice: 7,
     parent: 'Breakfast',
     quantity: 60,
@@ -3577,8 +3530,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.205Z',
     description:
       'a room, building, or establishment where milk is kept and butter or cheese is made. 2a : the department of farming or of a farm that is concerned with the production of milk, butter, and cheese. b : a farm devoted to such production.',
-    image:
-      'https://i.postimg.cc/XJJ1w1cL/Shurfine-Vanilla-Nonfat-Yogurt-6oz.jpg',
+    image: 'https://i.postimg.cc/XJJ1w1cL/Shurfine-Vanilla-Nonfat-Yogurt-6oz.jpg',
     originalPrice: 11,
     parent: 'Milk & Dairy',
     quantity: 100,
@@ -3600,8 +3552,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.205Z',
     description:
       'a room, building, or establishment where milk is kept and butter or cheese is made. 2a : the department of farming or of a farm that is concerned with the production of milk, butter, and cheese. b : a farm devoted to such production.',
-    image:
-      'https://i.postimg.cc/J4Bg6gwd/El-Mexicano-Em-Youstir-Peach-each.jpg',
+    image: 'https://i.postimg.cc/J4Bg6gwd/El-Mexicano-Em-Youstir-Peach-each.jpg',
     originalPrice: 9,
     parent: 'Milk & Dairy',
     quantity: 100,
@@ -3623,8 +3574,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.204Z',
     description:
       'a room, building, or establishment where milk is kept and butter or cheese is made. 2a : the department of farming or of a farm that is concerned with the production of milk, butter, and cheese. b : a farm devoted to such production.',
-    image:
-      'https://i.postimg.cc/8zRYD6zR/Cowgirl-Creamery-Mt-Tam-Triple-Creme-Cheese-per-lb.jpg',
+    image: 'https://i.postimg.cc/8zRYD6zR/Cowgirl-Creamery-Mt-Tam-Triple-Creme-Cheese-per-lb.jpg',
     originalPrice: 11,
     parent: 'Milk & Dairy',
     quantity: 10,
@@ -3646,8 +3596,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.204Z',
     description:
       'a room, building, or establishment where milk is kept and butter or cheese is made. 2a : the department of farming or of a farm that is concerned with the production of milk, butter, and cheese. b : a farm devoted to such production.',
-    image:
-      'https://i.postimg.cc/gc7QKp7Z/Balducci-AUSTRALIAN-CHEDDAR-per-lb.jpg',
+    image: 'https://i.postimg.cc/gc7QKp7Z/Balducci-AUSTRALIAN-CHEDDAR-per-lb.jpg',
     originalPrice: 10,
     parent: 'Milk & Dairy',
     quantity: 100,
@@ -3735,8 +3684,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.204Z',
     description:
       'Ice cream is a frozen dairy dessert obtained by freezing the ice cream mix with continuous agitation. It contains milk products, sweetening materials, stabilizers, colors, flavors, and egg products. Ice cream had its origins in Europe and was introduced later in the United States where it developed into an industry.',
-    image:
-      'https://i.postimg.cc/85QBCyXs/Igloo-Exotic-Swiss-Choccolate-Ice-Cream-100ml.jpg',
+    image: 'https://i.postimg.cc/85QBCyXs/Igloo-Exotic-Swiss-Choccolate-Ice-Cream-100ml.jpg',
     originalPrice: 11,
     parent: 'Milk & Dairy',
     quantity: 5,
@@ -3780,8 +3728,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.204Z',
     description:
       'a device used to disperse chemicals intended to mask or eliminate unpleasant odors The bathrooms should also have matching towels, soap and tissue dispensers, and a candle or plug-in air freshener with a pleasant scent.',
-    image:
-      'https://i.postimg.cc/7P0KvKrQ/Pure-Plant-Home-Lavender-Orange-Blossom-Candle-7oz.jpg',
+    image: 'https://i.postimg.cc/7P0KvKrQ/Pure-Plant-Home-Lavender-Orange-Blossom-Candle-7oz.jpg',
     originalPrice: 8,
     parent: 'Household Tools',
     quantity: 100,
@@ -3803,8 +3750,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.203Z',
     description:
       'a device used to disperse chemicals intended to mask or eliminate unpleasant odors The bathrooms should also have matching towels, soap and tissue dispensers, and a candle or plug-in air freshener with a pleasant scent.',
-    image:
-      'https://i.postimg.cc/dV4WHDcs/Glade-Clear-Springs-Sense-Spray-Motion-Sensor-Automatic-Spray-1ct.jpg',
+    image: 'https://i.postimg.cc/dV4WHDcs/Glade-Clear-Springs-Sense-Spray-Motion-Sensor-Automatic-Spray-1ct.jpg',
     originalPrice: 6,
     parent: 'Household Tools',
     quantity: 100,
@@ -3826,8 +3772,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.203Z',
     description:
       'a device used to disperse chemicals intended to mask or eliminate unpleasant odors The bathrooms should also have matching towels, soap and tissue dispensers, and a candle or plug-in air freshener with a pleasant scent.',
-    image:
-      'https://i.postimg.cc/brxgQwRj/Natures-Alchemy-Essential-Oil-100-Pure-Rosewood-0-5oz.jpg',
+    image: 'https://i.postimg.cc/brxgQwRj/Natures-Alchemy-Essential-Oil-100-Pure-Rosewood-0-5oz.jpg',
     originalPrice: 7,
     parent: 'Household Tools',
     quantity: 8,
@@ -3849,8 +3794,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.203Z',
     description:
       'a device used to disperse chemicals intended to mask or eliminate unpleasant odors The bathrooms should also have matching towels, soap and tissue dispensers, and a candle or plug-in air freshener with a pleasant scent.',
-    image:
-      'https://i.postimg.cc/pXQcjq0n/Glade-Be-At-Peace-Automatic-Spray-Refill-Air-Freshener-6-2oz.jpg',
+    image: 'https://i.postimg.cc/pXQcjq0n/Glade-Be-At-Peace-Automatic-Spray-Refill-Air-Freshener-6-2oz.jpg',
     originalPrice: 5,
     parent: 'Household Tools',
     quantity: 100,
@@ -3872,8 +3816,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.203Z',
     description:
       'a device used to disperse chemicals intended to mask or eliminate unpleasant odors The bathrooms should also have matching towels, soap and tissue dispensers, and a candle or plug-in air freshener with a pleasant scent.',
-    image:
-      'https://i.postimg.cc/Zqnw1ZJr/Glade-Oil-Refills-Scented-White-Tea-Lily-0-71oz.jpg',
+    image: 'https://i.postimg.cc/Zqnw1ZJr/Glade-Oil-Refills-Scented-White-Tea-Lily-0-71oz.jpg',
     originalPrice: 9,
     parent: 'Household Tools',
     quantity: 100,
@@ -3918,8 +3861,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.203Z',
     description:
       'A Cleaner, or Custodian, is responsible for keeping offices, homes, hotels or other public areas neat and organized. Their main duties include sweeping, mopping and vacuuming floors, dusting countertops, ceilings and furniture and sanitizing bathrooms, kitchens or other public areas.',
-    image:
-      'https://i.postimg.cc/ncG2W508/Good-Clean-Fresh-Scented-Disinfectant-Wipes-24ct.jpg',
+    image: 'https://i.postimg.cc/ncG2W508/Good-Clean-Fresh-Scented-Disinfectant-Wipes-24ct.jpg',
     originalPrice: 9,
     parent: 'Household Tools',
     quantity: 140,
@@ -3941,8 +3883,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.203Z',
     description:
       'A Cleaner, or Custodian, is responsible for keeping offices, homes, hotels or other public areas neat and organized. Their main duties include sweeping, mopping and vacuuming floors, dusting countertops, ceilings and furniture and sanitizing bathrooms, kitchens or other public areas.',
-    image:
-      'https://i.postimg.cc/cJ2BYN43/Everyday-Living-All-Purpose-Cleaner-with-Bleach-32-oz.jpg',
+    image: 'https://i.postimg.cc/cJ2BYN43/Everyday-Living-All-Purpose-Cleaner-with-Bleach-32-oz.jpg',
     originalPrice: 8,
     parent: 'Household Tools',
     quantity: 100,
@@ -3964,8 +3905,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.202Z',
     description:
       'A Cleaner, or Custodian, is responsible for keeping offices, homes, hotels or other public areas neat and organized. Their main duties include sweeping, mopping and vacuuming floors, dusting countertops, ceilings and furniture and sanitizing bathrooms, kitchens or other public areas.',
-    image:
-      'https://i.postimg.cc/kGxsqhCb/Artik-Mandarine-Obsession-All-Purpose-Cleaner-8fl-oz.jpg',
+    image: 'https://i.postimg.cc/kGxsqhCb/Artik-Mandarine-Obsession-All-Purpose-Cleaner-8fl-oz.jpg',
     originalPrice: 7,
     parent: 'Household Tools',
     quantity: 100,
@@ -4009,8 +3949,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.201Z',
     description:
       'A variety of accurate and specific tools and products created and designed in various colors, materials, mechanisms, shapes, sizes and styles to clean easily, effectively and efficiently. Cleaning tools are vital to clean especially when your form of employment involves cleaning.',
-    image:
-      'https://i.postimg.cc/JnXrRfRF/Continental-Complete-Window-Squeegee-12-in.jpg',
+    image: 'https://i.postimg.cc/JnXrRfRF/Continental-Complete-Window-Squeegee-12-in.jpg',
     originalPrice: 11,
     parent: 'Household Tools',
     quantity: 30,
@@ -4032,8 +3971,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.201Z',
     description:
       'A variety of accurate and specific tools and products created and designed in various colors, materials, mechanisms, shapes, sizes and styles to clean easily, effectively and efficiently. Cleaning tools are vital to clean especially when your form of employment involves cleaning.',
-    image:
-      'https://i.postimg.cc/XvpNzZm4/Char-Bron-Dual-SS-Scubbing-Pad-Brush-1ct.jpg',
+    image: 'https://i.postimg.cc/XvpNzZm4/Char-Bron-Dual-SS-Scubbing-Pad-Brush-1ct.jpg',
     originalPrice: 12,
     parent: 'Household Tools',
     quantity: 100,
@@ -4099,8 +4037,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.201Z',
     description:
       'A variety of accurate and specific tools and products created and designed in various colors, materials, mechanisms, shapes, sizes and styles to clean easily, effectively and efficiently. Cleaning tools are vital to clean especially when your form of employment involves cleaning.',
-    image:
-      'https://i.postimg.cc/mgd2j3dm/Casabella-Sponge-Brush-Loop-1-each.jpg',
+    image: 'https://i.postimg.cc/mgd2j3dm/Casabella-Sponge-Brush-Loop-1-each.jpg',
     originalPrice: 7,
     parent: 'Household Tools',
     quantity: 100,
@@ -4144,8 +4081,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.201Z',
     description:
       'A laundry service is a service in a hotel that washes and irons clothes for guests. Almost all hotels have a laundry service. If you hand in clothes one day you should get them back a day or two later. The laundry service will wash, dry, and iron your clothes.',
-    image:
-      'https://i.postimg.cc/Y0JyMPqd/Open-Nature-Chlorine-free-Bleach-64fl-oz.jpg',
+    image: 'https://i.postimg.cc/Y0JyMPqd/Open-Nature-Chlorine-free-Bleach-64fl-oz.jpg',
     originalPrice: 11,
     parent: 'Household Tools',
     quantity: 100,
@@ -4167,8 +4103,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.201Z',
     description:
       'A laundry service is a service in a hotel that washes and irons clothes for guests. Almost all hotels have a laundry service. If you hand in clothes one day you should get them back a day or two later. The laundry service will wash, dry, and iron your clothes.',
-    image:
-      'https://i.postimg.cc/mkc5x4Rc/Febreze-D-Bsl-Gain-Scent-Stain-Odor-Remover-32-fl-oz.jpg',
+    image: 'https://i.postimg.cc/mkc5x4Rc/Febreze-D-Bsl-Gain-Scent-Stain-Odor-Remover-32-fl-oz.jpg',
     originalPrice: 12,
     parent: 'Household Tools',
     quantity: 100,
@@ -4190,8 +4125,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.201Z',
     description:
       'A laundry service is a service in a hotel that washes and irons clothes for guests. Almost all hotels have a laundry service. If you hand in clothes one day you should get them back a day or two later. The laundry service will wash, dry, and iron your clothes.',
-    image:
-      'https://i.postimg.cc/gJtTBj9F/Febreze-Bedding-Refresher-Moonlit-Lavender-16-9oz.jpg',
+    image: 'https://i.postimg.cc/gJtTBj9F/Febreze-Bedding-Refresher-Moonlit-Lavender-16-9oz.jpg',
     originalPrice: 13,
     parent: 'Household Tools',
     quantity: 100,
@@ -4236,8 +4170,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.200Z',
     description:
       'Pest control is the regulation or management of a species defined as a pest, a member of the animal kingdom that impacts adversely on human activities. ... This can be achieved by monitoring the crop, only applying insecticides when necessary, and by growing varieties and crops which are resistant to pests.',
-    image:
-      'https://i.postimg.cc/28TV9LTX/Hot-Shot-Flying-Insect-Killer-Mist-Spray-14-oz.jpg',
+    image: 'https://i.postimg.cc/28TV9LTX/Hot-Shot-Flying-Insect-Killer-Mist-Spray-14-oz.jpg',
     originalPrice: 12,
     parent: 'Household Tools',
     quantity: 100,
@@ -4282,8 +4215,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.200Z',
     description:
       'Pest control is the regulation or management of a species defined as a pest, a member of the animal kingdom that impacts adversely on human activities. ... This can be achieved by monitoring the crop, only applying insecticides when necessary, and by growing varieties and crops which are resistant to pests.',
-    image:
-      'https://i.postimg.cc/HndkBTMg/d-Con-Trap-Rat-and-Mouse-Glue-Professional-Strength-2ct.jpg',
+    image: 'https://i.postimg.cc/HndkBTMg/d-Con-Trap-Rat-and-Mouse-Glue-Professional-Strength-2ct.jpg',
     originalPrice: 12,
     parent: 'Household Tools',
     quantity: 100,
@@ -4305,8 +4237,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.200Z',
     description:
       'Pest control is the regulation or management of a species defined as a pest, a member of the animal kingdom that impacts adversely on human activities. ... This can be achieved by monitoring the crop, only applying insecticides when necessary, and by growing varieties and crops which are resistant to pests.',
-    image:
-      'https://i.postimg.cc/bwBdpX7x/Black-Flag-Ant-Roach-Spider-Killer-Fragrance-Free-20-5-ox.jpg',
+    image: 'https://i.postimg.cc/bwBdpX7x/Black-Flag-Ant-Roach-Spider-Killer-Fragrance-Free-20-5-ox.jpg',
     originalPrice: 14,
     parent: 'Household Tools',
     quantity: 6,
@@ -4328,8 +4259,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.200Z',
     description:
       'Pest control is the regulation or management of a species defined as a pest, a member of the animal kingdom that impacts adversely on human activities. ... This can be achieved by monitoring the crop, only applying insecticides when necessary, and by growing varieties and crops which are resistant to pests.',
-    image:
-      'https://i.postimg.cc/PrdCMQbw/Bayer-Insect-Killer-All-Purpose-Continuous-Spray-15-75oz.jpg',
+    image: 'https://i.postimg.cc/PrdCMQbw/Bayer-Insect-Killer-All-Purpose-Continuous-Spray-15-75oz.jpg',
     originalPrice: 12,
     parent: 'Household Tools',
     quantity: 100,
@@ -4373,8 +4303,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.200Z',
     description:
       'Water filtering is a method used to filter out undesired chemical compounds, organic and inorganic materials, and biological contaminants from water. The purpose of water filtration is to provide clean drinking water.',
-    image:
-      'https://i.postimg.cc/x1nTQfpN/BRITA-Water-Filter-Dispenser-1-each.jpg',
+    image: 'https://i.postimg.cc/x1nTQfpN/BRITA-Water-Filter-Dispenser-1-each.jpg',
     originalPrice: 11,
     parent: 'Household Tools',
     quantity: 7,
@@ -4396,8 +4325,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.200Z',
     description:
       'Water filtering is a method used to filter out undesired chemical compounds, organic and inorganic materials, and biological contaminants from water. The purpose of water filtration is to provide clean drinking water.',
-    image:
-      'https://i.postimg.cc/0yn52ThW/BRITA-Soho-Pitcher-Filter-Water-Filtration-System-White-5-Cup-each.jpg',
+    image: 'https://i.postimg.cc/0yn52ThW/BRITA-Soho-Pitcher-Filter-Water-Filtration-System-White-5-Cup-each.jpg',
     originalPrice: 12,
     parent: 'Household Tools',
     quantity: 100,
@@ -4419,8 +4347,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.200Z',
     description:
       'Water filtering is a method used to filter out undesired chemical compounds, organic and inorganic materials, and biological contaminants from water. The purpose of water filtration is to provide clean drinking water.',
-    image:
-      'https://i.postimg.cc/28pSHF4w/BRITA-Replacement-Water-Filters-3each.jpg',
+    image: 'https://i.postimg.cc/28pSHF4w/BRITA-Replacement-Water-Filters-3each.jpg',
     originalPrice: 14,
     parent: 'Household Tools',
     quantity: 60,
@@ -4442,8 +4369,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.200Z',
     description:
       'Water filtering is a method used to filter out undesired chemical compounds, organic and inorganic materials, and biological contaminants from water. The purpose of water filtration is to provide clean drinking water.',
-    image:
-      'https://i.postimg.cc/9XwftNq0/BRITA-Bottle-Water-Filtration-System-Hard-Sided-1ct.jpg',
+    image: 'https://i.postimg.cc/9XwftNq0/BRITA-Bottle-Water-Filtration-System-Hard-Sided-1ct.jpg',
     originalPrice: 12,
     parent: 'Household Tools',
     quantity: 100,
@@ -4465,8 +4391,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.199Z',
     description:
       "Many species of birds make fun, engaging pets. If you're considering bird ownership, the care requirements include providing good housing, nutritious food, and keeping an eye on the bird's health. You'll also need to provide plenty of enrichment and interaction, to keep your pet bird happy and alert.",
-    image:
-      'https://i.postimg.cc/QMLLD0d4/Super-Bird-Creations-Making-Tracks-Bird-Toy-3-Length-each.jpg',
+    image: 'https://i.postimg.cc/QMLLD0d4/Super-Bird-Creations-Making-Tracks-Bird-Toy-3-Length-each.jpg',
     originalPrice: 12,
     parent: 'Pet Care',
     quantity: 150,
@@ -4488,8 +4413,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.199Z',
     description:
       "Many species of birds make fun, engaging pets. If you're considering bird ownership, the care requirements include providing good housing, nutritious food, and keeping an eye on the bird's health. You'll also need to provide plenty of enrichment and interaction, to keep your pet bird happy and alert.",
-    image:
-      'https://i.postimg.cc/0jyFn4VQ/Super-Bird-Creations-Foraging-Pouch-Bird-Toy-each.jpg',
+    image: 'https://i.postimg.cc/0jyFn4VQ/Super-Bird-Creations-Foraging-Pouch-Bird-Toy-each.jpg',
     originalPrice: 13,
     parent: 'Pet Care',
     quantity: 100,
@@ -4511,8 +4435,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.199Z',
     description:
       "Many species of birds make fun, engaging pets. If you're considering bird ownership, the care requirements include providing good housing, nutritious food, and keeping an eye on the bird's health. You'll also need to provide plenty of enrichment and interaction, to keep your pet bird happy and alert.",
-    image:
-      'https://i.postimg.cc/Gh5w7cw1/Ecotrition-Goofy-Links-For-Medium-To-Large-Birds-13-Length-each.jpg',
+    image: 'https://i.postimg.cc/Gh5w7cw1/Ecotrition-Goofy-Links-For-Medium-To-Large-Birds-13-Length-each.jpg',
     originalPrice: 12,
     parent: 'Pet Care',
     quantity: 7,
@@ -4534,8 +4457,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.199Z',
     description:
       "Many species of birds make fun, engaging pets. If you're considering bird ownership, the care requirements include providing good housing, nutritious food, and keeping an eye on the bird's health. You'll also need to provide plenty of enrichment and interaction, to keep your pet bird happy and alert.",
-    image:
-      'https://i.postimg.cc/Mpfkghqf/Paradise-Toys-6-x-16-Large-Cai-Knots-N-Blocks-1-6lb.jpg',
+    image: 'https://i.postimg.cc/Mpfkghqf/Paradise-Toys-6-x-16-Large-Cai-Knots-N-Blocks-1-6lb.jpg',
     originalPrice: 8,
     parent: 'Pet Care',
     quantity: 80,
@@ -4557,8 +4479,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.199Z',
     description:
       "Many species of birds make fun, engaging pets. If you're considering bird ownership, the care requirements include providing good housing, nutritious food, and keeping an eye on the bird's health. You'll also need to provide plenty of enrichment and interaction, to keep your pet bird happy and alert.",
-    image:
-      'https://i.postimg.cc/rp5Bwxd8/Kaytee-Forti-Diet-Pro-Health-Bird-Food-For-Parrots-8lb.jpg',
+    image: 'https://i.postimg.cc/rp5Bwxd8/Kaytee-Forti-Diet-Pro-Health-Bird-Food-For-Parrots-8lb.jpg',
     originalPrice: 7,
     parent: 'Pet Care',
     quantity: 100,
@@ -4580,8 +4501,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.199Z',
     description:
       'Provide plenty of human companionship. Provide regular, suitable meals with a constant supply of fresh water. Provide a clean and comfortable bed. Provide the cat with outdoor access or be prepared to empty and clean a litter tray on a daily basis.',
-    image:
-      'https://i.postimg.cc/Znm7sMj3/Pet-Qwerks-Incredibubbles-Catnip-Cat-Toy-each.jpg',
+    image: 'https://i.postimg.cc/Znm7sMj3/Pet-Qwerks-Incredibubbles-Catnip-Cat-Toy-each.jpg',
     originalPrice: 11,
     parent: 'Pet Care',
     quantity: 130,
@@ -4603,8 +4523,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.199Z',
     description:
       'Provide plenty of human companionship. Provide regular, suitable meals with a constant supply of fresh water. Provide a clean and comfortable bed. Provide the cat with outdoor access or be prepared to empty and clean a litter tray on a daily basis.',
-    image:
-      'https://i.postimg.cc/N0yzKT5y/Leaps-Bounds-Multipack-Ball-Cat-Toy-0-05lb.jpg',
+    image: 'https://i.postimg.cc/N0yzKT5y/Leaps-Bounds-Multipack-Ball-Cat-Toy-0-05lb.jpg',
     originalPrice: 13,
     parent: 'Pet Care',
     quantity: 100,
@@ -4626,8 +4545,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.199Z',
     description:
       'Provide plenty of human companionship. Provide regular, suitable meals with a constant supply of fresh water. Provide a clean and comfortable bed. Provide the cat with outdoor access or be prepared to empty and clean a litter tray on a daily basis.',
-    image:
-      'https://i.postimg.cc/zG2QDpXZ/Leaps-Bounds-Electronic-Shelf-Teaser-each.jpg',
+    image: 'https://i.postimg.cc/zG2QDpXZ/Leaps-Bounds-Electronic-Shelf-Teaser-each.jpg',
     originalPrice: 14,
     parent: 'Pet Care',
     quantity: 80,
@@ -4649,8 +4567,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.199Z',
     description:
       'Provide plenty of human companionship. Provide regular, suitable meals with a constant supply of fresh water. Provide a clean and comfortable bed. Provide the cat with outdoor access or be prepared to empty and clean a litter tray on a daily basis.',
-    image:
-      'https://i.postimg.cc/YCCVwT7z/IAMS-Proactive-Health-Oral-Care-Complete-Premium-Cat-Food-16-lb.jpg',
+    image: 'https://i.postimg.cc/YCCVwT7z/IAMS-Proactive-Health-Oral-Care-Complete-Premium-Cat-Food-16-lb.jpg',
     originalPrice: 12,
     parent: 'Pet Care',
     quantity: 100,
@@ -4695,8 +4612,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.199Z',
     description:
       "Dog Sitters supervise pets and take care of them in their owners' absence. Typical activities seen on a Dog Sitter example resume are grooming, providing food and water, taking dogs out for walk, taking dogs to vet appointments, administering medication, providing companionship, and following owner instructions.",
-    image:
-      'https://i.postimg.cc/QMTV04Fj/Hill-s-Science-Diet-Dog-Treat-Jerky-with-Real-Beef-Mini-Strips-7-2-oz.jpg',
+    image: 'https://i.postimg.cc/QMTV04Fj/Hill-s-Science-Diet-Dog-Treat-Jerky-with-Real-Beef-Mini-Strips-7-2-oz.jpg',
     originalPrice: 11,
     parent: 'Pet Care',
     quantity: 100,
@@ -4718,8 +4634,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.199Z',
     description:
       "Dog Sitters supervise pets and take care of them in their owners' absence. Typical activities seen on a Dog Sitter example resume are grooming, providing food and water, taking dogs out for walk, taking dogs to vet appointments, administering medication, providing companionship, and following owner instructions.",
-    image:
-      'https://i.postimg.cc/DwD8QkyC/Extra-Extra-Small-Halloween-Dog-Taco-Costume-each.jpg',
+    image: 'https://i.postimg.cc/DwD8QkyC/Extra-Extra-Small-Halloween-Dog-Taco-Costume-each.jpg',
     originalPrice: 14,
     parent: 'Pet Care',
     quantity: 100,
@@ -4741,8 +4656,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.198Z',
     description:
       "Dog Sitters supervise pets and take care of them in their owners' absence. Typical activities seen on a Dog Sitter example resume are grooming, providing food and water, taking dogs out for walk, taking dogs to vet appointments, administering medication, providing companionship, and following owner instructions.",
-    image:
-      'https://i.postimg.cc/Z50WyKZB/Buckle-Down-Pbkl-Large-Colorado-Dog-Collar-each.jpg',
+    image: 'https://i.postimg.cc/Z50WyKZB/Buckle-Down-Pbkl-Large-Colorado-Dog-Collar-each.jpg',
     originalPrice: 13,
     parent: 'Pet Care',
     quantity: 10,
@@ -4764,8 +4678,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.198Z',
     description:
       "Dog Sitters supervise pets and take care of them in their owners' absence. Typical activities seen on a Dog Sitter example resume are grooming, providing food and water, taking dogs out for walk, taking dogs to vet appointments, administering medication, providing companionship, and following owner instructions.",
-    image:
-      'https://i.postimg.cc/hP2Jj7FR/Bond-Co-XX-Small-For-Necks-8-10-Black-Bling-Dog-Collar-0-05lb.jpg',
+    image: 'https://i.postimg.cc/hP2Jj7FR/Bond-Co-XX-Small-For-Necks-8-10-Black-Bling-Dog-Collar-0-05lb.jpg',
     originalPrice: 12,
     parent: 'Pet Care',
     quantity: 100,
@@ -4787,8 +4700,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.198Z',
     description:
       "Dog Sitters supervise pets and take care of them in their owners' absence. Typical activities seen on a Dog Sitter example resume are grooming, providing food and water, taking dogs out for walk, taking dogs to vet appointments, administering medication, providing companionship, and following owner instructions.",
-    image:
-      'https://i.postimg.cc/gkzXmHTK/Bond-Co-Endless-Summer-Medium-Popsicle-Dog-Collar-each.jpg',
+    image: 'https://i.postimg.cc/gkzXmHTK/Bond-Co-Endless-Summer-Medium-Popsicle-Dog-Collar-each.jpg',
     originalPrice: 14,
     parent: 'Pet Care',
     quantity: 100,
@@ -4810,8 +4722,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.198Z',
     description:
       'canned food - food preserved by canning. canned foods, canned goods, tinned goods. food product, foodstuff - a substance that can be used or prepared for use as food. canned meat, tinned meat - meat preserved in a can or tin.',
-    image:
-      'https://i.postimg.cc/hPmDFzS0/Hibiscus-Premium-Whole-Baby-Corn-425g.jpg',
+    image: 'https://i.postimg.cc/hPmDFzS0/Hibiscus-Premium-Whole-Baby-Corn-425g.jpg',
     originalPrice: 11,
     parent: 'Snacks & Instant',
     quantity: 100,
@@ -4899,8 +4810,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.198Z',
     description:
       'canned food - food preserved by canning. canned foods, canned goods, tinned goods. food product, foodstuff - a substance that can be used or prepared for use as food. canned meat, tinned meat - meat preserved in a can or tin.',
-    image:
-      'https://i.postimg.cc/hjGDN2jJ/American-Garden-Mushroom-Whole-Can-425g.jpg',
+    image: 'https://i.postimg.cc/hjGDN2jJ/American-Garden-Mushroom-Whole-Can-425g.jpg',
     originalPrice: 12,
     parent: 'Snacks & Instant',
     quantity: 100,
@@ -4944,8 +4854,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.198Z',
     description:
       'a small usually thin and flat piece (as of wood or stone) cut, struck, or flaked off. b : a small piece of food: such as. (1) : a small, thin, crisp, usually salty piece of food typically prepared by frying, baking, or drying banana chips especially : potato chip — see also corn chip.',
-    image:
-      'https://i.postimg.cc/3xHDzHHd/Lays-American-Style-Cream-And-Onion-Chips-25g.jpg',
+    image: 'https://i.postimg.cc/3xHDzHHd/Lays-American-Style-Cream-And-Onion-Chips-25g.jpg',
     originalPrice: 9,
     parent: 'Snacks & Instant',
     quantity: 100,
@@ -5011,8 +4920,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.197Z',
     description:
       'a small usually thin and flat piece (as of wood or stone) cut, struck, or flaked off. b : a small piece of food: such as. (1) : a small, thin, crisp, usually salty piece of food typically prepared by frying, baking, or drying banana chips especially : potato chip — see also corn chip.',
-    image:
-      'https://i.postimg.cc/RhknMk6p/Blue-Diamond-Almonds-Smokehouse-43g.jpg',
+    image: 'https://i.postimg.cc/RhknMk6p/Blue-Diamond-Almonds-Smokehouse-43g.jpg',
     originalPrice: 10,
     parent: 'Snacks & Instant',
     quantity: 20,
@@ -5078,8 +4986,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.196Z',
     description:
       'a small usually thin and flat piece (as of wood or stone) cut, struck, or flaked off. b : a small piece of food: such as. (1) : a small, thin, crisp, usually salty piece of food typically prepared by frying, baking, or drying banana chips especially : potato chip — see also corn chip.',
-    image:
-      'https://i.postimg.cc/ydXRT1dm/Foxs-Crystal-Clear-Passiar-Mints-180g.jpg',
+    image: 'https://i.postimg.cc/ydXRT1dm/Foxs-Crystal-Clear-Passiar-Mints-180g.jpg',
     originalPrice: 10,
     parent: 'Snacks & Instant',
     quantity: 100,
@@ -5101,8 +5008,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.196Z',
     description:
       'a small usually thin and flat piece (as of wood or stone) cut, struck, or flaked off. b : a small piece of food: such as. (1) : a small, thin, crisp, usually salty piece of food typically prepared by frying, baking, or drying banana chips especially : potato chip — see also corn chip.',
-    image:
-      'https://i.postimg.cc/j2MJGMyC/CHIKO-Assorted-Chocolate-Box-200g.jpg',
+    image: 'https://i.postimg.cc/j2MJGMyC/CHIKO-Assorted-Chocolate-Box-200g.jpg',
     originalPrice: 11,
     parent: 'Snacks & Instant',
     quantity: 100,
@@ -5124,8 +5030,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.196Z',
     description:
       'a small usually thin and flat piece (as of wood or stone) cut, struck, or flaked off. b : a small piece of food: such as. (1) : a small, thin, crisp, usually salty piece of food typically prepared by frying, baking, or drying banana chips especially : potato chip — see also corn chip.',
-    image:
-      'https://i.postimg.cc/VkpXfZpC/Alpenliebe-Smooth-Caramel-Candy-225g.jpg',
+    image: 'https://i.postimg.cc/VkpXfZpC/Alpenliebe-Smooth-Caramel-Candy-225g.jpg',
     originalPrice: 10,
     parent: 'Snacks & Instant',
     quantity: 100,
@@ -5147,8 +5052,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.196Z',
     description:
       'Noodles are a type of food made from unleavened dough which is rolled flat and cut, stretched or extruded, into long strips or strings. ... Noodles are usually cooked in boiling water, sometimes with cooking oil or salt added. They are also often pan-fried or deep-fried.',
-    image:
-      'https://i.postimg.cc/fRN1y5dJ/Mr-Noodles-Cup-Noodles-Magic-Masala-40g.jpg',
+    image: 'https://i.postimg.cc/fRN1y5dJ/Mr-Noodles-Cup-Noodles-Magic-Masala-40g.jpg',
     originalPrice: 10,
     parent: 'Snacks & Instant',
     quantity: 100,
@@ -5170,8 +5074,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.196Z',
     description:
       'Noodles are a type of food made from unleavened dough which is rolled flat and cut, stretched or extruded, into long strips or strings. ... Noodles are usually cooked in boiling water, sometimes with cooking oil or salt added. They are also often pan-fried or deep-fried.',
-    image:
-      'https://i.postimg.cc/6pfgvRVz/Mama-Hot-Spicy-Flovour-Noodles-496-Gm.jpgg',
+    image: 'https://i.postimg.cc/6pfgvRVz/Mama-Hot-Spicy-Flovour-Noodles-496-Gm.jpgg',
     originalPrice: 15,
     parent: 'Snacks & Instant',
     quantity: 100,
@@ -5193,8 +5096,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.196Z',
     description:
       'Noodles are a type of food made from unleavened dough which is rolled flat and cut, stretched or extruded, into long strips or strings. ... Noodles are usually cooked in boiling water, sometimes with cooking oil or salt added. They are also often pan-fried or deep-fried.',
-    image:
-      'https://i.postimg.cc/fbWFjLBs/Mama-Hot-Spicy-Flovour-Noodles-248g.jpg',
+    image: 'https://i.postimg.cc/fbWFjLBs/Mama-Hot-Spicy-Flovour-Noodles-248g.jpg',
     originalPrice: 15,
     parent: 'Snacks & Instant',
     quantity: 100,
@@ -5216,8 +5118,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.196Z',
     description:
       'Noodles are a type of food made from unleavened dough which is rolled flat and cut, stretched or extruded, into long strips or strings. ... Noodles are usually cooked in boiling water, sometimes with cooking oil or salt added. They are also often pan-fried or deep-fried.',
-    image:
-      'https://i.postimg.cc/RVfjv2Nk/Maggi-Bangkok-Sweet-Chilli-Noodles-260g.jpg',
+    image: 'https://i.postimg.cc/RVfjv2Nk/Maggi-Bangkok-Sweet-Chilli-Noodles-260g.jpg',
     originalPrice: 15,
     parent: 'Snacks & Instant',
     quantity: 5,
@@ -5261,8 +5162,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.195Z',
     description:
       'honey, sweet, viscous liquid food, dark golden in colour, produced in the honey sacs of various bees from the nectar of flowers. Flavour and colour are determined by the flowers from which the nectar is gathered. Some of the most commercially desirable honeys are produced from clover by the domestic honeybee.',
-    image:
-      'https://i.postimg.cc/MGtChRvX/Dabur-Honey-1-Kg-Vatika-Tin-Can-Oil-Free.jpg',
+    image: 'https://i.postimg.cc/MGtChRvX/Dabur-Honey-1-Kg-Vatika-Tin-Can-Oil-Free.jpg',
     originalPrice: 20,
     parent: 'Honey',
     quantity: 100,
@@ -5284,8 +5184,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.195Z',
     description:
       'honey, sweet, viscous liquid food, dark golden in colour, produced in the honey sacs of various bees from the nectar of flowers. Flavour and colour are determined by the flowers from which the nectar is gathered. Some of the most commercially desirable honeys are produced from clover by the domestic honeybee.',
-    image:
-      'https://i.postimg.cc/6pVJfFKr/Aussiebee-Honey-312g-Glass-Bottle.jpg',
+    image: 'https://i.postimg.cc/6pVJfFKr/Aussiebee-Honey-312g-Glass-Bottle.jpg',
     originalPrice: 20,
     parent: 'Honey',
     quantity: 5,
@@ -5483,8 +5382,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.194Z',
     description:
       'Skin care is the range of practices that support skin integrity, enhance its appearance and relieve skin conditions. Skin care is a part of the treatment of wound healing, radiation therapy and some medications.',
-    image:
-      'https://i.ibb.co/N7CV3Kk/Goddess-Garden-Broad-Spectrum-Spf-30-Natural-Mineral-Sunscreen-3-4-oz.jpg',
+    image: 'https://i.ibb.co/N7CV3Kk/Goddess-Garden-Broad-Spectrum-Spf-30-Natural-Mineral-Sunscreen-3-4-oz.jpg',
     originalPrice: 11,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -5528,8 +5426,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.194Z',
     description:
       'Skin care is the range of practices that support skin integrity, enhance its appearance and relieve skin conditions. Skin care is a part of the treatment of wound healing, radiation therapy and some medications.',
-    image:
-      'https://i.ibb.co/FWP2RdG/Earthly-Remedies-by-Erin-Face-Wash-each.jpg',
+    image: 'https://i.ibb.co/FWP2RdG/Earthly-Remedies-by-Erin-Face-Wash-each.jpg',
     originalPrice: 8,
     parent: 'Beauty & Health',
     quantity: 5,
@@ -5551,8 +5448,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.194Z',
     description:
       'Skin care is the range of practices that support skin integrity, enhance its appearance and relieve skin conditions. Skin care is a part of the treatment of wound healing, radiation therapy and some medications.',
-    image:
-      'https://i.ibb.co/WvcHzmk/Best-Choice-Absorbing-Moisturizing-Soap-7-5-oz.jpg',
+    image: 'https://i.ibb.co/WvcHzmk/Best-Choice-Absorbing-Moisturizing-Soap-7-5-oz.jpg',
     originalPrice: 9,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -5574,8 +5470,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.192Z',
     description:
       'Skin care is the range of practices that support skin integrity, enhance its appearance and relieve skin conditions. Skin care is a part of the treatment of wound healing, radiation therapy and some medications.',
-    image:
-      'https://i.ibb.co/jzRftZC/Banana-Boat-for-Men-Triple-Defense-SPF-30-Sunscreen-Lotion-2fl-oz.jpg',
+    image: 'https://i.ibb.co/jzRftZC/Banana-Boat-for-Men-Triple-Defense-SPF-30-Sunscreen-Lotion-2fl-oz.jpg',
     originalPrice: 8,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -5773,8 +5668,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.191Z',
     description:
       'Oral Care Products are intended to cleanse the oral cavity, freshen the breath, and maintain good oral hygiene. Some products also include ingredients to protect against the formation of cavities.',
-    image:
-      'https://i.ibb.co/0ngPGNp/Colgate-Plax-Complete-Care-Mouthwash-250ml.jpg',
+    image: 'https://i.ibb.co/0ngPGNp/Colgate-Plax-Complete-Care-Mouthwash-250ml.jpg',
     originalPrice: 12,
     parent: 'Beauty & Health',
     quantity: 5,
@@ -5796,8 +5690,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.191Z',
     description:
       'Oral Care Products are intended to cleanse the oral cavity, freshen the breath, and maintain good oral hygiene. Some products also include ingredients to protect against the formation of cavities.',
-    image:
-      'https://i.ibb.co/HxFw9Cb/Closeup-Coco-B-Charcoal-Toothpaste-140g.jpg',
+    image: 'https://i.ibb.co/HxFw9Cb/Closeup-Coco-B-Charcoal-Toothpaste-140g.jpg',
     originalPrice: 8,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -5819,8 +5712,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.191Z',
     description:
       'Hair Care products are those that help to control the properties and behavior of the hair so that it can be maintained in a controlled and desirable manner. This can include hair conditioners, hair sprays, hair straighteners and relaxers, permanent waves, shampoos, rinses, tonics and dressings.',
-    image:
-      'https://i.ibb.co/5BT6nYH/Redken-Conditioner-Real-Control-8-5-oz.jpg',
+    image: 'https://i.ibb.co/5BT6nYH/Redken-Conditioner-Real-Control-8-5-oz.jpg',
     originalPrice: 8,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -5865,8 +5757,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.190Z',
     description:
       'Hair Care products are those that help to control the properties and behavior of the hair so that it can be maintained in a controlled and desirable manner. This can include hair conditioners, hair sprays, hair straighteners and relaxers, permanent waves, shampoos, rinses, tonics and dressings.',
-    image:
-      'https://i.ibb.co/7Ky2DVF/Herbal-Essences-Bio-Renew-Dry-Shampoo-4-9-fl-oz.jpg',
+    image: 'https://i.ibb.co/7Ky2DVF/Herbal-Essences-Bio-Renew-Dry-Shampoo-4-9-fl-oz.jpg',
     originalPrice: 8,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -5888,8 +5779,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.190Z',
     description:
       'Hair Care products are those that help to control the properties and behavior of the hair so that it can be maintained in a controlled and desirable manner. This can include hair conditioners, hair sprays, hair straighteners and relaxers, permanent waves, shampoos, rinses, tonics and dressings.',
-    image:
-      'https://i.ibb.co/FspY5Yn/Dark-and-Lovely-6-Week-Anti-Reversion-System-Conditioner-12-fl-oz.jpg',
+    image: 'https://i.ibb.co/FspY5Yn/Dark-and-Lovely-6-Week-Anti-Reversion-System-Conditioner-12-fl-oz.jpg',
     originalPrice: 7,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -5934,8 +5824,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.190Z',
     description:
       'A cosmetic product shall mean any substance or mixture intended to be placed in contact with the various external parts of the human body (epidermis, hair system, nails, lips and external genital organs) or with the teeth and the mucous membranes of the oral cavity with a view exclusively or mainly to cleaning them',
-    image:
-      'https://i.ibb.co/K0SBD3v/Revlon-Lipstick-Creme-Temptress-680-0-15oz.jpg',
+    image: 'https://i.ibb.co/K0SBD3v/Revlon-Lipstick-Creme-Temptress-680-0-15oz.jpg',
     originalPrice: 6,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -5980,8 +5869,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.190Z',
     description:
       'A cosmetic product shall mean any substance or mixture intended to be placed in contact with the various external parts of the human body (epidermis, hair system, nails, lips and external genital organs) or with the teeth and the mucous membranes of the oral cavity with a view exclusively or mainly to cleaning them',
-    image:
-      'https://i.ibb.co/KLTKrnX/Essie-Midnight-Cami-Nail-Color-0-46-fl-oz.jpg',
+    image: 'https://i.ibb.co/KLTKrnX/Essie-Midnight-Cami-Nail-Color-0-46-fl-oz.jpg',
     originalPrice: 5,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -6025,8 +5913,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.190Z',
     description:
       'A cosmetic product shall mean any substance or mixture intended to be placed in contact with the various external parts of the human body (epidermis, hair system, nails, lips and external genital organs) or with the teeth and the mucous membranes of the oral cavity with a view exclusively or mainly to cleaning them',
-    image:
-      'https://i.ibb.co/ZHRx2LS/Color-Elixir-By-Color-Sensational-Dashing-Orchid-Lipcolor-0-17fl-oz.jpg',
+    image: 'https://i.ibb.co/ZHRx2LS/Color-Elixir-By-Color-Sensational-Dashing-Orchid-Lipcolor-0-17fl-oz.jpg',
     originalPrice: 9,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -6048,8 +5935,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.190Z',
     description:
       'Body care means how you perform with passive range of motion, applications of dressings and ointments or lotions to the body, and pedicure to trim toenails and apply lotion to feet.',
-    image:
-      'https://i.ibb.co/QPKT5hP/Giovanni-Body-Lotion-Ultra-Sleek-For-All-Skin-Types-8-5-fl-oz.jpg',
+    image: 'https://i.ibb.co/QPKT5hP/Giovanni-Body-Lotion-Ultra-Sleek-For-All-Skin-Types-8-5-fl-oz.jpg',
     originalPrice: 7,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -6071,8 +5957,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.190Z',
     description:
       'Body care means how you perform with passive range of motion, applications of dressings and ointments or lotions to the body, and pedicure to trim toenails and apply lotion to feet.',
-    image:
-      'https://i.ibb.co/C0Rvgzs/Dove-Creme-Mousse-Sensitive-Skin-Nourishing-Body-Wash-18-fl-oz.jpg',
+    image: 'https://i.ibb.co/C0Rvgzs/Dove-Creme-Mousse-Sensitive-Skin-Nourishing-Body-Wash-18-fl-oz.jpg',
     originalPrice: 9,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -6094,8 +5979,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.190Z',
     description:
       'Body care means how you perform with passive range of motion, applications of dressings and ointments or lotions to the body, and pedicure to trim toenails and apply lotion to feet.',
-    image:
-      'https://i.ibb.co/tx3FfLr/Dial-Nutri-Skin-Ultra-Hydrating-Body-Wash-Grape-Seed-Oil-Lemongrass-16-fl-oz.jpg',
+    image: 'https://i.ibb.co/tx3FfLr/Dial-Nutri-Skin-Ultra-Hydrating-Body-Wash-Grape-Seed-Oil-Lemongrass-16-fl-oz.jpg',
     originalPrice: 8,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -6117,8 +6001,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.190Z',
     description:
       'Body care means how you perform with passive range of motion, applications of dressings and ointments or lotions to the body, and pedicure to trim toenails and apply lotion to feet.',
-    image:
-      'https://i.ibb.co/J7cB7YY/Care-One-Moisturizing-Body-Wash-Cucumber-Melon-12-fl-o.jpg',
+    image: 'https://i.ibb.co/J7cB7YY/Care-One-Moisturizing-Body-Wash-Cucumber-Melon-12-fl-o.jpg',
     originalPrice: 9,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -6140,8 +6023,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.189Z',
     description:
       'Body care means how you perform with passive range of motion, applications of dressings and ointments or lotions to the body, and pedicure to trim toenails and apply lotion to feet.',
-    image:
-      'https://i.ibb.co/3NqJ10Q/Avalon-Organics-Bath-Shower-Gel-Gluten-Free-Cucumber-12-oz.jpg',
+    image: 'https://i.ibb.co/3NqJ10Q/Avalon-Organics-Bath-Shower-Gel-Gluten-Free-Cucumber-12-oz.jpg',
     originalPrice: 8,
     parent: 'Beauty & Health',
     quantity: 100,
@@ -6295,8 +6177,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.188Z',
     description:
       "Baby foods are either a soft, liquid paste or an easily chewed food since babies lack developed muscles and teeth to effectively chew. Babies typically move to consuming baby food once nursing or formula is not sufficient for the child's appetite. Babies do not need to have teeth to transition to eating solid foods.",
-    image:
-      'https://i.ibb.co/yYsskBN/Cerelac-Wheat-Apple-Cornflakes-400-Gm-BIB.jpg',
+    image: 'https://i.ibb.co/yYsskBN/Cerelac-Wheat-Apple-Cornflakes-400-Gm-BIB.jpg',
     originalPrice: 15,
     parent: 'Baby Care',
     quantity: 100,
@@ -6406,8 +6287,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.188Z',
     description:
       'Baby Products are products intended to be used on infants and children under the age of three. Baby products are specially formulated to be mild and non-irritating and use ingredients that are selected for these properties. Baby products include baby shampoos and baby lotions, oils, powders and creams.',
-    image:
-      'https://i.ibb.co/4Pfnj7x/Huggies-Diaper-Dry-S-Up-To-7-Kg-36-Pcs.jpg',
+    image: 'https://i.ibb.co/4Pfnj7x/Huggies-Diaper-Dry-S-Up-To-7-Kg-36-Pcs.jpg',
     originalPrice: 9,
     parent: 'Baby Care',
     quantity: 100,
@@ -6451,8 +6331,7 @@ const products = [
     createdAt: '2021-12-22T16:41:23.186Z',
     description:
       'Baby Products are products intended to be used on infants and children under the age of three. Baby products are specially formulated to be mild and non-irritating and use ingredients that are selected for these properties. Baby products include baby shampoos and baby lotions, oils, powders and creams.',
-    image:
-      'https://i.ibb.co/sWBMfVP/Freshmaker-Baby-Wet-Wipes-With-Cover-72pcs.jpg',
+    image: 'https://i.ibb.co/sWBMfVP/Freshmaker-Baby-Wet-Wipes-With-Cover-72pcs.jpg',
     originalPrice: 8,
     parent: 'Baby Care',
     quantity: 100,
@@ -6463,7 +6342,7 @@ const products = [
     updatedAt: '2021-12-22T16:41:23.186Z',
     sku: '',
   },
-];
+]
 
-const productData = products.sort((a, b) => -1);
-export default productData;
+const productData = products.sort((a, b) => -1)
+export default productData

@@ -1,6 +1,6 @@
-import React from "react";
-import { Tooltip as ReactTooltip } from "react-tooltip";
-import "react-tooltip/dist/react-tooltip.css";
+import React from 'react'
+import { Tooltip as ReactTooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
 const Tooltip = ({ id, Icon, title, bgColor }) => {
   return (
@@ -12,7 +12,7 @@ const Tooltip = ({ id, Icon, title, bgColor }) => {
         <span className="text-sm font-medium">{title}</span>
       </ReactTooltip>
     </>
-  );
-};
+  )
+}
 
-export default Tooltip;
+export default Tooltip

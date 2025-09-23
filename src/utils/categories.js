@@ -49,14 +49,7 @@ const categories = [
   },
   {
     _id: '61b0d3975741dd2e949d53fa',
-    children: [
-      'Bath',
-      'Cosmetics',
-      'Oral Care',
-      'Skin Care',
-      'Body Care',
-      'Shaving Needs',
-    ],
+    children: ['Bath', 'Cosmetics', 'Oral Care', 'Skin Care', 'Body Care', 'Shaving Needs'],
     parent: 'Beauty & Health',
     type: 'Health Care',
     icon: 'https://i.postimg.cc/gjz1P7wx/beauty.png',
@@ -80,14 +73,7 @@ const categories = [
   },
   {
     _id: '61b0d3975741dd2e949d53fd',
-    children: [
-      'Cleaner',
-      'Laundry',
-      'Air Freshener',
-      'Water Filter',
-      'Pest Control',
-      'Cleaning Tools',
-    ],
+    children: ['Cleaner', 'Laundry', 'Air Freshener', 'Water Filter', 'Pest Control', 'Cleaning Tools'],
     parent: 'Household Tools',
     type: 'Home Accessories',
     icon: 'https://i.ibb.co/rdY6zL0/cleaner.png',
@@ -157,8 +143,8 @@ const categories = [
     icon: 'https://i.ibb.co/xmGhNRF/apple.png',
     status: 'Show',
   },
-];
+]
 
-const categoryData = categories.sort((a, b) => -1);
+const categoryData = categories.sort((a, b) => -1)
 
-export default categoryData;
+export default categoryData

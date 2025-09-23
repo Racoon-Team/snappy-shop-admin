@@ -7,33 +7,33 @@ import {
   StyleSheet,
   Text,
   View,
-} from "@react-pdf/renderer";
-import { useTranslation } from "react-i18next";
-import logoDark from "@/assets/img/logo/logo-color.png";
+} from '@react-pdf/renderer'
+import { useTranslation } from 'react-i18next'
+import logoDark from '@/assets/img/logo/logo-color.png'
 
 Font.register({
-  family: "Open Sans",
+  family: 'Open Sans',
   fonts: [
     {
-      src: "https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-regular.ttf",
+      src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-regular.ttf',
     },
     {
-      src: "https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-600.ttf",
+      src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-600.ttf',
       fontWeight: 600,
     },
   ],
-});
+})
 Font.register({
-  family: "DejaVu Sans",
+  family: 'DejaVu Sans',
   fonts: [
     {
-      src: "https://kendo.cdn.telerik.com/2017.2.621/styles/fonts/DejaVu/DejaVuSans.ttf",
+      src: 'https://kendo.cdn.telerik.com/2017.2.621/styles/fonts/DejaVu/DejaVuSans.ttf',
     },
     {
-      src: "https://kendo.cdn.telerik.com/2017.2.621/styles/fonts/DejaVu/DejaVuSans-Bold.ttf",
+      src: 'https://kendo.cdn.telerik.com/2017.2.621/styles/fonts/DejaVu/DejaVuSans-Bold.ttf',
     },
   ],
-});
+})
 
 const styles = StyleSheet.create({
   page: {
@@ -46,46 +46,46 @@ const styles = StyleSheet.create({
     lineHeight: 1.5,
   },
   table: {
-    display: "table",
-    width: "auto",
-    color: "#4b5563",
+    display: 'table',
+    width: 'auto',
+    color: '#4b5563',
     marginRight: 10,
     marginBottom: 20,
     marginLeft: 10,
     marginTop: 0,
-    borderRadius: "8px",
-    borderColor: "#e9e9e9",
-    borderStyle: "solid",
+    borderRadius: '8px',
+    borderColor: '#e9e9e9',
+    borderStyle: 'solid',
     borderWidth: 0.5,
     padding: 0,
-    textAlign: "left",
+    textAlign: 'left',
   },
   tableRow: {
     // margin: 'auto',
-    flexDirection: "row",
+    flexDirection: 'row',
     paddingBottom: 2,
     paddingTop: 2,
-    textAlign: "left",
+    textAlign: 'left',
     borderWidth: 0.8,
-    borderColor: "#E5E7EB",
-    borderBottom: "0",
+    borderColor: '#E5E7EB',
+    borderBottom: '0',
   },
   tableRowHeder: {
     // margin: 'auto',
-    flexDirection: "row",
-    backgroundColor: "#f9fafb",
+    flexDirection: 'row',
+    backgroundColor: '#f9fafb',
     paddingBottom: 4,
     paddingTop: 4,
     paddingLeft: 0,
     borderBottomWidth: 0.8,
-    borderColor: "#E5E7EB",
-    borderStyle: "solid",
-    textTransform: "uppercase",
-    textAlign: "left",
+    borderColor: '#E5E7EB',
+    borderStyle: 'solid',
+    textTransform: 'uppercase',
+    textAlign: 'left',
   },
   tableCol: {
-    width: "25%",
-    textAlign: "left",
+    width: '25%',
+    textAlign: 'left',
 
     // borderStyle: 'solid',
     // borderWidth: 1,
@@ -95,67 +95,67 @@ const styles = StyleSheet.create({
     // borderColor: '#d1d5db',
   },
   tableCell: {
-    margin: "auto",
+    margin: 'auto',
     marginTop: 5,
     fontSize: 10,
     // textAlign:'center',
-    paddingLeft: "0",
-    paddingRight: "0",
-    marginLeft: "13",
-    marginRight: "13",
+    paddingLeft: '0',
+    paddingRight: '0',
+    marginLeft: '13',
+    marginRight: '13',
   },
 
   tableCellQuantity: {
-    margin: "auto",
+    margin: 'auto',
     marginTop: 5,
     fontSize: 10,
-    textAlign: "center",
-    paddingLeft: "0",
-    paddingRight: "0",
-    marginLeft: "12",
-    marginRight: "12",
+    textAlign: 'center',
+    paddingLeft: '0',
+    paddingRight: '0',
+    marginLeft: '12',
+    marginRight: '12',
   },
 
   invoiceFirst: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     paddingBottom: 18,
     paddingLeft: 10,
     paddingRight: 10,
     borderBottom: 1,
-    borderColor: "#f3f4f6",
+    borderColor: '#f3f4f6',
     // backgroundColor:'#EEF2FF',
   },
   invoiceSecond: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "baseline",
-    justifyContent: "space-between",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    justifyContent: 'space-between',
     paddingTop: 20,
     paddingBottom: 20,
     paddingLeft: 10,
     paddingRight: 10,
     borderRadius: 12,
-    marginLeft: "13",
-    marginRight: "13",
+    marginLeft: '13',
+    marginRight: '13',
   },
   invoiceThird: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "baseline",
-    justifyContent: "space-between",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    justifyContent: 'space-between',
     paddingTop: 20,
     paddingBottom: 20,
     paddingLeft: 10,
     paddingRight: 10,
     borderTop: 1,
-    borderColor: "#ffffff",
-    backgroundColor: "#f4f5f7",
+    borderColor: '#ffffff',
+    backgroundColor: '#f4f5f7',
     borderRadius: 12,
-    marginLeft: "13",
-    marginRight: "13",
+    marginLeft: '13',
+    marginRight: '13',
 
     // backgroundColor:'#F2FCF9',
   },
@@ -165,116 +165,110 @@ const styles = StyleSheet.create({
     bottom: 5,
     right: 10,
     marginBottom: 10,
-    textAlign: "right",
-    color: "#4b5563",
-    fontFamily: "Open Sans",
-    fontWeight: "bold",
+    textAlign: 'right',
+    color: '#4b5563',
+    fontFamily: 'Open Sans',
+    fontWeight: 'bold',
     fontSize: 10.3,
 
-    marginRight: "39%",
-    textTransform: "uppercase",
+    marginRight: '39%',
+    textTransform: 'uppercase',
   },
   title: {
-    color: "#2f3032",
-    fontFamily: "Open Sans",
-    fontWeight: "bold",
+    color: '#2f3032',
+    fontFamily: 'Open Sans',
+    fontWeight: 'bold',
     fontSize: 8.1,
-    textTransform: "uppercase",
+    textTransform: 'uppercase',
   },
   info: {
     fontSize: 9,
-    color: "#6b7280",
+    color: '#6b7280',
   },
   infoCost: {
     fontSize: 10,
-    color: "#6b7280",
-    marginLeft: "4%",
-    marginTop: "7px",
-    textAlign: "left",
-    width: "25%",
+    color: '#6b7280',
+    marginLeft: '4%',
+    marginTop: '7px',
+    textAlign: 'left',
+    width: '25%',
   },
   invoiceNum: {
     fontSize: 9,
-    color: "#6b7280",
-    marginLeft: "6%",
+    color: '#6b7280',
+    marginLeft: '6%',
   },
   topAddress: {
     fontSize: 10,
-    color: "#6b7280",
-    width: "100%",
-    marginRight: "62%",
-    textAlign: "right",
-    whiteSapce: "nowrap",
+    color: '#6b7280',
+    width: '100%',
+    marginRight: '62%',
+    textAlign: 'right',
+    whiteSapce: 'nowrap',
   },
   amount: {
     fontSize: 10,
-    color: "#ef4444",
+    color: '#ef4444',
   },
   totalAmount: {
     fontSize: 10,
-    color: "#ef4444",
-    fontFamily: "Open Sans",
-    fontWeight: "bold",
-    textTransform: "uppercase",
-    textAlign: "right",
+    color: '#ef4444',
+    fontFamily: 'Open Sans',
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    textAlign: 'right',
   },
   status: {
-    color: "#10b981",
+    color: '#10b981',
   },
   quantity: {
-    color: "#1f2937",
-    textAlign: "center",
+    color: '#1f2937',
+    textAlign: 'center',
   },
   itemPrice: {
-    color: "#1f2937",
-    textAlign: "left",
+    color: '#1f2937',
+    textAlign: 'left',
   },
   header: {
-    color: "#6b7280",
+    color: '#6b7280',
     fontSize: 9,
-    fontFamily: "Open Sans",
-    fontWeight: "bold",
-    textTransform: "uppercase",
-    textAlign: "left",
+    fontFamily: 'Open Sans',
+    fontWeight: 'bold',
+    textTransform: 'uppercase',
+    textAlign: 'left',
   },
 
   thanks: {
-    color: "#22c55e",
+    color: '#22c55e',
   },
   infoRight: {
-    textAlign: "right",
+    textAlign: 'right',
     fontSize: 9,
-    color: "#6b7280",
-    width: "25%",
-    marginRight: "39%",
-    fontFamily: "Open Sans",
+    color: '#6b7280',
+    width: '25%',
+    marginRight: '39%',
+    fontFamily: 'Open Sans',
   },
   titleRight: {
-    textAlign: "right",
-    fontFamily: "Open Sans",
-    fontWeight: "bold",
+    textAlign: 'right',
+    fontFamily: 'Open Sans',
+    fontWeight: 'bold',
     fontSize: 8.1,
-    width: "25%",
-    marginRight: "39%",
-    textTransform: "uppercase",
-    color: "#2f3032",
+    width: '25%',
+    marginRight: '39%',
+    textTransform: 'uppercase',
+    color: '#2f3032',
   },
   topBg: {
     // backgroundColor:'#EEF2FF',
   },
   invoiceDiv: {
-    alignItems: "baseline",
+    alignItems: 'baseline',
   },
-});
+})
 
-const InvoiceForDownload = ({
-  data,
-  currency,
-  globalSetting,
-  showDateFormat,
-  getNumberTwo,
-}) => {
-  const { t } = useTranslation();
+const InvoiceForDownload = ({ data, currency, globalSetting, showDateFormat, getNumberTwo }) => {
+  const { t } = useTranslation()
 
   return (
     <>
@@ -284,63 +278,41 @@ const InvoiceForDownload = ({
             <View style={styles.invoiceDiv}>
               <Text
                 style={{
-                  fontFamily: "Open Sans",
-                  fontWeight: "bold",
-                  textTransform: "uppercase",
-                  alignItems: "baseline",
+                  fontFamily: 'Open Sans',
+                  fontWeight: 'bold',
+                  textTransform: 'uppercase',
+                  alignItems: 'baseline',
                 }}
               >
-                {t("invoice")}
+                {t('invoice')}
               </Text>
               <Text style={styles.info}>
-                Status :{" "}
-                {data?.status === "Merged" && (
-                  <Text style={{ color: "#eab308" }}>{data?.status}</Text>
-                )}
-                {data?.status === "Pending" && (
-                  <Text style={{ color: "#eab308" }}>{data?.status}</Text>
-                )}
-                {data?.status === "Processing" && (
-                  <Text style={{ color: "#14b8a6" }}>{data?.status}</Text>
-                )}
-                {data?.status === "POS-Completed" && (
-                  <Text style={{ color: "#14b8a6" }}>{data?.status}</Text>
-                )}
-                {data?.status === "Fully Returned" && (
-                  <Text style={{ color: "#14b8a6" }}>{data?.status}</Text>
-                )}
-                {data?.status === "Partial Returned" && (
-                  <Text style={{ color: "#14b8a6" }}>{data?.status}</Text>
-                )}
-                {data?.status === "Delivered" && (
-                  <Text style={{ color: "#22c55e" }}>{data?.status}</Text>
-                )}
-                {data?.status === "Cancel" && (
-                  <Text style={{ color: "#f43f5e" }}>{data?.status}</Text>
-                )}
-                {data?.status === "Deleted" && (
-                  <Text style={{ color: "#f43f5e" }}>{data?.status}</Text>
-                )}
+                Status : {data?.status === 'Merged' && <Text style={{ color: '#eab308' }}>{data?.status}</Text>}
+                {data?.status === 'Pending' && <Text style={{ color: '#eab308' }}>{data?.status}</Text>}
+                {data?.status === 'Processing' && <Text style={{ color: '#14b8a6' }}>{data?.status}</Text>}
+                {data?.status === 'POS-Completed' && <Text style={{ color: '#14b8a6' }}>{data?.status}</Text>}
+                {data?.status === 'Fully Returned' && <Text style={{ color: '#14b8a6' }}>{data?.status}</Text>}
+                {data?.status === 'Partial Returned' && <Text style={{ color: '#14b8a6' }}>{data?.status}</Text>}
+                {data?.status === 'Delivered' && <Text style={{ color: '#22c55e' }}>{data?.status}</Text>}
+                {data?.status === 'Cancel' && <Text style={{ color: '#f43f5e' }}>{data?.status}</Text>}
+                {data?.status === 'Deleted' && <Text style={{ color: '#f43f5e' }}>{data?.status}</Text>}
               </Text>
               {globalSetting?.vat_number && (
                 <Text style={styles.info}>
                   <Text className="font-semibold text-xs capitalize mt-2">
-                    VAT Number :{" "}
-                    <Text className="text-emerald-500">
-                      {globalSetting?.vat_number}
-                    </Text>
+                    VAT Number : <Text className="text-emerald-500">{globalSetting?.vat_number}</Text>
                   </Text>
                 </Text>
               )}
             </View>
 
-            <View style={{ alignItems: "flex-end" }}>
+            <View style={{ alignItems: 'flex-end' }}>
               <Text
                 style={{
-                  flexDirection: "row",
+                  flexDirection: 'row',
                   marginLeft: 80,
                   marginTop: 35,
-                  textAlign: "right",
+                  textAlign: 'right',
                 }}
               >
                 <Image
@@ -348,63 +320,57 @@ const InvoiceForDownload = ({
                   alt="kachabazar"
                   style={{
                     width: 90,
-                    alignItems: "right",
-                    textAlign: "right",
-                    float: "right",
+                    alignItems: 'right',
+                    textAlign: 'right',
+                    float: 'right',
                   }}
                 />
               </Text>
               <Text
                 style={{
                   fontSize: 9,
-                  color: "#888",
+                  color: '#888',
                   marginTop: 2,
-                  textAlign: "right",
+                  textAlign: 'right',
                 }}
               >
                 {globalSetting?.address}
-                {"\n"}
+                {'\n'}
                 {globalSetting?.contact}
-                {"\n"}
+                {'\n'}
                 {globalSetting?.email}
-                {"\n"}
+                {'\n'}
                 {globalSetting?.website}
               </Text>
             </View>
           </View>
 
           <View style={styles.invoiceSecond}>
-            <View style={{ width: "25%", alignItems: "baseline" }}>
-              <Text style={[styles.title, { fontSize: 10 }]}>{t("date")}</Text>
+            <View style={{ width: '25%', alignItems: 'baseline' }}>
+              <Text style={[styles.title, { fontSize: 10 }]}>{t('date')}</Text>
               <Text
                 style={{
                   fontSize: 9,
-                  color: "#6b7280",
-                  textAlign: "left",
+                  color: '#6b7280',
+                  textAlign: 'left',
                 }}
               >
-                {data?.createdAt !== undefined && (
-                  <Text>{showDateFormat(data?.createdAt)}</Text>
-                )}
+                {data?.createdAt !== undefined && <Text>{showDateFormat(data?.createdAt)}</Text>}
               </Text>
             </View>
-            <View style={{ width: "25%", alignItems: "baseline" }}>
+            <View style={{ width: '25%', alignItems: 'baseline' }}>
               <Text style={styles.title}>
-                <Text
-                  style={{ width: "25%", alignItems: "baseline", fontSize: 10 }}
-                >
-                  {t("InvoiceNo")}
-                </Text>
+                <Text style={{ width: '25%', alignItems: 'baseline', fontSize: 10 }}>{t('InvoiceNo')}</Text>
               </Text>
               <Text style={styles.title}>
-                <Text style={{ textAlign: "left" }}>
+                <Text style={{ textAlign: 'left' }}>
                   <Text
                     style={{
                       fontSize: 9,
-                      color: "#6b7280",
-                      marginLeft: "4%",
-                      marginTop: "7px",
-                      textAlign: "left",
+                      color: '#6b7280',
+                      marginLeft: '4%',
+                      marginTop: '7px',
+                      textAlign: 'left',
                     }}
                   >
                     #{data?.invoice}
@@ -413,48 +379,45 @@ const InvoiceForDownload = ({
               </Text>
             </View>
 
-            <View
-              style={{ width: "25%", alignItems: "baseline", float: "right" }}
-            >
+            <View style={{ width: '25%', alignItems: 'baseline', float: 'right' }}>
               <Text style={styles.title}>
                 <Text
                   style={{
                     fontSize: 10,
-                    float: "right",
-                    textAlign: "right",
-                    alignItems: "baseline",
+                    float: 'right',
+                    textAlign: 'right',
+                    alignItems: 'baseline',
                   }}
                 >
-                  {t("InvoiceTo")}
+                  {t('InvoiceTo')}
                 </Text>
               </Text>
               <Text style={styles.title}>
                 <Text
                   style={{
-                    textAlign: "right",
+                    textAlign: 'right',
                     fontSize: 9,
-                    textTransform: "lowercase",
+                    textTransform: 'lowercase',
                   }}
                 >
                   <Text
                     style={{
                       fontSize: 9,
-                      color: "#6b7280",
-                      marginTop: "7px",
-                      textAlign: "right",
-                      textTransform: "lowercase",
+                      color: '#6b7280',
+                      marginTop: '7px',
+                      textAlign: 'right',
+                      textTransform: 'lowercase',
                     }}
                   >
                     {data?.user_info?.name}
-                    {"\n"}
+                    {'\n'}
                     {data?.user_info?.contact}
-                    {"\n"}
+                    {'\n'}
                     {data?.user_info?.email}
-                    {"\n"}
+                    {'\n'}
                     {data?.user_info?.address?.substring(0, 30)}
-                    {"\n"}
-                    {data?.user_info?.city}, {data?.user_info?.country},{" "}
-                    {data?.user_info?.zipCode}
+                    {'\n'}
+                    {data?.user_info?.city}, {data?.user_info?.country}, {data?.user_info?.zipCode}
                   </Text>
                 </Text>
               </Text>
@@ -472,12 +435,12 @@ const InvoiceForDownload = ({
                 <Text style={styles.tableCell}>
                   <Text
                     style={{
-                      color: "#6b7280",
+                      color: '#6b7280',
                       fontSize: 9,
-                      fontFamily: "Open Sans",
-                      fontWeight: "bold",
-                      textTransform: "uppercase",
-                      textAlign: "left",
+                      fontFamily: 'Open Sans',
+                      fontWeight: 'bold',
+                      textTransform: 'uppercase',
+                      textAlign: 'left',
                     }}
                   >
                     Product Title
@@ -488,15 +451,15 @@ const InvoiceForDownload = ({
                 <Text style={styles.tableCell}>
                   <Text
                     style={{
-                      color: "#6b7280",
+                      color: '#6b7280',
                       fontSize: 9,
-                      fontFamily: "Open Sans",
-                      fontWeight: "bold",
-                      textTransform: "uppercase",
-                      textAlign: "center",
+                      fontFamily: 'Open Sans',
+                      fontWeight: 'bold',
+                      textTransform: 'uppercase',
+                      textAlign: 'center',
                     }}
                   >
-                    {t("Quantity")}
+                    {t('Quantity')}
                   </Text>
                 </Text>
               </View>
@@ -504,15 +467,15 @@ const InvoiceForDownload = ({
                 <Text style={styles.tableCell}>
                   <Text
                     style={{
-                      color: "#6b7280",
+                      color: '#6b7280',
                       fontSize: 9,
-                      fontFamily: "Open Sans",
-                      fontWeight: "bold",
-                      textTransform: "uppercase",
-                      textAlign: "left",
+                      fontFamily: 'Open Sans',
+                      fontWeight: 'bold',
+                      textTransform: 'uppercase',
+                      textAlign: 'left',
                     }}
                   >
-                    {t("ItemPrice")}
+                    {t('ItemPrice')}
                   </Text>
                 </Text>
               </View>
@@ -521,15 +484,15 @@ const InvoiceForDownload = ({
                 <Text style={styles.tableCell}>
                   <Text
                     style={{
-                      color: "#6b7280",
+                      color: '#6b7280',
                       fontSize: 9,
-                      fontFamily: "Open Sans",
-                      fontWeight: "bold",
-                      textTransform: "uppercase",
-                      textAlign: "right",
+                      fontFamily: 'Open Sans',
+                      fontWeight: 'bold',
+                      textTransform: 'uppercase',
+                      textAlign: 'right',
                     }}
                   >
-                    {t("Amount")}
+                    {t('Amount')}
                   </Text>
                 </Text>
               </View>
@@ -537,19 +500,17 @@ const InvoiceForDownload = ({
             {data?.cart?.map((item, i) => (
               <View key={i} style={styles.tableRow}>
                 <View style={styles.tableCol}>
-                  <Text style={styles.tableCell}>
-                    {item.title?.substring(0, 20)}
-                  </Text>
+                  <Text style={styles.tableCell}>{item.title?.substring(0, 20)}</Text>
                 </View>
                 <View style={styles.tableCol}>
                   <Text style={styles.tableCellQuantity}>
                     <Text
                       style={{
                         fontSize: 10,
-                        fontWeight: "bold",
-                        textAlign: "center",
-                        alignItems: "center",
-                        fontFamily: "Open Sans",
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                        alignItems: 'center',
+                        fontFamily: 'Open Sans',
                       }}
                     >
                       {item.quantity}
@@ -561,9 +522,9 @@ const InvoiceForDownload = ({
                     <Text
                       style={{
                         fontSize: 10,
-                        fontWeight: "bold",
-                        textAlign: "left",
-                        fontFamily: "Open Sans",
+                        fontWeight: 'bold',
+                        textAlign: 'left',
+                        fontFamily: 'Open Sans',
                       }}
                     >
                       {currency}
@@ -577,10 +538,10 @@ const InvoiceForDownload = ({
                     <Text
                       style={{
                         fontSize: 10,
-                        color: "#ef4444",
-                        fontWeight: "bold",
-                        textAlign: "right",
-                        fontFamily: "Open Sans",
+                        color: '#ef4444',
+                        fontWeight: 'bold',
+                        textAlign: 'right',
+                        fontFamily: 'Open Sans',
                       }}
                     >
                       {currency}
@@ -593,20 +554,16 @@ const InvoiceForDownload = ({
           </View>
 
           <View style={styles.invoiceThird}>
-            <View style={{ width: "25%", alignItems: "baseline" }}>
-              <Text style={styles.title}>{t("InvoicepaymentMethod")}</Text>
-              <Text style={{ fontSize: 10, color: "#0e9f6e" }}>
-                {data?.paymentMethod}
-              </Text>
+            <View style={{ width: '25%', alignItems: 'baseline' }}>
+              <Text style={styles.title}>{t('InvoicepaymentMethod')}</Text>
+              <Text style={{ fontSize: 10, color: '#0e9f6e' }}>{data?.paymentMethod}</Text>
             </View>
-            <View style={{ width: "25%", alignItems: "baseline" }}>
+            <View style={{ width: '25%', alignItems: 'baseline' }}>
               <Text style={styles.title}>
-                <Text style={{ width: "25%", alignItems: "baseline" }}>
-                  Sub Total
-                </Text>
+                <Text style={{ width: '25%', alignItems: 'baseline' }}>Sub Total</Text>
               </Text>
               <Text style={styles.title}>
-                <Text style={{ textAlign: "left" }}>
+                <Text style={{ textAlign: 'left' }}>
                   <Text style={styles.infoCost}>
                     {currency}
 
@@ -616,12 +573,12 @@ const InvoiceForDownload = ({
               </Text>
             </View>
 
-            <View style={{ width: "25%", alignItems: "baseline" }}>
+            <View style={{ width: '25%', alignItems: 'baseline' }}>
               <Text style={styles.title}>
-                <Text style={{ textAlign: "left" }}>{t("ShippingCost")}</Text>
+                <Text style={{ textAlign: 'left' }}>{t('ShippingCost')}</Text>
               </Text>
               <Text style={styles.title}>
-                <Text style={{ textAlign: "left" }}>
+                <Text style={{ textAlign: 'left' }}>
                   <Text style={styles.infoCost}>
                     {currency}
                     {getNumberTwo(data?.shippingCost)}
@@ -629,27 +586,23 @@ const InvoiceForDownload = ({
                 </Text>
               </Text>
             </View>
-            <View style={{ width: "25%", alignItems: "baseline" }}>
+            <View style={{ width: '25%', alignItems: 'baseline' }}>
               <Text style={styles.title}>
-                <Text style={{ textAlign: "left" }}>{t("discount")} </Text>
+                <Text style={{ textAlign: 'left' }}>{t('discount')} </Text>
               </Text>
               <Text style={styles.title}>
-                <Text style={{ textAlign: "left" }}>
+                <Text style={{ textAlign: 'left' }}>
                   <Text style={styles.infoCost}>
-                    {" "}
+                    {' '}
                     {currency}
                     {getNumberTwo(data?.discount)}
                   </Text>
                 </Text>
               </Text>
             </View>
-            <View style={{ width: "25%", alignItems: "baseline" }}>
+            <View style={{ width: '25%', alignItems: 'baseline' }}>
               <Text style={styles.title}>
-                <Text
-                  style={{ width: "45%", textAlign: "right", float: "left" }}
-                >
-                  Total
-                </Text>
+                <Text style={{ width: '45%', textAlign: 'right', float: 'left' }}>Total</Text>
               </Text>
               <Text style={styles.title}>
                 <Text style={styles.totalAmount}>
@@ -663,7 +616,7 @@ const InvoiceForDownload = ({
         </Page>
       </Document>
     </>
-  );
-};
+  )
+}
 
-export default InvoiceForDownload;
+export default InvoiceForDownload

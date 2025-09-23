@@ -1,27 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { MultiSelect } from "react-multi-select-component";
-import useUtilsFunction from "@/hooks/useUtilsFunction";
+import React, { useEffect, useState } from 'react'
+import { MultiSelect } from 'react-multi-select-component'
+import useUtilsFunction from '@/hooks/useUtilsFunction'
 
-const AttributeOptionTwo = ({
-  attributes,
-  values,
-  setValues,
-  selectedValueClear,
-}) => {
-  const [attributeOptions, setAttributeOptions] = useState([]);
-  const [selected, setSelected] = useState([]);
+const AttributeOptionTwo = ({ attributes, values, setValues, selectedValueClear }) => {
+  const [attributeOptions, setAttributeOptions] = useState([])
+  const [selected, setSelected] = useState([])
   // console.log('attributes in attribute option',attributes)
 
-  const { showingTranslateValue } = useUtilsFunction();
+  const { showingTranslateValue } = useUtilsFunction()
 
   const handleSelectValue = (items) => {
     // setSelectedValueClear(false);
-    setSelected(items);
+    setSelected(items)
     setValues({
       ...values,
       [attributes._id]: items?.map((el) => el._id),
-    });
-  };
+    })
+  }
 
   useEffect(() => {
     const options = attributes?.variants?.map((val) => {
@@ -29,16 +24,16 @@ const AttributeOptionTwo = ({
         ...val,
         label: showingTranslateValue(val?.name),
         value: val?._id,
-      };
-    });
-    setAttributeOptions(options);
-  }, [attributes?.variants]);
+      }
+    })
+    setAttributeOptions(options)
+  }, [attributes?.variants])
 
   useEffect(() => {
     if (selectedValueClear) {
-      setSelected([]);
+      setSelected([])
     }
-  }, [selectedValueClear]);
+  }, [selectedValueClear])
 
   return (
     <div>
@@ -49,7 +44,7 @@ const AttributeOptionTwo = ({
         labelledBy="Select"
       />
     </div>
-  );
-};
+  )
+}
 
-export default AttributeOptionTwo;
+export default AttributeOptionTwo

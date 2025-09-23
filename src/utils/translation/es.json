@@ -1,0 +1,1289 @@
+{
+  "common": {
+    "view": "Vista",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "cancelBtn": "Cancelar",
+    "closeBtn": "Cerrar",
+    "addBtn": "Agregar",
+    "updateBtn": "Actualizar",
+    "saveBtn": "Guardar",
+    "isRequired": "es obligatorio",
+    "published": "Publicado",
+    "error": "Por favor, selecciona primero un archivo válido .JSON/.CSV/.XLS",
+    "bulkActionUpdate": "Actualización masiva de",
+    "filter": "Filtrar",
+    "reset": "Restablecer",
+    "statusMessage": "Estado actualizado con éxito!",
+    "imageDeleteMessage": "Imagen eliminado exitosamente!",
+    "enableThisBlock": "Habilitar este bloque",
+    "pageHeaderBg": "Fondo del encabezado de la página",
+    "pageTitle": "Título de la página",
+
+    "modalDelete": {
+      "deleteModalH2": "¿Estás seguro? ¿Quieres eliminarlo?",
+      "deleteModalPtag": "¿Seguro que quieres eliminar estos registros? ¡Si los eliminas, ya no podrás verlos en tu lista!",
+      "modalKeepBtn": "No",
+      "modalDeletBtn": "Si"
+    },
+
+    "bulkAction": {
+      "label": "Acción múltiple",
+      "titleUpdate": "Actualizar {{label}}",
+      "descriptionUpdate": "Aplicar cambios a la lista de categorías {{label}}"
+    },
+
+    "export": {
+      "label": "Exportar",
+      "toCSV": "Exportar a CSV",
+      "toJSON": "Exportar a JSON"
+    },
+
+    "import": {
+      "label": "Importar",
+      "now": "Importar ahora",
+      "file": "Selecciona tu archivo para importar",
+      "error": "Por favor, selecciona primero un archivo válido .JSON/.CSV/.XLS"
+    },
+
+    "storeCustomizations": {
+      "labelEnableThisBlock": "Habilitar este bloque",
+      "labelTitle": "Titulo",
+      "labelDescription": "Descripción",
+      "labelProductsLimit": "Límite de productos",
+      "labelButtonName": "Nombre del botón",
+      "inputButtonName": "Añadir el nombre del botón",
+      "labelButtonLink": "Enlace del botón",
+      "titleBlock": "Bloque",
+      "labelLink": "Enlace",
+      "inputLinkName": "agregar un nombre al enlace",
+      "inputLink": "Añadir un enlace"
+    }
+  },
+
+  "loginScreen": {
+    "title": "Iniciar sesión",
+    "emailLbl": "Correo electrónico",
+    "passwordLbl": "Contraseña",
+    "loginBtn": "Iniciar sesión",
+    "loginWithFacebook": "Iniciar sesión con Facebook",
+    "loginWithGoogle": "Iniciar sesión con Google",
+
+    "forgotPassword": {
+      "title": "¿Olvidaste tu contraseña?",
+      "emailLbl": "Correo electrónico",
+      "recoverPasswordBtn": "Recuperar contraseña",
+      "alreadyHaveAccount": "¿Ya tienes una cuenta? Inicia sesión"
+    },
+
+    "createAccount": {
+      "title": "Crear cuenta",
+      "name": "Nombre",
+      "emailLbl": "Correo electrónico",
+      "passwordLbl": "Contraseña",
+      "staffRoleLbl": "Rol del personal",
+      "superAdminRole": "Superadministrador",
+      "adminRole": "Administrador",
+      "cashierRole": "Cajero",
+      "ceoRole": "Director general",
+      "managerRole": "Gerente",
+      "accountantRole": "Contador",
+      "driverRole": "Conductor",
+      "securityGuardRole": "Guardia de seguridad",
+      "deliveryPersonRole": "Repartidor",
+      "sellerRole": "Vendedor",
+      "iAgree": "Acepto la ",
+      "privacyPolicy": "Política de privacidad",
+      "btn": "Crear cuenta",
+      "signupWithFacebook": "Registrarse con Facebook",
+      "signupWithGoogle": "Registrarse con Google",
+      "alreadyHaveAccount": "¿Ya tienes una cuenta? Inicia sesión"
+    },
+
+    "message": {
+      "login": "¡Inicio de sesión exitoso!"
+    }
+  },
+
+  "profileMenu": {
+    "dashboardPM": "Panel",
+    "editProfile": "Editar perfil",
+    "logOut": "Cerrar sesion"
+  },
+
+  "sideBar": {
+    "dashboard": "Panel",
+    "catalog": {
+      "catalogTitle": "Catalogo",
+      "products": "Productos",
+      "categories": "Categorias",
+      "attributes": "Atributos",
+      "coupons": "Cupones"
+    },
+    "customers": "Clientes",
+    "orders": "Pedidos",
+    "ourStaff": "Nuestro personal",
+    "settings": "Configuracion",
+    "international": {
+      "internationalTitle": "Internacional",
+      "languages": "Idiomas",
+      "currencies": "Monedas"
+    },
+    "onlineStore": {
+      "onlineStoreTitle": "Tienda online",
+      "viewStore": "Ver tienda",
+      "storeCustomizationPageTitle": "Personalizacion de tienda",
+      "storeSettings": "Ajustes de tienda",
+      "deliveryPoints": "Puntos de entrega"
+    }
+  },
+
+  "dashboardScreen": {
+    "title": "Descripción general del panel de control",
+    "titleOrders": "Pedido reciente",
+
+    "cards": {
+      "method": {
+        "cash": "Efectivo",
+        "card": "Tarjeta",
+        "credit": "Crédito"
+      },
+
+      "todayOrders": "Pedidos de hoy",
+      "yesterdayOrders": "Pedidos de ayer",
+      "thisMonth": "Este mes",
+      "lastMonth": "El mes pasado",
+      "totalSales": "Ventas totales",
+      "totalOrders": "Pedidos totales",
+      "ordersPending": "Pedidos pendientes",
+      "ordersProcessing": "Pedidos en proceso",
+      "ordersDelivered": "Pedidos entregados"
+    },
+
+    "graphics": {
+      "weeklySales": "Ventas semanales",
+      "sales": "Ventas",
+      "orders": "Pedidos",
+      "bestSellingProducts": "Productos más vendidos"
+    }
+  },
+
+  "productsScreen": {
+    "productsPage": "Productos",
+    "title": "Producto",
+    "bulkActionsBtn": "Accion multiple",
+    "addProduct": "Agregar producto",
+    "search": "Buscar producto",
+    "category": "Categoria",
+    "filterBtn": "Filtrar",
+    "resetBtn": "Reiniciar",
+
+    "selectPrice": {
+      "title": "Precio",
+      "lowtoHigh": "De menor a mayor",
+      "hightoLow": "De mayor a menor",
+      "published": "Publicado",
+      "unpublished": "No publicado",
+      "statusSelling": "Estado de venta",
+      "statusStock": "Estado del inventario",
+      "dateAddedAsc": "Fecha de incorporación ascedente",
+      "dateAddedDesc": "Fecha de incorporación descendente ",
+      "dateUpdatedAsc": "Fecha de actualización ascendente",
+      "dateUpdatedDesc": "Fecha de actualización decendente"
+    },
+
+    "table": {
+      "productNameTbl": "NOMBRE DEL PRODUCTO",
+      "categoryTbl": "CATEGORÍA",
+      "priceTbl": "PRECIO",
+      "salePriceTbl": "PRECIO DE VENTA",
+      "stockTbl": "EXISTENTE",
+      "addQuantity": "AÑADIR CANTIDAD",
+      "statusTbl": "ESTADO",
+      "detailsTbl": "VISTA",
+      "publishedTbl": "PUBLICADO",
+      "actionsTbl": "ACCIONES"
+    },
+
+    "drawer": {
+      "titleUpdate": "Actualizar productos",
+      "descriptionUpdate": "Actualizar información de productos, combinaciones y extras.",
+      "titleAdd": "Agregar producto",
+      "descriptionAdd": "Añade tu producto y la información necesaria desde aquí",
+      "basicInfo": "Información básica",
+      "combination": "Combinación",
+      "productTitleName": "Título/nombre del producto",
+      "productDescription": "Descripción del Producto",
+      "productImage": "Imagen del producto",
+      "productSKU": "SKU del producto",
+      "productBarcode": "Código de barras del producto",
+      "category": "Categoría",
+      "selectCategory": "Seleccionar categoría",
+      "defaultCategory": "Categoría predeterminada",
+      "productPrice": "Precio del producto",
+      "salePrice": "Precio de venta",
+      "productQuantity": "Cantidad de producto",
+      "productSlug": "Slug del producto",
+      "productTag": "Etiquetas del producto",
+      "thisProductHaveVariants": "¿Este producto tiene variantes?",
+      "yes": "Si",
+      "no": "No",
+      "productTagPlaseholder": "Etiqueta del producto (Escriba y presione Enter para agregar una nueva etiqueta)",
+      "validationTitle": "¡El título es obligatorio!",
+      "validationSlug": "El slug es obligatorio",
+      "validationMinumum": "¡Valor mínimo 1!",
+      "validationPrice": "¡Se requiere precio original!",
+      "validationMin": "¡Valor mínimo 0!",
+      "quantityValidation": "¡Se requiere cantidad!",
+      "originalPrice": "Precio original",
+      "clearVariants": "Borrar variantes",
+      "generateVariants": "Generar variantes",
+      "selling": "Venta",
+      "soldOut": "Agotado",
+      "notification": "¡El precio de venta debe ser menor o igual al precio del producto!",
+      "variantNotification": "¡Seleccione primero una variante!",
+      "imageNotification": "¡Imagen cargada exitosamente!",
+
+      "titleAddQuantity": "Control de Inventario",
+      "titleDescriptionQuantity": "Tu puedes Añadir o quitar cantidad de producto",
+      "inbound": "Entrante:",
+      "outbound": "Saliente:",
+      "stockTotal": "Total existentes:",
+      "labelQuantity": "Cantidad",
+      "inputQuantity": "Añadir cantidad",
+      "buttonQuantity": "Añadir",
+      "buttonremove": "Quitar",
+      "labelRemove": "QUITAR PRODUCTO",
+      "titleTable": "Entradas de stock",
+
+      "table": {
+        "id": "Id",
+        "productName": "Nombre del producto",
+        "category": "Categoría",
+        "date": "Fecha",
+        "type": "Tipo",
+        "thereAreNoProducts": "No hay productos",
+        "quantity": "Cantidad"
+      }
+    },
+
+    "message": {
+      "saveNotification": "¡Guarde el producto antes de agregar combinaciones!",
+      "categoryNotification": "¡La categoría predeterminada es obligatoria!",
+      "addNotification": "¡Producto añadido exitosamente!",
+      "statusHide": "Producto ocultado ¡Exitosamente!",
+      "statusShow": "¡Producto presentado exitosamente!",
+      "delete": "¡Producto eliminado exitosamente!",
+      "update": "¡Producto actualizado exitosamente!",
+      "updateError": "¡Producto no encontrado!"
+    },
+
+    "productDetails": {
+      "title": "Detalles del producto",
+      "status": "Estado",
+      "productShowing": "Este producto mostrando",
+      "sku": "SKU",
+      "inStock": "En stock",
+      "quantity": "CANTIDAD",
+      "category": "Categoría",
+      "editProduct": "Editar producto",
+      "productVariantList": "Lista de variantes de producto",
+
+      "table": {
+        "sr": "SR",
+        "image": "IMAGEN",
+        "combination": "COMBINACIÓN",
+        "sku": "Sku",
+        "barcode": "CÓDIGO DE BARRAS",
+        "orginalPrice": "PRECIO ORIGINAL",
+        "salePrice": "PRECIO DE VENTA",
+        "quantity": "CANTIDAD",
+        "question": "¿Estás seguro de eliminar la combinación de este producto?",
+        "description": "(Se eliminarán todas tus combinaciones y extras.)",
+        "action": "ACCIÓN",
+        "delete": "¿Estás seguro de eliminar esta combinación!",
+        "deleteConfirmNote": "(Si está bien, se eliminará esta combinación.)"
+      }
+    }
+  },
+
+  "categoriesScreen": {
+    "title": "Categorias",
+    "addCategory": "Añadir Categoría",
+    "searchCategory": "Buscar por nombre de categoría",
+    "parentsOnly": "Solo padre",
+    "all": "Todo",
+    "linkCategories": "Categorías",
+
+    "table": {
+      "catId": "ID DE CATEGORÍA",
+      "catIcon": "ICONO",
+      "catName": "NOMBRE",
+      "catDescription": "DESCRIPCIÓN",
+      "catPublished": "PUBLICADO",
+      "catActions": "ACCIONES"
+    },
+
+    "categoryDrawer": {
+      "titleUpdate": "Actualizar categoría",
+      "descriptionUpdate": "Actualiza la categoría de tu producto y la información necesaria desde aquí",
+      "titleAdd": "Añadir categoría",
+      "descriptionAdd": "Añade la categoría de tu producto y la información necesaria desde aquí",
+      "labelName": "Nombre",
+      "inputName": "Título de la categoría",
+      "labelDescription": "Descripción",
+      "inputDescription": "Descripción de la categoría",
+      "labelParentCategory": "Categoría padre",
+      "labelCategoryIcon": "Imagen de categoría",
+      "dragYourImage": "Arrastra tus imágenes aquí",
+      "imageFormat": "(Solo se aceptarán imágenes *.jpeg, *.webp y *.png)",
+      "labelPublished": "Publicado",
+      "validationName": "Título de la categoría",
+      "validationNameRequired": "{{field}} es requerido!"
+    },
+
+    "message": {
+      "published": "¡Categoría publicada con éxito!",
+      "unpublished": "¡Categoría despublicada con éxito!",
+      "updated": "¡Categoría actualizada con éxito!",
+      "added": "¡Categoría añadida con éxito!",
+      "delete": "¡Categoría eliminada exitosamente!"
+    }
+  },
+
+  "attributesScreen": {
+    "label": "Atributos",
+    "addBtn": "Agregar Atributo",
+    "searchPh": "Buscar atributo por nombre",
+    "editValues": "Editar Valores",
+    "labelValues": "valores de los atributos",
+
+    "table": {
+      "id": "ID",
+      "name": "NOMBRE",
+      "displayName": "NOMBRE VISIBLE",
+      "option": "OPCIÓN",
+      "published": "PUBLICADO",
+      "values": "VALORES",
+      "action": "ACCIÓN",
+      "type": "TIPO",
+      "status": "ESTADO"
+    },
+
+    "drawer": {
+      "options": "Opciones",
+      "required": "¡La opción es obligatoria!",
+      "select": "Seleccionar Tipo",
+      "dropDown": "Desplegable",
+      "radio": "Opción Única",
+      "addValue": "Agregar Valor de Atributo",
+      "addUpdateValue": "Agregar/Actualizar Valor de Atributo",
+      "addValueDescription": "Agrega los valores de tu atributo y la información necesaria desde aquí",
+      "addTitleLbl": "Título del Atributo",
+      "addTitlePh": "Color o Tamaño o Dimensión o Material o Tela",
+      "displayName": "Nombre Visible",
+      "variants": "Variantes",
+      "variantsPh": "Presiona Enter para agregar una variante",
+      "singularBtn": "Atributo",
+      "changeGroupLbl": "Cambiar grupo del atributo",
+      "selectGroup": "Selecciona el grupo del atributo"
+    },
+
+    "editionValues": {
+      "label": "Valor de atributo",
+      "add": "Agregar Valor"
+    },
+
+    "message": {
+      "published": "¡Atributo publicado con éxito!",
+      "unpublished": "¡Atributo despublicado con éxito!",
+      "updated": "¡Atributo actualizado con éxito!",
+      "added": "¡Atributo añadido con éxito!",
+      "delete": "¡Atributo eliminado exitosamente!",
+      "pluralDelete": "¡Atributos eliminados exitosamente!"
+    }
+  },
+
+  "couponsScreen": {
+    "title": "Cupones",
+    "addCoupon": "Añadir Cupón",
+    "searchCoupon": "Buscar por código / nombre del cupón",
+
+    "table": {
+      "campaignName": "NOMBRE DEL CUPON",
+      "code": "CÓDIGO",
+      "discount": "DESCUENTO",
+      "published": "PUBLICADO",
+      "startDate": "FECHA DE INICIO",
+      "endDate": "FECHA DE FINALIZACIÓN",
+      "status": "ESTADO",
+      "actions": "ACCIONES",
+      "expired": "Caducado",
+      "active": "Activo"
+    },
+
+    "couponDrawer": {
+      "titleUpdate": "Actualizar cupón",
+      "descriptionUpdate": "Actualicé su cupón y la información necesaria desde aquí",
+      "titleAdd": "Añadir cupón",
+      "descriptionAdd": "Añadir su cupón y la información necesaria desde aquí",
+      "couponBannerImage": "Imagen del banner del cupón",
+      "campaignName": "Nombre del cupon",
+      "campaignCode": "Codigo del cupon",
+      "couponValidityTime": "Tiempo de validez del cupón",
+      "discountType": "Tipo de descuento",
+      "fixed": "Fijo",
+      "percentage": "Porcentaje",
+      "couponDiscount": "Descuento",
+      "inputFixed": "Cantidad fija",
+      "inputPercentaje": "Cantidad Porcentual",
+      "minimumAmount": "Cantidad mínima",
+      "inputMinimumAmount": "Cantidad mínima requerida",
+      "labelPublished": "Publicado",
+      "labelStart": "Hora de inicio",
+      "validationStart": "Hora de inicio de la validación del cupón",
+      "labelEnd": "Hora de finalizacion",
+      "validationEnd": "Hora de finalización de la validación del cupón",
+      "validationDiscount": "Descuento"
+    },
+
+    "message": {
+      "published": "¡Cupóm publicada con éxito!",
+      "unpublished": "¡Cupón despublicada con éxito!",
+      "updated": "¡Cupón actualizado exitosamente!",
+      "added": "¡Cupón añadido exitosamente!",
+      "delete": "¡Cupón eliminado exitosamente!"
+    }
+  },
+
+  "customerScreen": {
+    "title": "Clientes",
+    "singularTitle": "Cliente",
+    "customersPageSearchPlaceholder": "Buscar por nombre / correo electrónico / teléfono",
+    "filter": "Filtrar",
+    "reset": "Reiniciar",
+    "customerDescription": "Lo sentimos, no hay clientes en este momento.",
+
+    "drawer": {
+      "title": "Actualizar cliente",
+      "description": "Actualiza la información necesaria de tu cliente desde aquí",
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "address": "Dirección"
+    },
+
+    "table": {
+      "id": "ID",
+      "joiningDate": "FECHA DE INGRESO",
+      "name": "NOMBRE",
+      "email": "CORREO ELECTRÓNICO",
+      "phone": "TELÉFONO",
+      "actions": "ACCIONES"
+    },
+
+    "viewOrder": {
+      "view": "Ver Orden",
+      "noOrder": "No Ordenar",
+      "label": "Lista de pedidos",
+
+      "table": {
+        "orderId": "ID DE PEDIDO",
+        "time": "HORA",
+        "shippingAdress": "DIRECCIÓN DE ENVÍO",
+        "phone": "TELÉFONO",
+        "method": "MÉTODO",
+        "amount": "MONTO",
+        "status": "ESTADO",
+        "action": "ACCIÓN"
+      }
+    },
+
+    "message": {
+      "updated": "Cliente actualizado con éxito!",
+      "delete": "Cliente eliminado con éxito!"
+    }
+  },
+
+  "ordersScreen": {
+    "title": "Pedidos",
+    "searchByCustomerName": "Buscar por nombre de cliente",
+    "downloadOrdersBtn": "Descargar todos los pedidos",
+    "notFound": "Lo sentimos, no podemos encontrar esto",
+    "sorryOrderNotFound": "Lo sentimos, no hay pedidos en este momento.",
+
+    "status": {
+      "label": "Estado",
+      "orderDelivered": "Entregado",
+      "orderPending": "Pendiente",
+      "orderProcessing": "Procesando",
+      "orderCancel": "Cancelado"
+    },
+
+    "orderLimits": {
+      "label": "Límites de pedidos",
+      "daysLim5": "Pedidos de los últimos 5 días",
+      "daysLim7": "Pedidos de los últimos 7 días",
+      "daysLim15": "Pedidos de los últimos 15 días",
+      "daysLim30": "Pedidos de los últimos 30 días"
+    },
+
+    "method": {
+      "label": "Método",
+      "cash": "Efectivo",
+      "card": "Tarjeta",
+      "credit": "Credito"
+    },
+
+    "filters": {
+      "startDate": "Fecha de inicio",
+      "endDate": "Fecha de finalización"
+    },
+
+    "table": {
+      "invoiceNoTbl": "Nº FACTURA",
+      "timeTbl": "HORA DEL PEDIDO",
+      "customerNameTbl": "NOMBRE DEL CLIENTE",
+      "methodTbl": "MÉTODO",
+      "amountTbl": "CANTIDAD",
+      "oderStatusTbl": "ESTADO",
+      "actionTbl": "ACCIÓN",
+      "invoiceTbl": "FACTURA",
+      "viewInvoice": "Ver factura",
+      "printReceipt": "Imprimir recibo"
+    },
+
+    "invoice": {
+      "title": "Factura",
+      "status": "Estado",
+      "date": "FECHA",
+      "invoiceNo": "NUMERO DE FACTURA",
+      "invoiceTo": "FACTURA A",
+      "serieNo": "NUMERO DE SERIE",
+      "articulos": "ARTICULOS",
+      "quantity": "CANTIDAD",
+      "itemPrice": "PRECIO DEL ARTÍCULO",
+      "amount": "CANTIDAD",
+      "paymentMethod": "MÉTODO DE PAGO",
+      "shippingCost": "COSTOS DE ENVÍO",
+      "discount": "DESCUENTO",
+      "totalAmount": "IMPORTE TOTAL",
+      "download": "Descargar Factura",
+      "print": "Imprimir Factura"
+    },
+
+    "message": {
+      "updated": "¡Pedido actualizado correctamente!"
+    }
+  },
+
+  "staffScreen": {
+    "title": "Todo el personal",
+    "searchBy": "Buscar por nombre / correo electrónico / teléfono",
+    "addStaffBtn": "Agregar personal",
+    "staffDescription": "Lo sentimos, no hay personal en este momento.",
+
+    "selectRole": {
+      "title": "Rol del personal",
+      "admin": "Administrador",
+      "ceo": "CEO",
+      "cashiers": "Cajero",
+      "superAdmin": "Súper administrador"
+    },
+
+    "table": {
+      "name": "Nombre",
+      "email": "Correo",
+      "contact": "Contacto",
+      "joiningDate": "Fecha de incorporación",
+      "role": "Rol",
+      "oderStatus": "ESTADO",
+      "published": "PUBLICADO",
+      "actions": "ACCIONES"
+    },
+
+    "status": {
+      "inactive": "Inactivo",
+      "active": "activo"
+    },
+
+    "drawer": {
+      "titleUpdate": "Actualizar personal",
+      "descriptionUpdate": "Actualiza la información necesaria de su personal desde aquí",
+      "titleAdd": "Añadir personal",
+      "descriptionAdd": "Añadir la información necesaria de su personal desde aquí",
+      "labelStaffImage": "Imagen del personal",
+      "labelName": "Nombre",
+      "inputName": "Nombre del personal",
+      "labelEmail": "Correo electrónico",
+      "inputEmail": "Correo electrónico del personal",
+      "labelPassword": "Contraseña",
+      "inputPassword": "Contraseña del personal",
+      "labelContact": "Número de contacto",
+      "inputContact": "Número de teléfono",
+      "labelJoiningDate": "Fecha de incorporación",
+      "labelRole": "Rol del personal",
+      "labelSelectAccess": "Seleccionar rutas para el acceso especificado",
+
+      "selectAccess": {
+        "dashboard": "Panel de control",
+        "products": "Productos",
+        "categories": "Categorías",
+        "attributes": "Atributos",
+        "coupons": "Cupones",
+        "customers": "Clientes",
+        "orders": "Pedidos",
+        "ourStaff": "Personal",
+        "settings": "Configuración",
+        "languages": "Idiomas",
+        "currencies": "Monedas",
+        "store": "Ver tienda",
+        "customization": "Personalización de la tienda",
+        "storeSettings": "Configuración de la tienda",
+        "product": "Detalles del producto",
+        "order": "Factura del pedido",
+        "editProfile": "Editar perfil",
+        "customerOrder": "Pedido del cliente",
+        "notifications": "Notificación",
+        "comingSoon": "Próximamente"
+      }
+    },
+
+    "accesslistModal": {
+      "text": "Lista de accesos a rutas para",
+      "message": "Este personal no tiene acceso a la ruta!"
+    },
+
+    "message": {
+      "updated": "¡Personal actualizado exitosamente!",
+      "added": "¡Personal añadido exitosamente!",
+      "delete": "¡Personal eliminado exitosamente!",
+      "emailExists": "¡Este correo electrónico ya se agregó!",
+      "active": "¡Personal Activo con Éxito!",
+      "inactive": "¡Personal Inactivo con Éxito!"
+    }
+  },
+
+  "settingScreen": {
+    "setting": "Configuracion",
+    "numberOfImagesPerProduct": "Numero de imagenes por producto",
+    "allowAutoTranslation": "Permitir traduccion automatica",
+    "yesSwitchToggle": "Si",
+    "translationSecretKey": "LLave de traduccion secreta",
+    "descriptionKey": "Obten tu llave desde ",
+    "here": "Aqui",
+    "defaultLanguage": "Idioma por defecto",
+    "defaultCurrency": "Moneda predeterminada",
+    "timeZone": "Zona horaria predeterminada",
+    "defaultDateFormat": "Formato de fecha predeterminada",
+    "ssMDY": "MM/DD/AAAA",
+    "ssDMY": "DD/MM/AAAA",
+    "ssYMD": "AAAA/MM/DD",
+    "receiptSize": "Tamaño de recibo (Ancho)",
+    "emailOptionInvoice": "Habilitar envío de facturas al cliente por correo electrónico",
+    "fromEmail": "Desde el email",
+    "phFromEmail": "Correo electronico referente",
+    "shopName": "Nombre de la tienda",
+    "invoiceCompanyName": "Nombre de la compañia",
+    "vatNumber": "Numero IVA",
+    "addressLine": "Direccion",
+    "postCode": "Codigo Postal",
+    "globalContactNumber": "Contacto",
+    "phGlobalContactNumber": "Numero de contacto",
+    "footerEmail": "Correo Electronico",
+    "webSite": "Sitio Web"
+  },
+
+  "roleScreen": {
+    "sidebarLabel": "Configuración de roles",
+    "label": "CONFIGURACIÓN DE ROLES",
+    "addBtn": "Agregar",
+
+    "table": {
+      "name": "NOMBRE",
+      "permissions": "PERMISOS",
+      "actions": "ACCIONES"
+    },
+
+    "drawer": {
+      "titleAdd": "Agregar Rol",
+      "descriptionAdd": "Configura tus permisos desde aqui",
+      "labelName": "Nombre",
+      "inputName": "Nombre del rol",
+      "labelPermission": "Selecciona permisos",
+      "titleBtn": "Rol"
+    },
+
+    "message": {
+      "update": "Rol actualizado con exito!",
+      "add": "Rol añadido con exito!",
+      "delete": "Rol eliminado con exito!"
+    }
+  },
+
+  "languagesScreen": {
+    "title": "Idiomas",
+
+    "table": {
+      "searchLanguage": "Búsqueda por nombre de país y código ISO, código de idioma",
+      "addLanguage": "Agregar idioma",
+      "languagesSr": "SR",
+      "languagesNname": "NOMBRE",
+      "languagesIsoCode": "CÓDIGO ISO",
+      "languageCode": "CÓDIGO DE IDIOMA",
+      "languagesFlag": "BANDERA",
+      "languagesPublished": "PUBLICADO",
+      "languagesActions": "ACTIONES"
+    },
+
+    "drawer": {
+      "addLanguage": "Agregar idioma",
+      "languageText": "Añade la información necesaria de tu idioma desde aquí",
+      "languageName": "Nombre del idioma",
+      "isoCode": "Código ISO",
+      "flag": "Bandera",
+      "published": "Publicado",
+      "languageBtn": "Idioma",
+      "defaultIsoCode": "Código ISO predeterminado"
+    },
+    "message": {
+      "published": "Idioma publicado exitosamente",
+      "unPublished": "Idioma no publicado exitosamente",
+      "addNotification": "¡Idioma agregado exitosamente!",
+      "deleteNotification": "¡Idioma eliminado con éxito!"
+    }
+  },
+
+  "currenciesScreen": {
+    "title": "Monedas",
+    "addCurrency": "Agregar moneda",
+    "searchIsoCode": "Buscar por código ISO",
+
+    "table": {
+      "nameTbl": "NOMBRE",
+      "symbolTbl": "SÍMBOLO",
+      "enabledTbl": "ACTIVADO",
+      "actionsTbl": "ACTIONES"
+    },
+    "drawer": {
+      "updateCurrency": "Actualizar moneda",
+      "currencyText": "Actualice su moneda y la información necesaria desde aquí",
+      "name": "Nombre",
+      "symbol": "Símbolo",
+      "enabled": "Activado",
+      "currency": "Moneda",
+      "addCurrency": "Agregar moneda",
+      "descriptionCurrency": "Añade tu moneda y la información necesaria desde aquí"
+    },
+
+    "message": {
+      "published": "¡Moneda publicada exitosamente!",
+      "unpublished": "¡Moneda no publicada exitosamente!",
+      "updateCurrency": "¡Actualización de moneda exitosa!",
+      "deleteCurrency": "¡Moneda eliminada con éxito!"
+    }
+  },
+
+  "storeCustomizationScreen": {
+    "title": "Personalizaciones de la tienda",
+    "tabsSettings": {
+      "home": "Página de inicio",
+      "product": "Página de slug del producto",
+      "aboutUs": "Sobre nosotros",
+      "privacyTC": "Política de privacidad y T&C",
+      "faq": "FAQs",
+      "offers": "Ofertas",
+      "contactUs": "Contáctanos",
+      "checkOut": "Verificar",
+      "dashboard": "Panel de control",
+      "seo": "Configuración SEO"
+    },
+
+    "homePage": {
+      "header": {
+        "title": "Encabezado",
+
+        "contact": {
+          "title": "Contactos del encabezado",
+          "labelHeaderText": "Texto del encabezado",
+          "inputWeAreAvailable": "Estamos disponibles 24/7, ¿Necesitas ayuda?",
+          "labelPhoneNumber": "Número de teléfono",
+          "labelHeaderLogo": "Logo del encabezado"
+        },
+
+        "menuEditor": {
+          "title": "Editor del menú",
+          "labelCategories": "Categorías",
+          "inputCategories": "Categorías",
+          "labelAboutUs": "Sobre nosotros",
+          "inputAboutUs": "Sobre nosotros",
+          "labelContactUs": "Contáctanos",
+          "inputContactUs": "Contáctanos",
+          "labelOffers": "Ofertas",
+          "inputOffers": "Ofertas",
+          "labelFAQ": "Preguntas frecuentes",
+          "inputFAQ": "Preguntas frecuentes",
+          "labelPrivacyPolicy": "Política de privacidad",
+          "inputPrivacyPolicy": "Política de privacidad",
+          "labelTermsConditions": "Términos y condiciones",
+          "inputTermsConditions": "Términos y condiciones",
+          "labelPages": "Páginas",
+          "inputPages": "Páginas",
+          "labelMyAccount": "Mi cuenta",
+          "inputMyAccount": "Mi cuenta",
+          "labelLogin": "Iniciar sesión",
+          "inputLogin": "Iniciar sesión",
+          "labelLogout": "Cerrar sesión",
+          "inputLogout": "Cerrar sesión",
+          "labelCheckout": "Finalizar compra",
+          "inputCheckout": "Finalizar compra"
+        }
+      },
+
+      "mainSlider": {
+        "title": "Carrusel principal",
+
+        "tabs": {
+          "title": "Carrusel",
+          "labelImages": "Imágenes del carrusel",
+          "labelTitle": "Título del carrusel",
+          "inputTitle": "Título del carrusel",
+          "labelDescription": "Descripción del carrusel",
+          "inputDescription": "Descripción del carrusel",
+          "labelButtonName": "Texto del botón",
+          "inputButtonName": "Texto del botón",
+          "labelButtonLink": "Enlace del botón",
+          "inputButtonLink": "Enlace del botón",
+          "titleOptions": "Opciones",
+          "leftRighArrows": "Flechas izquierda y derecha",
+          "bottomDots": "Puntos inferiores",
+          "both": "Ambos"
+        }
+      },
+
+      "discountCouponCodeBox": {
+        "title": "Caja de cupón de descuento",
+        "labelShowHide": "Mostrar / Ocultar",
+        "labelTitle": "Título del descuento en la página de inicio",
+        "inputTitle": "Título del descuento en la página de inicio",
+        "labelCouponCode": "Cupón de descuento activo",
+        "labelSliderFullWidth": "Carrusel a ancho completo",
+        "labelPlaceHolderImage": "Imagen de marcador de posición",
+        "textImagesResolution": "Resolución de imágenes 500X400px"
+      },
+
+      "promotionBanner": {
+        "title": "Banner de promoción",
+        "inputDescription": "Descripción de la promoción"
+      },
+
+      "featuredCategories": {
+        "title": "Categorías destacadas",
+        "labelFeaturedCategories": "Categorías destacadas",
+        "inputFeaturedCategories": "Agregar categorías destacadas"
+      },
+
+      "popularProducts": {
+        "title": "Productos populares",
+        "inputPopularDescription": "Descripción de productos populares"
+      },
+
+      "quickDeliverySection": {
+        "title": "Sección de entrega rápida",
+        "labelsubTitle": "Subtítulo",
+        "inputsubTitle": "Agregar subtítulo",
+        "labelImage": "Imagen"
+      },
+
+      "latestDiscountedProducts": {
+        "title": "Últimos productos con descuento",
+        "inputDescription": "Descripción de los últimos descuentos"
+      },
+
+      "getYourDailyNeeds": {
+        "title": "Obtén tus necesidades diarias",
+        "labelImageLeft": "Imagen izquierda",
+        "labelImageRight": "Imagen derecha",
+        "labelButton1image": "Imagen del botón 1",
+        "labelButton1Link": "Enlace del botón 1",
+        "labelButton2image": "Imagen del botón 2",
+        "labelButton2Link": "Enlace del botón 2"
+      },
+
+      "featurePromoSection": {
+        "title": "Sección de promociones destacadas",
+        "labelFreeShipping": "Envío gratis",
+        "inputFreeShipping": "Desde $500.00",
+        "labelSupport": "Soporte",
+        "inputSupport": "24/7 en cualquier momento",
+        "labelSecurePayment": "Pago seguro",
+        "inputSecurePayment": "Agregar método de pago seguro",
+        "labelLatestOffer": "Última oferta",
+        "inputLatestOffer": "Hasta 20% de descuento"
+      },
+
+      "footer": {
+        "title": "Pie de página",
+        "labelLogo": "Logo del pie de página",
+        "labelAddress": "Dirección",
+        "inputAddress": "Agregar dirección",
+        "labelPhone": "Teléfono",
+        "inputPhone": "Agregar teléfono",
+        "labelEmail": "Correo electrónico",
+        "inputEmail": "Agregar correo electrónico",
+        "titleSocialLinks": "Enlaces sociales",
+        "titlePaymentMethod": "Método de pago",
+        "labelImagePaymentMethod": "Imagen del método de pago",
+        "titleBottomContact": "Número de contacto en el pie inferior",
+        "labelBottomContact": "Número de contacto",
+        "inputBottomContact": "Agregar número de contacto"
+      }
+    },
+
+    "productSlugPage": {
+      "rightBox": {
+        "title": "Cuadro derecho",
+        "inputDescription": "Añadir descripción"
+      }
+    },
+
+    "aboutUs": {
+      "title": "Sobre nosotros",
+
+      "pageHeader": {
+        "title": "Encabezado de página",
+        "enableThisBlock": "Habilitar este bloque",
+        "pageHeaderBg": "Fondo del encabezado de página",
+        "pageTitle": "Título de la página"
+      },
+
+      "aboutPage": {
+        "topContentLeft": "Contenido superior izquierdo de la página ",
+        "topTitle": "Título superior",
+        "topDescription": "Descripción superior",
+        "boxOneTitle": "Título del cuadro uno",
+        "boxOneSubtitle": "Subtítulo del cuadro uno",
+        "boxOneDescription": "Descripción del cuadro uno",
+        "boxTwoTitle": "Título del cuadro dos",
+        "boxTwoSubtitle": "Subtítulo del cuadro dos",
+        "boxTwoDescription": "Descripción del cuadro dos"
+      },
+
+      "pageTop": {
+        "topContentRight": "Contenido superior derecho de la página",
+        "contentRightImage": "Imagen del contenido superior derecho"
+      },
+
+      "contentSection": {
+        "title": "Sección de contenido",
+        "descriptionOne": "Primer párrafo",
+        "descriptionTwo": "Segundo párrafo",
+        "image": "Imagen de contenido"
+      },
+      "ourTeam": {
+        "title": "Nuestro equipo",
+        "foundertitle": "Título de nuestro equipo",
+        "description": "Descripción de nuestro equipo",
+        "member": "Miembro",
+        "image": "Imagen de nuestro equipo Uno",
+        "oneTitle": "Título de Nuestro Equipo Uno",
+        "oneSubTitle": "Subtítulo de Nuestro Equipo Uno",
+        "twoImage": "Imagen de Nuestro Equipo Dos",
+        "twoTitle": "Título de Nuestro Equipo Dos",
+        "twoSubTitle": "Subtítulo de Nuestro Equipo Dos",
+        "threeImage": "Imagen de Nuestro Equipo Tres",
+        "threeTitle": "Título de Nuestro Equipo Tres",
+        "threeSubTitle": "Subtítulo de Nuestro Equipo Tres",
+        "fourImage": "Imagen de Nuestro Equipo Cuatro",
+        "fourTitle": "Título de Nuestro Equipo Cuatro",
+        "fourSubTitle": "Subtítulo de Nuestro Equipo Cuatro",
+        "fiveImage": "Imagen de Nuestro Equipo Cinco",
+        "fiveTitle": "Título de Nuestro Equipo Cinco",
+        "fiveSubTitle": "Subtítulo de Nuestro Equipo Cinco",
+        "sixImage": "Imagen de Nuestro Equipo Seis",
+        "sixTitle": "Título de Nuestro Equipo Seis",
+        "sixSubTitle": "Subtítulo de Nuestro Equipo Seis"
+      }
+    },
+
+    "privacyPolicy": {
+      "title": "Política de privacidad y términos y condiciones",
+
+      "privacy": {
+        "subTitle": "política de privacidad",
+        "pageText": "Texto de la página"
+      },
+      "termsConditions": {
+        "title": "Términos y condiciones"
+      }
+    },
+
+    "faQs": {
+      "title": "Configuración de Preguntas Frecuentes",
+
+      "subTitle": {
+        "titleFaQs": "Encabezado de la Página de Preguntas Frecuentes"
+      },
+      "LeftColumn": {
+        "faqLeftCol": "Preguntas frecuentes Columna izquierda",
+        "leftImage": "Imagen izquierda",
+        "faqTitleOne": "Título de la primera pregunta frecuente",
+        "title": "Título de las preguntas frecuentes",
+        "faqDescriptionOne": "Descripción de la primera pregunta frecuente",
+        "faqTitleTwo": "Título de la segunda pregunta frecuente",
+        "faqDescriptionTwo": "Descripción de la segunda pregunta frecuente",
+        "faqTitleThree": "Título de la tercera pregunta frecuente",
+        "faqDescriptionThree": "Descripción de la tercera pregunta frecuente",
+        "faqTitleFour": "Título de la cuarta pregunta frecuente",
+        "faqDescriptionFour": "Descripción de la cuarta pregunta frecuente",
+        "faqTitleFive": "Título de la quinta pregunta frecuente",
+        "faqDescriptionFive": "Descripción de la quinta pregunta frecuente",
+        "faqTitleSix": "Título de la sexta pregunta frecuente",
+        "faqDescriptionSix": "Descripción de la sexta pregunta frecuente",
+        "faqTitleSeven": "Título de la séptima pregunta frecuente",
+        "faqDescriptionSeven": "Descripción de la séptima pregunta frecuente",
+        "faqTitleEight": "Título de la octava pregunta frecuente",
+        "faqDescriptionEight": "Descripción de la octava pregunta frecuente"
+      }
+    },
+
+    "offers": {
+      "title": "Ofertas",
+      "subTitle": "Encabezado de la página",
+      "superDiscount": "Código de cupón activo de súper descuento"
+    },
+
+    "contactUs": {
+      "title": "Contáctanos",
+      "pageHeader": {
+        "title": "Encabezado de Página",
+        "labelBackground": "Fondo del Encabezado",
+        "labelPageTitle": "Título de Página",
+        "inputPageTitle": "Agregar Título de Página"
+      },
+
+      "emailUsBox": {
+        "title": "Caja de Correo",
+        "labelEmail": "Correo Electrónico",
+        "inputEmail": "Agregar Correo",
+        "labelText": "Texto",
+        "inputText": "Agregar Texto"
+      },
+
+      "callUsBox": {
+        "title": "Caja de Teléfono",
+        "labelPhone": "Teléfono",
+        "inputPhone": "Agregar Teléfono +591 33344455",
+        "labelText": "Texto",
+        "inputText": "Agregar Texto"
+      },
+
+      "addressBox": {
+        "title": "Caja de Dirección",
+        "labelAddressOne": "Dirección",
+        "inputAddressOne": "Agregar Dirección"
+      },
+
+      "middleLeftColum": {
+        "title": "Columna Izquierda Central",
+        "labelImage": "Imagen Izquierda Central"
+      },
+
+      "contactForm": {
+        "title": "Formulario de Contacto",
+        "labelTitle": "Título del Formulario",
+        "inputTitle": "Agregar Título del Formulario",
+        "labelDescription": "Descripción del Formulario",
+        "inputDescription": "Agregar Descripción del Formulario"
+      }
+    },
+
+    "checkOut": {
+      "title": "Finalizar Compra",
+      "personalDetails": {
+        "titleInfo": "Datos Personales",
+        "inputInfo": "Agregar Datos Personales",
+        "labelFirstName": "Nombre",
+        "inputFirstName": "Agregar Nombre",
+        "labelMiddleName": "Segundo Nombre",
+        "inputMiddleName": "Agregar Segundo Nombre",
+        "labelLastName": "Apellido",
+        "inputLastName": "Agregar Apellido",
+        "labelEmailAddress": "Correo Electrónico",
+        "inputEmailAddress": "Agregar Correo Electrónico",
+        "labelPhone": "Teléfono",
+        "inputPhone": "Agregar Número de Teléfono"
+      },
+
+      "shippingDetails": {
+        "titleInfo": "Detalles de Envío",
+        "inputInfo": "Agregar Detalles de Envío",
+        "labelStreetAddress": "Dirección",
+        "inputStreetAddress": "Agregar Dirección",
+        "labelCity": "Ciudad",
+        "inputCity": "Agregar Ciudad",
+        "labelCountry": "País",
+        "inputCountry": "Agregar País",
+        "labelZipCode": "Código Postal",
+        "inputZipCode": "Agregar Código Postal",
+        "labelCost": "Costo de Envío",
+        "inputCost": "Agregar Costo de Envío",
+        "labelNameOne": "Nombre de Envío Uno",
+        "inputNameOne": "Agregar Nombre de Envío Uno",
+        "labelOneDescription": "Descripción de Envío Uno",
+        "inputOneDescription": "Agregar Descripción de Envío Uno",
+        "labelOneCost": "Costo de Envío Uno",
+        "inputOneCost": "Agregar Costo de Envío Uno",
+        "labelNameTwo": "Nombre de Envío Dos",
+        "inputNameTwo": "Agregar Nombre de Envío Dos",
+        "labelTwoDescription": "Descripción de Envío Dos",
+        "inputTwoDescription": "Agregar Descripción de Envío Dos",
+        "labelTwoCost": "Costo de Envío Dos",
+        "inputTwoCost": "Agregar Costo de Envío Dos",
+        "labelpaymentMethod": "Método de Pago",
+        "inputpaymentMethod": "Agregar Método de Pago",
+        "labelContinueButton": "Botón Continuar",
+        "inputContinueButton": "Agregar Botón Continuar",
+        "labelConfirmButton": "Botón Confirmar",
+        "inputConfirmButton": "Agregar Botón Confirmar"
+      },
+
+      "cartItemSection": {
+        "title": "Sección de Carrito",
+        "labelOrderSummary": "Resumen de Pedido",
+        "inputOrderSummary": "Agregar Resumen de Pedido",
+        "labelApplyButton": "Botón Aplicar",
+        "inputApplyButton": "Agregar Botón Aplicar",
+        "labelSubtotal": "Subtotal",
+        "inputSubtotal": "Agregar Subtotal",
+        "labelDiscountLower": "Descuento",
+        "inputDiscountLower": "Agregar Descuento",
+        "labelTotalCost": "Costo Total",
+        "inputTotalCost": "Agregar Costo Total"
+      }
+    },
+
+    "dashboardSetting": {
+      "title": "Configuración del panel",
+
+      "subTitle": {
+        "dashboard": "Panel de controld",
+        "invoiceMessage1st": "Mensaje de factura Primera parte",
+        "invoiceMessage2nd": "Última parte del mensaje de la factura",
+        "printButton": "Botón Imprimir",
+        "downloadButton": "Botón descargar",
+        "totalOrder": "Pedidos totales",
+        "pendingOrder": "Pedido pendiente",
+        "processingOrder": "Pedido en proceso",
+        "completeOrder": "Pedido completado",
+        "recentOrder": "Pedido reciente",
+        "myOrder": "Mi pedido"
+      },
+      "updateProfile": {
+        "title": "Actualizar perfil",
+        "fullName": "Nombre completo",
+        "userAddress": "Dirección",
+        "phoneMobile": "Teléfono / Móvil",
+        "emailAddress": "Dirección de correo electrónico",
+        "updateButton": "Botón de actualizar",
+        "currentPassword": "Contraseña actual",
+        "newPassword": "Nueva contraseña",
+        "changePassword": "Cambiar contraseña"
+      }
+    },
+
+    "soeSetting": {
+      "title": "Configuración de SEO",
+      "favicon": "Favicon",
+      "metaTitle": "Título meta",
+      "metaDescription": "Descripción meta",
+      "metaUrl": "URL meta",
+      "metaKeyword": "Palabras clave meta",
+      "metaImage": "Imagen meta"
+    }
+  },
+
+  "storeSettingScreen": {
+    "title": "Configuración de la tienda",
+
+    "table": {
+      "titleDetails": "Detalles de la tienda",
+      "enableCOD": "Habilitar pago contra entrega",
+      "description": "Esta opción está habilitada de forma predeterminada.",
+      "enableQR": "Habilitar pago con QR",
+      "qrKey": "Clave de QR",
+      "qrSecret": "Clave secreta de QR",
+      "enableStripe": "Habilitar Stripe",
+      "stripeKey": "Clave de Stripe",
+      "stripeSecret": "Clave secreta de Stripe",
+      "enableRazorPay": "Habilitar RazorPay",
+      "razorPayId": "ID de RazorPay",
+      "razorPaySecret": "Clave secreta de RazorPay",
+      "enableGoogleLogin": "Habilitar inicio de sesión con Google",
+      "googleClientId": "ID de cliente de Google",
+      "googleSecret": "Clave secreta de Google",
+      "enableGithub": "Habilitar inicio de sesión con GitHub",
+      "githubId": "ID de GitHub",
+      "githubSecret": "Clave secreta de GitHub",
+      "enableFacebook": "Habilitar inicio de sesión con Facebook",
+      "facebookId": "ID de Facebook",
+      "facebookSecret": "Clave secreta de Facebook",
+      "enableGoggleAnalytics": "Habilitar Google Analytics",
+      "googleAnalyticKey": "Clave de Google Analytics",
+      "enableTawkChat": "Habilitar chat de Tawk",
+      "tawkChatWidgetID": "ID del widget de Tawk Chat",
+      "tawkChatPropertyID": "ID de propiedad de Tawk Chat",
+      "provinces": "Provincias",
+      "textProvince": "Escribe una provincia y presiona Enter"
+    }
+  },
+
+  "deliveryPointsScreen": {
+    "title": "Puntos de entrega",
+    "details": "Detalles de los puntos de entrega",
+    "addDeliveryPointsBtn": "Añadir nuevos puntos de entrega",
+    "select": "Ubicacion",
+
+    "table": {
+      "id": "ID",
+      "location": "UBICACION",
+      "place": "NOMBRE DEL LUGAR",
+      "street": "NOMBRE DE LA CALLE",
+      "details": "DETALLES",
+      "shipingCost": "COSTO POR ENVIO",
+      "free": "Gratis",
+      "actions": "ACCIONES"
+    },
+
+    "deliveryDrawer": {
+      "titleAdd": "Añadir nuevos puntos de entrega",
+      "titleUpdate": "Actualización del punto de entrega",
+      "descriptionAdd": "Haga clic en el mapa y rellene el formulario ",
+      "descriptionUpdate": "Actualice la información necesaria sobre su punto de entrega",
+      "labelLocation": "Ubicacion",
+      "select": "Seleccione una ubicación",
+      "labelStreetName": "Nombre de la calle",
+      "inputStreetName": "Calle detectada por el mapa",
+      "labelPlaceName": "Nombre del lugar",
+      "inputPlaceName": "Nombre principal del lugar de entrega",
+      "labelDetails": "Detalles",
+      "inputDetails": "Detalles adicionales del punto de entrega",
+      "shippingCost": "Costo por envio",
+      "titleAddDeliveryPointBtn": "Punto de entrega"
+    },
+
+    "message": {
+      "notifySuccessAdd": "Punto de entrega agregado",
+      "notifySuccessUpdate": "Punto de entrega actualizado",
+      "notifyErrorAdd": "Error al agregar el punto de entrega",
+      "notifyErrorUpdate": "Error al actualizar el punto de entrega",
+      "notifyError": "Error al cargar el punto de entrega"
+    },
+
+    "form": {
+      "unnamed": "Lugar sin nombre",
+      "direction": "Dirección no disponible",
+      "error": "No se pudo obtener la dirección"
+    }
+  }
+}

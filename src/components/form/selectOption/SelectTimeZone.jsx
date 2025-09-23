@@ -1,8 +1,8 @@
-import { Select } from "@windmill/react-ui";
-import React from "react";
+import { Select } from '@windmill/react-ui'
+import React from 'react'
 
 //internal import
-import { timeZones } from "@/utils/timezones";
+import { timeZones } from '@/utils/timezones'
 
 const SelectTimeZone = ({ register, name, label, required }) => {
   return (
@@ -16,16 +16,12 @@ const SelectTimeZone = ({ register, name, label, required }) => {
         Default Time Zone
       </option>
       {timeZones.map((timeZone, i) => (
-        <option
-          key={i + 1}
-          value={timeZone.tzCode}
-          className="py-12 hover:bg-white"
-        >
+        <option key={i + 1} value={timeZone.tzCode} className="py-12 hover:bg-white">
           {timeZone.label}
         </option>
       ))}
     </Select>
-  );
-};
+  )
+}
 
-export default SelectTimeZone;
+export default SelectTimeZone

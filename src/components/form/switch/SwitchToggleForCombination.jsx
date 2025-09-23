@@ -1,36 +1,27 @@
-import Switch from "react-switch";
-import { useTranslation } from "react-i18next";
+import Switch from 'react-switch'
+import { useTranslation } from 'react-i18next'
 
-const SwitchToggleForCombination = ({
-  title,
-  product,
-  handleProcess,
-  processOption,
-}) => {
+const SwitchToggleForCombination = ({ title, product, handleProcess, processOption }) => {
   // console.log('processOption',processOption)
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   return (
     <>
       <div
-        className={`${
-          product ? "mb-3 flex flex-wrap justify-end items-center mr-8" : "mb-3"
-        }`}
+        className={`${product ? 'mb-3 flex flex-wrap justify-end items-center mr-8' : 'mb-3'}`}
         style={{
           height: product ? 20 : 0,
-          transition: "all 0.3s",
-          visibility: product ? "visible" : "hidden",
-          opacity: product ? "1" : "0",
+          transition: 'all 0.3s',
+          visibility: product ? 'visible' : 'hidden',
+          opacity: product ? '1' : '0',
         }}
       >
         <div className="flex flex-wrap items-center">
           {product ? (
             <label className="block text-base font-normal text-orange-500 dark:text-orange-400 mx-4">
-              {t("ThisProductHaveVariants")}
+              {t('productsScreen.drawer.thisProductHaveVariants')}
             </label>
           ) : (
-            <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">
-              {title}
-            </label>
+            <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">{title}</label>
           )}
 
           <Switch
@@ -40,17 +31,17 @@ const SwitchToggleForCombination = ({
             uncheckedIcon={
               <div
                 style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: "100%",
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  height: '100%',
                   fontSize: 14,
-                  color: "white",
+                  color: 'white',
                   paddingRight: 5,
                   paddingTop: 1,
                 }}
               >
-                No
+                {t('productsScreen.drawer.no')}
               </div>
             }
             width={80}
@@ -61,24 +52,24 @@ const SwitchToggleForCombination = ({
             checkedIcon={
               <div
                 style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: "100%",
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  height: '100%',
                   fontSize: 14,
-                  color: "white",
+                  color: 'white',
                   paddingLeft: 8,
                   paddingTop: 1,
                 }}
               >
-                Yes
+                {t('productsScreen.drawer.yes')}
               </div>
             }
           />
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default SwitchToggleForCombination;
+export default SwitchToggleForCombination

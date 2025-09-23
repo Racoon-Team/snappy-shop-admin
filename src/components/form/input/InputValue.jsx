@@ -1,4 +1,5 @@
-import { Input } from "@windmill/react-ui";
+import { Input } from '@windmill/react-ui'
+import { useTranslation } from 'react-i18next'
 
 const InputValue = ({
   name,
@@ -14,22 +15,23 @@ const InputValue = ({
   defaultValue,
   placeholder,
 }) => {
+  const { t } = useTranslation()
   const value = {
     valueAsNumber: true,
-    required: required ? `${label} is required!` : false,
+    required: required ? `${label} ${t('common.isRequired')}` : false,
     max: {
       value: maxValue,
       message: `Maximum value ${maxValue}!`,
     },
     min: {
       value: minValue,
-      message: `Minimum value ${minValue}!`,
+      message: t('productsScreen.drawer.validationMinumum', { minValue }),
     },
     pattern: {
       value: /^[0-9]*$/,
       message: `Invalid ${label}!`,
     },
-  };
+  }
 
   return (
     <>
@@ -47,11 +49,11 @@ const InputValue = ({
           disabled={disabled}
           placeholder={placeholder}
           defaultValue={defaultValue}
-          className={`mr-2 p-2 ${product && "rounded-l-none"}`}
+          className={`mr-2 p-2 ${product && 'rounded-l-none'}`}
         />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default InputValue;
+export default InputValue

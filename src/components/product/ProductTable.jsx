@@ -1,40 +1,34 @@
-import {
-  Avatar,
-  Badge,
-  TableBody,
-  TableCell,
-  TableRow,
-} from "@windmill/react-ui";
-import { t } from "i18next";
-import { FiZoomIn } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Avatar, Badge, TableBody, TableCell, TableRow } from '@windmill/react-ui'
+import { FiZoomIn, FiPlusCircle } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
-//internal import
-import MainDrawer from "@/components/drawer/MainDrawer";
-import ProductDrawer from "@/components/drawer/ProductDrawer";
-import CheckBox from "@/components/form/others/CheckBox";
-import DeleteModal from "@/components/modal/DeleteModal";
-import EditDeleteButton from "@/components/table/EditDeleteButton";
-import ShowHideButton from "@/components/table/ShowHideButton";
-import Tooltip from "@/components/tooltip/Tooltip";
-import useToggleDrawer from "@/hooks/useToggleDrawer";
-import useUtilsFunction from "@/hooks/useUtilsFunction";
-
-//internal import
+// internal import
+import MainDrawer from '@/components/drawer/MainDrawer'
+import ProductDrawer from '@/components/drawer/ProductDrawer'
+import CheckBox from '@/components/form/others/CheckBox'
+import DeleteModal from '@/components/modal/DeleteModal'
+import EditDeleteButton from '@/components/table/EditDeleteButton'
+import ShowHideButton from '@/components/table/ShowHideButton'
+import Tooltip from '@/components/tooltip/Tooltip'
+import useToggleDrawer from '@/hooks/useToggleDrawer'
+import useUtilsFunction from '@/hooks/useUtilsFunction'
+import StockDrawer from '../drawer/StockDrawer'
+import useStock from '@/hooks/useStock'
+import OrderServices from '@/services/OrderServices'
 
 const ProductTable = ({ products, isCheck, setIsCheck }) => {
-  const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer();
-  const { currency, showingTranslateValue, getNumberTwo } = useUtilsFunction();
-
+  const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer()
+  const { currency, showingTranslateValue, getNumberTwo } = useUtilsFunction()
+  const { t } = useTranslation()
   const handleClick = (e) => {
-    const { id, checked } = e.target;
-    // console.log("id", id, checked);
-
-    setIsCheck([...isCheck, id]);
+    const { id, checked } = e.target
+    setIsCheck([...isCheck, id])
     if (!checked) {
-      setIsCheck(isCheck.filter((item) => item !== id));
+      setIsCheck(isCheck.filter((item) => item !== id))
     }
-  };
+  }
 
   return (
     <>
@@ -42,115 +36,138 @@ const ProductTable = ({ products, isCheck, setIsCheck }) => {
 
       {isCheck?.length < 2 && (
         <MainDrawer>
-          <ProductDrawer currency={currency} id={serviceId} />
+          {title === 'ADD STOCK' ? (
+            <StockDrawer id={serviceId} onSuccess={() => {}} />
+          ) : (
+            <ProductDrawer currency={currency} id={serviceId} />
+          )}
         </MainDrawer>
       )}
 
       <TableBody>
-        {products?.map((product, i) => (
-          <TableRow key={i + 1}>
-            <TableCell>
-              <CheckBox
-                type="checkbox"
-                name={product?.title?.en}
-                id={product._id}
-                handleClick={handleClick}
-                isChecked={isCheck?.includes(product._id)}
-              />
-            </TableCell>
+        {products?.map((product, i) => {
+          const { totals } = useStock(product._id)
+          const [orderOutbound, setOrderOutbound] = useState(0)
 
-            <TableCell>
-              <div className="flex items-center">
-                {product?.image[0] ? (
-                  <Avatar
-                    className="hidden p-1 mr-2 md:block bg-gray-50 shadow-none"
-                    src={product?.image[0]}
-                    alt="product"
-                  />
-                ) : (
-                  <Avatar
-                    src={`https://res.cloudinary.com/ahossain/image/upload/v1655097002/placeholder_kvepfp.png`}
-                    alt="product"
-                  />
-                )}
-                <div>
-                  <h2
-                    className={`text-sm font-medium ${
-                      product?.title.length > 30 ? "wrap-long-title" : ""
-                    }`}
-                  >
-                    {showingTranslateValue(product?.title)?.substring(0, 28)}
-                  </h2>
-                </div>
-              </div>
-            </TableCell>
+          useEffect(() => {
+            const fetchOutbound = async () => {
+              try {
+                const res = await OrderServices.getTotalSoldByProduct(product._id)
+                setOrderOutbound(res?.totalQuantity || 0)
+              } catch (err) {
+                console.error('Error fetching outbound:', err)
+              }
+            }
+            fetchOutbound()
+          }, [product._id])
 
-            <TableCell>
-              <span className="text-sm">
-                {showingTranslateValue(product?.category?.name)}
-              </span>
-            </TableCell>
+          const inbound = totals?.inbound || 0
+          const outbound = (totals?.outbound || 0) + orderOutbound
+          const stockTotal = inbound - outbound
 
-            <TableCell>
-              <span className="text-sm font-semibold">
-                {currency}
-                {product?.isCombination
-                  ? getNumberTwo(product?.variants[0]?.originalPrice)
-                  : getNumberTwo(product?.prices?.originalPrice)}
-              </span>
-            </TableCell>
-
-            <TableCell>
-              <span className="text-sm font-semibold">
-                {currency}
-                {product?.isCombination
-                  ? getNumberTwo(product?.variants[0]?.price)
-                  : getNumberTwo(product?.prices?.price)}
-              </span>
-            </TableCell>
-
-            <TableCell>
-              <span className="text-sm">{product.stock}</span>
-            </TableCell>
-            <TableCell>
-              {product.stock > 0 ? (
-                <Badge type="success">{t("Selling")}</Badge>
-              ) : (
-                <Badge type="danger">{t("SoldOut")}</Badge>
-              )}
-            </TableCell>
-            <TableCell>
-              <Link
-                to={`/product/${product._id}`}
-                className="flex justify-center text-gray-400 hover:text-emerald-600"
-              >
-                <Tooltip
-                  id="view"
-                  Icon={FiZoomIn}
-                  title={t("DetailsTbl")}
-                  bgColor="#10B981"
+          return (
+            <TableRow key={i + 1}>
+              <TableCell>
+                <CheckBox
+                  type="checkbox"
+                  name={product?.title?.en}
+                  id={product._id}
+                  handleClick={handleClick}
+                  isChecked={isCheck?.includes(product._id)}
                 />
-              </Link>
-            </TableCell>
-            <TableCell className="text-center">
-              <ShowHideButton id={product._id} status={product.status} />
-              {/* {product.status} */}
-            </TableCell>
-            <TableCell>
-              <EditDeleteButton
-                id={product._id}
-                product={product}
-                isCheck={isCheck}
-                handleUpdate={handleUpdate}
-                handleModalOpen={handleModalOpen}
-                title={showingTranslateValue(product?.title)}
-              />
-            </TableCell>
-          </TableRow>
-        ))}
+              </TableCell>
+              <TableCell>
+                <div className="flex items-center">
+                  {product?.image[0] ? (
+                    <Avatar
+                      className="hidden p-1 mr-2 md:block bg-gray-50 shadow-none"
+                      src={product?.image[0]}
+                      alt="product"
+                    />
+                  ) : (
+                    <Avatar
+                      src={`https://res.cloudinary.com/ahossain/image/upload/v1655097002/placeholder_kvepfp.png`}
+                      alt="product"
+                    />
+                  )}
+                  <div>
+                    <h2 className={`text-sm font-medium ${product?.title.length > 30 ? 'wrap-long-title' : ''}`}>
+                      {showingTranslateValue(product?.title)?.substring(0, 28)}
+                    </h2>
+                  </div>
+                </div>
+              </TableCell>
+              <TableCell>
+                <span className="text-sm">{showingTranslateValue(product?.category?.name)}</span>
+              </TableCell>
+              <TableCell>
+                <span className="text-sm font-semibold">
+                  {currency}
+                  {product?.isCombination
+                    ? getNumberTwo(product?.variants[0]?.originalPrice)
+                    : getNumberTwo(product?.prices?.originalPrice)}
+                </span>
+              </TableCell>
+              <TableCell>
+                <span className="text-sm font-semibold">
+                  {currency}
+                  {product?.isCombination
+                    ? getNumberTwo(product?.variants[0]?.price)
+                    : getNumberTwo(product?.prices?.price)}
+                </span>
+              </TableCell>
+              <TableCell>
+                <span className="text-sm font-semibold">{stockTotal}</span>
+              </TableCell>
+
+              <TableCell className="text-center">
+                <button
+                  onClick={() => handleUpdate(product._id, 'ADD STOCK', product)}
+                  className="text-blue-500 hover:text-blue-700"
+                >
+                  <Tooltip
+                    id={`add-stock-${product._id}`}
+                    Icon={FiPlusCircle}
+                    bgColor="rgba(59, 130, 246, 1)"
+                    title={t('productsScreen.table.addQuantity')}
+                  />
+                </button>
+              </TableCell>
+
+              <TableCell>
+                {stockTotal > 0 ? (
+                  <Badge type="success">{t('productsScreen.drawer.selling')}</Badge>
+                ) : (
+                  <Badge type="danger">{t('productsScreen.drawer.soldOut')}</Badge>
+                )}
+              </TableCell>
+              <TableCell>
+                <Link
+                  to={`/product/${product._id}`}
+                  className="flex justify-center text-gray-400 hover:text-emerald-600"
+                >
+                  <Tooltip id="view" Icon={FiZoomIn} title={t('DetailsTbl')} bgColor="#10B981" />
+                </Link>
+              </TableCell>
+              <TableCell className="text-center">
+                <ShowHideButton id={product._id} status={product.status} />
+              </TableCell>
+              <TableCell>
+                <EditDeleteButton
+                  id={product._id}
+                  product={product}
+                  isCheck={isCheck}
+                  handleUpdate={handleUpdate}
+                  handleModalOpen={handleModalOpen}
+                  title={showingTranslateValue(product?.title)}
+                />
+              </TableCell>
+            </TableRow>
+          )
+        })}
       </TableBody>
     </>
-  );
-};
+  )
+}
 
-export default ProductTable;
+export default ProductTable

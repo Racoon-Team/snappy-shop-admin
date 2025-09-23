@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react'
 
 //internal imports
-import useUtilsFunction from "@/hooks/useUtilsFunction";
+import useUtilsFunction from '@/hooks/useUtilsFunction'
 
 const SelectLanguage = ({ handleLanguageChange }) => {
-  const { languages, langError, langLoading } = useUtilsFunction();
+  const { languages, langError, langLoading } = useUtilsFunction()
 
   return (
     <ul className="dropdown-content w-full">
@@ -25,13 +25,11 @@ const SelectLanguage = ({ handleLanguageChange }) => {
             ></div>
 
             {/* Language Name */}
-            <span className="text-gray-900 dark:text-gray-600 pr-8 text-right">
-              {lang?.name}
-            </span>
+            <span className="text-gray-900 dark:text-gray-600 pr-8 text-right">{lang?.name}</span>
           </li>
         ))}
     </ul>
-  );
-};
+  )
+}
 
-export default SelectLanguage;
+export default SelectLanguage

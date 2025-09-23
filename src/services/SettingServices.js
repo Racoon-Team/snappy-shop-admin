@@ -1,44 +1,63 @@
-import requests from "./httpService";
+import requests from './httpService'
 
 const SettingServices = {
   // global setting all function
   addGlobalSetting: async (body) => {
-    return requests.post("/setting/global/add", body);
+    return requests.post('/setting/global/add', body)
   },
 
   getGlobalSetting: async () => {
-    return requests.get("/setting/global/all");
+    return requests.get('/setting/global/all')
   },
 
   updateGlobalSetting: async (body) => {
-    return requests.put(`/setting/global/update`, body);
+    return requests.put(`/setting/global/update`, body)
   },
 
   // store setting all function
   addStoreSetting: async (body) => {
-    return requests.post("/setting/store-setting/add", body);
+    return requests.post('/setting/store-setting/add', body)
   },
 
   getStoreSetting: async () => {
-    return requests.get("/setting/store-setting/all");
+    return requests.get('/setting/store-setting/all')
   },
 
   updateStoreSetting: async (body) => {
-    return requests.put(`/setting/store-setting/update`, body);
+    return requests.put(`/setting/store-setting/update`, body)
   },
 
   // store customization setting all function
   addStoreCustomizationSetting: async (body) => {
-    return requests.post("/setting/store/customization/add", body);
+    return requests.post('/setting/store/customization/add', body)
   },
 
   getStoreCustomizationSetting: async () => {
-    return requests.get("/setting/store/customization/all");
+    return requests.get('/setting/store/customization/all')
   },
 
   updateStoreCustomizationSetting: async (body) => {
-    return requests.put(`/setting/store/customization/update`, body);
+    return requests.put(`/setting/store/customization/update`, body)
   },
-};
 
-export default SettingServices;
+  getDeliveryPoints: async () => {
+    return requests.get('/setting/delivery-points')
+  },
+
+  deleteDeliveryPoint: async (id) => {
+    return requests.delete(`/setting/delivery-points/${id}`, {})
+  },
+
+  addDeliveryPoint: async (data) => {
+    return requests.post('/setting/delivery-points/add', data)
+  },
+
+  getDeliveryPointById: async (id) => {
+    return requests.get(`/setting/delivery-points/${id}`)
+  },
+
+  updateDeliveryPoint(id, data) {
+    return requests.put(`/setting/admin/delivery-points/${id}`, data)
+  },
+}
+export default SettingServices

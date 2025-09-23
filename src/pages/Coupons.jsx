@@ -9,39 +9,38 @@ import {
   TableContainer,
   TableFooter,
   TableHeader,
-} from "@windmill/react-ui";
-import { useContext, useState } from "react";
-import { FiEdit, FiPlus, FiTrash2 } from "react-icons/fi";
-import { useTranslation } from "react-i18next";
+} from '@windmill/react-ui'
+import { useContext, useState } from 'react'
+import { FiEdit, FiPlus, FiTrash2 } from 'react-icons/fi'
+import { useTranslation } from 'react-i18next'
 
 //internal import
-import { SidebarContext } from "@/context/SidebarContext";
-import CouponServices from "@/services/CouponServices";
-import useAsync from "@/hooks/useAsync";
-import useToggleDrawer from "@/hooks/useToggleDrawer";
-import useFilter from "@/hooks/useFilter";
-import PageTitle from "@/components/Typography/PageTitle";
-import DeleteModal from "@/components/modal/DeleteModal";
-import BulkActionDrawer from "@/components/drawer/BulkActionDrawer";
-import MainDrawer from "@/components/drawer/MainDrawer";
-import CouponDrawer from "@/components/drawer/CouponDrawer";
-import TableLoading from "@/components/preloader/TableLoading";
-import CheckBox from "@/components/form/others/CheckBox";
-import CouponTable from "@/components/coupon/CouponTable";
-import NotFound from "@/components/table/NotFound";
-import UploadMany from "@/components/common/UploadMany";
-import AnimatedContent from "@/components/common/AnimatedContent";
+import { SidebarContext } from '@/context/SidebarContext'
+import CouponServices from '@/services/CouponServices'
+import useAsync from '@/hooks/useAsync'
+import useToggleDrawer from '@/hooks/useToggleDrawer'
+import useFilter from '@/hooks/useFilter'
+import PageTitle from '@/components/Typography/PageTitle'
+import DeleteModal from '@/components/modal/DeleteModal'
+import BulkActionDrawer from '@/components/drawer/BulkActionDrawer'
+import MainDrawer from '@/components/drawer/MainDrawer'
+import CouponDrawer from '@/components/drawer/CouponDrawer'
+import TableLoading from '@/components/preloader/TableLoading'
+import CheckBox from '@/components/form/others/CheckBox'
+import CouponTable from '@/components/coupon/CouponTable'
+import NotFound from '@/components/table/NotFound'
+import UploadMany from '@/components/common/UploadMany'
+import AnimatedContent from '@/components/common/AnimatedContent'
 
 const Coupons = () => {
-  const { t } = useTranslation();
-  const { toggleDrawer, lang } = useContext(SidebarContext);
-  const { data, loading, error } = useAsync(CouponServices.getAllCoupons);
+  const { t } = useTranslation()
+  const { toggleDrawer, lang } = useContext(SidebarContext)
+  const { data, loading, error } = useAsync(CouponServices.getAllCoupons)
   // console.log('data',data)
-  const [isCheckAll, setIsCheckAll] = useState(false);
-  const [isCheck, setIsCheck] = useState([]);
+  const [isCheckAll, setIsCheckAll] = useState(false)
+  const [isCheck, setIsCheck] = useState([])
 
-  const { allId, serviceId, handleDeleteMany, handleUpdateMany } =
-    useToggleDrawer();
+  const { allId, serviceId, handleDeleteMany, handleUpdateMany } = useToggleDrawer()
 
   const {
     filename,
@@ -57,31 +56,27 @@ const Coupons = () => {
     handleSubmitCoupon,
     handleUploadMultiple,
     handleRemoveSelectFile,
-  } = useFilter(data);
+  } = useFilter(data)
 
   const handleSelectAll = () => {
-    setIsCheckAll(!isCheckAll);
-    setIsCheck(data?.map((li) => li._id));
+    setIsCheckAll(!isCheckAll)
+    setIsCheck(data?.map((li) => li._id))
     if (isCheckAll) {
-      setIsCheck([]);
+      setIsCheck([])
     }
-  };
+  }
 
   // handle reset field function
   const handleResetField = () => {
-    setSearchCoupon("");
-    couponRef.current.value = "";
-  };
+    setSearchCoupon('')
+    couponRef.current.value = ''
+  }
 
   return (
     <>
-      <PageTitle>{t("CouponspageTitle")}</PageTitle>
-      <DeleteModal
-        ids={allId}
-        setIsCheck={setIsCheck}
-        title="Selected Coupon"
-      />
-      <BulkActionDrawer ids={allId} title="Coupons" />
+      <PageTitle>{t('couponsScreen.title')}</PageTitle>
+      <DeleteModal ids={allId} setIsCheck={setIsCheck} title="Selected Coupon" />
+      <BulkActionDrawer ids={allId} type="Coupons" title={t('couponsScreen.title')} />
 
       <MainDrawer>
         <CouponDrawer id={serviceId} />
@@ -90,10 +85,7 @@ const Coupons = () => {
       <AnimatedContent>
         <Card className="min-w-0 shadow-xs overflow-hidden bg-white dark:bg-gray-800 mb-5">
           <CardBody>
-            <form
-              onSubmit={handleSubmitCoupon}
-              className="py-3 grid gap-4 lg:gap-6 xl:gap-6  xl:flex"
-            >
+            <form onSubmit={handleSubmitCoupon} className="py-3 grid gap-4 lg:gap-6 xl:gap-6  xl:flex">
               <div className="flex justify-start xl:w-1/2  md:w-full">
                 <UploadMany
                   title="Coupon"
@@ -116,7 +108,7 @@ const Coupons = () => {
                     <span className="mr-2">
                       <FiEdit />
                     </span>
-                    {t("BulkAction")}
+                    {t('common.bulkAction.label')}
                   </Button>
                 </div>
 
@@ -130,19 +122,16 @@ const Coupons = () => {
                       <FiTrash2 />
                     </span>
 
-                    {t("Delete")}
+                    {t('common.delete')}
                   </Button>
                 </div>
 
                 <div className="w-full md:w-48 lg:w-48 xl:w-48">
-                  <Button
-                    onClick={toggleDrawer}
-                    className="w-full rounded-md h-12"
-                  >
+                  <Button onClick={toggleDrawer} className="w-full rounded-md h-12">
                     <span className="mr-2">
                       <FiPlus />
                     </span>
-                    {t("AddCouponsBtn")}
+                    {t('couponsScreen.addCoupon')}
                   </Button>
                 </div>
               </div>
@@ -152,21 +141,14 @@ const Coupons = () => {
 
         <Card className="min-w-0 shadow-xs overflow-hidden bg-white dark:bg-gray-800 mb-5">
           <CardBody>
-            <form
-              onSubmit={handleSubmitCoupon}
-              className="py-3 grid gap-4 lg:gap-6 xl:gap-6 md:flex xl:flex"
-            >
+            <form onSubmit={handleSubmitCoupon} className="py-3 grid gap-4 lg:gap-6 xl:gap-6 md:flex xl:flex">
               <div className="flex-grow-0 md:flex-grow lg:flex-grow xl:flex-grow">
-                <Input
-                  ref={couponRef}
-                  type="search"
-                  placeholder={t("SearchCoupon")}
-                />
+                <Input ref={couponRef} type="search" placeholder={t('couponsScreen.searchCoupon')} />
               </div>
               <div className="flex items-center gap-2 flex-grow-0 md:flex-grow lg:flex-grow xl:flex-grow">
                 <div className="w-full mx-1">
                   <Button type="submit" className="h-12 w-full bg-emerald-700">
-                    Filter
+                    {t('common.filter')}
                   </Button>
                 </div>
 
@@ -177,7 +159,7 @@ const Coupons = () => {
                     type="reset"
                     className="px-4 md:py-1 py-2 h-12 text-sm dark:bg-gray-700"
                   >
-                    <span className="text-black dark:text-gray-200">Reset</span>
+                    <span className="text-black dark:text-gray-200">{t('common.reset')}</span>
                   </Button>
                 </div>
               </div>
@@ -205,27 +187,17 @@ const Coupons = () => {
                     isChecked={isCheckAll}
                   />
                 </TableCell>
-                <TableCell>{t("CoupTblCampaignsName")}</TableCell>
-                <TableCell>{t("CoupTblCode")}</TableCell>
-                <TableCell>{t("Discount")}</TableCell>
-
-                <TableCell className="text-center">
-                  {t("catPublishedTbl")}
-                </TableCell>
-                <TableCell>{t("CoupTblStartDate")}</TableCell>
-                <TableCell>{t("CoupTblEndDate")}</TableCell>
-                <TableCell>{t("CoupTblStatus")}</TableCell>
-                <TableCell className="text-right">
-                  {t("CoupTblActions")}
-                </TableCell>
+                <TableCell>{t('couponsScreen.table.campaignName')}</TableCell>
+                <TableCell>{t('couponsScreen.table.code')}</TableCell>
+                <TableCell>{t('couponsScreen.table.discount')}</TableCell>
+                <TableCell className="text-center">{t('couponsScreen.table.published')}</TableCell>
+                <TableCell>{t('couponsScreen.table.startDate')}</TableCell>
+                <TableCell>{t('couponsScreen.table.endDate')}</TableCell>
+                <TableCell>{t('couponsScreen.table.status')}</TableCell>
+                <TableCell className="text-right">{t('couponsScreen.table.actions')}</TableCell>
               </tr>
             </TableHeader>
-            <CouponTable
-              lang={lang}
-              isCheck={isCheck}
-              coupons={dataTable}
-              setIsCheck={setIsCheck}
-            />
+            <CouponTable lang={lang} isCheck={isCheck} coupons={dataTable} setIsCheck={setIsCheck} />
           </Table>
           <TableFooter>
             <Pagination
@@ -240,7 +212,7 @@ const Coupons = () => {
         <NotFound title="Sorry, There are no coupons right now." />
       )}
     </>
-  );
-};
+  )
+}
 
-export default Coupons;
+export default Coupons

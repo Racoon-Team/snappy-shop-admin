@@ -9,76 +9,75 @@ import {
   TableCell,
   TableContainer,
   TableRow,
-} from "@windmill/react-ui";
-import { useContext, useEffect, useState } from "react";
-import Scrollbars from "react-custom-scrollbars-2";
-import { FiTrash2, FiMail } from "react-icons/fi";
-import { Link } from "react-router-dom";
+} from '@windmill/react-ui'
+import { useEffect, useState } from 'react'
+import Scrollbars from 'react-custom-scrollbars-2'
+import { FiMail, FiTrash2 } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 
 //internal import
-import ellipse from "@/assets/img/icons/ellipse.svg";
-import CheckBox from "@/components/form/input/CheckBox";
-import PageTitle from "@/components/Typography/PageTitle";
-import { SidebarContext } from "@/context/SidebarContext";
-import { notifyError, notifySuccess } from "@/utils/toast";
-import useUtilsFunction from "@/hooks/useUtilsFunction";
-import NotificationServices from "@/services/NotificationServices";
+import ellipse from '@/assets/img/icons/ellipse.svg'
+import CheckBox from '@/components/form/input/CheckBox'
+import PageTitle from '@/components/Typography/PageTitle'
+import useUtilsFunction from '@/hooks/useUtilsFunction'
+import NotificationServices from '@/services/NotificationServices'
+import { notifyError, notifySuccess } from '@/utils/toast'
 
 const Notifications = () => {
   // react hook
-  const [data, setData] = useState([]);
-  const [totalDoc, setTotalDoc] = useState(0);
-  const [totalUnreadDoc, setTotalUnreadDoc] = useState(0);
-  const [page, setPage] = useState(2);
-  const [isCheck, setIsCheck] = useState([]);
-  const [isCheckAll, setIsCheckAll] = useState(false);
+  const [data, setData] = useState([])
+  const [totalDoc, setTotalDoc] = useState(0)
+  const [totalUnreadDoc, setTotalUnreadDoc] = useState(0)
+  const [page, setPage] = useState(2)
+  const [isCheck, setIsCheck] = useState([])
+  const [isCheckAll, setIsCheckAll] = useState(false)
 
-  const { showDateTimeFormat } = useUtilsFunction();
+  const { showDateTimeFormat } = useUtilsFunction()
 
   // handle notification status change
   const handleNotificationStatusChange = async (id) => {
     try {
       await NotificationServices.updateStatusNotification(id, {
-        status: "read",
-      });
-      const getAllRes = await NotificationServices.getAllNotification();
-      setData(getAllRes?.notifications);
-      setTotalUnreadDoc(getAllRes?.totalUnreadDoc);
-      window.location.reload(false);
+        status: 'read',
+      })
+      const getAllRes = await NotificationServices.getAllNotification()
+      setData(getAllRes?.notifications)
+      setTotalUnreadDoc(getAllRes?.totalUnreadDoc)
+      window.location.reload(false)
     } catch (err) {
       // console.log(err);
-      notifyError(err?.response?.data?.message || err?.message);
+      notifyError(err?.response?.data?.message || err?.message)
     }
-  };
+  }
 
   // handle notification delete
   const handleNotificationDelete = async (id) => {
     try {
-      await NotificationServices.deleteNotification(id);
-      const getAllRes = await NotificationServices.getAllNotification();
-      setData(getAllRes?.notifications);
-      setTotalUnreadDoc(getAllRes?.totalUnreadDoc);
-      setTotalDoc(getAllRes?.totalDoc);
+      await NotificationServices.deleteNotification(id)
+      const getAllRes = await NotificationServices.getAllNotification()
+      setData(getAllRes?.notifications)
+      setTotalUnreadDoc(getAllRes?.totalUnreadDoc)
+      setTotalDoc(getAllRes?.totalDoc)
     } catch (err) {
       // console.log(err);
-      notifyError(err?.response?.data?.message || err?.message);
+      notifyError(err?.response?.data?.message || err?.message)
     }
-  };
+  }
 
   // handle see more notification
   const handleSeeMoreNotification = async (pg) => {
     // console.log("pg ===>", pg);
 
     try {
-      const getAllRes = await NotificationServices.getAllNotification(pg);
-      setData((pre) => [...pre, ...getAllRes?.notifications]);
-      setTotalUnreadDoc(getAllRes?.totalUnreadDoc);
-      setPage((pre) => pre + 1);
+      const getAllRes = await NotificationServices.getAllNotification(pg)
+      setData((pre) => [...pre, ...(getAllRes?.notifications || [])])
+      setTotalUnreadDoc(getAllRes?.totalUnreadDoc)
+      setPage((pre) => pre + 1)
     } catch (err) {
       // console.log(err);
-      notifyError(err?.response?.data?.message || err?.message);
+      notifyError(err?.response?.data?.message || err?.message)
     }
-  };
+  }
 
   // handle mark is read
   const handleMarkIsRead = async () => {
@@ -86,21 +85,21 @@ const Notifications = () => {
       // notification status update many
       const res = await NotificationServices.updateManyStatusNotification({
         ids: isCheck,
-        status: "read",
-      });
-      setIsCheck([]);
-      notifySuccess(res.message);
-      setPage(1);
+        status: 'read',
+      })
+      setIsCheck([])
+      notifySuccess(res.message)
+      setPage(1)
       // get all Notification
-      const getAllRes = await NotificationServices.getAllNotification();
-      setData(getAllRes?.notifications);
-      setTotalUnreadDoc(getAllRes?.totalUnreadDoc);
+      const getAllRes = await NotificationServices.getAllNotification()
+      setData(getAllRes?.notifications)
+      setTotalUnreadDoc(getAllRes?.totalUnreadDoc)
     } catch (err) {
       // notifyError("Server Side Error");
-      notifyError(err?.response?.data?.message || err?.message);
+      notifyError(err?.response?.data?.message || err?.message)
       // console.log(err);
     }
-  };
+  }
 
   // handle delete many
   const handleDeleteMany = async () => {
@@ -108,53 +107,53 @@ const Notifications = () => {
       // notification
       const res = await NotificationServices.deleteManyNotification({
         ids: isCheck,
-      });
-      notifySuccess(res.message);
-      setIsCheck([]);
-      setPage(1);
+      })
+      notifySuccess(res.message)
+      setIsCheck([])
+      setPage(1)
       // get all Notification
-      const getAllRes = await NotificationServices.getAllNotification();
-      setData(getAllRes?.notifications);
-      setTotalUnreadDoc(getAllRes?.totalUnreadDoc);
+      const getAllRes = await NotificationServices.getAllNotification()
+      setData(getAllRes?.notifications)
+      setTotalUnreadDoc(getAllRes?.totalUnreadDoc)
     } catch (err) {
       // notifyError("Server Side Error");
-      notifyError(err?.response?.data?.message || err?.message);
+      notifyError(err?.response?.data?.message || err?.message)
       // console.log(err);
     }
-  };
+  }
 
   // handle select all
   const handleSelectAll = () => {
-    setIsCheckAll(!isCheckAll);
-    setIsCheck(data?.map((li) => li._id));
+    setIsCheckAll(!isCheckAll)
+    setIsCheck(data?.map((li) => li._id))
     if (isCheckAll) {
-      setIsCheck([]);
+      setIsCheck([])
     }
-  };
+  }
 
   // handle single click
   const handleClick = (e) => {
-    const { id, checked } = e.target;
-    setIsCheck([...isCheck, id]);
+    const { id, checked } = e.target
+    setIsCheck([...isCheck, id])
     if (!checked) {
-      setIsCheck(isCheck.filter((item) => item !== id));
+      setIsCheck(isCheck.filter((item) => item !== id))
     }
-  };
+  }
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       try {
-        const res = await NotificationServices.getAllNotification();
-        setData(res?.notifications);
-        setTotalUnreadDoc(res?.totalUnreadDoc);
-        setTotalDoc(res?.totalDoc);
-        setPage(1);
+        const res = await NotificationServices.getAllNotification()
+        setData(res?.notifications)
+        setTotalUnreadDoc(res?.totalUnreadDoc)
+        setTotalDoc(res?.totalDoc)
+        setPage(1)
       } catch (err) {
         // console.log(err?.response?.data?.message || err?.message);
-        notifyError(err?.response?.data?.message || err?.message);
+        notifyError(err?.response?.data?.message || err?.message)
       }
-    })();
-  }, []);
+    })()
+  }, [])
 
   return (
     <>
@@ -193,9 +192,7 @@ const Notifications = () => {
       <Card className="shadow-xs overflow-hidden bg-white dark:bg-gray-800 mb-5">
         <CardBody style={{ padding: 0 }}>
           <div className="p-4 dark:text-gray-300">
-            <p className="text-sm font-semibold text-teal-700">
-              Unread Notification ({totalUnreadDoc})
-            </p>
+            <p className="text-sm font-semibold text-teal-700">Unread Notification ({totalUnreadDoc})</p>
           </div>
 
           <div className="border rounded-md">
@@ -219,9 +216,7 @@ const Notifications = () => {
                 </p>
               </div> */}
               <div className="text-right">
-                <p className="text-xs font-semibold text-gray-500 my-auto dark:text-gray-300 mr-2 uppercase">
-                  Action
-                </p>
+                <p className="text-xs font-semibold text-gray-500 my-auto dark:text-gray-300 mr-2 uppercase">Action</p>
               </div>
             </div>
 
@@ -243,20 +238,11 @@ const Notifications = () => {
                               />
                             </TableCell>
 
-                            <TableCell
-                              className="md:w-full w-1/5"
-                              style={{ paddingRight: 0 }}
-                            >
+                            <TableCell className="md:w-full w-1/5" style={{ paddingRight: 0 }}>
                               <Link
-                                to={
-                                  value.productId
-                                    ? `/product/${value.productId}`
-                                    : `/order/${value.orderId}`
-                                }
+                                to={value.productId ? `/product/${value.productId}` : `/order/${value.orderId}`}
                                 className="flex items-center"
-                                onClick={() =>
-                                  handleNotificationStatusChange(value._id)
-                                }
+                                onClick={() => handleNotificationStatusChange(value._id)}
                               >
                                 <Avatar
                                   className="mr-2 md:block hidden bg-gray-50 border border-gray-200"
@@ -266,13 +252,11 @@ const Notifications = () => {
 
                                 <div className="notification-content">
                                   <div className="md:inline-block hidden">
-                                    <h6 className="font-medium text-gray-500">
-                                      {value?.message}
-                                    </h6>
+                                    <h6 className="font-medium text-gray-500">{value?.message}</h6>
                                   </div>
                                   <div className="md:hidden">
                                     <h6 className="font-medium text-gray-500">
-                                      {value?.message.substring(0, 33) + "..."}
+                                      {value?.message.substring(0, 33) + '...'}
                                     </h6>
                                   </div>
 
@@ -282,13 +266,11 @@ const Notifications = () => {
                                     ) : (
                                       <Badge type="success">New Order</Badge>
                                     )}
-                                    <span className="ml-2">
-                                      {showDateTimeFormat(value?.createdAt)}
-                                    </span>
+                                    <span className="ml-2">{showDateTimeFormat(value?.createdAt)}</span>
                                   </p>
                                 </div>
 
-                                {value.status === "unread" && (
+                                {value.status === 'unread' && (
                                   <span className="px-2 md:flex hidden focus:outline-none text-emerald-600">
                                     <img
                                       src={ellipse}
@@ -305,16 +287,12 @@ const Notifications = () => {
                             <TableCell
                               className="text-right"
                               style={{
-                                padding: `${
-                                  window.innerWidth < 420 ? "0" : "0.5rem"
-                                }`,
+                                padding: `${window.innerWidth < 420 ? '0' : '0.5rem'}`,
                               }}
                             >
                               <div className="group inline-block relative">
                                 <button
-                                  onClick={() =>
-                                    handleNotificationDelete(value._id)
-                                  }
+                                  onClick={() => handleNotificationDelete(value._id)}
                                   type="button"
                                   className="px-2 group-hover:text-blue-500 text-red-500 focus:outline-none"
                                 >
@@ -327,7 +305,7 @@ const Notifications = () => {
                               </div>
                             </TableCell>
                           </TableRow>
-                        );
+                        )
                       })}
                     </TableBody>
                   </Table>
@@ -352,7 +330,7 @@ const Notifications = () => {
         </CardBody>
       </Card>
     </>
-  );
-};
+  )
+}
 
-export default Notifications;
+export default Notifications

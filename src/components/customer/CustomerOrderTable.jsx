@@ -1,25 +1,23 @@
-import React from "react";
-import { TableCell, TableBody, TableRow } from "@windmill/react-ui";
+import React from 'react'
+import { TableCell, TableBody, TableRow } from '@windmill/react-ui'
 
 //internal import
-import Status from "@/components/table/Status";
-import useUtilsFunction from "@/hooks/useUtilsFunction";
-import SelectStatus from "@/components/form/selectOption/SelectStatus";
+import Status from '@/components/table/Status'
+import useUtilsFunction from '@/hooks/useUtilsFunction'
+import SelectStatus from '@/components/form/selectOption/SelectStatus'
 
 // import Status from '../table/Status';
 // import SelectStatus from '../form/SelectStatus';
 
 const CustomerOrderTable = ({ orders }) => {
-  const { showDateTimeFormat, getNumberTwo, currency } = useUtilsFunction();
+  const { showDateTimeFormat, getNumberTwo, currency } = useUtilsFunction()
   return (
     <>
       <TableBody>
         {orders?.map((order) => (
           <TableRow key={order._id}>
             <TableCell>
-              <span className="font-semibold uppercase text-xs">
-                {order?._id?.substring(20, 24)}
-              </span>
+              <span className="font-semibold uppercase text-xs">{order?._id?.substring(20, 24)}</span>
             </TableCell>
             <TableCell>
               <span className="text-sm">
@@ -32,20 +30,18 @@ const CustomerOrderTable = ({ orders }) => {
               <span className="text-sm">{order?.user_info?.address}</span>
             </TableCell>
             <TableCell>
-              {" "}
-              <span className="text-sm">{order.user_info?.contact}</span>{" "}
+              {' '}
+              <span className="text-sm">{order.user_info?.contact}</span>{' '}
             </TableCell>
             <TableCell>
-              <span className="text-sm font-semibold">
-                {order.paymentMethod}
-              </span>
+              <span className="text-sm font-semibold">{order.paymentMethod}</span>
             </TableCell>
             <TableCell>
-              {" "}
+              {' '}
               <span className="text-sm font-semibold">
                 {currency}
                 {getNumberTwo(order.total)}
-              </span>{" "}
+              </span>{' '}
             </TableCell>
             <TableCell className="text-center">
               <Status status={order.status} />
@@ -57,7 +53,7 @@ const CustomerOrderTable = ({ orders }) => {
         ))}
       </TableBody>
     </>
-  );
-};
+  )
+}
 
-export default CustomerOrderTable;
+export default CustomerOrderTable

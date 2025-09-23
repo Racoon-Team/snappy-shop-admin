@@ -1,14 +1,6 @@
-import { Input } from "@windmill/react-ui";
+import { Input } from '@windmill/react-ui'
 
-const InputAreaTwo = ({
-  register,
-  defaultValue,
-  required,
-  name,
-  label,
-  type,
-  placeholder,
-}) => {
+const InputAreaTwo = ({ register, defaultValue, required, name, label, type, placeholder }) => {
   return (
     <>
       <Input
@@ -23,7 +15,7 @@ const InputAreaTwo = ({
         className="mr-2 p-2"
       />
     </>
-  );
-};
+  )
+}
 
-export default InputAreaTwo;
+export default InputAreaTwo

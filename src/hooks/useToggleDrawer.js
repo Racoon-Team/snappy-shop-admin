@@ -1,40 +1,40 @@
-import { useContext, useEffect, useState } from "react";
-import { SidebarContext } from "@/context/SidebarContext";
+import { useContext, useEffect, useState } from 'react'
+import { SidebarContext } from '@/context/SidebarContext'
 
 const useToggleDrawer = () => {
-  const [serviceId, setServiceId] = useState("");
-  const [allId, setAllId] = useState([]);
-  const [title, setTitle] = useState("");
-  const { toggleDrawer, isDrawerOpen, toggleModal, toggleBulkDrawer } =
-    useContext(SidebarContext);
+  const [serviceId, setServiceId] = useState('')
+  const [allId, setAllId] = useState([])
+  const [title, setTitle] = useState('')
+  const { toggleDrawer, isDrawerOpen, toggleModal, toggleBulkDrawer } = useContext(SidebarContext)
 
-  const handleUpdate = (id) => {
-    setServiceId(id);
-    toggleDrawer();
-  };
+  const handleUpdate = (id, title) => {
+    setServiceId(id)
+    setTitle(title)
+    toggleDrawer()
+  }
 
   const handleUpdateMany = (id) => {
-    setAllId(id);
-    toggleBulkDrawer();
-  };
+    setAllId(id)
+    toggleBulkDrawer()
+  }
 
   const handleModalOpen = (id, title) => {
-    setServiceId(id);
-    toggleModal();
-    setTitle(title);
-  };
+    setServiceId(id)
+    toggleModal()
+    setTitle(title)
+  }
 
   useEffect(() => {
     if (!isDrawerOpen) {
-      setServiceId();
+      setServiceId()
     }
-  }, [isDrawerOpen]);
+  }, [isDrawerOpen])
 
   const handleDeleteMany = async (id, products) => {
-    setAllId(id);
-    toggleModal();
-    setTitle("Selected Products");
-  };
+    setAllId(id)
+    toggleModal()
+    setTitle('Selected Products')
+  }
 
   return {
     title,
@@ -45,7 +45,7 @@ const useToggleDrawer = () => {
     handleModalOpen,
     handleDeleteMany,
     handleUpdateMany,
-  };
-};
+  }
+}
 
-export default useToggleDrawer;
+export default useToggleDrawer

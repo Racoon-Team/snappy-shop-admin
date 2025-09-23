@@ -1,5 +1,5 @@
-import { Input } from "@windmill/react-ui";
-
+import { Input } from '@windmill/react-ui'
+import { useTranslation } from 'react-i18next'
 const InputValueFive = ({
   name,
   label,
@@ -12,23 +12,24 @@ const InputValueFive = ({
   defaultValue,
   placeholder,
 }) => {
+  const { t } = useTranslation()
   const value = {
     valueAsNumber: true,
-    required: required ? `${label} is required!` : false,
+    required: required ? t('productsScreen.drawer.quantityValidation', { label }) : false,
     max: {
       value: maxValue,
       message: `Maximum value ${maxValue}!`,
     },
     min: {
       value: minValue,
-      message: `Minimum value ${minValue}!`,
+      message: t('productsScreen.drawer.validationMin', { minValue }),
     },
     pattern: {
       value: /^[0-9]*$/,
       message: `Invalid ${label}!`,
     },
     // onBlur: (e) => handleTotalVolume(e.target.value, 'stock'),
-  };
+  }
 
   return (
     <>
@@ -44,7 +45,7 @@ const InputValueFive = ({
         />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default InputValueFive;
+export default InputValueFive

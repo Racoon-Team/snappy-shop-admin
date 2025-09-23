@@ -1,8 +1,8 @@
-import { Select } from "@windmill/react-ui";
+import { Select } from '@windmill/react-ui'
 
 //internal import
-import useAsync from "@/hooks/useAsync";
-import CurrencyServices from "@/services/CurrencyServices";
+import useAsync from '@/hooks/useAsync'
+import CurrencyServices from '@/services/CurrencyServices'
 // import { CODES } from 'currencies-map';
 
 const SelectCurrency = ({
@@ -12,12 +12,12 @@ const SelectCurrency = ({
   required,
   // loading,
 }) => {
-  const { data, loading } = useAsync(CurrencyServices.getShowingCurrency);
+  const { data, loading } = useAsync(CurrencyServices.getShowingCurrency)
 
   return (
     <>
       {loading ? (
-        "Loading..."
+        'Loading...'
       ) : (
         <Select
           name={name}
@@ -33,6 +33,6 @@ const SelectCurrency = ({
         </Select>
       )}
     </>
-  );
-};
-export default SelectCurrency;
+  )
+}
+export default SelectCurrency

@@ -1,60 +1,51 @@
-import {
-  Badge,
-  Pagination,
-  Table,
-  TableCell,
-  TableContainer,
-  TableFooter,
-  TableHeader,
-} from "@windmill/react-ui";
-import React, { useContext, useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { useParams } from "react-router";
+import { Badge, Pagination, Table, TableCell, TableContainer, TableFooter, TableHeader } from '@windmill/react-ui'
+import { useContext, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router'
 //internal import
 
-import useAsync from "@/hooks/useAsync";
-import useFilter from "@/hooks/useFilter";
-import useProductSubmit from "@/hooks/useProductSubmit";
-import useToggleDrawer from "@/hooks/useToggleDrawer";
-import ProductServices from "@/services/ProductServices";
-import useUtilsFunction from "@/hooks/useUtilsFunction";
-import AttributeList from "@/components/attribute/AttributeList";
-import MainDrawer from "@/components/drawer/MainDrawer";
-import ProductDrawer from "@/components/drawer/ProductDrawer";
-import Loading from "@/components/preloader/Loading";
-import PageTitle from "@/components/Typography/PageTitle";
-import { SidebarContext } from "@/context/SidebarContext";
+import AttributeList from '@/components/attribute/AttributeList'
+import MainDrawer from '@/components/drawer/MainDrawer'
+import ProductDrawer from '@/components/drawer/ProductDrawer'
+import Loading from '@/components/preloader/Loading'
+import PageTitle from '@/components/Typography/PageTitle'
+import { SidebarContext } from '@/context/SidebarContext'
+import useAsync from '@/hooks/useAsync'
+import useFilter from '@/hooks/useFilter'
+import useProductSubmit from '@/hooks/useProductSubmit'
+import useToggleDrawer from '@/hooks/useToggleDrawer'
+import useUtilsFunction from '@/hooks/useUtilsFunction'
+import ProductServices from '@/services/ProductServices'
 
 const ProductDetails = () => {
-  const { id } = useParams();
-  const { t } = useTranslation();
-  const { handleUpdate } = useToggleDrawer();
-  const { attribue } = useProductSubmit(id);
-  const [variantTitle, setVariantTitle] = useState([]);
-  const { lang } = useContext(SidebarContext);
+  const { id } = useParams()
+  const { t } = useTranslation()
+  const { handleUpdate } = useToggleDrawer()
+  const { attribue } = useProductSubmit(id)
+  const [variantTitle, setVariantTitle] = useState([])
+  const { lang } = useContext(SidebarContext)
 
-  const { data, loading } = useAsync(() => ProductServices.getProductById(id));
+  const { data, loading } = useAsync(() => ProductServices.getProductById(id))
 
-  const { currency, showingTranslateValue, getNumberTwo } = useUtilsFunction();
+  const { currency, showingTranslateValue, getNumberTwo } = useUtilsFunction()
 
-  const { handleChangePage, totalResults, resultsPerPage, dataTable } =
-    useFilter(data?.variants);
+  const { handleChangePage, totalResults, resultsPerPage, dataTable } = useFilter(data?.variants)
   // console.log('data',data)
 
   useEffect(() => {
     if (!loading) {
-      const res = Object.keys(Object.assign({}, ...data?.variants));
+      const res = data?.variants ? Object.keys(Object.assign({}, ...data.variants)) : []
 
       const varTitle = attribue?.filter((att) =>
         // res.includes(att.title.replace(/[^a-zA-Z0-9]/g, ''))
         res.includes(att._id)
-      );
+      )
 
-      setVariantTitle(varTitle);
+      setVariantTitle(varTitle)
     }
-  }, [attribue, data?.variants, loading, lang]);
+  }, [attribue, data?.variants, loading, lang])
 
-  console.log("product", data);
+  console.log('product', data)
 
   return (
     <>
@@ -62,7 +53,7 @@ const ProductDetails = () => {
         <ProductDrawer id={id} />
       </MainDrawer>
 
-      <PageTitle>{t("ProductDetails")}</PageTitle>
+      <PageTitle>{t('productsScreen.productDetails.title')}</PageTitle>
       {loading ? (
         <Loading loading={loading} />
       ) : (
@@ -82,15 +73,11 @@ const ProductDetails = () => {
               <div className="mb-5 block ">
                 <div className="font-serif font-semibold py-1 text-sm">
                   <p className="text-sm text-gray-500 pr-4">
-                    {t("Status")}:{" "}
-                    {data.status === "show" ? (
-                      <span className="text-emerald-400">
-                        {t("ThisProductShowing")}
-                      </span>
+                    {t('productsScreen.productDetails.status')}:{' '}
+                    {data.status === 'show' ? (
+                      <span className="text-emerald-400">{t('productsScreen.productDetails.productShowing')}</span>
                     ) : (
-                      <span className="text-red-400">
-                        {t("ThisProductHidden")}
-                      </span>
+                      <span className="text-red-400">{t('ThisProductHidden')}</span>
                     )}
                   </p>
                 </div>
@@ -98,7 +85,7 @@ const ProductDetails = () => {
                   {showingTranslateValue(data?.title)}
                 </h2>
                 <p className="uppercase font-serif font-medium text-gray-500 dark:text-gray-400 text-sm">
-                  {t("Sku")} :{" "}
+                  {t('productsScreen.productDetails.sku')} :{' '}
                   <span className="font-bold text-gray-500 dark:text-gray-500">
                     {/* {data?._id !== undefined && data?._id.substring(18, 24)} */}
                     {data?.sku}
@@ -120,16 +107,16 @@ const ProductDetails = () => {
               <div className="mb-3">
                 {data?.stock <= 0 ? (
                   <Badge type="danger">
-                    <span className="font-bold">{t("StockOut")}</span>{" "}
+                    <span className="font-bold">{t('StockOut')}</span>{' '}
                   </Badge>
                 ) : (
                   <Badge type="success">
-                    {" "}
-                    <span className="font-bold">{t("InStock")}</span>
+                    {' '}
+                    <span className="font-bold">{t('productsScreen.productDetails.inStock')}</span>
                   </Badge>
                 )}
                 <span className="text-sm text-gray-500 dark:text-gray-400 font-medium pl-4">
-                  {t("Quantity")}: {data?.stock}
+                  {t('productsScreen.productDetails.quantity')}: {data?.stock}
                 </span>
               </div>
               <p className="text-sm leading-6 text-gray-500 dark:text-gray-400 md:leading-7">
@@ -138,8 +125,8 @@ const ProductDetails = () => {
               <div className="flex flex-col mt-4">
                 <p className="font-serif font-semibold py-1 text-gray-500 text-sm">
                   <span className="text-gray-700 dark:text-gray-400">
-                    {t("Category")}:{" "}
-                  </span>{" "}
+                    {t('productsScreen.productDetails.category')}:{' '}
+                  </span>{' '}
                   {showingTranslateValue(data?.category?.name)}
                 </p>
                 <div className="flex flex-row">
@@ -158,7 +145,7 @@ const ProductDetails = () => {
                   onClick={() => handleUpdate(id)}
                   className="cursor-pointer leading-5 transition-colors duration-150 font-medium text-sm focus:outline-none px-5 py-2 rounded-md text-white bg-emerald-500 border border-transparent active:bg-emerald-600 hover:bg-emerald-600 "
                 >
-                  {t("EditProduct")}
+                  {t('productsScreen.productDetails.editProduct')}
                 </button>
               </div>
             </div>
@@ -167,27 +154,22 @@ const ProductDetails = () => {
       )}
       {data?.isCombination && variantTitle?.length > 0 && !loading && (
         <>
-          <PageTitle>{t("ProductVariantList")}</PageTitle>
+          <PageTitle>{t('productsScreen.productDetails.productVariantList')}</PageTitle>
           <TableContainer className="mb-8 rounded-b-lg">
             <Table>
               <TableHeader>
                 <tr>
-                  <TableCell>{t("SR")}</TableCell>
-                  <TableCell>{t("Image")}</TableCell>
-                  <TableCell>{t("Combination")}</TableCell>
-                  <TableCell>{t("Sku")}</TableCell>
-                  <TableCell>{t("Barcode")}</TableCell>
-                  <TableCell>{t("OrginalPrice")}</TableCell>
-                  <TableCell>{t("SalePrice")}</TableCell>
-                  <TableCell>{t("Quantity")}</TableCell>
+                  <TableCell>{t('productsScreen.productDetails.table.sr')}</TableCell>
+                  <TableCell>{t('productsScreen.productDetails.table.image')}</TableCell>
+                  <TableCell>{t('productsScreen.productDetails.table.combination')}</TableCell>
+                  <TableCell>{t('productsScreen.productDetails.table.sku')}</TableCell>
+                  <TableCell>{t('productsScreen.productDetails.table.barcode')}</TableCell>
+                  <TableCell>{t('productsScreen.productDetails.table.orginalPrice')}</TableCell>
+                  <TableCell>{t('productsScreen.productDetails.table.salePrice')}</TableCell>
+                  <TableCell>{t('productsScreen.productDetails.table.quantity')}</TableCell>
                 </tr>
               </TableHeader>
-              <AttributeList
-                lang={lang}
-                variants={dataTable}
-                currency={currency}
-                variantTitle={variantTitle}
-              />
+              <AttributeList lang={lang} variants={dataTable} currency={currency} variantTitle={variantTitle} />
             </Table>
             <TableFooter>
               <Pagination
@@ -201,7 +183,7 @@ const ProductDetails = () => {
         </>
       )}
     </>
-  );
-};
+  )
+}
 
-export default ProductDetails;
+export default ProductDetails

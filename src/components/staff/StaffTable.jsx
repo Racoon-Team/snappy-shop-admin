@@ -1,46 +1,39 @@
-import { Avatar, TableBody, TableCell, TableRow } from "@windmill/react-ui";
-import React, { useState } from "react";
-import { FiZoomIn } from "react-icons/fi";
+import { Avatar, TableBody, TableCell, TableRow } from '@windmill/react-ui'
+import React, { useState } from 'react'
+import { FiZoomIn } from 'react-icons/fi'
 
 //internal import
 
-import Status from "@/components/table/Status";
-import useUtilsFunction from "@/hooks/useUtilsFunction";
-import MainDrawer from "@/components/drawer/MainDrawer";
-import useToggleDrawer from "@/hooks/useToggleDrawer";
-import Tooltip from "@/components/tooltip/Tooltip";
-import StaffDrawer from "@/components/drawer/StaffDrawer";
-import DeleteModal from "@/components/modal/DeleteModal";
-import EditDeleteButton from "@/components/table/EditDeleteButton";
-import ActiveInActiveButton from "@/components/table/ActiveInActiveButton";
-import AccessListModal from "@/components/modal/AccessListModal";
+import Status from '@/components/table/Status'
+import useUtilsFunction from '@/hooks/useUtilsFunction'
+import MainDrawer from '@/components/drawer/MainDrawer'
+import useToggleDrawer from '@/hooks/useToggleDrawer'
+import Tooltip from '@/components/tooltip/Tooltip'
+import StaffDrawer from '@/components/drawer/StaffDrawer'
+import DeleteModal from '@/components/modal/DeleteModal'
+import EditDeleteButton from '@/components/table/EditDeleteButton'
+import ActiveInActiveButton from '@/components/table/ActiveInActiveButton'
+import AccessListModal from '@/components/modal/AccessListModal'
 
 const StaffTable = ({ staffs, lang }) => {
-  const {
-    title,
-    serviceId,
-    handleModalOpen,
-    handleUpdate,
-    isSubmitting,
-    handleResetPassword,
-  } = useToggleDrawer();
+  const { title, serviceId, handleModalOpen, handleUpdate, isSubmitting, handleResetPassword } = useToggleDrawer()
 
-  const { showDateFormat, showingTranslateValue } = useUtilsFunction();
+  const { showDateFormat, showingTranslateValue } = useUtilsFunction()
   // State for access list modal
-  const [selectedStaff, setSelectedStaff] = useState(null);
-  const [isAccessModalOpen, setIsAccessModalOpen] = useState(false);
+  const [selectedStaff, setSelectedStaff] = useState(null)
+  const [isAccessModalOpen, setIsAccessModalOpen] = useState(false)
 
   // Function to open the access list modal
   const handleAccessModalOpen = (staff) => {
-    setSelectedStaff(staff);
-    setIsAccessModalOpen(true);
-  };
+    setSelectedStaff(staff)
+    setIsAccessModalOpen(true)
+  }
 
   // Function to close the access list modal
   const handleAccessModalClose = () => {
-    setSelectedStaff(null);
-    setIsAccessModalOpen(false);
-  };
+    setSelectedStaff(null)
+    setIsAccessModalOpen(false)
+  }
 
   return (
     <>
@@ -64,21 +57,15 @@ const StaffTable = ({ staffs, lang }) => {
           <TableRow key={staff._id}>
             <TableCell>
               <div className="flex items-center">
-                <Avatar
-                  className="hidden mr-3 md:block bg-gray-50"
-                  src={staff.image}
-                  alt="staff"
-                />
+                <Avatar className="hidden mr-3 md:block bg-gray-50" src={staff.image} alt="staff" />
                 <div>
-                  <h2 className="text-sm font-medium">
-                    {showingTranslateValue(staff?.name)}
-                  </h2>
+                  <h2 className="text-sm font-medium">{showingTranslateValue(staff?.name)}</h2>
                 </div>
               </div>
             </TableCell>
 
             <TableCell>
-              <span className="text-sm">{staff.email}</span>{" "}
+              <span className="text-sm">{staff.email}</span>{' '}
             </TableCell>
             <TableCell>
               <span className="text-sm ">{staff.phone}</span>
@@ -98,26 +85,13 @@ const StaffTable = ({ staffs, lang }) => {
             </TableCell>
 
             <TableCell className="text-center">
-              <ActiveInActiveButton
-                id={staff?._id}
-                staff={staff}
-                option="staff"
-                status={staff.status}
-              />
+              <ActiveInActiveButton id={staff?._id} staff={staff} option="staff" status={staff.status} />
             </TableCell>
 
             <TableCell>
               <div className="flex justify-between items-center">
-                <button
-                  onClick={() => handleAccessModalOpen(staff)}
-                  className="text-gray-400"
-                >
-                  <Tooltip
-                    id="view"
-                    Icon={FiZoomIn}
-                    title="View Access Route"
-                    bgColor="#059669"
-                  />
+                <button onClick={() => handleAccessModalOpen(staff)} className="text-gray-400">
+                  <Tooltip id="view" Icon={FiZoomIn} title="View Access Route" bgColor="#059669" />
                 </button>
                 <EditDeleteButton
                   id={staff._id}
@@ -134,7 +108,7 @@ const StaffTable = ({ staffs, lang }) => {
         ))}
       </TableBody>
     </>
-  );
-};
+  )
+}
 
-export default StaffTable;
+export default StaffTable

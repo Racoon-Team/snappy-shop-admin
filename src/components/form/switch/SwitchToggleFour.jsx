@@ -1,28 +1,17 @@
-import Switch from 'react-switch';
+import Switch from 'react-switch'
+import { t } from 'i18next'
 
-const SwitchToggleFour = ({
-  title,
-  handleProcess,
-  processOption,
-  product,
-  handleIsCombination,
-}) => {
+const SwitchToggleFour = ({ title, handleProcess, processOption, product, handleIsCombination }) => {
   return (
     <>
-      <div
-        className={`${
-          product ? 'mb-3 flex flex-wrap justify-end items-center mr-8' : 'mb-3'
-        }`}
-      >
+      <div className={`${product ? 'mb-3 flex flex-wrap justify-end items-center mr-8' : 'mb-3'}`}>
         <div className="flex flex-wrap items-center">
           {product ? (
             <label className="block text-base font-normal text-orange-500 dark:text-orange-400 mx-4">
               Does this product have variants?
             </label>
           ) : (
-            <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">
-              {title}
-            </label>
+            <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">{title}</label>
           )}
 
           <Switch
@@ -42,7 +31,7 @@ const SwitchToggleFour = ({
                   paddingTop: 1,
                 }}
               >
-                Fixed
+                {t('couponsScreen.couponDrawer.fixed')}
               </div>
             }
             width={125}
@@ -63,14 +52,14 @@ const SwitchToggleFour = ({
                   paddingTop: 1,
                 }}
               >
-                Percentage
+                {t('couponsScreen.couponDrawer.percentage')}
               </div>
             }
           />
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default SwitchToggleFour;
+export default SwitchToggleFour

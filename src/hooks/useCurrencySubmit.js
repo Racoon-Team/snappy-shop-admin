@@ -1,16 +1,16 @@
-import { useContext, useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useContext, useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
 
 //internal import
-import { SidebarContext } from "@/context/SidebarContext";
-import CurrencyServices from "@/services/CurrencyServices";
-import { notifyError, notifySuccess } from "@/utils/toast";
-
+import { SidebarContext } from '@/context/SidebarContext'
+import CurrencyServices from '@/services/CurrencyServices'
+import { notifyError, notifySuccess } from '@/utils/toast'
+import { useTranslation } from 'react-i18next'
 const useCurrencySubmit = (id) => {
-  const [status, setStatus] = useState(true);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { isDrawerOpen, closeDrawer, setIsUpdate } = useContext(SidebarContext);
-
+  const [status, setStatus] = useState(true)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { isDrawerOpen, closeDrawer, setIsUpdate } = useContext(SidebarContext)
+  const { t } = useTranslation()
   // console.log(variants);
 
   const {
@@ -19,64 +19,63 @@ const useCurrencySubmit = (id) => {
     setValue,
     clearErrors,
     formState: { errors },
-  } = useForm();
+  } = useForm()
 
   const onSubmit = async ({ symbol, name }) => {
     try {
-      setIsSubmitting(true);
+      setIsSubmitting(true)
       const currencyData = {
         name: name,
         symbol: symbol,
-        status: status ? "show" : "hide",
-      };
+        status: status ? 'show' : 'hide',
+      }
 
       if (id) {
-        const res = await CurrencyServices.updateCurrency(id, currencyData);
-        setIsUpdate(true);
-        setIsSubmitting(false);
-        notifySuccess(res.message);
-        closeDrawer();
+        const res = await CurrencyServices.updateCurrency(id, currencyData)
+        setIsUpdate(true)
+        setIsSubmitting(false)
+        notifySuccess(t('currenciesScreen.message.updateCurrency'))
+        closeDrawer()
       } else {
-        const res = await CurrencyServices.addCurrency(currencyData);
-        setIsUpdate(true);
-        setIsSubmitting(false);
-        notifySuccess(res.message);
-        closeDrawer();
+        const res = await CurrencyServices.addCurrency(currencyData)
+        setIsUpdate(true)
+        setIsSubmitting(false)
+        notifySuccess(res.message)
+        closeDrawer()
       }
     } catch (err) {
-      setIsSubmitting(false);
-      notifyError(err?.response?.data?.message || err?.message);
-      closeDrawer();
+      setIsSubmitting(false)
+      notifyError(err?.response?.data?.message || err?.message)
+      closeDrawer()
     }
-  };
+  }
 
   useEffect(() => {
     if (!isDrawerOpen) {
-      setValue("name");
-      setValue("symbol");
+      setValue('name')
+      setValue('symbol')
 
-      setStatus(true);
-      clearErrors("symbol");
-      clearErrors("name");
+      setStatus(true)
+      clearErrors('symbol')
+      clearErrors('name')
 
-      return;
+      return
     }
     if (id) {
-      (async () => {
+      ;(async () => {
         try {
-          const res = await CurrencyServices.getCurrencyById(id);
+          const res = await CurrencyServices.getCurrencyById(id)
           if (res) {
-            setValue("name", res.name);
-            setValue("symbol", res.symbol);
-            setStatus(res.status === "show" ? true : false);
+            setValue('name', res.name)
+            setValue('symbol', res.symbol)
+            setStatus(res.status === 'show' ? true : false)
           }
         } catch (err) {
-          notifyError(err?.response?.data?.message || err?.message);
+          notifyError(err?.response?.data?.message || err?.message)
         }
-      })();
+      })()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [clearErrors, id, isDrawerOpen, setValue]);
+  }, [clearErrors, id, isDrawerOpen, setValue])
 
   return {
     errors,
@@ -86,7 +85,7 @@ const useCurrencySubmit = (id) => {
     setStatus,
     isSubmitting,
     handleSubmit,
-  };
-};
+  }
+}
 
-export default useCurrencySubmit;
+export default useCurrencySubmit

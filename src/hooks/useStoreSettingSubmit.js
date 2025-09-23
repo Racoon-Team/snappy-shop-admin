@@ -1,48 +1,53 @@
-import { useContext, useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useContext, useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
 
 //internal import
-import useDisableForDemo from "./useDisableForDemo";
-import { SidebarContext } from "@/context/SidebarContext";
-import SettingServices from "@/services/SettingServices";
-import { notifyError, notifySuccess } from "@/utils/toast";
+import useDisableForDemo from './useDisableForDemo'
+import { SidebarContext } from '@/context/SidebarContext'
+import SettingServices from '@/services/SettingServices'
+import { notifyError, notifySuccess } from '@/utils/toast'
 
 const useStoreSettingSubmit = (id) => {
-  const { setIsUpdate } = useContext(SidebarContext);
-  const [isSave, setIsSave] = useState(true);
-  const [metaImg, setMetaImg] = useState("");
-  const [favicon, setFavicon] = useState("");
-  const [enabledCOD, setEnabledCOD] = useState(true);
-  const [enabledStripe, setEnabledStripe] = useState(true);
-  const [enabledRazorPay, setEnabledRazorPay] = useState(true);
-  const [enabledFbPixel, setEnableFbPixel] = useState(true);
-  const [enabledTawkChat, setEnabledTawkChat] = useState(false);
-  const [enabledGoogleLogin, setEnabledGoogleLogin] = useState(true);
-  const [enabledGithubLogin, setEnabledGithubLogin] = useState(false);
-  const [enabledFacebookLogin, setEnabledFacebookLogin] = useState(false);
-  const [enabledGoogleAnalytics, setEnabledGoogleAnalytics] = useState(false);
+  const { setIsUpdate } = useContext(SidebarContext)
+  const [isSave, setIsSave] = useState(true)
+  const [metaImg, setMetaImg] = useState('')
+  const [favicon, setFavicon] = useState('')
+  const [enabledCOD, setEnabledCOD] = useState(true)
+  const [enabledQR, setEnabledQR] = useState(true)
+  const [enabledStripe, setEnabledStripe] = useState(true)
+  const [enabledRazorPay, setEnabledRazorPay] = useState(true)
+  const [enabledFbPixel, setEnableFbPixel] = useState(true)
+  const [enabledTawkChat, setEnabledTawkChat] = useState(false)
+  const [enabledGoogleLogin, setEnabledGoogleLogin] = useState(true)
+  const [enabledGithubLogin, setEnabledGithubLogin] = useState(false)
+  const [enabledFacebookLogin, setEnabledFacebookLogin] = useState(false)
+  const [enabledGoogleAnalytics, setEnabledGoogleAnalytics] = useState(false)
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [provinces, setProvinces] = useState([])
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const { handleDisableForDemo } = useDisableForDemo();
+  const { handleDisableForDemo } = useDisableForDemo()
 
   const {
     register,
     handleSubmit,
     setValue,
     formState: { errors },
-  } = useForm();
+  } = useForm()
 
   const onSubmit = async (data) => {
     if (handleDisableForDemo()) {
-      return; // Exit the function if the feature is disabled
+      return // Exit the function if the feature is disabled
     }
     try {
-      setIsSubmitting(true);
+      setIsSubmitting(true)
       const settingData = {
-        name: "storeSetting",
+        name: 'storeSetting',
         setting: {
           cod_status: enabledCOD,
+          qr_status: enabledQR,
+          qr_key: data.qr_key,
+          qr_secret: data.qr_secret,
           stripe_status: enabledStripe,
           razorpay_status: enabledRazorPay,
           stripe_key: data.stripe_key,
@@ -67,71 +72,76 @@ const useStoreSettingSubmit = (id) => {
           tawk_chat_status: enabledTawkChat,
           tawk_chat_property_id: data.tawk_chat_property_id,
           tawk_chat_widget_id: data.tawk_chat_widget_id,
+          available_locations: data.provinces || provinces,
         },
-      };
+      }
 
       // console.log("store setting", settingData, "data", data);
       // return;
 
       if (!isSave) {
-        const res = await SettingServices.updateStoreSetting(settingData);
-        setIsUpdate(true);
-        setIsSubmitting(false);
-        window.location.reload();
-        notifySuccess(res.message);
+        const res = await SettingServices.updateStoreSetting(settingData)
+        setIsUpdate(true)
+        setIsSubmitting(false)
+        window.location.reload()
+        notifySuccess(res.message)
       } else {
-        const res = await SettingServices.addStoreSetting(settingData);
-        setIsUpdate(true);
-        setIsSubmitting(false);
-        window.location.reload();
-        notifySuccess(res.message);
+        const res = await SettingServices.addStoreSetting(settingData)
+        setIsUpdate(true)
+        setIsSubmitting(false)
+        window.location.reload()
+        notifySuccess(res.message)
       }
     } catch (err) {
       // console.log("err", err);
-      notifyError(err?.response?.data?.message || err?.message);
-      setIsSubmitting(false);
+      notifyError(err?.response?.data?.message || err?.message)
+      setIsSubmitting(false)
     }
-  };
+  }
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       try {
-        const res = await SettingServices.getStoreSetting();
+        const res = await SettingServices.getStoreSetting()
         // console.log("res>>>", res);
         if (res) {
-          setIsSave(false);
+          setIsSave(false)
           // for store setting
-          setEnabledCOD(res.cod_status);
-          setEnabledStripe(res.stripe_status);
-          setEnabledRazorPay(res.razorpay_status);
-          setEnableFbPixel(res.fb_pixel_status);
-          setEnabledTawkChat(res.tawk_chat_status);
-          setEnabledGoogleLogin(res.google_login_status);
-          setEnabledGithubLogin(res.github_login_status);
-          setEnabledFacebookLogin(res.facebook_login_status);
-          setEnabledGoogleAnalytics(res.google_analytic_status);
-          setValue("stripe_key", res.stripe_key);
-          setValue("stripe_secret", res.stripe_secret);
-          setValue("razorpay_id", res.razorpay_id);
-          setValue("razorpay_secret", res.razorpay_secret);
-          setValue("google_id", res.google_id);
-          setValue("google_secret", res.google_secret);
-          setValue("github_id", res.github_id);
-          setValue("github_secret", res.github_secret);
-          setValue("facebook_id", res.facebook_id);
-          setValue("facebook_secret", res.facebook_secret);
+          setEnabledCOD(res.cod_status)
+          setEnabledQR(res.qr_status)
+          setEnabledStripe(res.stripe_status)
+          setEnabledRazorPay(res.razorpay_status)
+          setEnableFbPixel(res.fb_pixel_status)
+          setEnabledTawkChat(res.tawk_chat_status)
+          setEnabledGoogleLogin(res.google_login_status)
+          setEnabledGithubLogin(res.github_login_status)
+          setEnabledFacebookLogin(res.facebook_login_status)
+          setEnabledGoogleAnalytics(res.google_analytic_status)
+          setValue('qr_key', res.qr_key)
+          setValue('qr_secret', res.qr_secret)
+          setValue('stripe_key', res.stripe_key)
+          setValue('stripe_secret', res.stripe_secret)
+          setValue('razorpay_id', res.razorpay_id)
+          setValue('razorpay_secret', res.razorpay_secret)
+          setValue('google_id', res.google_id)
+          setValue('google_secret', res.google_secret)
+          setValue('github_id', res.github_id)
+          setValue('github_secret', res.github_secret)
+          setValue('facebook_id', res.facebook_id)
+          setValue('facebook_secret', res.facebook_secret)
           // setValue("nextauth_secret", res.nextauth_secret);
           // setValue("next_api_base_url", res.next_api_base_url);
-          setValue("google_analytic_key", res.google_analytic_key);
-          setValue("fb_pixel_key", res.fb_pixel_key);
-          setValue("tawk_chat_property_id", res.tawk_chat_property_id);
-          setValue("tawk_chat_widget_id", res.tawk_chat_widget_id);
+          setValue('google_analytic_key', res.google_analytic_key)
+          setValue('fb_pixel_key', res.fb_pixel_key)
+          setValue('tawk_chat_property_id', res.tawk_chat_property_id)
+          setValue('tawk_chat_widget_id', res.tawk_chat_widget_id)
+          setProvinces(res.available_locations || [])
         }
       } catch (err) {
-        notifyError(err?.response?.data?.message || err.message);
+        notifyError(err?.response?.data?.message || err.message)
       }
-    })();
-  }, []);
+    })()
+  }, [])
 
   return {
     errors,
@@ -146,6 +156,8 @@ const useStoreSettingSubmit = (id) => {
     handleSubmit,
     enabledCOD,
     setEnabledCOD,
+    enabledQR,
+    setEnabledQR,
     enabledStripe,
     setEnabledStripe,
     enabledRazorPay,
@@ -162,7 +174,9 @@ const useStoreSettingSubmit = (id) => {
     setEnabledFacebookLogin,
     enabledGoogleAnalytics,
     setEnabledGoogleAnalytics,
-  };
-};
+    provinces,
+    setProvinces,
+  }
+}
 
-export default useStoreSettingSubmit;
+export default useStoreSettingSubmit

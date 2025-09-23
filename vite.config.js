@@ -1,9 +1,9 @@
 import react from "@vitejs/plugin-react";
+import { visualizer } from "rollup-plugin-visualizer";
 import { defineConfig } from "vite";
+import compression from "vite-plugin-compression2";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 import { VitePWA } from "vite-plugin-pwa";
-import compression from "vite-plugin-compression2";
-import { visualizer } from "rollup-plugin-visualizer";
 
 import dns from "dns";
 import path from "path";
@@ -115,7 +115,6 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      // eslint-disable-next-line no-undef
       "@": path.resolve(__dirname, "./src/"),
     },
   },

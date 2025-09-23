@@ -1,16 +1,14 @@
-import { Avatar, TableBody, TableCell, TableRow } from "@windmill/react-ui";
-import useUtilsFunction from "@/hooks/useUtilsFunction";
+import { Avatar, TableBody, TableCell, TableRow } from '@windmill/react-ui'
+import useUtilsFunction from '@/hooks/useUtilsFunction'
 
 const AttributeList = ({ variants, variantTitle }) => {
-  const { showingTranslateValue, currency, getNumberTwo } = useUtilsFunction();
+  const { showingTranslateValue, currency, getNumberTwo } = useUtilsFunction()
   return (
     <>
       <TableBody>
         {variants?.map((variant, i) => (
           <TableRow key={i + 1}>
-            <TableCell className="font-semibold uppercase text-xs">
-              {i + 1}
-            </TableCell>
+            <TableCell className="font-semibold uppercase text-xs">{i + 1}</TableCell>
             <TableCell>
               <div className="flex items-center">
                 {variant.image ? (
@@ -33,36 +31,24 @@ const AttributeList = ({ variants, variantTitle }) => {
                 <span>
                   {variantTitle
                     ?.map((att) => {
-                      const attributeData = att?.variants?.filter(
-                        (val) => val?.name !== "All"
-                      );
+                      const attributeData = att?.variants?.filter((val) => val?.name !== 'All')
 
-                      const attributeName = attributeData?.find(
-                        (v) => v._id === variant[att?._id]
-                      )?.name;
+                      const attributeName = attributeData?.find((v) => v._id === variant[att?._id])?.name
                       if (attributeName === undefined) {
-                        return attributeName?.en;
+                        return attributeName?.en
                       } else {
-                        return showingTranslateValue(attributeName);
+                        return showingTranslateValue(attributeName)
                       }
                     })
                     ?.filter(Boolean)
-                    .join(" ")}
+                    .join(' ')}
                 </span>
-                {variant.productId && (
-                  <span className="text-xs text-gray-500">
-                    ({variant.productId})
-                  </span>
-                )}
+                {variant.productId && <span className="text-xs text-gray-500">({variant.productId})</span>}
               </div>
             </TableCell>
 
-            <TableCell className="font-semibold uppercase text-xs">
-              {variant.sku}
-            </TableCell>
-            <TableCell className="font-semibold uppercase text-xs">
-              {variant.barcode}
-            </TableCell>
+            <TableCell className="font-semibold uppercase text-xs">{variant.sku}</TableCell>
+            <TableCell className="font-semibold uppercase text-xs">{variant.barcode}</TableCell>
 
             <TableCell className="font-semibold uppercase text-xs">
               {currency}
@@ -73,14 +59,12 @@ const AttributeList = ({ variants, variantTitle }) => {
               {getNumberTwo(variant.price)}
             </TableCell>
 
-            <TableCell className="font-semibold uppercase text-xs">
-              {variant.quantity}
-            </TableCell>
+            <TableCell className="font-semibold uppercase text-xs">{variant.quantity}</TableCell>
           </TableRow>
         ))}
       </TableBody>
     </>
-  );
-};
+  )
+}
 
-export default AttributeList;
+export default AttributeList

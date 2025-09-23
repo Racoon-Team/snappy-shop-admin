@@ -1,24 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
 
 //internal import
-import useAsync from "@/hooks/useAsync";
-import CategoryServices from "@/services/CategoryServices";
+import useAsync from '@/hooks/useAsync'
+import CategoryServices from '@/services/CategoryServices'
 
 const ChildrenCategory = ({ value }) => {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([])
 
-  const { data } = useAsync(CategoryServices.getAllCategory);
+  const { data } = useAsync(CategoryServices.getAllCategory)
   // console.log('data',data)
   useEffect(() => {
     if (value) {
-      const result = data.filter((parent) =>
-        parent.parentName.toLowerCase().includes(value.toLowerCase())
-      );
-      setCategories(result);
+      const result = data.filter((parent) => parent.parentName.toLowerCase().includes(value.toLowerCase()))
+      setCategories(result)
     } else {
-      setCategories(data);
+      setCategories(data)
     }
-  }, [data, value]);
+  }, [data, value])
 
   return (
     <>
@@ -26,7 +24,7 @@ const ChildrenCategory = ({ value }) => {
         {categories.parentName}
       </option>
     </>
-  );
-};
+  )
+}
 
-export default ChildrenCategory;
+export default ChildrenCategory

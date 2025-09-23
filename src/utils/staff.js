@@ -95,7 +95,7 @@ const admins = [
     createdAt: '2021-11-25T11:47:02.764Z',
     updatedAt: '2021-11-25T11:47:02.764Z',
   },
-];
+]
 
-const adminData = admins.sort((a, b) => -1);
-export default adminData;
+const adminData = admins.sort((a, b) => -1)
+export default adminData

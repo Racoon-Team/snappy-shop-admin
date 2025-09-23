@@ -1,24 +1,22 @@
-import Drawer from "rc-drawer";
-import React, { useContext, useEffect, useState } from "react";
-import { FiX } from "react-icons/fi";
-import { useLocation } from "react-router-dom";
+import Drawer from 'rc-drawer'
+import React, { useContext, useEffect, useState } from 'react'
+import { FiX } from 'react-icons/fi'
+import { useLocation } from 'react-router-dom'
 
 //internal import
-import { SidebarContext } from "@/context/SidebarContext";
+import { SidebarContext } from '@/context/SidebarContext'
 
 const MainDrawer = ({ children, product }) => {
-  const { toggleDrawer, isDrawerOpen, closeDrawer, windowDimension } =
-    useContext(SidebarContext);
-  const [isProduct, setIsProduct] = useState(false);
+  const { toggleDrawer, isDrawerOpen, closeDrawer, windowDimension } = useContext(SidebarContext)
+  const [isProduct, setIsProduct] = useState(false)
 
-  const location = useLocation();
+  const location = useLocation()
 
   useEffect(() => {
-    if (location.pathname === "/products") {
-      setIsProduct(true);
+    if (location.pathname === '/products') {
+      setIsProduct(true)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   // console.log('windowDimension ==========>', windowDimension <= 575);
 
@@ -28,10 +26,8 @@ const MainDrawer = ({ children, product }) => {
       onClose={closeDrawer}
       parent={null}
       level={null}
-      placement={"right"}
-      width={`${
-        windowDimension <= 575 ? "100%" : product || isProduct ? "85%" : "50%"
-      }`}
+      placement={'right'}
+      width={`${windowDimension <= 575 ? '100%' : product || isProduct ? '40%' : '50%'}`}
     >
       <button
         onClick={toggleDrawer}
@@ -40,11 +36,9 @@ const MainDrawer = ({ children, product }) => {
         <FiX className="mx-auto" />
       </button>
 
-      <div className="flex flex-col w-full h-full justify-between">
-        {children}
-      </div>
+      <div className="flex flex-col w-full h-full justify-between">{children}</div>
     </Drawer>
-  );
-};
+  )
+}
 
-export default React.memo(MainDrawer);
+export default React.memo(MainDrawer)

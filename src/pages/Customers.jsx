@@ -9,23 +9,23 @@ import {
   TableContainer,
   TableFooter,
   TableHeader,
-} from "@windmill/react-ui";
-import React from "react";
-import { useTranslation } from "react-i18next";
+} from '@windmill/react-ui'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 //internal import
-import UploadMany from "@/components/common/UploadMany";
-import CustomerTable from "@/components/customer/CustomerTable";
-import TableLoading from "@/components/preloader/TableLoading";
-import NotFound from "@/components/table/NotFound";
-import PageTitle from "@/components/Typography/PageTitle";
-import useAsync from "@/hooks/useAsync";
-import useFilter from "@/hooks/useFilter";
-import CustomerServices from "@/services/CustomerServices";
-import AnimatedContent from "@/components/common/AnimatedContent";
+import UploadMany from '@/components/common/UploadMany'
+import CustomerTable from '@/components/customer/CustomerTable'
+import TableLoading from '@/components/preloader/TableLoading'
+import NotFound from '@/components/table/NotFound'
+import PageTitle from '@/components/Typography/PageTitle'
+import useAsync from '@/hooks/useAsync'
+import useFilter from '@/hooks/useFilter'
+import CustomerServices from '@/services/CustomerServices'
+import AnimatedContent from '@/components/common/AnimatedContent'
 
 const Customers = () => {
-  const { data, loading, error } = useAsync(CustomerServices.getAllCustomers);
+  const { data, loading, error } = useAsync(CustomerServices.getAllCustomers)
 
   // console.log('customer',data)
 
@@ -43,25 +43,22 @@ const Customers = () => {
     handleChangePage,
     handleUploadMultiple,
     handleRemoveSelectFile,
-  } = useFilter(data);
+  } = useFilter(data)
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   const handleResetField = () => {
-    setSearchUser("");
-    userRef.current.value = "";
-  };
+    setSearchUser('')
+    userRef.current.value = ''
+  }
 
   return (
     <>
-      <PageTitle>{t("CustomersPage")}</PageTitle>
+      <PageTitle>{t('customerScreen.title')}</PageTitle>
 
       <AnimatedContent>
         <Card className="min-w-0 shadow-xs overflow-hidden bg-white dark:bg-gray-800 mb-5">
           <CardBody>
-            <form
-              onSubmit={handleSubmitUser}
-              className="py-3 grid gap-4 lg:gap-6 xl:gap-6 md:flex xl:flex"
-            >
+            <form onSubmit={handleSubmitUser} className="py-3 grid gap-4 lg:gap-6 xl:gap-6 md:flex xl:flex">
               <div className="items-center">
                 <UploadMany
                   title="Customers"
@@ -79,26 +76,20 @@ const Customers = () => {
 
         <Card className="min-w-0 shadow-xs overflow-hidden bg-white dark:bg-gray-800 mb-5">
           <CardBody>
-            <form
-              onSubmit={handleSubmitUser}
-              className="py-3 grid gap-4 lg:gap-6 xl:gap-6 md:flex xl:flex"
-            >
+            <form onSubmit={handleSubmitUser} className="py-3 grid gap-4 lg:gap-6 xl:gap-6 md:flex xl:flex">
               <div className="flex-grow-0 md:flex-grow lg:flex-grow xl:flex-grow">
                 <Input
                   ref={userRef}
                   type="search"
                   name="search"
-                  placeholder={t("CustomersPageSearchPlaceholder")}
+                  placeholder={t('customerScreen.customersPageSearchPlaceholder')}
                 />
-                <button
-                  type="submit"
-                  className="absolute right-0 top-0 mt-5 mr-1"
-                ></button>
+                <button type="submit" className="absolute right-0 top-0 mt-5 mr-1"></button>
               </div>
               <div className="flex items-center gap-2 flex-grow-0 md:flex-grow lg:flex-grow xl:flex-grow">
                 <div className="w-full mx-1">
                   <Button type="submit" className="h-12 w-full bg-emerald-700">
-                    Filter
+                    {t('common.filter')}
                   </Button>
                 </div>
 
@@ -109,7 +100,7 @@ const Customers = () => {
                     type="reset"
                     className="px-4 md:py-1 py-2 h-12 text-sm dark:bg-gray-700"
                   >
-                    <span className="text-black dark:text-gray-200">Reset</span>
+                    <span className="text-black dark:text-gray-200">{t('common.reset')}</span>
                   </Button>
                 </div>
               </div>
@@ -128,14 +119,12 @@ const Customers = () => {
           <Table>
             <TableHeader>
               <tr>
-                <TableCell>{t("CustomersId")}</TableCell>
-                <TableCell>{t("CustomersJoiningDate")}</TableCell>
-                <TableCell>{t("CustomersName")}</TableCell>
-                <TableCell>{t("CustomersEmail")}</TableCell>
-                <TableCell>{t("CustomersPhone")}</TableCell>
-                <TableCell className="text-right">
-                  {t("CustomersActions")}
-                </TableCell>
+                <TableCell>{t('customerScreen.table.id')}</TableCell>
+                <TableCell>{t('customerScreen.table.joiningDate')}</TableCell>
+                <TableCell>{t('customerScreen.table.name')}</TableCell>
+                <TableCell>{t('customerScreen.table.email')}</TableCell>
+                <TableCell>{t('customerScreen.table.phone')}</TableCell>
+                <TableCell className="text-right">{t('customerScreen.table.actions')}</TableCell>
               </tr>
             </TableHeader>
             <CustomerTable customers={dataTable} />
@@ -150,10 +139,10 @@ const Customers = () => {
           </TableFooter>
         </TableContainer>
       ) : (
-        <NotFound title="Sorry, There are no customers right now." />
+        <NotFound title={t('customerScreen.customerDescription')} />
       )}
     </>
-  );
-};
+  )
+}
 
-export default Customers;
+export default Customers

@@ -1,63 +1,66 @@
-import { useContext, useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useContext, useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 
 //internal import
-import { SidebarContext } from "@/context/SidebarContext";
-import CustomerServices from "@/services/CustomerServices";
-import { notifyError, notifySuccess } from "@/utils/toast";
+import { SidebarContext } from '@/context/SidebarContext'
+import CustomerServices from '@/services/CustomerServices'
+import { notifyError, notifySuccess } from '@/utils/toast'
 
 const useCustomerSubmit = (id) => {
-  const [imageUrl, setImageUrl] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { closeDrawer, setIsUpdate } = useContext(SidebarContext);
+  const { t } = useTranslation()
+  const [imageUrl, setImageUrl] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { closeDrawer, setIsUpdate } = useContext(SidebarContext)
 
   const {
     register,
     handleSubmit,
     setValue,
     formState: { errors },
-  } = useForm();
+  } = useForm()
 
   const onSubmit = async (data) => {
     try {
-      setIsSubmitting(true);
+      setIsSubmitting(true)
       const customerData = {
         name: data.name,
         email: data.email,
         phone: data.phone,
         address: data.address,
-      };
+      }
 
       if (id) {
-        const res = await CustomerServices.updateCustomer(id, customerData);
-        setIsUpdate(true);
-        notifySuccess(res.message);
-        closeDrawer();
+        const res = await CustomerServices.updateCustomer(id, customerData)
+        setIsUpdate(true)
+        notifySuccess(t('customerScreen.message.updated'))
+        closeDrawer()
       }
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     } catch (err) {
-      notifyError(err?.response?.data?.message || err?.message);
-      closeDrawer();
+      notifyError(err?.response?.data?.message || err?.message)
+      closeDrawer()
     }
-  };
+  }
 
   useEffect(() => {
     if (id) {
-      (async () => {
+      ;(async () => {
         try {
-          const res = await CustomerServices.getCustomerById(id);
+          const res = await CustomerServices.getCustomerById(id)
+
           if (res) {
-            setValue("name", res.name);
-            setValue("phone", res.phone);
-            setValue("email", res.email);
-            setValue("address", res.address);
+            setValue('name', res.name)
+            setValue('phone', res.phone)
+            setValue('email', res.email)
+            setValue('address', res.address)
           }
         } catch (err) {
-          notifyError(err?.response?.data?.message || err?.message);
+          notifyError(err?.response?.data?.message || err?.message)
         }
-      })();
+      })()
     }
-  }, [id, setValue]);
+  }, [id, setValue])
 
   return {
     register,
@@ -67,7 +70,7 @@ const useCustomerSubmit = (id) => {
     setImageUrl,
     imageUrl,
     isSubmitting,
-  };
-};
+  }
+}
 
-export default useCustomerSubmit;
+export default useCustomerSubmit

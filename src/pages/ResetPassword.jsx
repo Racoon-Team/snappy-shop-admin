@@ -1,57 +1,52 @@
-import { Button, Input } from "@windmill/react-ui";
-import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router";
-import { useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
+import { Button, Input } from '@windmill/react-ui'
+import React, { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { useParams } from 'react-router'
+import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 
 //internal import
-import Error from "@/components/form/others/Error";
-import LabelArea from "@/components/form/selectOption/LabelArea";
-import AdminServices from "@/services/AdminServices";
-import { notifyError, notifySuccess } from "@/utils/toast";
-import ImageLight from "@/assets/img/forgot-password-office.jpeg";
-import ImageDark from "@/assets/img/forgot-password-office-dark.jpeg";
+import Error from '@/components/form/others/Error'
+import LabelArea from '@/components/form/selectOption/LabelArea'
+import AdminServices from '@/services/AdminServices'
+import { notifyError, notifySuccess } from '@/utils/toast'
+import ImageLight from '@/assets/img/forgot-password-office.jpeg'
+import ImageDark from '@/assets/img/forgot-password-office-dark.jpeg'
 
 const ResetPassword = () => {
-  const { t } = useTranslation();
-  const { token } = useParams();
-  const password = useRef("");
-  const [loading, setLoading] = useState(false);
+  const { t } = useTranslation()
+  const { token } = useParams()
+  const password = useRef('')
+  const [loading, setLoading] = useState(false)
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
+  } = useForm()
 
-  password.current = watch("newPassword");
+  password.current = watch('newPassword')
 
   const submitHandler = ({ newPassword }) => {
-    setLoading(true);
+    setLoading(true)
 
     AdminServices.resetPassword({ newPassword, token })
       .then((res) => {
-        setLoading(false);
-        notifySuccess(res.message);
+        setLoading(false)
+        notifySuccess(res.message)
       })
       .catch((err) => {
-        setLoading(false);
-        notifyError(err ? err.response.data.message : err.message);
-      });
-  };
+        setLoading(false)
+        notifyError(err ? err.response.data.message : err.message)
+      })
+  }
 
   return (
     <div className="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
       <div className="flex-1 h-full max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800">
         <div className="flex flex-col overflow-y-auto md:flex-row">
           <div className="h-32 md:h-auto md:w-1/2">
-            <img
-              aria-hidden="true"
-              className="object-cover w-full h-full dark:hidden"
-              src={ImageLight}
-              alt="Office"
-            />
+            <img aria-hidden="true" className="object-cover w-full h-full dark:hidden" src={ImageLight} alt="Office" />
             <img
               aria-hidden="true"
               className="hidden object-cover w-full h-full dark:block"
@@ -61,9 +56,7 @@ const ResetPassword = () => {
           </div>
           <main className="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
             <div className="w-full">
-              <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
-                {t("ResetPassword")}
-              </h1>
+              <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">{t('ResetPassword')}</h1>
 
               <form onSubmit={handleSubmit(submitHandler)}>
                 <LabelArea label="Password" />
@@ -73,11 +66,11 @@ const ResetPassword = () => {
                   type="password"
                   autocomplete="current-password"
                   placeholder="Password"
-                  {...register("newPassword", {
-                    required: "You must specify a password",
+                  {...register('newPassword', {
+                    required: 'You must specify a password',
                     minLength: {
                       value: 10,
-                      message: "Password must have at least 10 characters",
+                      message: 'Password must have at least 10 characters',
                     },
                   })}
                 />
@@ -89,22 +82,15 @@ const ResetPassword = () => {
                   name="confirm_password"
                   type="password"
                   autocomplete="current-password"
-                  placeholder={t("ConfirmPassword")}
-                  {...register("confirm_password", {
-                    validate: (value) =>
-                      value === password.current ||
-                      "The passwords do not match",
+                  placeholder={t('ConfirmPassword')}
+                  {...register('confirm_password', {
+                    validate: (value) => value === password.current || 'The passwords do not match',
                   })}
                 />
                 <Error errorName={errors.confirm_password} />
 
-                <Button
-                  disabled={loading}
-                  type="submit"
-                  block
-                  className="mt-4 h-12"
-                >
-                  {t("Reset")}
+                <Button disabled={loading} type="submit" block className="mt-4 h-12">
+                  {t('Reset')}
                 </Button>
               </form>
               <p className="mt-4">
@@ -112,7 +98,7 @@ const ResetPassword = () => {
                   className="text-sm font-medium text-emerald-500 dark:text-emerald-400 hover:underline"
                   to="/login"
                 >
-                  {t("AlreadyAccount")}
+                  {t('AlreadyAccount')}
                 </Link>
               </p>
             </div>
@@ -120,7 +106,7 @@ const ResetPassword = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ResetPassword;
+export default ResetPassword

@@ -1,28 +1,28 @@
-import Switch from "react-switch";
+import Switch from 'react-switch'
+import { useTranslation } from 'react-i18next'
 
 const SwitchToggle = ({ id, title, handleProcess, processOption }) => {
+  const { t } = useTranslation()
   return (
     <>
-      <div className={`${"mb-3"}`}>
+      <div className={`${'mb-3'}`}>
         <div className="flex flex-wrap items-center">
-          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">
-            {title}
-          </label>
+          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">{title}</label>
 
           <Switch
-            id={id || title || ""}
+            id={id || title || ''}
             onChange={handleProcess}
             checked={processOption}
             className="react-switch md:ml-0 ml-3"
             uncheckedIcon={
               <div
                 style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: "100%",
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  height: '100%',
                   fontSize: 14,
-                  color: "white",
+                  color: 'white',
                   paddingRight: 5,
                   paddingTop: 1,
                 }}
@@ -38,24 +38,24 @@ const SwitchToggle = ({ id, title, handleProcess, processOption }) => {
             checkedIcon={
               <div
                 style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  height: "100%",
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  height: '100%',
                   fontSize: 14,
-                  color: "white",
+                  color: 'white',
                   paddingLeft: 8,
                   paddingTop: 1,
                 }}
               >
-                Yes
+                {t('settingScreen.yesSwitchToggle')}
               </div>
             }
           />
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default SwitchToggle;
+export default SwitchToggle

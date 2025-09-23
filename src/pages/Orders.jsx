@@ -11,25 +11,25 @@ import {
   TableContainer,
   TableFooter,
   TableHeader,
-} from "@windmill/react-ui";
-import { useContext, useState } from "react";
-import { IoCloudDownloadOutline } from "react-icons/io5";
-import { useTranslation } from "react-i18next";
-import exportFromJSON from "export-from-json";
+} from '@windmill/react-ui'
+import { useContext, useState } from 'react'
+import { IoCloudDownloadOutline } from 'react-icons/io5'
+import { useTranslation } from 'react-i18next'
+import exportFromJSON from 'export-from-json'
 
 //internal import
-import { notifyError } from "@/utils/toast";
-import useAsync from "@/hooks/useAsync";
-import useFilter from "@/hooks/useFilter";
-import OrderServices from "@/services/OrderServices";
-import NotFound from "@/components/table/NotFound";
-import PageTitle from "@/components/Typography/PageTitle";
-import { SidebarContext } from "@/context/SidebarContext";
-import OrderTable from "@/components/order/OrderTable";
-import TableLoading from "@/components/preloader/TableLoading";
-import spinnerLoadingImage from "@/assets/img/spinner.gif";
-import useUtilsFunction from "@/hooks/useUtilsFunction";
-import AnimatedContent from "@/components/common/AnimatedContent";
+import { notifyError } from '@/utils/toast'
+import useAsync from '@/hooks/useAsync'
+import useFilter from '@/hooks/useFilter'
+import OrderServices from '@/services/OrderServices'
+import NotFound from '@/components/table/NotFound'
+import PageTitle from '@/components/Typography/PageTitle'
+import { SidebarContext } from '@/context/SidebarContext'
+import OrderTable from '@/components/order/OrderTable'
+import TableLoading from '@/components/preloader/TableLoading'
+import spinnerLoadingImage from '@/assets/img/spinner.gif'
+import useUtilsFunction from '@/hooks/useUtilsFunction'
+import AnimatedContent from '@/components/common/AnimatedContent'
 
 const Orders = () => {
   const {
@@ -50,11 +50,11 @@ const Orders = () => {
     handleChangePage,
     handleSubmitForAll,
     resultsPerPage,
-  } = useContext(SidebarContext);
+  } = useContext(SidebarContext)
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
-  const [loadingExport, setLoadingExport] = useState(false);
+  const [loadingExport, setLoadingExport] = useState(false)
 
   const { data, loading, error } = useAsync(() =>
     OrderServices.getAllOrders({
@@ -67,15 +67,15 @@ const Orders = () => {
       limit: resultsPerPage,
       customerName: searchText,
     })
-  );
+  )
 
-  const { currency, getNumber, getNumberTwo } = useUtilsFunction();
+  const { currency, getNumber, getNumberTwo } = useUtilsFunction()
 
-  const { dataTable, serviceData } = useFilter(data?.orders);
+  const { dataTable, serviceData } = useFilter(data?.orders)
 
   const handleDownloadOrders = async () => {
     try {
-      setLoadingExport(true);
+      setLoadingExport(true)
       const res = await OrderServices.getAllOrders({
         page: 1,
         day: time,
@@ -86,7 +86,7 @@ const Orders = () => {
         startDate: startDate,
         limit: data?.totalDoc,
         customerName: searchText,
-      });
+      })
 
       // console.log("handleDownloadOrders", res);
       const exportData = res?.orders?.map((order) => {
@@ -102,38 +102,38 @@ const Orders = () => {
           user_info: order?.user_info?.name,
           createdAt: order.createdAt,
           updatedAt: order.updatedAt,
-        };
-      });
+        }
+      })
       // console.log("exportData", exportData);
 
       exportFromJSON({
         data: exportData,
-        fileName: "orders",
+        fileName: 'orders',
         exportType: exportFromJSON.types.csv,
-      });
-      setLoadingExport(false);
+      })
+      setLoadingExport(false)
     } catch (err) {
-      setLoadingExport(false);
+      setLoadingExport(false)
       // console.log("err on orders download", err);
-      notifyError(err?.response?.data?.message || err?.message);
+      notifyError(err?.response?.data?.message || err?.message)
     }
-  };
+  }
 
   // handle reset field
   const handleResetField = () => {
-    setTime("");
-    setMethod("");
-    setStatus("");
-    setEndDate("");
-    setStartDate("");
-    setSearchText("");
-    searchRef.current.value = "";
-  };
+    setTime('')
+    setMethod('')
+    setStatus('')
+    setEndDate('')
+    setStartDate('')
+    setSearchText('')
+    searchRef.current.value = ''
+  }
   // console.log("data in orders page", data);
 
   return (
     <>
-      <PageTitle>{t("Orders")}</PageTitle>
+      <PageTitle>{t('ordersScreen.title')}</PageTitle>
 
       <AnimatedContent>
         <Card className="min-w-0 shadow-xs overflow-hidden bg-white dark:bg-gray-800 mb-5">
@@ -145,62 +145,49 @@ const Orders = () => {
                     ref={searchRef}
                     type="search"
                     name="search"
-                    placeholder="Search by Customer Name"
+                    placeholder={t('ordersScreen.searchByCustomerName')}
                   />
                 </div>
 
                 <div>
                   <Select onChange={(e) => setStatus(e.target.value)}>
                     <option value="Status" defaultValue hidden>
-                      {t("Status")}
+                      {t('ordersScreen.status.label')}
                     </option>
-                    <option value="Delivered">{t("PageOrderDelivered")}</option>
-                    <option value="Pending">{t("PageOrderPending")}</option>
-                    <option value="Processing">
-                      {t("PageOrderProcessing")}
-                    </option>
-                    <option value="Cancel">{t("OrderCancel")}</option>
+                    <option value="Delivered">{t('ordersScreen.status.orderDelivered')}</option>
+                    <option value="Pending">{t('ordersScreen.status.orderPending')}</option>
+                    <option value="Processing">{t('ordersScreen.status.orderProcessing')}</option>
+                    <option value="Cancel">{t('ordersScreen.status.orderCancel')}</option>
                   </Select>
                 </div>
 
                 <div>
                   <Select onChange={(e) => setTime(e.target.value)}>
                     <option value="Order limits" defaultValue hidden>
-                      {t("Orderlimits")}
+                      {t('ordersScreen.orderLimits.label')}
                     </option>
-                    <option value="5">{t("DaysOrders5")}</option>
-                    <option value="7">{t("DaysOrders7")}</option>
-                    <option value="15">{t("DaysOrders15")}</option>
-                    <option value="30">{t("DaysOrders30")}</option>
+                    <option value="5">{t('ordersScreen.orderLimits.daysLim5')}</option>
+                    <option value="7">{t('ordersScreen.orderLimits.daysLim7')}</option>
+                    <option value="15">{t('ordersScreen.orderLimits.daysLim15')}</option>
+                    <option value="30">{t('ordersScreen.orderLimits.daysLim30')}</option>
                   </Select>
                 </div>
                 <div>
                   <Select onChange={(e) => setMethod(e.target.value)}>
                     <option value="Method" defaultValue hidden>
-                      {t("Method")}
+                      {t('ordersScreen.method.label')}
                     </option>
 
-                    <option value="Cash">{t("Cash")}</option>
-                    <option value="Card">{t("Card")}</option>
-                    <option value="Credit">{t("Credit")}</option>
+                    <option value="Cash">{t('ordersScreen.method.cash')}</option>
+                    <option value="Card">{t('ordersScreen.method.card')}</option>
+                    <option value="Credit">{t('ordersScreen.method.credit')}</option>
                   </Select>
                 </div>
                 <div>
                   {loadingExport ? (
-                    <Button
-                      disabled={true}
-                      type="button"
-                      className="h-12 w-full"
-                    >
-                      <img
-                        src={spinnerLoadingImage}
-                        alt="Loading"
-                        width={20}
-                        height={10}
-                      />{" "}
-                      <span className="font-serif ml-2 font-light">
-                        Processing
-                      </span>
+                    <Button disabled={true} type="button" className="h-12 w-full">
+                      <img src={spinnerLoadingImage} alt="Loading" width={20} height={10} />{' '}
+                      <span className="font-serif ml-2 font-light">{t('Processing')}</span>
                     </Button>
                   ) : (
                     <button
@@ -208,11 +195,10 @@ const Orders = () => {
                       disabled={data?.orders?.length <= 0 || loadingExport}
                       type="button"
                       className={`${
-                        (data?.orders?.length <= 0 || loadingExport) &&
-                        "opacity-50 cursor-not-allowed bg-emerald-600"
+                        (data?.orders?.length <= 0 || loadingExport) && 'opacity-50 cursor-not-allowed bg-emerald-600'
                       } flex items-center justify-center text-sm leading-5 h-12 w-full text-center transition-colors duration-150 font-medium px-6 py-2 rounded-md text-white bg-emerald-500 border border-transparent active:bg-emerald-600 hover:bg-emerald-600 `}
                     >
-                      Download All Orders
+                      {t('ordersScreen.downloadOrdersBtn')}
                       <span className="ml-2 text-base">
                         <IoCloudDownloadOutline />
                       </span>
@@ -223,44 +209,31 @@ const Orders = () => {
 
               <div className="grid gap-4 lg:gap-6 xl:gap-6 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 py-2">
                 <div>
-                  <Label>Start Date</Label>
-                  <Input
-                    type="date"
-                    name="startDate"
-                    onChange={(e) => setStartDate(e.target.value)}
-                  />
+                  <Label>{t('ordersScreen.filters.startDate')}</Label>
+                  <Input type="date" name="startDate" onChange={(e) => setStartDate(e.target.value)} />
                 </div>
 
                 <div>
-                  <Label>End Date</Label>
-                  <Input
-                    type="date"
-                    name="startDate"
-                    onChange={(e) => setEndDate(e.target.value)}
-                  />
+                  <Label>{t('ordersScreen.filters.endDate')}</Label>
+                  <Input type="date" name="startDate" onChange={(e) => setEndDate(e.target.value)} />
                 </div>
                 <div className="mt-2 md:mt-0 flex items-center xl:gap-x-4 gap-x-1 flex-grow-0 md:flex-grow lg:flex-grow xl:flex-grow">
                   <div className="w-full mx-1">
-                    <Label style={{ visibility: "hidden" }}>Filter</Label>
-                    <Button
-                      type="submit"
-                      className="h-12 w-full bg-emerald-700"
-                    >
-                      Filter
+                    <Label style={{ visibility: 'hidden' }}>Filter</Label>
+                    <Button type="submit" className="h-12 w-full bg-emerald-700">
+                      {t('common.filter')}
                     </Button>
                   </div>
 
                   <div className="w-full">
-                    <Label style={{ visibility: "hidden" }}>Reset</Label>
+                    <Label style={{ visibility: 'hidden' }}>Reset</Label>
                     <Button
                       layout="outline"
                       onClick={handleResetField}
                       type="reset"
                       className="px-4 md:py-1 py-3 text-sm dark:bg-gray-700"
                     >
-                      <span className="text-black dark:text-gray-200">
-                        Reset
-                      </span>
+                      <span className="text-black dark:text-gray-200">{t('common.reset')}</span>
                     </Button>
                   </div>
                 </div>
@@ -277,7 +250,7 @@ const Orders = () => {
                 <div key={i + 1} className="dark:text-gray-300">
                   {el?.method && (
                     <>
-                      <span className="font-medium"> {el.method}</span> :{" "}
+                      <span className="font-medium"> {el.method}</span> :{' '}
                       <span className="font-semibold mr-2">
                         {currency}
                         {getNumber(el.total)}
@@ -300,14 +273,14 @@ const Orders = () => {
           <Table>
             <TableHeader>
               <tr>
-                <TableCell>{t("InvoiceNo")}</TableCell>
-                <TableCell>{t("TimeTbl")}</TableCell>
-                <TableCell>{t("CustomerName")}</TableCell>
-                <TableCell>{t("MethodTbl")}</TableCell>
-                <TableCell>{t("AmountTbl")}</TableCell>
-                <TableCell>{t("OderStatusTbl")}</TableCell>
-                <TableCell>{t("ActionTbl")}</TableCell>
-                <TableCell className="text-right">{t("InvoiceTbl")}</TableCell>
+                <TableCell>{t('ordersScreen.table.invoiceNoTbl')}</TableCell>
+                <TableCell>{t('ordersScreen.table.timeTbl')}</TableCell>
+                <TableCell>{t('ordersScreen.table.customerNameTbl')}</TableCell>
+                <TableCell>{t('ordersScreen.table.methodTbl')}</TableCell>
+                <TableCell>{t('ordersScreen.table.amountTbl')}</TableCell>
+                <TableCell>{t('ordersScreen.table.oderStatusTbl')}</TableCell>
+                <TableCell>{t('ordersScreen.table.actionTbl')}</TableCell>
+                <TableCell className="text-right">{t('ordersScreen.table.invoiceTbl')}</TableCell>
               </tr>
             </TableHeader>
 
@@ -324,10 +297,10 @@ const Orders = () => {
           </TableFooter>
         </TableContainer>
       ) : (
-        <NotFound title="Sorry, There are no orders right now." />
+        <NotFound title={t('ordersScreen.sorryOrderNotFound')} />
       )}
     </>
-  );
-};
+  )
+}
 
-export default Orders;
+export default Orders

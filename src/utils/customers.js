@@ -93,8 +93,7 @@ const customers = [
     createdAt: '2021-11-25T11:47:01.878Z',
     updatedAt: '2021-11-25T22:43:28.326Z',
     address: 'Las Vegas, NV 89101',
-    image:
-      'http://res.cloudinary.com/ahossain/image/upload/v1637880199/ymwffpd8hlc1ifg0m1ss.jpg',
+    image: 'http://res.cloudinary.com/ahossain/image/upload/v1637880199/ymwffpd8hlc1ifg0m1ss.jpg',
   },
   {
     _id: '619f77b553cc5a1858ef366a',
@@ -114,8 +113,7 @@ const customers = [
     createdAt: '2021-11-25T11:47:01.878Z',
     updatedAt: '2021-11-26T12:30:30.340Z',
     address: 'l705 Pine Barren Rd, Poole',
-    image:
-      'http://res.cloudinary.com/ahossain/image/upload/v1637929773/nhln9pld5evjhym457d0.jpg',
+    image: 'http://res.cloudinary.com/ahossain/image/upload/v1637929773/nhln9pld5evjhym457d0.jpg',
   },
   {
     _id: '619f77b553cc5a1858ef366e',
@@ -163,8 +161,7 @@ const customers = [
     _id: '61a888c5597c7b001654f348',
     name: 'Dastan Abildaev',
     email: 'abildaev1996@gmail.com',
-    image:
-      'https://lh3.googleusercontent.com/a/AATXAJzsOqpqbT0DMutCfq_PP7oMVRYCTJ45gWUDKoPy=s96-c',
+    image: 'https://lh3.googleusercontent.com/a/AATXAJzsOqpqbT0DMutCfq_PP7oMVRYCTJ45gWUDKoPy=s96-c',
     createdAt: '2021-12-02T08:50:13.827Z',
     updatedAt: '2021-12-02T08:50:13.827Z',
   },
@@ -180,8 +177,7 @@ const customers = [
     _id: '61a92d54597c7b001654fb5b',
     name: 'Mir Raisul Tanvir',
     email: 'tanvirgraphic2@gmail.com',
-    image:
-      'https://lh3.googleusercontent.com/a/AATXAJzYe4har8HGRnfcBGS1EHKB4K12SKfjIr4ss5wW=s96-c',
+    image: 'https://lh3.googleusercontent.com/a/AATXAJzYe4har8HGRnfcBGS1EHKB4K12SKfjIr4ss5wW=s96-c',
     createdAt: '2021-12-02T20:32:21.015Z',
     updatedAt: '2021-12-02T20:32:21.015Z',
   },
@@ -189,8 +185,7 @@ const customers = [
     _id: '61aae62553d6e00016b747b6',
     name: 'peter magic',
     email: 'peter.sabuy@gmail.com',
-    image:
-      'https://lh3.googleusercontent.com/a/AATXAJxH-bvt7IpIE8AsCrkmxHO7klsDgFfkV2hEoGoF=s96-c',
+    image: 'https://lh3.googleusercontent.com/a/AATXAJxH-bvt7IpIE8AsCrkmxHO7klsDgFfkV2hEoGoF=s96-c',
     createdAt: '2021-12-04T03:53:09.554Z',
     updatedAt: '2021-12-04T03:53:09.554Z',
   },
@@ -206,8 +201,7 @@ const customers = [
     _id: '61ac2fd1667e1300167b42b7',
     name: 'Yuri Habib',
     email: 'mansourhabib2@gmail.com',
-    image:
-      'https://lh3.googleusercontent.com/a-/AOh14GijQR7jkSQRVDLuzDJiHD_llrss69cCtAK_-5aIsQ=s96-c',
+    image: 'https://lh3.googleusercontent.com/a-/AOh14GijQR7jkSQRVDLuzDJiHD_llrss69cCtAK_-5aIsQ=s96-c',
     createdAt: '2021-12-05T03:19:45.345Z',
     updatedAt: '2021-12-05T03:19:45.345Z',
   },
@@ -225,8 +219,7 @@ const customers = [
     _id: '61ace8af667e1300167b4f09',
     name: 'Isa Haji',
     email: 'ihajisolution@gmail.com',
-    image:
-      'https://lh3.googleusercontent.com/a/AATXAJwyEHLA5owydWP0WoeWS868Y1a-ZdFyrLc_kqMD=s96-c',
+    image: 'https://lh3.googleusercontent.com/a/AATXAJwyEHLA5owydWP0WoeWS868Y1a-ZdFyrLc_kqMD=s96-c',
     createdAt: '2021-12-05T16:28:31.701Z',
     updatedAt: '2021-12-05T16:28:31.701Z',
   },
@@ -234,8 +227,7 @@ const customers = [
     _id: '61ad287a667e1300167b51b6',
     name: 'Usman Ahmad',
     email: 'dextar47@gmail.com',
-    image:
-      'https://lh3.googleusercontent.com/a-/AOh14Gi5Aploo-4m9VdZfo59YVRD9nKcvJ2nZp_GAegZ_w=s96-c',
+    image: 'https://lh3.googleusercontent.com/a-/AOh14Gi5Aploo-4m9VdZfo59YVRD9nKcvJ2nZp_GAegZ_w=s96-c',
     createdAt: '2021-12-05T21:00:42.463Z',
     updatedAt: '2021-12-05T21:00:42.463Z',
   },
@@ -243,8 +235,7 @@ const customers = [
     _id: '61af104e35d5ac001664dca8',
     name: 'parmeet Sinha',
     email: 'parmeet.sinha52@gmail.com',
-    image:
-      'https://lh3.googleusercontent.com/a-/AOh14Gjh2JvZzgqFSxGRQPKZmVojlexnwKWXpYN9JLJgEw=s96-c',
+    image: 'https://lh3.googleusercontent.com/a-/AOh14Gjh2JvZzgqFSxGRQPKZmVojlexnwKWXpYN9JLJgEw=s96-c',
     createdAt: '2021-12-07T07:42:06.051Z',
     updatedAt: '2021-12-07T07:42:06.051Z',
   },
@@ -252,8 +243,7 @@ const customers = [
     _id: '61afc8ec35d5ac001664ecf5',
     name: 'Allan da Silva',
     email: 'allanweb019@gmail.com',
-    image:
-      'https://lh3.googleusercontent.com/a-/AOh14GhGRNyt_qDmWiNcAWSqKO2X-QAwq5MZRKe6pbJBxQ=s96-c',
+    image: 'https://lh3.googleusercontent.com/a-/AOh14GhGRNyt_qDmWiNcAWSqKO2X-QAwq5MZRKe6pbJBxQ=s96-c',
     createdAt: '2021-12-07T20:49:48.923Z',
     updatedAt: '2021-12-07T20:49:48.923Z',
   },
@@ -262,13 +252,12 @@ const customers = [
     _id: '61b2656c7f4fde00161e6da1',
     name: 'Holo Tarot',
     email: 'holotarot@gmail.com',
-    image:
-      'https://lh3.googleusercontent.com/a/AATXAJxbtmfdXBCoPYF27AERTzZsjr_75yVKGzeiNqjZ=s96-c',
+    image: 'https://lh3.googleusercontent.com/a/AATXAJxbtmfdXBCoPYF27AERTzZsjr_75yVKGzeiNqjZ=s96-c',
     createdAt: '2021-12-09T20:22:04.576Z',
     updatedAt: '2021-12-09T20:22:04.576Z',
   },
-];
+]
 
-const userData = customers.sort((a, b) => -1);
+const userData = customers.sort((a, b) => -1)
 
-export default userData;
+export default userData

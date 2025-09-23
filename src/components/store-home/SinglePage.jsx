@@ -1,12 +1,12 @@
-import { Button } from "@windmill/react-ui";
-import { useTranslation } from "react-i18next";
-import { FiSettings } from "react-icons/fi";
+import { Button } from '@windmill/react-ui'
+import { useTranslation } from 'react-i18next'
+import { FiSettings } from 'react-icons/fi'
 
 //internal import
-import Error from "@/components/form/others/Error";
-import spinnerLoadingImage from "@/assets/img/spinner.gif";
-import SwitchToggle from "@/components/form/switch/SwitchToggle";
-import TextAreaCom from "@/components/form/others/TextAreaCom";
+import Error from '@/components/form/others/Error'
+import spinnerLoadingImage from '@/assets/img/spinner.gif'
+import SwitchToggle from '@/components/form/switch/SwitchToggle'
+import TextAreaCom from '@/components/form/others/TextAreaCom'
 
 const SinglePageSetting = ({
   isSave,
@@ -16,28 +16,20 @@ const SinglePageSetting = ({
   singleProductPageRightBox,
   setSingleProductPageRightBox,
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <>
       <div className="sticky top-0 z-20 flex justify-end">
         {isSubmitting ? (
           <Button disabled={true} type="button" className="h-10 px-6">
-            <img
-              src={spinnerLoadingImage}
-              alt="Loading"
-              width={20}
-              height={10}
-            />{" "}
-            <span className="font-serif ml-2 font-light">
-              {" "}
-              {t("Processing")}
-            </span>
+            <img src={spinnerLoadingImage} alt="Loading" width={20} height={10} />{' '}
+            <span className="font-serif ml-2 font-light"> {t('Processing')}</span>
           </Button>
         ) : (
           <Button type="submit" className="h-10 px-6 ">
-            {" "}
-            {isSave ? t("SaveBtn") : t("UpdateBtn")}
+            {' '}
+            {isSave ? t('common.saveBtn') : t('common.updateBtn')}
           </Button>
         )}
       </div>
@@ -45,7 +37,7 @@ const SinglePageSetting = ({
         <div className="col-span-12 md:col-span-12 lg:col-span-12">
           <div className="inline-flex md:text-lg text-base text-gray-800 font-semibold dark:text-gray-400 mb-3 relative">
             <FiSettings className="mt-1 mr-2" />
-            {t("RightBox")}
+            {t('storeCustomizationScreen.productSlugPage.rightBox.title')}
           </div>
 
           <hr className="md:mb-12 mb-2" />
@@ -53,7 +45,7 @@ const SinglePageSetting = ({
           <div className="xl:px-10 flex-grow scrollbar-hide w-full max-h-full">
             <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-2">
               <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                {t("EnableThisBlock")}
+                {t('common.storeCustomizations.labelEnableThisBlock')}
               </label>
               <div className="sm:col-span-4">
                 <SwitchToggle
@@ -68,14 +60,14 @@ const SinglePageSetting = ({
             <div
               style={{
                 height: singleProductPageRightBox ? 940 : 0,
-                transition: "all 0.5s",
-                visibility: !singleProductPageRightBox ? "hidden" : "visible",
-                opacity: !singleProductPageRightBox ? "0" : "1",
+                transition: 'all 0.5s',
+                visibility: !singleProductPageRightBox ? 'hidden' : 'visible',
+                opacity: !singleProductPageRightBox ? '0' : '1',
               }}
             >
               <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-4">
                 <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                  {t("Description")} One
+                  {t('common.storeCustomizations.labelDescription')} 1
                 </label>
                 <div className=" sm:col-span-4">
                   <TextAreaCom
@@ -83,7 +75,7 @@ const SinglePageSetting = ({
                     label="Description"
                     name="slug_page_card_description_one"
                     type="text"
-                    placeholder={t("Description")}
+                    placeholder={t('storeCustomizationScreen.productSlugPage.rightBox.inputDescription')}
                   />
 
                   <Error errorName={errors.slug_page_card_description_one} />
@@ -92,7 +84,7 @@ const SinglePageSetting = ({
 
               <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-4">
                 <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                  {t("Description")} Two
+                  {t('common.storeCustomizations.labelDescription')} 2
                 </label>
                 <div className=" sm:col-span-4">
                   <TextAreaCom
@@ -100,7 +92,7 @@ const SinglePageSetting = ({
                     label=" Description"
                     name="slug_page_card_description_two"
                     type="text"
-                    placeholder={t("Description")}
+                    placeholder={t('storeCustomizationScreen.productSlugPage.rightBox.inputDescription')}
                   />
 
                   <Error errorName={errors.slug_page_card_description_two} />
@@ -109,7 +101,7 @@ const SinglePageSetting = ({
 
               <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-4">
                 <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                  {t("Description")} Three
+                  {t('common.storeCustomizations.labelDescription')} 3
                 </label>
                 <div className=" sm:col-span-4">
                   <TextAreaCom
@@ -117,7 +109,7 @@ const SinglePageSetting = ({
                     label="Description"
                     name="slug_page_card_description_three"
                     type="text"
-                    placeholder={t("Description")}
+                    placeholder={t('storeCustomizationScreen.productSlugPage.rightBox.inputDescription')}
                   />
 
                   <Error errorName={errors.slug_page_card_description_three} />
@@ -126,7 +118,7 @@ const SinglePageSetting = ({
 
               <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-4">
                 <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                  {t("Description")} Four
+                  {t('common.storeCustomizations.labelDescription')} 4
                 </label>
                 <div className=" sm:col-span-4">
                   <TextAreaCom
@@ -134,7 +126,7 @@ const SinglePageSetting = ({
                     label="Description"
                     name="slug_page_card_description_four"
                     type="text"
-                    placeholder={t("Description")}
+                    placeholder={t('storeCustomizationScreen.productSlugPage.rightBox.inputDescription')}
                   />
 
                   <Error errorName={errors.slug_page_card_description_four} />
@@ -143,7 +135,7 @@ const SinglePageSetting = ({
 
               <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-4">
                 <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                  {t("Description")} Five
+                  {t('common.storeCustomizations.labelDescription')} 5
                 </label>
                 <div className="sm:col-span-4">
                   <TextAreaCom
@@ -151,7 +143,7 @@ const SinglePageSetting = ({
                     label="slug_page_card_description_five"
                     name="slug_page_card_description_five"
                     type="text"
-                    placeholder={t("Description")}
+                    placeholder={t('storeCustomizationScreen.productSlugPage.rightBox.inputDescription')}
                   />
 
                   <Error errorName={errors.slug_page_card_description_five} />
@@ -160,7 +152,7 @@ const SinglePageSetting = ({
 
               <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-4">
                 <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                  {t("Description")} Six
+                  {t('common.storeCustomizations.labelDescription')} 6
                 </label>
                 <div className=" sm:col-span-4">
                   <TextAreaCom
@@ -168,7 +160,7 @@ const SinglePageSetting = ({
                     label="Description"
                     name="slug_page_card_description_six"
                     type="text"
-                    placeholder={t("Description")}
+                    placeholder={t('storeCustomizationScreen.productSlugPage.rightBox.inputDescription')}
                   />
 
                   <Error errorName={errors.slug_page_card_description_six} />
@@ -177,7 +169,7 @@ const SinglePageSetting = ({
 
               <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 md:mb-6 mb-4">
                 <label className="block md:text-sm md:col-span-1 sm:col-span-2 text-xs font-semibold text-gray-600 dark:text-gray-400 md:mb-1">
-                  {t("Description")} Seven
+                  {t('common.storeCustomizations.labelDescription')} 7
                 </label>
                 <div className=" sm:col-span-4">
                   <TextAreaCom
@@ -185,7 +177,7 @@ const SinglePageSetting = ({
                     label=" Description"
                     name="slug_page_card_description_seven"
                     type="text"
-                    placeholder={t("Description")}
+                    placeholder={t('storeCustomizationScreen.productSlugPage.rightBox.inputDescription')}
                   />
 
                   <Error errorName={errors.slug_page_card_description_seven} />
@@ -196,7 +188,7 @@ const SinglePageSetting = ({
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default SinglePageSetting;
+export default SinglePageSetting

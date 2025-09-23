@@ -1,15 +1,7 @@
-import { Textarea } from "@windmill/react-ui";
-import React from "react";
+import { Textarea } from '@windmill/react-ui'
+import React from 'react'
 
-const TextAreaCom = ({
-  register,
-  name,
-  label,
-  placeholder,
-  required,
-  type,
-  value,
-}) => {
+const TextAreaCom = ({ register, name, label, placeholder, required, type, value }) => {
   return (
     <>
       <Textarea
@@ -24,7 +16,7 @@ const TextAreaCom = ({
         spellCheck="false"
       />
     </>
-  );
-};
+  )
+}
 
-export default TextAreaCom;
+export default TextAreaCom

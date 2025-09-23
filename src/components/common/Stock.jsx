@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Stock = ({ stock, card }) => {
   return (
@@ -12,19 +12,16 @@ const Stock = ({ stock, card }) => {
           <span
             className={`${
               card
-                ? "bg-gray-100 dark:bg-gray-600 text-emerald-500 rounded-full text-xs px-2 py-0 font-medium"
-                : "bg-emerald-100 dark:bg-gray-600 text-emerald-500 rounded-full inline-flex items-center justify-center px-2 py-0 text-xs font-semibold  font-serif"
+                ? 'bg-gray-100 dark:bg-gray-600 text-emerald-500 rounded-full text-xs px-2 py-0 font-medium'
+                : 'bg-emerald-100 dark:bg-gray-600 text-emerald-500 rounded-full inline-flex items-center justify-center px-2 py-0 text-xs font-semibold  font-serif'
             }`}
           >
-            Stock :
-            <span className="text-red-500 dark:text-red-400 dark:bg-gray-600 pl-1 font-bold">
-              {stock}{" "}
-            </span>
+            Stock :<span className="text-red-500 dark:text-red-400 dark:bg-gray-600 pl-1 font-bold">{stock} </span>
           </span>
         </span>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Stock;
+export default Stock

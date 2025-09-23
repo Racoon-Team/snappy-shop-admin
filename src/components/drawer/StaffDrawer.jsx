@@ -1,24 +1,24 @@
-import React, { useContext } from "react";
-import { Scrollbars } from "react-custom-scrollbars-2";
-import { Card, CardBody, Input, WindmillContext } from "@windmill/react-ui";
-import { useTranslation } from "react-i18next";
-import { MultiSelect } from "react-multi-select-component";
+import React, { useContext } from 'react'
+import { Scrollbars } from 'react-custom-scrollbars-2'
+import { Card, CardBody, Input, WindmillContext } from '@windmill/react-ui'
+import { useTranslation } from 'react-i18next'
+import { MultiSelect } from 'react-multi-select-component'
 
 //internal import
-import { routeAccessList } from "@/routes";
-import useGetCData from "@/hooks/useGetCData";
-import Error from "@/components/form/others/Error";
-import Title from "@/components/form/others/Title";
-import InputArea from "@/components/form/input/InputArea";
-import useStaffSubmit from "@/hooks/useStaffSubmit";
-import SelectRole from "@/components/form/selectOption/SelectRole";
-import DrawerButton from "@/components/form/button/DrawerButton";
-import LabelArea from "@/components/form/selectOption/LabelArea";
-import Uploader from "@/components/image-uploader/Uploader";
+import { routeAccessList } from '@/routes'
+import useGetCData from '@/hooks/useGetCData'
+import Error from '@/components/form/others/Error'
+import Title from '@/components/form/others/Title'
+import InputArea from '@/components/form/input/InputArea'
+import useStaffSubmit from '@/hooks/useStaffSubmit'
+import SelectRole from '@/components/form/selectOption/SelectRole'
+import DrawerButton from '@/components/form/button/DrawerButton'
+import LabelArea from '@/components/form/selectOption/LabelArea'
+import Uploader from '@/components/image-uploader/Uploader'
 
 const StaffDrawer = ({ id }) => {
-  const { role } = useGetCData();
-  const { mode } = useContext(WindmillContext);
+  const { role } = useGetCData()
+  const { mode } = useContext(WindmillContext)
   const {
     register,
     handleSubmit,
@@ -33,8 +33,13 @@ const StaffDrawer = ({ id }) => {
     accessedRoutes,
     setAccessedRoutes,
     handleSelectLanguage,
-  } = useStaffSubmit(id);
-  const { t } = useTranslation();
+  } = useStaffSubmit(id)
+
+  const { t } = useTranslation()
+  const translatedRouteAccessList = routeAccessList.map((route) => ({
+    ...route,
+    label: t(`staffScreen.drawer.selectAccess.${route.value}`),
+  }))
 
   return (
     <>
@@ -43,15 +48,15 @@ const StaffDrawer = ({ id }) => {
           <Title
             register={register}
             handleSelectLanguage={handleSelectLanguage}
-            title={t("UpdateStaff")}
-            description={t("UpdateStaffdescription")}
+            title={t('staffScreen.drawer.titleUpdate')}
+            description={t('staffScreen.drawer.descriptionUpdate')}
           />
         ) : (
           <Title
             register={register}
             handleSelectLanguage={handleSelectLanguage}
-            title={t("AddStaffTitle")}
-            description={t("AddStaffdescription")}
+            title={t('staffScreen.drawer.titleAdd')}
+            description={t('staffScreen.drawer.descriptionAdd')}
           />
         )}
       </div>
@@ -61,7 +66,7 @@ const StaffDrawer = ({ id }) => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="px-6 pt-8 flex-grow scrollbar-hide w-full max-h-full pb-40">
                 <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                  <LabelArea label="Staff Image" />
+                  <LabelArea label={t('staffScreen.drawer.labelStaffImage')} />
                   <div className="col-span-8 sm:col-span-4">
                     <Uploader
                       imageUrl={imageUrl}
@@ -74,7 +79,7 @@ const StaffDrawer = ({ id }) => {
                 </div>
 
                 <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                  <LabelArea label="Name" />
+                  <LabelArea label={t('staffScreen.drawer.labelName')} />
                   <div className="col-span-8 sm:col-span-4">
                     <InputArea
                       required={true}
@@ -83,14 +88,14 @@ const StaffDrawer = ({ id }) => {
                       name="name"
                       type="text"
                       autoComplete="username"
-                      placeholder="Staff name"
+                      placeholder={t('staffScreen.drawer.inputName')}
                     />
                     <Error errorName={errors.name} />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                  <LabelArea label="Email" />
+                  <LabelArea label={t('staffScreen.drawer.labelEmail')} />
                   <div className="col-span-8 sm:col-span-4">
                     <InputArea
                       required={true}
@@ -102,14 +107,14 @@ const StaffDrawer = ({ id }) => {
                       pattern={
                         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
                       }
-                      placeholder="Email"
+                      placeholder={t('staffScreen.drawer.inputEmail')}
                     />
                     <Error errorName={errors.email} />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                  <LabelArea label="Password" />
+                  <LabelArea label={t('staffScreen.drawer.labelPassword')} />
                   <div className="col-span-8 sm:col-span-4">
                     {id ? (
                       <InputArea
@@ -118,7 +123,7 @@ const StaffDrawer = ({ id }) => {
                         name="password"
                         type="password"
                         autoComplete="current-password"
-                        placeholder="Password"
+                        placeholder={t('staffScreen.drawer.inputPassword')}
                       />
                     ) : (
                       <InputArea
@@ -128,7 +133,7 @@ const StaffDrawer = ({ id }) => {
                         name="password"
                         type="password"
                         autoComplete="current-password"
-                        placeholder="Password"
+                        placeholder={t('staffScreen.drawer.inputPassword')}
                       />
                     )}
 
@@ -137,7 +142,7 @@ const StaffDrawer = ({ id }) => {
                 </div>
 
                 <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                  <LabelArea label="Contact Number" />
+                  <LabelArea label={t('staffScreen.drawer.labelContact')} />
                   <div className="col-span-8 sm:col-span-4">
                     <InputArea
                       required={true}
@@ -148,14 +153,14 @@ const StaffDrawer = ({ id }) => {
                       minLength={6}
                       maxLength={15}
                       type="text"
-                      placeholder="Phone number"
+                      placeholder={t('staffScreen.drawer.inputContact')}
                     />
                     <Error errorName={errors.phone} />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                  <LabelArea label="Joining Date" />
+                  <LabelArea label={t('staffScreen.drawer.labelJoiningDate')} />
                   <div className="col-span-8 sm:col-span-4">
                     <Input
                       onChange={(e) => setSelectedDate(e.target.value)}
@@ -163,48 +168,43 @@ const StaffDrawer = ({ id }) => {
                       name="joiningDate"
                       value={selectedDate}
                       type="date"
-                      placeholder={t("StaffJoiningDate")}
+                      placeholder
                     />
                     <Error errorName={errors.joiningDate} />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                  <LabelArea label="Staff Role" />
+                  <LabelArea label={t('staffScreen.drawer.labelRole')} />
                   <div className="col-span-8 sm:col-span-4">
                     <SelectRole register={register} label="Role" name="role" />
                     <Error errorName={errors.role} />
                   </div>
                 </div>
-                {role === "Admin" ||
-                  (role === "Super Admin" && (
+                {role === 'Admin' ||
+                  (role === 'Super Admin' && (
                     <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                      <LabelArea label="Select Routes to given Access" />
+                      <LabelArea label={t('staffScreen.drawer.labelSelectAccess')} />
                       <div className="col-span-8 sm:col-span-4">
                         <MultiSelect
-                          options={routeAccessList}
+                          options={translatedRouteAccessList}
                           value={accessedRoutes}
                           className={mode}
                           onChange={(v) => setAccessedRoutes(v)}
-                          labelledBy="Select Coupon"
+                          labelledBy={t('staffScreen.drawer.labelSelectAccess')}
                         />
                       </div>
                     </div>
                   ))}
               </div>
 
-              <DrawerButton
-                id={id}
-                title="Staff"
-                zIndex="z-5"
-                isSubmitting={isSubmitting}
-              />
+              <DrawerButton id={id} title="Staff" zIndex="z-5" isSubmitting={isSubmitting} />
             </form>
           </CardBody>
         </Card>
       </Scrollbars>
     </>
-  );
-};
+  )
+}
 
-export default StaffDrawer;
+export default StaffDrawer

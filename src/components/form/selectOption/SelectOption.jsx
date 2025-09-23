@@ -1,5 +1,5 @@
-import React from "react";
-import { Select } from "@windmill/react-ui";
+import React from 'react'
+import { Select } from '@windmill/react-ui'
 
 const SelectOption = ({ register, name, label }) => {
   return (
@@ -26,7 +26,7 @@ const SelectOption = ({ register, name, label }) => {
         <option value="Electronics">Electronics </option>
       </Select>
     </>
-  );
-};
+  )
+}
 
-export default SelectOption;
+export default SelectOption

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const CustomerChart = ({ legends }) => {
   return (
@@ -10,7 +10,7 @@ const CustomerChart = ({ legends }) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default CustomerChart;
+export default CustomerChart

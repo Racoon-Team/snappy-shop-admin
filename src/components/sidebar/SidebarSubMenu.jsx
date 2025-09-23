@@ -1,15 +1,11 @@
-import React, { useState } from "react";
-import { NavLink, Route } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import {
-  IoChevronDownOutline,
-  IoChevronForwardOutline,
-  IoRemoveSharp,
-} from "react-icons/io5";
+import React, { useState } from 'react'
+import { NavLink, Route } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { IoChevronDownOutline, IoChevronForwardOutline, IoRemoveSharp } from 'react-icons/io5'
 
 const SidebarSubMenu = ({ route }) => {
-  const { t } = useTranslation();
-  const [open, setOpen] = useState(false);
+  const { t } = useTranslation()
+  const [open, setOpen] = useState(false)
 
   return (
     <>
@@ -22,9 +18,7 @@ const SidebarSubMenu = ({ route }) => {
           <span className="inline-flex items-center">
             <route.icon className="w-5 h-5" aria-hidden="true" />
             <span className="ml-4 mt-1">{t(`${route.name}`)}</span>
-            <span className="pl-4 mt-1">
-              {open ? <IoChevronDownOutline /> : <IoChevronForwardOutline />}
-            </span>
+            <span className="pl-4 mt-1">{open ? <IoChevronDownOutline /> : <IoChevronForwardOutline />}</span>
           </span>
           {/* <DropdownIcon className="w-4 h-4" aria-hidden="true" /> */}
         </button>
@@ -90,7 +84,7 @@ const SidebarSubMenu = ({ route }) => {
         )}
       </li>
     </>
-  );
-};
+  )
+}
 
-export default SidebarSubMenu;
+export default SidebarSubMenu

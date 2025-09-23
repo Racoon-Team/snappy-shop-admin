@@ -1,16 +1,7 @@
-import { Input } from "@windmill/react-ui";
-import React from "react";
+import { Input } from '@windmill/react-ui'
+import React from 'react'
 
-const CombinationInput = ({
-  id,
-  value,
-  name,
-  variant,
-  readOnly,
-  isBulkUpdate,
-  placeholder,
-  handleQuantityPrice,
-}) => {
+const CombinationInput = ({ id, value, name, variant, readOnly, isBulkUpdate, placeholder, handleQuantityPrice }) => {
   return (
     <>
       {isBulkUpdate && (
@@ -38,7 +29,7 @@ const CombinationInput = ({
         />
       )}
     </>
-  );
-};
+  )
+}
 
-export default CombinationInput;
+export default CombinationInput

@@ -1,7 +1,9 @@
-import React from "react";
-import { Select } from "@windmill/react-ui";
+import React from 'react'
+import { Select } from '@windmill/react-ui'
+import { useTranslation } from 'react-i18next'
 
 const SelectRole = ({ setRole, register, name, label }) => {
+  const { t } = useTranslation()
   return (
     <>
       <Select
@@ -12,20 +14,21 @@ const SelectRole = ({ setRole, register, name, label }) => {
         })}
       >
         <option value="" defaultValue hidden>
-          Staff role
+          {t('loginScreen.createAccount.superAdminRole')}
         </option>
-        <option value="Super Admin">Super Admin</option>
-        <option value="Admin">Admin</option>
-        <option value="Cashier">Cashier</option>
-        <option value="CEO">CEO</option>
-        <option value="Manager">Manager</option>
-        <option value="Accountant">Accountant</option>
-        <option value="Driver"> Driver </option>
-        <option value="Security Guard">Security Guard</option>
-        <option value="Deliver Person">Delivery Person</option>
+        <option value="Super Admin">{t('loginScreen.createAccount.superAdminRole')}</option>
+        <option value="Admin">{t('loginScreen.createAccount.adminRole')}</option>
+        <option value="Cashier">{t('loginScreen.createAccount.cashierRole')}</option>
+        <option value="CEO">{t('loginScreen.createAccount.ceoRole')}</option>
+        <option value="Manager">{t('loginScreen.createAccount.managerRole')}</option>
+        <option value="Accountant">{t('loginScreen.createAccount.accountantRole')}</option>
+        <option value="Driver">{t('loginScreen.createAccount.driverRole')}</option>
+        <option value="Security Guard">{t('loginScreen.createAccount.securityGuardRole')}</option>
+        <option value="Delivery Person">{t('loginScreen.createAccount.deliveryPersonRole')}</option>
+        <option value="Seller">{t('loginScreen.createAccount.sellerRole')}</option>
       </Select>
     </>
-  );
-};
+  )
+}
 
-export default SelectRole;
+export default SelectRole

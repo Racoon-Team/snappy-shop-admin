@@ -47,6 +47,6 @@ const coupons = [
     createdAt: '2021-09-20T14:13:15.650Z',
     updatedAt: '2021-11-25T19:16:31.930Z',
   },
-];
+]
 
-export default coupons;
+export default coupons

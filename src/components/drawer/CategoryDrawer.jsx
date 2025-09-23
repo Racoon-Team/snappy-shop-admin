@@ -1,26 +1,26 @@
-import { Input } from "@windmill/react-ui";
+import { Input } from '@windmill/react-ui'
 
-import Tree from "rc-tree";
-import React from "react";
-import Scrollbars from "react-custom-scrollbars-2";
-import { useTranslation } from "react-i18next";
+import Tree from 'rc-tree'
+import React from 'react'
+import Scrollbars from 'react-custom-scrollbars-2'
+import { useTranslation } from 'react-i18next'
 
 //internal import
-import { notifyError } from "@/utils/toast";
-import Error from "@/components/form/others/Error";
-import Title from "@/components/form/others/Title";
-import InputArea from "@/components/form/input/InputArea";
-import LabelArea from "@/components/form/selectOption/LabelArea";
-import SwitchToggle from "@/components/form/switch/SwitchToggle";
-import TextAreaCom from "@/components/form/input/TextAreaCom";
-import Uploader from "@/components/image-uploader/Uploader";
-import useCategorySubmit from "@/hooks/useCategorySubmit";
-import CategoryServices from "@/services/CategoryServices";
-import DrawerButton from "@/components/form/button/DrawerButton";
-import useUtilsFunction from "@/hooks/useUtilsFunction";
+import { notifyError } from '@/utils/toast'
+import Error from '@/components/form/others/Error'
+import Title from '@/components/form/others/Title'
+import InputArea from '@/components/form/input/InputArea'
+import LabelArea from '@/components/form/selectOption/LabelArea'
+import SwitchToggle from '@/components/form/switch/SwitchToggle'
+import TextAreaCom from '@/components/form/input/TextAreaCom'
+import Uploader from '@/components/image-uploader/Uploader'
+import useCategorySubmit from '@/hooks/useCategorySubmit'
+import CategoryServices from '@/services/CategoryServices'
+import DrawerButton from '@/components/form/button/DrawerButton'
+import useUtilsFunction from '@/hooks/useUtilsFunction'
 
 const CategoryDrawer = ({ id, data }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   const {
     checked,
@@ -37,9 +37,9 @@ const CategoryDrawer = ({ id, data }) => {
     setSelectCategoryName,
     handleSelectLanguage,
     isSubmitting,
-  } = useCategorySubmit(id, data);
+  } = useCategorySubmit(id, data)
 
-  const { showingTranslateValue } = useUtilsFunction();
+  const { showingTranslateValue } = useUtilsFunction()
 
   const STYLE = `
   .rc-tree-child-tree {
@@ -49,71 +49,65 @@ const CategoryDrawer = ({ id, data }) => {
     transition: all .3s;
     overflow-y: hidden;
   }
-`;
+`
 
   const motion = {
-    motionName: "node-motion",
+    motionName: 'node-motion',
     motionAppear: false,
     onAppearStart: (node) => {
-      return { height: 0 };
+      return { height: 0 }
     },
     onAppearActive: (node) => ({ height: node.scrollHeight }),
     onLeaveStart: (node) => ({ height: node.offsetHeight }),
     onLeaveActive: () => ({ height: 0 }),
-  };
+  }
 
   const renderCategories = (categories) => {
-    let myCategories = [];
+    let myCategories = []
     for (let category of categories) {
       myCategories.push({
         title: showingTranslateValue(category.name),
         key: category._id,
-        children:
-          category.children.length > 0 && renderCategories(category.children),
-      });
+        children: category.children.length > 0 && renderCategories(category.children),
+      })
     }
 
-    return myCategories;
-  };
+    return myCategories
+  }
 
   const findObject = (obj, target) => {
-    return obj._id === target
-      ? obj
-      : obj?.children?.reduce(
-          (acc, obj) => acc ?? findObject(obj, target),
-          undefined
-        );
-  };
+    return obj._id === target ? obj : obj?.children?.reduce((acc, obj) => acc ?? findObject(obj, target), undefined)
+  }
 
   const handleSelect = async (key) => {
     // console.log('key', key, 'id', id);
-    if (key === undefined) return;
+    if (key === undefined) return
     if (id) {
-      const parentCategoryId = await CategoryServices.getCategoryById(key);
+      const parentCategoryId = await CategoryServices.getCategoryById(key)
 
       if (id === key) {
-        return notifyError("This can't be select as a parent category!");
+        return notifyError("This can't be select as a parent category!")
       } else if (id === parentCategoryId.parentId) {
-        return notifyError("This can't be select as a parent category!");
+        return notifyError("This can't be select as a parent category!")
       } else {
-        if (key === undefined) return;
-        setChecked(key);
+        if (key === undefined) return
+        setChecked(key)
 
-        const obj = data[0];
-        const result = findObject(obj, key);
+        const obj = data[0]
+        const result = findObject(obj, key)
 
-        setSelectCategoryName(showingTranslateValue(result?.name));
+        setSelectCategoryName(showingTranslateValue(result?.name))
       }
     } else {
-      if (key === undefined) return;
-      setChecked(key);
+      if (key === undefined) return
+      setChecked(key)
 
-      const obj = data[0];
-      const result = findObject(obj, key);
+      const obj = data[0]
+      const result = findObject(obj, key)
 
-      setSelectCategoryName(showingTranslateValue(result?.name));
+      setSelectCategoryName(showingTranslateValue(result?.name))
     }
-  };
+  }
 
   return (
     <>
@@ -122,15 +116,15 @@ const CategoryDrawer = ({ id, data }) => {
           <Title
             register={register}
             handleSelectLanguage={handleSelectLanguage}
-            title={t("UpdateCategory")}
-            description={t("UpdateCategoryDescription")}
+            title={t('categoriesScreen.categoryDrawer.titleUpdate')}
+            description={t('categoriesScreen.categoryDrawer.descriptionUpdate')}
           />
         ) : (
           <Title
             register={register}
             handleSelectLanguage={handleSelectLanguage}
-            title={t("AddCategoryTitle")}
-            description={t("AddCategoryDescription")}
+            title={t('categoriesScreen.categoryDrawer.titleAdd')}
+            description={t('categoriesScreen.categoryDrawer.descriptionAdd')}
           />
         )}
       </div>
@@ -139,36 +133,36 @@ const CategoryDrawer = ({ id, data }) => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="p-6 flex-grow scrollbar-hide w-full max-h-full pb-40">
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-              <LabelArea label={t("Name")} />
+              <LabelArea label={t('categoriesScreen.categoryDrawer.labelName')} />
               <div className="col-span-8 sm:col-span-4">
                 <InputArea
                   required={true}
                   register={register}
-                  label="Category title"
+                  label={t('categoriesScreen.categoryDrawer.validationName')}
                   name="name"
                   type="text"
-                  placeholder={t("ParentCategoryPlaceholder")}
+                  placeholder={t('categoriesScreen.categoryDrawer.inputName')}
                 />
                 <Error errorName={errors.name} />
               </div>
             </div>
 
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-              <LabelArea label={t("Description")} />
+              <LabelArea label={t('categoriesScreen.categoryDrawer.labelDescription')} />
               <div className="col-span-8 sm:col-span-4">
                 <TextAreaCom
                   register={register}
                   label="Description"
                   name="description"
                   type="text"
-                  placeholder="Category Description"
+                  placeholder={t('categoriesScreen.categoryDrawer.inputDescription')}
                 />
                 <Error errorName={errors.description} />
               </div>
             </div>
 
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-              <LabelArea label={t("ParentCategory")} />
+              <LabelArea label={t('categoriesScreen.categoryDrawer.labelParentCategory')} />
               <div className="col-span-8 sm:col-span-4 relative">
                 <Input
                   readOnly
@@ -176,8 +170,8 @@ const CategoryDrawer = ({ id, data }) => {
                     required: false,
                   })}
                   name="parent"
-                  value={selectCategoryName ? selectCategoryName : "Home"}
-                  placeholder={t("ParentCategory")}
+                  value={selectCategoryName ? selectCategoryName : 'Home'}
+                  placeholder={t('categoriesScreen.categoryDrawer.labelParentCategory')}
                   type="text"
                 />
 
@@ -196,7 +190,7 @@ const CategoryDrawer = ({ id, data }) => {
             </div>
 
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-              <LabelArea label={t("CategoryIcon")} />
+              <LabelArea label={t('categoriesScreen.categoryDrawer.labelCategoryIcon')} />
               <div className="col-span-8 sm:col-span-4">
                 <Uploader
                   imageUrl={imageUrl}
@@ -209,21 +203,18 @@ const CategoryDrawer = ({ id, data }) => {
             </div>
 
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-              <LabelArea label={t("Published")} />
+              <LabelArea label={t('categoriesScreen.categoryDrawer.labelPublished')} />
               <div className="col-span-8 sm:col-span-4">
-                <SwitchToggle
-                  handleProcess={setPublished}
-                  processOption={published}
-                />
+                <SwitchToggle handleProcess={setPublished} processOption={published} />
               </div>
             </div>
           </div>
 
-          <DrawerButton id={id} title="Category" isSubmitting={isSubmitting} />
+          <DrawerButton id={id} title={t('categoriesScreen.title')} isSubmitting={isSubmitting} />
         </form>
       </Scrollbars>
     </>
-  );
-};
+  )
+}
 
-export default CategoryDrawer;
+export default CategoryDrawer

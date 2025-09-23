@@ -1,19 +1,19 @@
-import { useTranslation } from "react-i18next";
-import { Select } from "@windmill/react-ui";
+import { useTranslation } from 'react-i18next'
+import { Select } from '@windmill/react-ui'
 
 //internal import
-import Error from "@/components/form/others/Error";
-import PageTitle from "@/components/Typography/PageTitle";
-import useSettingSubmit from "@/hooks/useSettingSubmit";
-import InputArea from "@/components/form/input/InputArea";
-import InputAreaTwo from "@/components/form/input/InputAreaTwo";
-import AnimatedContent from "@/components/common/AnimatedContent";
-import SwitchToggle from "@/components/form/switch/SwitchToggle";
-import SettingContainer from "@/components/settings/SettingContainer";
-import SelectTimeZone from "@/components/form/selectOption/SelectTimeZone";
-import SelectCurrency from "@/components/form/selectOption/SelectCurrency";
-import SelectReceiptSize from "@/components/form/selectOption/SelectPrintSize";
-import SelectLanguageThree from "@/components/form/selectOption/SelectLanguageThree";
+import Error from '@/components/form/others/Error'
+import PageTitle from '@/components/Typography/PageTitle'
+import useSettingSubmit from '@/hooks/useSettingSubmit'
+import InputArea from '@/components/form/input/InputArea'
+import InputAreaTwo from '@/components/form/input/InputAreaTwo'
+import AnimatedContent from '@/components/common/AnimatedContent'
+import SwitchToggle from '@/components/form/switch/SwitchToggle'
+import SettingContainer from '@/components/settings/SettingContainer'
+import SelectTimeZone from '@/components/form/selectOption/SelectTimeZone'
+import SelectCurrency from '@/components/form/selectOption/SelectCurrency'
+import SelectReceiptSize from '@/components/form/selectOption/SelectPrintSize'
+import SelectLanguageThree from '@/components/form/selectOption/SelectLanguageThree'
 
 const Setting = () => {
   const {
@@ -29,34 +29,30 @@ const Setting = () => {
     setEnableInvoice,
     isAllowAutoTranslation,
     setIsAllowAutoTranslation,
-  } = useSettingSubmit();
+  } = useSettingSubmit()
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <>
-      <PageTitle>{t("Setting")}</PageTitle>
+      <PageTitle>{t('settingScreen.setting')}</PageTitle>
       <AnimatedContent>
         <div className="sm:container w-full md:p-6 p-4 mx-auto bg-white dark:bg-gray-800 dark:text-gray-200 rounded-lg">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <SettingContainer
-              isSave={isSave}
-              title={t("Setting")}
-              isSubmitting={isSubmitting}
-            >
+            <SettingContainer isSave={isSave} title={t('settingScreen.setting')} isSubmitting={isSubmitting}>
               <div className="flex-grow scrollbar-hide w-full max-h-full">
                 <div className="grid md:grid-cols-5 items-center sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("NumberOfImagesPerProduct")}
+                    {t('settingScreen.numberOfImagesPerProduct')}
                   </label>
                   <div className="sm:col-span-3">
                     <InputAreaTwo
                       required={true}
                       register={register}
-                      label={t("NumberOfImagesPerProduct")}
+                      label={t('settingScreen.numberOfImagesPerProduct')}
                       name="number_of_image_per_product"
                       type="number"
-                      placeholder={t("NumberOfImagesPerProduct")}
+                      placeholder={t('settingScreen.numberOfImagesPerProduct')}
                     />
                     <Error errorName={errors.number_of_image_per_product} />
                   </div>
@@ -64,12 +60,12 @@ const Setting = () => {
 
                 <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                   <label className="block text-sm text-gray-600 font-semibold dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("AllowAutoTranslation")}
+                    {t('settingScreen.allowAutoTranslation')}
                   </label>
 
                   <div className="md:col-span-3 sm:col-span-4">
                     <SwitchToggle
-                      title={""}
+                      title={''}
                       handleProcess={setIsAllowAutoTranslation}
                       processOption={isAllowAutoTranslation}
                     />
@@ -78,35 +74,35 @@ const Setting = () => {
                 <div
                   className={`grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6`}
                   style={{
-                    height: isAllowAutoTranslation ? "auto" : 0,
-                    transition: "all 0.6s",
-                    visibility: !isAllowAutoTranslation ? "hidden" : "visible",
-                    opacity: !isAllowAutoTranslation ? "0" : "1",
+                    height: isAllowAutoTranslation ? 'auto' : 0,
+                    transition: 'all 0.6s',
+                    visibility: !isAllowAutoTranslation ? 'hidden' : 'visible',
+                    opacity: !isAllowAutoTranslation ? '0' : '1',
                     marginBottom: !isAllowAutoTranslation ? 0 : 24,
                   }}
                 >
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("TranslationSecretKey")}
+                    {t('settingScreen.translationSecretKey')}
                     <br />
                     <small className="font-normal text-xs">
-                      You can create key from{" "}
+                      {t('settingScreen.descriptionKey')}{' '}
                       <a
                         href="https://mymemory.translated.net/doc/keygen.php"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-600 underline hover:text-blue-700"
                       >
-                        here
+                        {t('settingScreen.here')}
                       </a>
                     </small>
                   </label>
                   <div className="md:col-span-3 sm:col-span-4">
                     <InputAreaTwo
                       register={register}
-                      label={t("TranslationSecretKey")}
+                      label={t('settingScreen.translationSecretKey')}
                       name="translation_key"
                       type="password"
-                      placeholder={t("TranslationSecretKey")}
+                      placeholder={t('settingScreen.translationSecretKey')}
                       autoComplete="new-password"
                       required={isAllowAutoTranslation}
                     />
@@ -115,7 +111,7 @@ const Setting = () => {
                 </div>
                 <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6 relative">
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("DefaultLanguage")}
+                    {t('settingScreen.defaultLanguage')}
                   </label>
 
                   <div className="sm:col-span-3">
@@ -125,59 +121,51 @@ const Setting = () => {
                       setValue={setValue}
                       register={register}
                       name="default_language"
-                      label={t("DefaultLanguage")}
+                      label={t('settingScreen.defaultLanguage')}
                     />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-5 items-center sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                   <label className="block text-sm text-gray-600 font-semibold dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("DefaultCurrency")}
+                    {t('settingScreen.defaultCurrency')}
                   </label>
 
                   <div className="sm:col-span-3">
                     <div className="col-span-8 sm:col-span-4">
-                      <SelectCurrency
-                        register={register}
-                        label="Currency"
-                        name="default_currency"
-                      />
+                      <SelectCurrency register={register} label="Currency" name="default_currency" />
                     </div>
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-5 items-center sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("TimeZone")}
+                    {t('settingScreen.timeZone')}
                   </label>
 
                   <div className="sm:col-span-3">
-                    <SelectTimeZone
-                      register={register}
-                      name="default_time_zone"
-                      label="Time Zone"
-                    />
+                    <SelectTimeZone register={register} name="default_time_zone" label="Time Zone" />
                     <Error errorName={errors.default_time_zone} />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-5 items-center sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("DefaultDateFormat")}
+                    {t('settingScreen.defaultDateFormat')}
                   </label>
 
                   <div className="sm:col-span-3">
                     <Select
                       {...register(`default_date_format`, {
-                        required: "Default date formate is required",
+                        required: 'Default date formate is required',
                       })}
                     >
                       <option value="" defaultValue hidden>
-                        {t("DefaultDateFormat")}
+                        {t('settingScreen.defaultDateFormat')}
                       </option>
-                      <option value="MMM D, YYYY">MM/DD/YYYY</option>
-                      <option value="D MMM, YYYY">DD/MM/YYYY</option>
-                      <option value="YYYY,MMM D">YYYY/MM/DD</option>
+                      <option value="MMM D, YYYY">{t('settingScreen.ssMDY')}</option>
+                      <option value="D MMM, YYYY">{t('settingScreen.ssDMY')}</option>
+                      <option value="YYYY,MMM D">{t('settingScreen.ssYMD')}</option>
                     </Select>
                     <Error errorName={errors.default_date_format} />
                   </div>
@@ -185,44 +173,35 @@ const Setting = () => {
 
                 <div className="grid md:grid-cols-5 sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6 relative">
                   <label className="block text-sm text-gray-600 font-semibold dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("ReceiptSize")}
+                    {t('settingScreen.receiptSize')}
                   </label>
                   <div className="sm:col-span-3">
-                    <SelectReceiptSize
-                      label="Role"
-                      register={register}
-                      name="receipt_size"
-                      required={true}
-                    />
+                    <SelectReceiptSize label="Role" register={register} name="receipt_size" required={true} />
                     <Error errorName={errors.receipt_size} />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-5 sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6 relative">
                   <label className="block text-sm text-gray-600 font-semibold dark:text-gray-400 mb-1 sm:col-span-2">
-                    Enable Invoice Send to Customer by email
+                    {t('settingScreen.emailOptionInvoice')}
                   </label>
                   <div className="sm:col-span-3">
-                    <SwitchToggle
-                      id="enable-invoice"
-                      processOption={enableInvoice}
-                      handleProcess={setEnableInvoice}
-                    />
+                    <SwitchToggle id="enable-invoice" processOption={enableInvoice} handleProcess={setEnableInvoice} />
                   </div>
                 </div>
 
                 <div
                   style={{
-                    height: enableInvoice ? "auto" : 0,
-                    transition: "all .6s",
-                    visibility: !enableInvoice ? "hidden" : "visible",
-                    opacity: !enableInvoice ? "0" : "1",
+                    height: enableInvoice ? 'auto' : 0,
+                    transition: 'all .6s',
+                    visibility: !enableInvoice ? 'hidden' : 'visible',
+                    opacity: !enableInvoice ? '0' : '1',
                   }}
-                  className={`${enableInvoice ? "mb-8" : "mb-2"}`}
+                  className={`${enableInvoice ? 'mb-8' : 'mb-2'}`}
                 >
                   <div className="grid md:grid-cols-5 items-center sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                     <label className="block text-sm text-gray-600 font-semibold dark:text-gray-400 mb-1 sm:col-span-2">
-                      From Email
+                      {t('settingScreen.fromEmail')}
                     </label>
                     <div className="sm:col-span-3">
                       <InputArea
@@ -231,7 +210,7 @@ const Setting = () => {
                         label="From Email"
                         name="from_email"
                         type="email"
-                        placeholder="Enter from email on custom invoice"
+                        placeholder={t('settingScreen.phFromEmail')}
                       />
                       <Error errorName={errors.from_email} />
                     </div>
@@ -240,32 +219,32 @@ const Setting = () => {
 
                 <div className="grid md:grid-cols-5 items-center sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("ShopName")}
+                    {t('settingScreen.shopName')}
                   </label>
                   <div className="sm:col-span-3">
                     <InputAreaTwo
                       required={true}
                       register={register}
-                      label={t("ShopName")}
+                      label={t('settingScreen.shopName')}
                       name="shop_name"
                       type="text"
-                      placeholder={t("ShopName")}
+                      placeholder={t('settingScreen.shopName')}
                     />
                     <Error errorName={errors.shop_name} />
                   </div>
                 </div>
                 <div className="grid md:grid-cols-5 items-center sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("InvoiceCompanyName")}
+                    {t('settingScreen.invoiceCompanyName')}
                   </label>
                   <div className="sm:col-span-3">
                     <InputAreaTwo
                       required={true}
                       register={register}
-                      label={t("InvoiceCompanyName")}
+                      label={t('settingScreen.invoiceCompanyName')}
                       name="company_name"
                       type="text"
-                      placeholder={t("InvoiceCompanyName")}
+                      placeholder={t('settingScreen.invoiceCompanyName')}
                     />
                     <Error errorName={errors.company_name} />
                   </div>
@@ -273,7 +252,7 @@ const Setting = () => {
                 <div className="grid md:grid-cols-5 items-center sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
                     {/* {t("FooterAddress")} */}
-                    {t("VatNumber")}
+                    {t('settingScreen.vatNumber')}
                   </label>
                   <div className="sm:col-span-3">
                     <InputAreaTwo
@@ -281,14 +260,14 @@ const Setting = () => {
                       label="Address"
                       name="vat_number"
                       type="text"
-                      placeholder="Vat Number"
+                      placeholder={t('settingScreen.vatNumber')}
                     />
                     <Error errorName={errors.vat_number} />
                   </div>
                 </div>
                 <div className="grid md:grid-cols-5 items-center sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("AddressLine")}
+                    {t('settingScreen.addressLine')}
                   </label>
                   <div className="sm:col-span-3">
                     <InputAreaTwo
@@ -297,7 +276,7 @@ const Setting = () => {
                       label="Address"
                       name="address"
                       type="text"
-                      placeholder="Address"
+                      placeholder={t('settingScreen.addressLine')}
                     />
                     <Error errorName={errors.address} />
                   </div>
@@ -305,7 +284,7 @@ const Setting = () => {
 
                 <div className="grid md:grid-cols-5 items-center sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("PostCode")}
+                    {t('settingScreen.postCode')}
                   </label>
                   <div className="sm:col-span-3">
                     <InputAreaTwo
@@ -313,7 +292,7 @@ const Setting = () => {
                       label="Address"
                       name="post_code"
                       type="text"
-                      placeholder="Post Code"
+                      placeholder={t('settingScreen.postCode')}
                     />
                     <Error errorName={errors.post_code} />
                   </div>
@@ -321,7 +300,7 @@ const Setting = () => {
 
                 <div className="grid md:grid-cols-5 items-center sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("GlobalContactNumber")}
+                    {t('settingScreen.globalContactNumber')}
                   </label>
                   <div className=" sm:col-span-3">
                     <InputAreaTwo
@@ -330,7 +309,7 @@ const Setting = () => {
                       label="Phone"
                       name="contact"
                       type="text"
-                      placeholder="Contact Number"
+                      placeholder={t('settingScreen.phGlobalContactNumber')}
                     />
                     <Error errorName={errors.contact} />
                   </div>
@@ -338,7 +317,7 @@ const Setting = () => {
 
                 <div className="grid md:grid-cols-5 items-center sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("FooterEmail")}
+                    {t('settingScreen.footerEmail')}
                   </label>
                   <div className=" sm:col-span-3">
                     <InputAreaTwo
@@ -347,14 +326,14 @@ const Setting = () => {
                       label="Email"
                       name="email"
                       type="text"
-                      placeholder="Email"
+                      placeholder={t('settingScreen.footerEmail')}
                     />
                     <Error errorName={errors.email} />
                   </div>
                 </div>
                 <div className="grid md:grid-cols-5 items-center sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                   <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
-                    {t("WebSite")}
+                    {t('settingScreen.webSite')}
                   </label>
                   <div className=" sm:col-span-3">
                     <InputAreaTwo
@@ -362,7 +341,7 @@ const Setting = () => {
                       label="Email"
                       name="website"
                       type="text"
-                      placeholder="Web Site"
+                      placeholder={t('settingScreen.webSite')}
                     />
                     <Error errorName={errors.website} />
                   </div>
@@ -373,6 +352,6 @@ const Setting = () => {
         </div>
       </AnimatedContent>
     </>
-  );
-};
-export default Setting;
+  )
+}
+export default Setting

@@ -1,31 +1,33 @@
-import { TableBody, TableCell, TableRow } from "@windmill/react-ui";
-import React from "react";
-import { FiEdit } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { TableBody, TableCell, TableRow } from '@windmill/react-ui'
+import React from 'react'
+import { FiEdit } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 //internal import
-import Tooltip from "@/components/tooltip/Tooltip";
-import useUtilsFunction from "@/hooks/useUtilsFunction";
-import MainDrawer from "@/components/drawer/MainDrawer";
-import DeleteModal from "@/components/modal/DeleteModal";
-import useToggleDrawer from "@/hooks/useToggleDrawer";
-import CheckBox from "@/components/form/others/CheckBox";
-import ShowHideButton from "@/components/table/ShowHideButton";
-import EditDeleteButton from "@/components/table/EditDeleteButton";
-import AttributeDrawer from "@/components/drawer/AttributeDrawer";
+import Tooltip from '@/components/tooltip/Tooltip'
+import useUtilsFunction from '@/hooks/useUtilsFunction'
+import MainDrawer from '@/components/drawer/MainDrawer'
+import DeleteModal from '@/components/modal/DeleteModal'
+import useToggleDrawer from '@/hooks/useToggleDrawer'
+import CheckBox from '@/components/form/others/CheckBox'
+import ShowHideButton from '@/components/table/ShowHideButton'
+import EditDeleteButton from '@/components/table/EditDeleteButton'
+import AttributeDrawer from '@/components/drawer/AttributeDrawer'
 
 const AttributeTable = ({ isCheck, setIsCheck, attributes }) => {
-  const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer();
+  const { t } = useTranslation()
+  const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer()
 
-  const { showingTranslateValue } = useUtilsFunction();
+  const { showingTranslateValue } = useUtilsFunction()
 
   const handleClick = (e) => {
-    const { id, checked } = e.target;
-    setIsCheck([...isCheck, id]);
+    const { id, checked } = e.target
+    setIsCheck([...isCheck, id])
     if (!checked) {
-      setIsCheck(isCheck.filter((item) => item !== id));
+      setIsCheck(isCheck.filter((item) => item !== id))
     }
-  };
+  }
 
   // console.log('attributes', attributes);
 
@@ -52,21 +54,13 @@ const AttributeTable = ({ isCheck, setIsCheck, attributes }) => {
               />
             </TableCell>
 
-            <TableCell className="font-semibold uppercase text-xs">
-              {attribute?._id?.substring(20, 24)}
-            </TableCell>
+            <TableCell className="font-semibold uppercase text-xs">{attribute?._id?.substring(20, 24)}</TableCell>
 
-            <TableCell className="font-medium text-sm">
-              {showingTranslateValue(attribute.title)}
-            </TableCell>
+            <TableCell className="font-medium text-sm">{showingTranslateValue(attribute.title)}</TableCell>
 
-            <TableCell className="font-medium text-sm">
-              {showingTranslateValue(attribute.name)}
-            </TableCell>
+            <TableCell className="font-medium text-sm">{showingTranslateValue(attribute.name)}</TableCell>
 
-            <TableCell className="font-medium text-sm">
-              {attribute.option}
-            </TableCell>
+            <TableCell className="font-medium text-sm">{attribute.option}</TableCell>
 
             <TableCell className="text-center">
               <ShowHideButton id={attribute._id} status={attribute.status} />
@@ -77,12 +71,7 @@ const AttributeTable = ({ isCheck, setIsCheck, attributes }) => {
                 to={`/attributes/${attribute._id}`}
                 className="p-2 cursor-pointer text-gray-400 hover:text-emerald-600 focus:outline-none"
               >
-                <Tooltip
-                  id="edit values"
-                  Icon={FiEdit}
-                  title="Edit Values"
-                  bgColor="#10B981"
-                />
+                <Tooltip id="edit values" Icon={FiEdit} title={t('attributesScreen.editValues')} bgColor="#10B981" />
               </Link>
             </TableCell>
 
@@ -100,7 +89,7 @@ const AttributeTable = ({ isCheck, setIsCheck, attributes }) => {
         ))}
       </TableBody>
     </>
-  );
-};
+  )
+}
 
-export default AttributeTable;
+export default AttributeTable

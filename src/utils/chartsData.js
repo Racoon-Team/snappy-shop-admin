@@ -1,26 +1,26 @@
 export const doughnutLegends = [
-  { title: "Fresh Vegetable", color: "bg-emerald-500" },
-  { title: "Cooking Essentials", color: "bg-blue-500" },
-  { title: "Drinks", color: "bg-orange-500" },
-  { title: "Organic Food", color: "bg-indigo-500" },
-];
+  { title: 'Fresh Vegetable', color: 'bg-emerald-500' },
+  { title: 'Cooking Essentials', color: 'bg-blue-500' },
+  { title: 'Drinks', color: 'bg-orange-500' },
+  { title: 'Organic Food', color: 'bg-indigo-500' },
+]
 
 export const lineLegends = [
-  { title: "Organic", color: "bg-teal-600" },
-  { title: "Paid", color: "bg-purple-600" },
-];
+  { title: 'Organic', color: 'bg-teal-600' },
+  { title: 'Paid', color: 'bg-purple-600' },
+]
 
 export const barLegends = [
-  { title: "Fresh Vegetable", color: "bg-emerald-500" },
-  { title: "Cooking Essentials", color: "bg-blue-500" },
-  { title: "Drinks", color: "bg-orange-500" },
-  { title: "Organic Food", color: "bg-indigo-500" },
-];
+  { title: 'Fresh Vegetable', color: 'bg-emerald-500' },
+  { title: 'Cooking Essentials', color: 'bg-blue-500' },
+  { title: 'Drinks', color: 'bg-orange-500' },
+  { title: 'Organic Food', color: 'bg-indigo-500' },
+]
 
 export const pieLegends = [
-  { title: "Organic", color: "bg-teal-600" },
-  { title: "Paid", color: "bg-purple-600" },
-];
+  { title: 'Organic', color: 'bg-teal-600' },
+  { title: 'Paid', color: 'bg-purple-600' },
+]
 
 export const doughnutOptions = {
   data: {
@@ -31,11 +31,11 @@ export const doughnutOptions = {
          * These colors come from Tailwind CSS palette
          * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
          */
-        backgroundColor: ["#10B981", "#3B82F6", "#F97316", "#0EA5E9"],
-        label: "Dataset 1",
+        backgroundColor: ['#10B981', '#3B82F6', '#F97316', '#0EA5E9'],
+        label: 'Dataset 1',
       },
     ],
-    labels: ["Fresh Vegetable", "Cooking Essentials", "Drinks", "Organic Food"],
+    labels: ['Fresh Vegetable', 'Cooking Essentials', 'Drinks', 'Organic Food'],
   },
   options: {
     responsive: true,
@@ -44,32 +44,32 @@ export const doughnutOptions = {
   legend: {
     display: false,
   },
-};
+}
 
 export const lineOptions = {
   data: {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
       {
-        label: "Organic",
+        label: 'Organic',
         /**
          * These colors come from Tailwind CSS palette
          * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
          */
-        backgroundColor: "#0694a2",
-        borderColor: "#0694a2",
+        backgroundColor: '#0694a2',
+        borderColor: '#0694a2',
         data: [43, 48, 40, 54, 67, 73, 70],
         fill: false,
       },
       {
-        label: "Paid",
+        label: 'Paid',
         fill: false,
         /**
          * These colors come from Tailwind CSS palette
          * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
          */
-        backgroundColor: "#7e3af2",
-        borderColor: "#7e3af2",
+        backgroundColor: '#7e3af2',
+        borderColor: '#7e3af2',
         data: [24, 50, 64, 74, 52, 51, 65],
       },
     ],
@@ -77,11 +77,11 @@ export const lineOptions = {
   options: {
     responsive: true,
     tooltips: {
-      mode: "index",
+      mode: 'index',
       intersect: false,
     },
     hover: {
-      mode: "nearest",
+      mode: 'nearest',
       intersect: true,
     },
     scales: {
@@ -89,14 +89,14 @@ export const lineOptions = {
         display: true,
         scaleLabel: {
           display: true,
-          labelString: "Month",
+          labelString: 'Month',
         },
       },
       y: {
         display: true,
         scaleLabel: {
           display: true,
-          labelString: "Value",
+          labelString: 'Value',
         },
       },
     },
@@ -104,36 +104,36 @@ export const lineOptions = {
   legend: {
     display: false,
   },
-};
+}
 
 export const barOptions = {
   data: {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
       {
-        label: "Fresh Vegetable",
-        backgroundColor: "#10B981",
+        label: 'Fresh Vegetable',
+        backgroundColor: '#10B981',
         // borderColor: window.chartColors.red,
         borderWidth: 1,
         data: [15, 35, 45, 40, 70, 85, 90],
       },
       {
-        label: "Cooking Essentials",
-        backgroundColor: "#3B82F6",
+        label: 'Cooking Essentials',
+        backgroundColor: '#3B82F6',
         // borderColor: window.chartColors.blue,
         borderWidth: 1,
         data: [5, 25, 50, 35, 24, 32, 84],
       },
       {
-        label: "Drinks",
-        backgroundColor: "#F97316",
+        label: 'Drinks',
+        backgroundColor: '#F97316',
         // borderColor: window.chartColors.red,
         borderWidth: 1,
         data: [10, 45, 52, 74, 33, 50, 70],
       },
       {
-        label: "Organic Food",
-        backgroundColor: "#0EA5E9",
+        label: 'Organic Food',
+        backgroundColor: '#0EA5E9',
         // borderColor: window.chartColors.red,
         borderWidth: 1,
         data: [20, 35, 30, 74, 33, 40, 70],
@@ -146,30 +146,30 @@ export const barOptions = {
   legend: {
     display: false,
   },
-};
+}
 
 export const pieOptions = {
   data: {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
       {
-        label: "# of Votes",
+        label: '# of Votes',
         data: [30, 45, 50, 45, 42, 55],
         backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
         ],
         borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
         ],
         borderWidth: 1,
       },
@@ -178,11 +178,11 @@ export const pieOptions = {
   options: {
     responsive: true,
     tooltips: {
-      mode: "index",
+      mode: 'index',
       intersect: false,
     },
     hover: {
-      mode: "nearest",
+      mode: 'nearest',
       intersect: true,
     },
     scales: {
@@ -190,14 +190,14 @@ export const pieOptions = {
         display: true,
         scaleLabel: {
           display: true,
-          labelString: "Month",
+          labelString: 'Month',
         },
       },
       y: {
         display: true,
         scaleLabel: {
           display: true,
-          labelString: "Value",
+          labelString: 'Value',
         },
       },
     },
@@ -205,4 +205,4 @@ export const pieOptions = {
   legend: {
     display: false,
   },
-};
+}

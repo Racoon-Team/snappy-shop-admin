@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Discount = ({ discount, product, modal }) => {
   return (
@@ -26,7 +26,7 @@ const Discount = ({ discount, product, modal }) => {
         </span>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Discount;
+export default Discount

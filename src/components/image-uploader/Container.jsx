@@ -1,6 +1,6 @@
-import update from "immutability-helper";
-import { useCallback } from "react";
-import Card from "./Card";
+import update from 'immutability-helper'
+import { useCallback } from 'react'
+import Card from './Card'
 
 const Container = ({ setImageUrl, imageUrl, handleRemoveImage }) => {
   const moveCard = useCallback(
@@ -12,10 +12,10 @@ const Container = ({ setImageUrl, imageUrl, handleRemoveImage }) => {
             [hoverIndex, 0, prevCards[dragIndex]],
           ],
         })
-      );
+      )
     },
     [setImageUrl]
-  );
+  )
 
   const renderCard = useCallback(
     (card, i) => {
@@ -29,11 +29,11 @@ const Container = ({ setImageUrl, imageUrl, handleRemoveImage }) => {
           image={card}
           handleRemoveImage={handleRemoveImage}
         />
-      );
+      )
     },
     [moveCard, handleRemoveImage]
-  );
-  return <>{imageUrl.map((card, i) => renderCard(card, i))}</>;
-};
+  )
+  return <>{imageUrl.map((card, i) => renderCard(card, i))}</>
+}
 
-export default Container;
+export default Container

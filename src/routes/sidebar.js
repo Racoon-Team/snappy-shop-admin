@@ -1,13 +1,4 @@
-import {
-  FiGrid,
-  FiUsers,
-  FiUser,
-  FiCompass,
-  FiSettings,
-  FiSlack,
-  FiGlobe,
-  FiTarget,
-} from "react-icons/fi";
+import { FiGrid, FiUsers, FiUser, FiCompass, FiSettings, FiSlack, FiGlobe, FiTarget } from 'react-icons/fi'
 
 /**
  * ⚠ These are used just to render the Sidebar!
@@ -18,87 +9,101 @@ import {
  */
 const sidebar = [
   {
-    path: "/dashboard", // the url
+    path: '/dashboard', // the url
     icon: FiGrid, // icon
-    name: "Dashboard", // name that appear in Sidebar
+    name: 'sideBar.dashboard', // name that appear in Sidebar
   },
 
   {
     icon: FiSlack,
-    name: "Catalog",
+    name: 'sideBar.catalog.catalogTitle',
     routes: [
       {
-        path: "/products",
-        name: "Products",
+        path: '/products',
+        name: 'sideBar.catalog.products',
       },
       {
-        path: "/categories",
-        name: "Categories",
+        path: '/categories',
+        name: 'sideBar.catalog.categories',
       },
       {
-        path: "/attributes",
-        name: "Attributes",
+        path: '/attributes',
+        name: 'sideBar.catalog.attributes',
       },
       {
-        path: "/coupons",
-        name: "Coupons",
+        path: '/coupons',
+        name: 'sideBar.catalog.coupons',
       },
     ],
   },
 
   {
-    path: "/customers",
+    path: '/customers',
     icon: FiUsers,
-    name: "Customers",
+    name: 'sideBar.customers',
   },
   {
-    path: "/orders",
+    path: '/orders',
     icon: FiCompass,
-    name: "Orders",
+    name: 'sideBar.orders',
   },
 
   {
-    path: "/our-staff",
+    path: '/our-staff',
     icon: FiUser,
-    name: "OurStaff",
+    name: 'sideBar.ourStaff',
   },
 
   {
-    path: "/settings?settingTab=common-settings",
     icon: FiSettings,
-    name: "Settings",
-  },
-  {
-    icon: FiGlobe,
-    name: "International",
+    name: 'sideBar.settings',
     routes: [
       {
-        path: "/languages",
-        name: "Languages",
+        path: '/settings?settingTab=common-settings',
+        name: 'General',
       },
       {
-        path: "/currencies",
-        name: "Currencies",
+        path: '/settings/roles',
+        name: 'roleScreen.sidebarLabel',
+      },
+    ],
+  },
+
+  {
+    icon: FiGlobe,
+    name: 'sideBar.international.internationalTitle',
+    routes: [
+      {
+        path: '/languages',
+        name: 'sideBar.international.languages',
+      },
+      {
+        path: '/currencies',
+        name: 'sideBar.international.currencies',
       },
     ],
   },
   {
     icon: FiTarget,
-    name: "OnlineStore",
+    name: 'sideBar.onlineStore.onlineStoreTitle',
     routes: [
       {
-        name: "ViewStore",
-        path: "/store",
-        outside: "store",
+        name: 'sideBar.onlineStore.viewStore',
+        path: '/store',
+        outside: 'store',
       },
 
       {
-        path: "/store/customization",
-        name: "StoreCustomization",
+        path: '/store/customization',
+        name: 'sideBar.onlineStore.storeCustomizationPageTitle',
       },
       {
-        path: "/store/store-settings",
-        name: "StoreSettings",
+        path: '/store/store-settings',
+        name: 'sideBar.onlineStore.storeSettings',
+      },
+      {
+        path: '/store/delivery-points',
+        name: 'sideBar.onlineStore.deliveryPoints',
       },
     ],
   },
@@ -119,6 +124,6 @@ const sidebar = [
   //     },
   //   ],
   // },
-];
+]
 
-export default sidebar;
+export default sidebar

@@ -1,16 +1,16 @@
-import { Select } from "@windmill/react-ui";
-import React, { Fragment } from "react";
-import { useTranslation } from "react-i18next";
-import { Scrollbars } from "react-custom-scrollbars-2";
+import { Select } from '@windmill/react-ui'
+import React, { Fragment } from 'react'
+import { useTranslation } from 'react-i18next'
+import { Scrollbars } from 'react-custom-scrollbars-2'
 
 //internal import
-import Error from "@/components/form/others/Error";
-import Title from "@/components/form/others/Title";
-import LabelArea from "@/components/form/selectOption/LabelArea";
-import InputArea from "@/components/form/input/InputArea";
-import DrawerButton from "@/components/form/button/DrawerButton";
-import TagInputTwo from "@/components/common/TagInputTwo";
-import useAttributeSubmit from "@/hooks/useAttributeSubmit";
+import Error from '@/components/form/others/Error'
+import Title from '@/components/form/others/Title'
+import LabelArea from '@/components/form/selectOption/LabelArea'
+import InputArea from '@/components/form/input/InputArea'
+import DrawerButton from '@/components/form/button/DrawerButton'
+import TagInputTwo from '@/components/common/TagInputTwo'
+import useAttributeSubmit from '@/hooks/useAttributeSubmit'
 
 const AttributeDrawer = ({ id }) => {
   const {
@@ -23,9 +23,9 @@ const AttributeDrawer = ({ id }) => {
     isSubmitting,
     removeVariant,
     handleSelectLanguage,
-  } = useAttributeSubmit(id);
+  } = useAttributeSubmit(id)
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <>
@@ -34,15 +34,15 @@ const AttributeDrawer = ({ id }) => {
           <Title
             register={register}
             handleSelectLanguage={handleSelectLanguage}
-            title={t("UpdateAttribute")}
-            description={t("UpdateAttributeDesc")}
+            title={t('attributesScreen.drawer.addValue')}
+            description={t('attributesScreen.drawer.addValueDescription')}
           />
         ) : (
           <Title
             register={register}
             handleSelectLanguage={handleSelectLanguage}
-            title={t("AddAttribute")}
-            description={t("AddAttributeDesc")}
+            title={t('attributesScreen.drawer.addValue')}
+            description={t('attributesScreen.drawer.addValueDescription')}
           />
         )}
       </div>
@@ -51,7 +51,7 @@ const AttributeDrawer = ({ id }) => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="px-6 pt-8 flex-grow scrollbar-hide w-full max-h-full">
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-              <LabelArea label={t("DrawerAttributeTitle")} />
+              <LabelArea label={t('attributesScreen.drawer.addTitleLbl')} />
               <div className="col-span-8 sm:col-span-4">
                 {/* <SelectAttribute
                   register={register}
@@ -61,44 +61,44 @@ const AttributeDrawer = ({ id }) => {
                 <InputArea
                   required={true}
                   register={register}
-                  label="Attribute Title"
+                  label={t('attributesScreen.drawer.addTitleLbl')}
                   name="title"
                   type="text"
-                  placeholder="Color or Size or Dimension or Material or Fabric"
+                  placeholder={t('attributesScreen.drawer.addTitlePh')}
                 />
                 <Error errorName={errors.title} />
               </div>
             </div>
 
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6 relative">
-              <LabelArea label={t("DisplayName")} />
+              <LabelArea label={t('attributesScreen.drawer.displayName')} />
               <div className="col-span-8 sm:col-span-4">
                 <InputArea
                   required={true}
                   register={register}
-                  label="Display Name"
+                  label={t('attributesScreen.drawer.displayName')}
                   name="name"
                   type="text"
-                  placeholder="Display Name"
+                  placeholder={t('attributesScreen.drawer.displayName')}
                 />
                 <Error errorName={errors.name} />
               </div>
             </div>
 
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 relative">
-              <LabelArea label={t("DrawerOptions")} />
+              <LabelArea label={t('attributesScreen.drawer.options')} />
               <div className="col-span-8 sm:col-span-4 ">
                 <Select
                   name="option"
                   {...register(`option`, {
-                    required: `Option is required!`,
+                    required: t('attributesScreen.drawer.required'),
                   })}
                 >
                   <option value="" defaultValue hidden>
-                    {t("DrawerSelecttype")}
+                    {t('attributesScreen.drawer.select')}
                   </option>
-                  <option value="Dropdown">{t("Dropdown")}</option>
-                  <option value="Radio">{t("Radio")}</option>
+                  <option value="Dropdown">{t('attributesScreen.drawer.dropDown')}</option>
+                  <option value="Radio">{t('attributesScreen.drawer.radio')}</option>
                   {/* <option value="Checkbox">Checkbox</option> */}
                 </Select>
                 <Error errorName={errors.option} />
@@ -106,18 +106,14 @@ const AttributeDrawer = ({ id }) => {
             </div>
           </div>
 
-          <DrawerButton id={id} title="Attribute" isSubmitting={isSubmitting} />
+          <DrawerButton id={id} title={t('attributesScreen.drawer.singularBtn')} isSubmitting={isSubmitting} />
         </form>
         <div className="px-6 pt-8 flex-grow scrollbar-hide w-full max-h-full pb-40 ">
           {!id && (
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6 relative">
-              <LabelArea label={t("Variants")} />
+              <LabelArea label={t('attributesScreen.drawer.variants')} />
               <div className="col-span-8 sm:col-span-4">
-                <TagInputTwo
-                  notes={variants}
-                  addNote={addVariant}
-                  removeNote={removeVariant}
-                />
+                <TagInputTwo notes={variants} addNote={addVariant} removeNote={removeVariant} />
                 {/* <ReactTagInput
                     placeholder="White or S or Cotton or 40X60 or Premium...(Write then press enter to add new color)"
                     tags={variants}
@@ -129,7 +125,7 @@ const AttributeDrawer = ({ id }) => {
         </div>
       </Scrollbars>
     </>
-  );
-};
+  )
+}
 
-export default AttributeDrawer;
+export default AttributeDrawer

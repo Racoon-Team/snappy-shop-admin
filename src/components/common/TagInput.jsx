@@ -1,26 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-const TagInput = ({
-  notes,
-  addNote,
-  removeNote,
-  getInputValue,
-  onChangeInput,
-  setShowKeyBoard,
-  setInputName,
-}) => {
+const TagInput = ({ notes, addNote, removeNote, getInputValue, onChangeInput, setShowKeyBoard, setInputName }) => {
   return (
     <div className="react-tag-input">
       <ul id="tags">
         {notes.map((note, index) => (
           <li key={index} className="react-tag-input__tag">
-            <span className="tag-title react-tag-input__tag__content">
-              {note}
-            </span>
-            <span
-              className="react-tag-input__tag__remove"
-              onClick={() => removeNote(index)}
-            ></span>
+            <span className="tag-title react-tag-input__tag__content">{note}</span>
+            <span className="react-tag-input__tag__remove" onClick={() => removeNote(index)}></span>
           </li>
         ))}
       </ul>
@@ -29,8 +16,8 @@ const TagInput = ({
         value={getInputValue('note')}
         onChange={onChangeInput}
         onFocus={() => {
-          setShowKeyBoard(true);
-          setInputName('note');
+          setShowKeyBoard(true)
+          setInputName('note')
         }}
         className="react-tag-input__input"
         type="text"
@@ -39,7 +26,7 @@ const TagInput = ({
         placeholder="Press enter to add note"
       />
     </div>
-  );
-};
+  )
+}
 
-export default TagInput;
+export default TagInput

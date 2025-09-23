@@ -1,17 +1,17 @@
-import React from "react";
-import { Scrollbars } from "react-custom-scrollbars-2";
-import ReactFlagsSelect from "react-flags-select";
-import { useTranslation } from "react-i18next";
+import React from 'react'
+import { Scrollbars } from 'react-custom-scrollbars-2'
+import ReactFlagsSelect from 'react-flags-select'
+import { useTranslation } from 'react-i18next'
 
 //internal import
-import Title from "@/components/form/others/Title";
-import Error from "@/components/form/others/Error";
-import InputArea from "@/components/form/input/InputArea";
-import LabelArea from "@/components/form/selectOption/LabelArea";
-import SelectISOCode from "@/components/form/selectOption/SelectISOCode";
-import SwitchToggle from "@/components/form/switch/SwitchToggle";
-import useLanguageSubmit from "@/hooks/useLanguageSubmit";
-import DrawerButton from "@/components/form/button/DrawerButton";
+import Title from '@/components/form/others/Title'
+import Error from '@/components/form/others/Error'
+import InputArea from '@/components/form/input/InputArea'
+import LabelArea from '@/components/form/selectOption/LabelArea'
+import SelectISOCode from '@/components/form/selectOption/SelectISOCode'
+import SwitchToggle from '@/components/form/switch/SwitchToggle'
+import useLanguageSubmit from '@/hooks/useLanguageSubmit'
+import DrawerButton from '@/components/form/button/DrawerButton'
 
 //internal import
 
@@ -26,20 +26,20 @@ const LanguageDrawer = ({ id }) => {
     isSubmitting,
     languagePublished,
     setLanguagePublished,
-  } = useLanguageSubmit(id);
+  } = useLanguageSubmit(id)
 
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   return (
     <>
       <div className="w-full relative p-6 border-b border-gray-100 bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">
         {id ? (
-          <Title
-            title={t("UpdateLanguage")}
-            description={t("UpdateLanguageText")}
-          />
+          <Title title={t('UpdateLanguage')} description={t('UpdateLanguageText')} />
         ) : (
-          <Title title={t("AddLanguage")} description={t("AddLanguageText")} />
+          <Title
+            title={t('languagesScreen.drawer.addLanguage')}
+            description={t('languagesScreen.drawer.languageText')}
+          />
         )}
       </div>
 
@@ -47,7 +47,7 @@ const LanguageDrawer = ({ id }) => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="p-6 flex-grow scrollbar-hide w-full max-h-full pb-40">
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-              <LabelArea label={t("AddLanguageName")} />
+              <LabelArea label={t('languagesScreen.drawer.languageName')} />
               <div className="col-span-8 sm:col-span-4">
                 <InputArea
                   required={true}
@@ -55,52 +55,40 @@ const LanguageDrawer = ({ id }) => {
                   label="Language name"
                   name="name"
                   type="text"
-                  placeholder="Language name"
+                  placeholder={t('languagesScreen.drawer.languageName')}
                 />
                 <Error errorName={errors.name} />
               </div>
             </div>
 
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6 relative">
-              <LabelArea label={t("AddLanguagesIsoCode")} />
+              <LabelArea label={t('languagesScreen.drawer.isoCode')} />
               <div className="col-span-8 sm:col-span-4">
-                <SelectISOCode
-                  register={register}
-                  label="ISO code"
-                  name={"iso_code"}
-                  required={true}
-                />
+                <SelectISOCode register={register} label="ISO code" name={'iso_code'} required={true} />
                 <Error errorName={errors.iso_code} />
               </div>
             </div>
 
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-              <LabelArea label={t("AddLanguagesFlag")} />
+              <LabelArea label={t('languagesScreen.drawer.flag')} />
               <div className="col-span-8 sm:col-span-4">
-                <ReactFlagsSelect
-                  selected={flagAndName}
-                  onSelect={(code) => setFlagAndName(code)}
-                />
+                <ReactFlagsSelect selected={flagAndName} onSelect={(code) => setFlagAndName(code)} />
               </div>
             </div>
 
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-              <LabelArea label={t("AddLanguagesPublished")} />
+              <LabelArea label={t('languagesScreen.drawer.published')} />
               <div className="col-span-8 sm:col-span-4">
-                <SwitchToggle
-                  title={""}
-                  handleProcess={setLanguagePublished}
-                  processOption={languagePublished}
-                />
+                <SwitchToggle title={''} handleProcess={setLanguagePublished} processOption={languagePublished} />
               </div>
             </div>
           </div>
 
-          <DrawerButton id={id} title="Language" isSubmitting={isSubmitting} />
+          <DrawerButton id={id} title={t('languagesScreen.drawer.languageBtn')} isSubmitting={isSubmitting} />
         </form>
       </Scrollbars>
     </>
-  );
-};
+  )
+}
 
-export default LanguageDrawer;
+export default LanguageDrawer

@@ -26,3 +26,7 @@ yarn-error.log*
 
 # css
 /src/assets/css/tailwind.output.css
+
+# IDE's
+/.idea
+/.vscode

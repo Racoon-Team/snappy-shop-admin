@@ -1,57 +1,52 @@
-import { useState } from "react";
-import "chart.js/auto";
-import { Line } from "react-chartjs-2";
-import { useTranslation } from "react-i18next";
+import { useState } from 'react'
+import 'chart.js/auto'
+import { Line } from 'react-chartjs-2'
+import { useTranslation } from 'react-i18next'
 
 const LineChart = ({ salesReport }) => {
+  const { t } = useTranslation()
   // console.log("saleReport", salesReport);
   // Create a Set to store unique dates
-  const uniqueDates = new Set();
+  const uniqueDates = new Set()
 
   // Use filter to iterate through the array and add unique dates to the Set
   const updatedSalesReport = salesReport?.filter((item) => {
-    const isUnique = !uniqueDates.has(item.date);
-    uniqueDates.add(item.date);
-    return isUnique;
-  });
+    const isUnique = !uniqueDates.has(item.date)
+    uniqueDates.add(item.date)
+    return isUnique
+  })
 
   // console.log("updatedSalesReport", updatedSalesReport);
 
   const [activeButton, setActiveButton] = useState({
-    title: "Sales",
-    color: "emerald",
-  });
+    title: 'Sales',
+    color: 'emerald',
+  })
 
   const handleClick = ({ title, color }) => {
-    setActiveButton({ title, color });
-  };
+    setActiveButton({ title, color })
+  }
 
   const barOptions = {
     data: {
-      labels: updatedSalesReport
-        ?.sort((a, b) => new Date(a.date) - new Date(b.date))
-        ?.map((or) => or.date),
+      labels: updatedSalesReport?.sort((a, b) => new Date(a.date) - new Date(b.date))?.map((or) => or.date),
       datasets: [
-        activeButton.title === "Sales"
+        activeButton.title === 'Sales'
           ? {
-              label: "Sales",
-              data: updatedSalesReport
-                ?.sort((a, b) => new Date(a.date) - new Date(b.date))
-                ?.map((or) => or.total),
-              borderColor: "#10B981",
-              backgroundColor: "#10B981",
+              label: t('dashboardScreen.graphics.sales'),
+              data: updatedSalesReport?.sort((a, b) => new Date(a.date) - new Date(b.date))?.map((or) => or.total),
+              borderColor: '#10B981',
+              backgroundColor: '#10B981',
               borderWidth: 3,
-              yAxisID: "y",
+              yAxisID: 'y',
             }
           : {
-              label: "Order",
-              data: updatedSalesReport
-                ?.sort((a, b) => new Date(a.date) - new Date(b.date))
-                ?.map((or) => or.order),
-              borderColor: "#F97316",
-              backgroundColor: "#F97316",
+              label: t('dashboardScreen.graphics.orders'),
+              data: updatedSalesReport?.sort((a, b) => new Date(a.date) - new Date(b.date))?.map((or) => or.order),
+              borderColor: '#F97316',
+              backgroundColor: '#F97316',
               borderWidth: 3,
-              yAxisID: "y",
+              yAxisID: 'y',
             },
       ],
     },
@@ -61,9 +56,7 @@ const LineChart = ({ salesReport }) => {
     legend: {
       display: false,
     },
-  };
-
-  const { t } = useTranslation();
+  }
 
   return (
     <>
@@ -71,29 +64,29 @@ const LineChart = ({ salesReport }) => {
         <ul className="flex flex-wrap -mb-px">
           <li className="mr-2">
             <button
-              onClick={() => handleClick({ title: "Sales", color: "emerald" })}
+              onClick={() => handleClick({ title: 'Sales', color: 'emerald' })}
               type="button"
               className={`inline-block p-2 rounded-t-lg border-b-2 border-transparent ${
-                activeButton.title === "Sales"
-                  ? "text-emerald-600 border-emerald-600 dark:text-emerald-500 dark:border-emerald-500"
-                  : "hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                activeButton.title === 'Sales'
+                  ? 'text-emerald-600 border-emerald-600 dark:text-emerald-500 dark:border-emerald-500'
+                  : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'
               }  focus:outline-none`}
             >
-              {t("Sales")}
+              {t('dashboardScreen.graphics.sales')}
             </button>
           </li>
 
           <li className="mr-2">
             <button
-              onClick={() => handleClick({ title: "Orders", color: "red" })}
+              onClick={() => handleClick({ title: 'Orders', color: 'red' })}
               type="button"
               className={`inline-block p-2 rounded-t-lg border-b-2 border-transparent ${
-                activeButton.title === "Orders"
-                  ? "text-orange-500 border-orange-500 dark:text-orange-500 dark:border-orange-500"
-                  : "hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                activeButton.title === 'Orders'
+                  ? 'text-orange-500 border-orange-500 dark:text-orange-500 dark:border-orange-500'
+                  : 'hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300'
               }  focus:outline-none`}
             >
-              {t("Orders")}
+              {t('dashboardScreen.graphics.orders')}
             </button>
           </li>
         </ul>
@@ -101,7 +94,7 @@ const LineChart = ({ salesReport }) => {
 
       <Line {...barOptions} />
     </>
-  );
-};
+  )
+}
 
-export default LineChart;
+export default LineChart

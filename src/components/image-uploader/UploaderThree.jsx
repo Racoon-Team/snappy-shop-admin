@@ -15,14 +15,12 @@ const UploaderThree = ({ imageUrl, handleSelectImage }) => {
               </div>
             ))
           ) : (
-            <div className="p-8 text-red-500 dark:text-red-400">
-              No Product Image Uploaded Yet!
-            </div>
+            <div className="p-8 text-red-500 dark:text-red-400">No Product Image Uploaded Yet!</div>
           )}
         </aside>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default UploaderThree;
+export default UploaderThree

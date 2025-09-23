@@ -1,67 +1,1344 @@
 {
+  "common": {
+    "view": "View",
+    "delete": "Delete",
+    "edit": "Edit",
+    "cancelBtn": "Cancel",
+    "closeBtn": "Close",
+    "addBtn": "Add",
+    "updateBtn": "Update",
+    "saveBtn": "Save",
+    "published": "Published",
+    "isRequired": "is required!",
+    "error": "Please select a valid .JSON/.CSV/.XLS file first!",
+    "filter": "Filter",
+    "reset": "Reset",
+    "statusMessage": "Status Updated Successfully!",
+    "imageDeleteMessage": "Image delete successfully!",
+    "enableThisBlock": "Enable This Block",
+    "pageHeaderBg": "Page Header Background",
+    "pageTitle": "Page Title",
+
+    "modalDelete": {
+      "deleteModalH2": "Are You Sure! Want to Delete",
+      "deleteModalPtag": "Do you really want to delete these records? You can't view this in your list anymore if you delete!",
+      "modalKeepBtn": "No, Keep It",
+      "modalDeletBtn": "Yes, Delete It"
+    },
+
+    "bulkAction": {
+      "label": "Bulk Action",
+      "titleUpdate": "Update {{label}}",
+      "descriptionUpdate": "Apply changes to the list of categories {{label}}"
+    },
+
+    "export": {
+      "label": "Export",
+      "toCSV": "Export to CSV",
+      "toJSON": "Export to JSON"
+    },
+
+    "import": {
+      "label": "Import",
+      "now": "Import Now",
+      "file": "Select your file to import",
+      "error": "Please select a valid .JSON/.CSV/.XLS file first!"
+    },
+
+    "storeCustomizations": {
+      "labelEnableThisBlock": "Enable This Block",
+      "labelTitle": "Title",
+      "inputTitle": "Add Title",
+      "labelDescription": "Description",
+      "labelProductsLimit": "Products Limit",
+      "labelButtonName": "Button Name",
+      "inputButtonName": "Add the Button Name",
+      "labelButtonLink": "Button Link",
+      "titleBlock": "Block",
+      "labelLink": "Link",
+      "inputLinkName": "Add a name to the link",
+      "inputLink": "Add a Link"
+    }
+  },
+
+  "loginScreen": {
+    "title": "Login",
+    "emailLbl": "Email",
+    "passwordLbl": "Password",
+    "loginBtn": "Login",
+    "loginWithFacebook": "Login with Facebook",
+    "loginWithGoogle": "Login with Google",
+
+    "forgotPassword": {
+      "title": "Forgot Your password?",
+      "emailLbl": "Email",
+      "recoverPasswordBtn": "Recover Password",
+      "alreadyHaveAccount": "Already Have an Account? Log In"
+    },
+
+    "createAccount": {
+      "title": "Create Account",
+      "name": "Name",
+      "emailLbl": "Email",
+      "passwordLbl": "Password",
+      "staffRoleLbl": "Staff Role",
+      "superAdminRole": "Super Admin",
+      "adminRole": "Admin",
+      "cashierRole": "Cashier",
+      "ceoRole": "CEO",
+      "managerRole": "Manager",
+      "accountantRole": "Accountant",
+      "driverRole": "Driver",
+      "securityGuardRole": "Security Guard",
+      "deliveryPersonRole": "Delivery Person",
+      "sellerRole": "Seller",
+      "iAgree": "I agree to the ",
+      "privacyPolicy": "Privacy Policy",
+      "btn": "Create Account",
+      "signupWithFacebook": "Sign Up with Facebook",
+      "signupWithGoogle": "Sign Up with Google",
+      "alreadyHaveAccount": "Already Have an Account? Log In"
+    },
+
+    "message": {
+      "login": "Login Success!"
+    }
+  },
+
+  "profileMenu": {
+    "dashboardPM": "Dashboard",
+    "editProfile": "Edit profile",
+    "logOut": "Log out"
+  },
+
+  "sideBar": {
+    "dashboard": "Dashboard",
+    "catalog": {
+      "catalogTitle": "Catalog",
+      "products": "Products",
+      "categories": "Categories",
+      "attributes": "Attributes",
+      "coupons": "Coupons"
+    },
+    "customers": "Customers",
+    "orders": "Orders",
+    "ourStaff": "Our staff",
+    "settings": "Settings",
+    "international": {
+      "internationalTitle": "International",
+      "languages": "Languages",
+      "currencies": "Currencies"
+    },
+    "onlineStore": {
+      "onlineStoreTitle": "Online store",
+      "viewStore": "View store",
+      "storeCustomizationPageTitle": "Store customizations",
+      "storeSettings": "Store settings",
+      "deliveryPoints": "Delivery points"
+    }
+  },
+
+  "dashboardScreen": {
+    "title": "Dashboard Overview",
+    "titleOrders": "Recent Order",
+
+    "cards": {
+      "method": {
+        "cash": "Cash",
+        "card": "Card",
+        "credit": "Credit"
+      },
+
+      "todayOrders": "Today Orders",
+      "yesterdayOrders": "Yesterday Orders",
+      "thisMonth": "This month",
+      "lastMonth": "Last month",
+      "totalSales": "Total sales",
+      "totalOrders": "Total Orders",
+      "ordersPending": "Orders Pending",
+      "ordersProcessing": "Orders Processing",
+      "ordersDelivered": "Orders Delivered"
+    },
+
+    "graphics": {
+      "weeklySales": "Weekly Sales",
+      "sales": "Sales",
+      "orders": "Orders",
+      "bestSellingProducts": "Best Selling Products"
+    }
+  },
+
+  "productsScreen": {
+    "productsPage": "Products",
+    "title": "Product",
+    "bulkActionsBtn": "Bulk Actions",
+    "addProduct": "Add Product",
+    "search": "Search Product",
+    "category": "Category",
+    "filterBtn": "Filter",
+    "resetBtn": "Reset",
+
+    "selectPrice": {
+      "title": "Price",
+      "lowtoHigh": "Low to High",
+      "hightoLow": "High to Low",
+      "published": "Published",
+      "unpublished": "Unpublished",
+      "statusSelling": "Status Selling",
+      "statusStock": "Status Stock",
+      "dateAddedAsc": "Date Added Asc",
+      "dateAddedDesc": "Date Added Desc",
+      "dateUpdatedAsc": "Date Updated Asc",
+      "dateUpdatedDesc": "Date Updated Desc"
+    },
+    "table": {
+      "productNameTbl": "PRODUCT NAME",
+      "categoryTbl": "CATEGORY",
+      "priceTbl": "PRICE",
+      "salePriceTbl": "SALE PRICE",
+      "stockTbl": "STOCK",
+      "addQuantity": "ADD QUANTITY",
+      "statusTbl": "STATUS",
+      "detailsTbl": "VIEW",
+      "publishedTbl": "PUBLISHED",
+      "actionsTbl": "ACTIONS"
+    },
+
+    "drawer": {
+      "titleUpdate": "Update Products",
+      "descriptionUpdate": "Update products info, combinations and extras.",
+      "titleAdd": "Add Product",
+      "descriptionAdd": "Add your product and necessary information from here",
+      "basicInfo": "Basic Info",
+      "combination": "Combination",
+      "productTitleName": "Product Title/Name",
+      "productDescription": "Product Description",
+      "productImage": "Product Image",
+      "productSKU": "Product SKU",
+      "productBarcode": "Product Barcode",
+      "category": "Category",
+      "selectCategory": "Select Category",
+      "defaultCategory": "Default Category",
+      "productPrice": "Product Price",
+      "salePrice": "Sale Price",
+      "productQuantity": "Product Quantity",
+      "productSlug": "Product Slug",
+      "productTag": "Product Tags",
+      "thisProductHaveVariants": "Does this product have variants?",
+      "yes": "Yes",
+      "no": "No",
+      "productTagPlaseholder": "Product Tag (Write then press enter to add new tag )",
+      "validationTitle": "Title is required!",
+      "validationSlug": "Slug is required",
+      "validationMinumum": "Minimum value 1!",
+      "validationPrice": "Original Price is required!",
+      "validationMin": "Minimumm valueee 0!",
+      "quantityValidation": "Quantity is required!",
+      "originalPrice": "Original Price",
+      "clearVariants": "Clear Variants",
+      "generateVariants": "Generate Variants",
+      "selling": "Selling",
+      "soldOut": "Sold Out",
+      "notification": "Sale Price must be less then or equal of product price!",
+      "variantNotification": "Please select a variant first!",
+      "imageNotification": "Image Uploaded successfully!",
+
+      "titleAddQuantity": "Inventory control",
+      "titleDescriptionQuantity": "You can add or remove quantity of product",
+      "inbound": "Inbound:",
+      "outbound": "Outbound:",
+      "stockTotal": "Stock Total:",
+      "labelQuantity": "Quantity",
+      "inputQuantity": "Add quantity",
+      "buttonQuantity": "Add",
+      "buttonremove": "Remove",
+      "labelRemove": "REMOVE PRODUCT",
+      "titleTable": "stock entries",
+
+      "table": {
+        "id": "Id",
+        "productName": "Product name",
+        "category": "Category",
+        "date": "Date",
+        "type": "Type",
+        "thereAreNoProducts": "There are no products",
+        "quantity": "Quantity"
+      }
+    },
+
+    "message": {
+      "saveNotification": "Please save product before adding combinations!",
+      "categoryNotification": "Default Category is required!",
+      "addNotification": "Product Added Successfully!",
+      "statusHide": "Product hide Successfully!",
+      "statusShow": "Product show Successfully!",
+      "delete": "Product Deleted Successfully!",
+      "update": "Product updated successfully!",
+      "updateError": "Product Not Found!"
+    },
+
+    "productDetails": {
+      "title": "Product Details",
+      "status": "Status",
+      "productShowing": "This product Showing",
+      "sku": "SKU",
+      "inStock": "In Stock",
+      "quantity": "QUANTITY",
+      "category": "Category",
+      "editProduct": "Edit Product",
+      "productVariantList": "Product Variant List",
+
+      "table": {
+        "sr": "SR",
+        "image": "IMAGEN",
+        "combination": "COMBINATION",
+        "sku": "Sku",
+        "barcode": "BARCODE",
+        "orginalPrice": "ORGINAL PRICE",
+        "salePrice": "SALE PRICE",
+        "quantity": "QUANTITY",
+        "question": "Are you sure to remove combination from this product!",
+        "description": "(It will be delete all your combination and extras)",
+        "action": "ACTION",
+        "delete": "Are you sure to delete this combination!",
+        "deleteConfirmNote": "(If Okay, It will be delete this combination)"
+      }
+    }
+  },
+
+  "categoriesScreen": {
+    "title": "Category",
+    "addCategory": "Add Category",
+    "searchCategory": "Search by Category name",
+    "parentsOnly": "Parent only",
+    "all": " All",
+    "linkCategories": "Categories",
+
+    "table": {
+      "catId": "ID",
+      "catIcon": "ICON",
+      "catName": "NAME",
+      "catDescription": "DESCRIPTION",
+      "catPublished": "PUBLISHED",
+      "catActions": "ACTIONS"
+    },
+
+    "categoryDrawer": {
+      "titleUpdate": "Update Category",
+      "descriptionUpdate": "Updated your Product category and necessary information from here",
+      "titleAdd": "Add Category",
+      "descriptionAdd": "Add your Product category and necessary information from here",
+      "labelName": "Name",
+      "inputName": "Category title",
+      "labelDescription": "Description",
+      "inputDescription": "Category Description",
+      "labelParentCategory": "Parent Category",
+      "labelCategoryIcon": "Category Image",
+      "dragYourImage": "Drag your images here",
+      "imageFormat": "(Only *.jpeg, *.webp and *.png images will be accepted)",
+      "labelPublished": "Published",
+      "validationName": "Category title",
+      "validationNameRequired": "{{field}} is required!"
+    },
+
+    "message": {
+      "published": "Category Published Successfully!",
+      "unpublished": "Category Unpublished Successfully!",
+      "updated": "Category updated successfully!",
+      "added": "Category added successfully!",
+      "delete": "Category Deleted Successfully!"
+    }
+  },
+
+  "attributesScreen": {
+    "label": "Attributes",
+    "addBtn": "Add Attribute",
+    "searchPh": "Search by attribute name",
+    "editValues": "Edit Values",
+    "labelValues": "Attribute Value(s)",
+
+    "table": {
+      "id": "ID",
+      "name": "NAME",
+      "displayName": "DISPLAY NAME",
+      "option": "OPTION",
+      "published": "PUBLISHED",
+      "values": "VALUES",
+      "action": "ACTION",
+      "type": "TYPE",
+      "status": "STATUS"
+    },
+
+    "drawer": {
+      "options": "Options",
+      "required": "Option is required!",
+      "select": "Select Type",
+      "dropDown": "Dropdown",
+      "radio": "Radio",
+      "addValue": "Add Attribute Value",
+      "addUpdateValue": "Add/Update Attribute Value",
+      "addValueDescription": "Add your attribute values and necessary information from here",
+      "addTitleLbl": "Attribute Title",
+      "addTitlePh": "Color or Size or Dimension or Material or Fabric",
+      "displayName": "Display Name",
+      "variants": "Variants",
+      "variantsPh": "Press enter to add variant",
+      "singularBtn": "Attribute",
+      "changeGroupLbl": "Change Attribute Group",
+      "selectGroup": "Select Attribute Group"
+    },
+
+    "editionValues": {
+      "label": "Attributes value",
+      "add": "Add Value"
+    },
+
+    "message": {
+      "published": "Attribute published successfully!",
+      "unpublished": "Attribute unpublished successfully!",
+      "updated": "Attribute updated successfully!",
+      "added": "Attribute added successfully!",
+      "delete": "Attribute deleted successfully!",
+      "pluralDelete": "Attributes deleted successfully!"
+    }
+  },
+
+  "couponsScreen": {
+    "title": "Coupons",
+    "addCoupon": "Add Coupon",
+    "searchCoupon": "Search by coupon code / name",
+
+    "table": {
+      "campaignName": "COUPON NAME",
+      "code": "CODE",
+      "discount": "DISCOUNT",
+      "published": "PUBLISHED",
+      "startDate": "START DATE",
+      "endDate": "END DATE",
+      "status": "STATUS",
+      "actions": "ACTIONS",
+      "expired": "Expired",
+      "active": "Active"
+    },
+
+    "couponDrawer": {
+      "titleUpdate": "Update Coupon",
+      "descriptionUpdate": "Updated your coupon and necessary information from here",
+      "titleAdd": "Add Coupon",
+      "descriptionAdd": "Add your coupon and necessary information from here",
+      "couponBannerImage": "Coupon Banner Image",
+      "campaignName": "Coupon name",
+      "campaignCode": "Coupon Code",
+      "couponValidityTime": "Coupon Validity Time",
+      "discountType": "Discount Type",
+      "fixed": " Fixed",
+      "percentage": "Percentage",
+      "couponDiscount": "Discount",
+      "inputFixed": "Fixed amount",
+      "inputPercentaje": "Percentaje amount",
+      "minimumAmount": "Minimum Amount",
+      "inputMinimumAmount": "Minimum amount required",
+      "labelPublished": "Published",
+      "labelStart": "Start Time",
+      "validationStart": "Coupon Validation Start Time",
+      "labelEnd": "End Time",
+      "validationEnd": "Coupon Validation End Time",
+      "validationDiscount": "Discount"
+    },
+
+    "message": {
+      "published": "Coupon published successfully!",
+      "unpublished": "Coupon unpublished successfully!",
+      "updated": "Coupon Updated Successfully!",
+      "added": "Coupon Added Successfully!",
+      "delete": "Coupon Deleted Successfully!"
+    }
+  },
+
+  "customerScreen": {
+    "title": "Customers",
+    "singularTitle": "Customer",
+    "customersPageSearchPlaceholder": "Search by name/email/phone",
+    "filter": "Filter",
+    "reset": "Reset",
+    "customerDescription": "Sorry, There are no customers right now.",
+
+    "drawer": {
+      "title": "Update Customer",
+      "description": "Update your Customer necessary information from here",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address"
+    },
+
+    "table": {
+      "id": "ID",
+      "joiningDate": "JOINING DATE",
+      "name": "NAME",
+      "email": "EMAIL",
+      "phone": "PHONE",
+      "actions": "ACTIONS"
+    },
+
+    "viewOrder": {
+      "view": "View Order",
+      "noOrder": "Don't Order",
+      "label": "Order List",
+
+      "table": {
+        "orderId": "ORDER ID",
+        "time": "TIME",
+        "shippingAdress": "SHIPPING ADRESS",
+        "phone": "PHONE",
+        "method": "METHOD",
+        "amount": "AMOUNT",
+        "status": "STATUS",
+        "action": "ACTION"
+      }
+    },
+
+    "message": {
+      "updated": "Customer updated successfully!",
+      "delete": "Customer deleted successfully!"
+    }
+  },
+
+  "ordersScreen": {
+    "title": "Orders",
+    "searchByCustomerName": "Search by Customer Name",
+    "downloadOrdersBtn": "Download All Orders",
+    "notFound": "Sorry, we can not find this",
+    "sorryCategoryNotFound": "Sorry, There are no categories right now.",
+
+    "status": {
+      "label": "Status",
+      "orderDelivered": "Delivered",
+      "orderPending": "Pending",
+      "orderProcessing": "Processing",
+      "orderCancel": "Cancel"
+    },
+
+    "orderLimits": {
+      "label": "Order limits",
+      "daysLim5": "Last 5 days orders",
+      "daysLim7": "Last 7 days orders",
+      "daysLim15": "Last 15 days orders",
+      "daysLim30": "Last 30 days orders"
+    },
+
+    "method": {
+      "label": "Method",
+      "cash": "Cash",
+      "card": "Card",
+      "credit": "Credit"
+    },
+
+    "filters": {
+      "startDate": "Start Date",
+      "endDate": "End Date"
+    },
+
+    "table": {
+      "invoiceNoTbl": "INVOICE ",
+      "timeTbl": "ORDER TIME",
+      "customerNameTbl": "CUSTOMER NAME",
+      "methodTbl": "METHOD",
+      "amountTbl": "AMOUNT",
+      "oderStatusTbl": "STATUS",
+      "actionTbl": "ACTION",
+      "invoiceTbl": "INVOICE",
+      "viewInvoice": "View Invoice",
+      "printReceipt": "Print Receipt"
+    },
+
+    "invoice": {
+      "title": "Invoice",
+      "status": "Status",
+      "date": "DATE",
+      "invoiceNo": "INVOICE NUMBER",
+      "invoiceTo": "INVOICE TO",
+      "serieNo": "SERIAL NUMBER",
+      "articulos": "ITEMS",
+      "quantity": "QUANTITY",
+      "itemPrice": "ITEM PRICE",
+      "amount": "AMOUNT",
+      "paymentMethod": "PAYMENT METHOD",
+      "shippingCost": "SHIPPING COST",
+      "discount": "DISCOUNT",
+      "totalAmount": "TOTAL AMOUNT",
+      "download": "Download Invoice",
+      "print": "Print Invoice"
+    },
+
+    "message": {
+      "updated": "Order Updated Successfully!"
+    }
+  },
+
+  "staffScreen": {
+    "title": "All Staff",
+    "searchBy": "Search by name/email/phone",
+    "addStaffBtn": "Add Staff",
+    "staffDescription": "Sorry, There are no staff right now.",
+
+    "selectRole": {
+      "title": "Staff Role",
+      "admin": "Admin",
+      "ceo": "CEO",
+      "cashiers": "Cashier",
+      "superAdmin": "Super Admin"
+    },
+
+    "table": {
+      "name": "Name",
+      "email": "Email",
+      "contact": "Contact",
+      "joiningDate": "Joining Date",
+      "role": "Role",
+      "orderStatus": "Status",
+      "published": "PUBLISHED",
+      "actions": "ACTIONS"
+    },
+
+    "status": {
+      "inactive": "Inactive",
+      "active": "active"
+    },
+
+    "drawer": {
+      "titleUpdate": "Update Staff",
+      "descriptionUpdate": "Updated your staff necessary information from here",
+      "titleAdd": "Add Staff",
+      "descriptionAdd": "Add your staff necessary information from here",
+      "labelStaffImage": "Staff Image",
+      "labelName": "Name",
+      "inputName": "Staff Name",
+      "labelEmail": "Email",
+      "inputEmail": "Staff Email",
+      "labelPassword": "Password",
+      "inputPassword": "Staff Password",
+      "labelContact": "Contact Number",
+      "inputContact": "Phone number",
+      "labelJoiningDate": "Joining Date",
+      "labelRole": "Staff Role",
+      "labelSelectAccess": "Select Routes to given Access",
+
+      "selectAccess": {
+        "dashboard": "Dashboard",
+        "products": "Products",
+        "categories": "Categories",
+        "attributes": "Attributes",
+        "coupons": "Coupons",
+        "customers": "Customers",
+        "orders": "Orders",
+        "ourStaff": "Staff",
+        "settings": "Settings",
+        "languages": "Languages",
+        "currencies": "Currencies",
+        "store": "View Store",
+        "customization": "Store Customization",
+        "storeSettings": "Store Settings",
+        "product": "Product Details",
+        "order": "Order Invoice",
+        "editProfile": "Edit Profile",
+        "customerOrder": "Customer Order",
+        "notifications": "Notification",
+        "comingSoon": "Coming Soon"
+      }
+    },
+
+    "accesslistModal": {
+      "text": "List of route access for",
+      "message": "This staff not have any route access!"
+    },
+
+    "message": {
+      "updated": "Staff Updated Successfully!",
+      "added": "Staff Added Successfully!",
+      "delete": "Staff Deleted Successfully!",
+      "emailExists": "This Email already Added!",
+      "active": "Staff Active Successfully!",
+      "inactive": "Staff Inactive Successfully!"
+    }
+  },
+
+  "settingScreen": {
+    "setting": "Settings",
+    "numberOfImagesPerProduct": "Number of images per product",
+    "allowAutoTranslation": "Allow Auto Translation",
+    "yesSwitchToggle": "Yes",
+    "translationSecretKey": "Translation Secret Key",
+    "descriptionKey": "You can create key from",
+    "here": "Here",
+    "defaultLanguage": "Default language",
+    "defaultCurrency": "Default currency",
+    "timeZone": "Default time zone",
+    "defaultDateFormat": "Default Date Format",
+    "ssMDY": "MM/DD/YYYY",
+    "ssDMY": "DD/MM/YYYY",
+    "ssYMD": "YYYY/MM/DD",
+    "receiptSize": "Receipt size (width)",
+    "emailOptionInvoice": "Enable Invoice Send to Customer by email",
+    "fromEmail": "From Email",
+    "phFromEmail": "Enter from email on custom invoice",
+    "shopName": "Shop name",
+    "invoiceCompanyName": "Company Name",
+    "vatNumber": "VAT number",
+    "addressLine": "Address",
+    "postCode": "Post Code",
+    "globalContactNumber": "Contact",
+    "phGlobalContactNumber": "Contact Number",
+    "footerEmail": "Email",
+    "webSite": "Web site"
+  },
+
+  "roleScreen": {
+    "sidebarLabel": "Role Settings",
+    "label": "ROLE SETTINGS",
+    "addBtn": "Add",
+
+    "table": {
+      "name": "NAME",
+      "permissions": "PERMISSIONS",
+      "actions": "ACTIONS"
+    },
+
+    "drawer": {
+      "titleAdd": "Add Role",
+      "descriptionAdd": "Configure permissions from here",
+      "labelName": "Name",
+      "inputName": "Role Name",
+      "labelPermission": "Select Permissions",
+      "titleBtn": "Role"
+    },
+
+    "message": {
+      "update": "Role updated successfully!",
+      "add": "Role added successfully!",
+      "delete": "Role deleted successfully!"
+    }
+  },
+
+  "languagesScreen": {
+    "title": "Languages",
+
+    "table": {
+      "searchLanguage": "Search by country name and iso code, language code",
+      "addLanguage": "Add language",
+      "languagesSr": "SR",
+      "languagesNname": "NAME",
+      "languagesIsoCode": "ISO CODE",
+      "languageCode": "LANGUAGE CODE",
+      "languagesFlag": "FLAG",
+      "languagesPublished": "PUBLISHED",
+      "languagesActions": "ACTIONS"
+    },
+
+    "drawer": {
+      "addLanguage": "Add Language",
+      "languageText": "Add your Language necessary information from here",
+      "languageName": "Language Name",
+      "isoCode": "Iso Code",
+      "flag": "Flag",
+      "published": "Published",
+      "languageBtn": "Language",
+      "defaultIsoCode": "Default Iso Code"
+    },
+    "message": {
+      "published": "Language Published Successfully",
+      "unPublished": "Language Un-Published Successfully",
+      "addNotification": "Language added successfully!",
+      "deleteNotification": "Delete language successfully!"
+    }
+  },
+
+  "currenciesScreen": {
+    "title": "Currencies",
+    "addCurrency": "Add Currency",
+    "searchIsoCode": "Search by iso code",
+    "table": {
+      "nameTbl": "NAME",
+      "symbolTbl": "SYMBOL",
+      "enabledTbl": "ENABLED",
+      "actionsTbl": "ACTIONS"
+    },
+    "drawer": {
+      "updateCurrency": "Update Currency",
+      "currencyText": "Updated your currency and necessary information from here",
+      "name": "Name",
+      "symbol": "Symbol",
+      "enabled": "Enabled",
+      "currency": "Currency",
+      "addCurrency": "Add Currency",
+      "descriptionCurrency": "Add your Currency and necessary information from here"
+    },
+    "message": {
+      "published": "Currency Published Successfully!",
+      "unpublished": "Currency Un-Published Successfully!",
+      "updateCurrency": "Currency update successfully!",
+      "deleteCurrency": "Delete currency successfully!"
+    }
+  },
+
+  "storeCustomizationScreen": {
+    "title": "Store customizations",
+
+    "tabsSettings": {
+      "home": "Home Page",
+      "product": "Product Slug Page",
+      "aboutUs": "About Us",
+      "privacyTC": "Privacy Policy and T&C",
+      "faq": "FAQs",
+      "offers": "Offers",
+      "contactUs": "Contact Us",
+      "checkOut": "Checkout",
+      "dashboard": "Dashboard Setting",
+      "seo": "Seo Settings"
+    },
+
+    "homePage": {
+      "header": {
+        "title": "Header",
+
+        "contact": {
+          "title": "Header Contacts",
+          "labelHeaderText": "Header Text",
+          "inputWeAreAvailable": "We are available 24/7, Need help?",
+          "labelPhoneNumber": "Phone Number",
+          "labelHeaderLogo": "Header Logo"
+        },
+
+        "menuEditor": {
+          "title": "Menu Editor",
+          "labelCategories": "Categories",
+          "inputCategories": "Categories",
+          "labelAboutUs": "About Us",
+          "inputAboutUs": "About Us",
+          "labelContactUs": "Contact Us",
+          "inputContactUs": "Contact Us",
+          "labelOffers": "Offers",
+          "inputOffers": "Offers",
+          "labelFAQ": "FAQ",
+          "inputFAQ": "FAQ",
+          "labelPrivacyPolicy": "Privacy Policy",
+          "inputPrivacyPolicy": "Privacy Policy",
+          "labelTermsConditions": "Terms & Conditions",
+          "inputTermsConditions": "Terms & Conditions",
+          "labelPages": "Pages",
+          "inputPages": "Pages",
+          "labelMyAccount": "My Account",
+          "inputMyAccount": "My Account",
+          "labelLogin": "Login",
+          "inputLogin": "Login",
+          "labelLogout": "Logout",
+          "inputLogout": "Logout",
+          "labelCheckout": "Checkout",
+          "inputCheckout": "Checkout"
+        }
+      },
+
+      "mainSlider": {
+        "title": "Main Slider",
+
+        "tabs": {
+          "title": "Slider",
+          "labelImages": "Slider Images",
+          "labelTitle": "Slider Title",
+          "inputTitle": "Slider Title",
+          "labelDescription": "Slider Description",
+          "inputDescription": "Slider Description",
+          "labelButtonName": "Slider Button Name",
+          "inputButtonName": "Slider Button Name",
+          "labelButtonLink": "Slider Button Link",
+          "inputButtonLink": "Slider Button Link",
+          "titleOptions": "Options",
+          "leftRighArrows": "Left and Right Arrows",
+          "bottomDots": "Bottom Dots",
+          "both": "Both"
+        }
+      },
+
+      "discountCouponCodeBox": {
+        "title": "Discount Coupon Code Box",
+        "labelShowHide": "Show / Hide",
+        "labelTitle": "Home Page Discount Title",
+        "inputTitle": "Home Page Discount Title",
+        "labelCouponCode": "Super Discount Active Coupon Code",
+        "labelSliderFullWidth": "Slider Full Width",
+        "labelPlaceHolderImage": "Place Holder Image",
+        "textImagesResolution": "Images resolution 500X400px"
+      },
+
+      "promotionBanner": {
+        "title": "Promotion Banner",
+        "inputDescription": "Promotion Description"
+      },
+
+      "featuredCategories": {
+        "title": "Featured Categories",
+        "labelFeaturedCategories": "Featured Categories",
+        "inputFeaturedCategories": "Add Featured Categories"
+      },
+
+      "popularProducts": {
+        "title": "Popular Products",
+        "inputPopularDescription": "Popular Description"
+      },
+
+      "quickDeliverySection": {
+        "title": "Quick Delivery Section",
+        "labelsubTitle": "Sub Title",
+        "inputsubTitle": "Add Sub Title",
+        "labelImage": "Image"
+      },
+
+      "latestDiscountedProducts": {
+        "title": "Latest Discounted Products",
+        "inputDescription": "Latest Discount Description"
+      },
+
+      "getYourDailyNeeds": {
+        "title": "Get Your Daily Needs",
+        "labelImageLeft": "Image Left",
+        "labelImageRight": "Image Right",
+        "labelButton1image": "Button 1 Image",
+        "labelButton1Link": "Button 1 Link",
+        "labelButton2image": "Button 2 Image",
+        "labelButton2Link": "Button 2 Link"
+      },
+
+      "featurePromoSection": {
+        "title": "Feature Promo Section",
+        "labelFreeShipping": "Free Shipping",
+        "inputFreeShipping": "From $500.00",
+        "labelSupport": "Support",
+        "inputSupport": "24/7 At Anytime",
+        "labelSecurePayment": "Secure Payment",
+        "inputSecurePayment": "Add Secure Payment",
+        "labelLatestOffer": "Latest Offer",
+        "inputLatestOffer": "Upto 20% Off"
+      },
+
+      "footer": {
+        "title": "Footer",
+        "labelLogo": "Footer Logo",
+        "labelAddress": "Address",
+        "inputAddress": "Add Address",
+        "labelPhone": "Phone",
+        "inputPhone": "AddPhone",
+        "labelEmail": "Email",
+        "inputEmail": "Add Email",
+        "titleSocialLinks": "Social Links",
+        "titlePaymentMethod": "Payment Method",
+        "labelImagePaymentMethod": "Image Payment Method",
+        "titleBottomContact": "Footer Bottom Contact Number",
+        "labelBottomContact": "Contact Number",
+        "inputBottomContact": "Add contact number"
+      }
+    },
+
+    "productSlugPage": {
+      "rightBox": {
+        "title": "Right Box",
+        "inputDescription": "Add description"
+      }
+    },
+
+    "aboutUs": {
+      "title": "About Us",
+
+      "pageHeader": {
+        "title": "Page Header",
+        "enableThisBlock": "Enable This Block",
+        "pageHeaderBg": "Page Header Background",
+        "pageTitle": "Page Title"
+      },
+
+      "aboutPage": {
+        "topContentLeft": "About Page Top Content Left",
+        "topTitle": "Top Title",
+        "topDescription": "Top Description",
+        "boxOneTitle": "Box One Title",
+        "boxOneSubtitle": "Box One Subtitle",
+        "boxOneDescription": "Box One Description",
+        "boxTwoTitle": "Box Two Title",
+        "boxTwoSubtitle": "Box Two Subtitle",
+        "boxTwoDescription": "Box Two Description"
+      },
+
+      "pageTop": {
+        "topContentRight": "Page Top Content Right",
+        "contentRightImage": "Top Content Right Image"
+      },
+
+      "contentSection": {
+        "title": "Content Section",
+        "descriptionOne": "First Paragraph",
+        "descriptionTwo": "Second Paragraph",
+        "image": "Content Image"
+      },
+      "ourTeam": {
+        "title": "Our Team",
+        "foundertitle": "Our Team Title",
+        "description": "Our Team Description",
+        "member": "Member",
+        "image": "Our Team One Image",
+        "oneTitle": "Our Team One Title",
+        "oneSubTitle": "Our Team One Sub Title",
+        "twoImage": "Our Team Two Image",
+        "twoTitle": "Our Team Two Title",
+        "twoSubTitle": "Our Team Two Sub Title",
+        "threeImage": "Our Team Three Image",
+        "threeTitle": "Our Team Three Title",
+        "threeSubTitle": "Our Team Three Sub Title",
+        "fourImage": "Our Team Four Image",
+        "fourTitle": "Our Team Four Title",
+        "fourSubTitle": "Our Team Four Sub Title",
+        "fiveImage": "Our Team Five Image",
+        "fiveTitle": "Our Team Five Title",
+        "fiveSubTitle": "Our Team Five Sub Title",
+        "sixImage": "Our Team Six Image",
+        "sixTitle": "Our Team Six Title",
+        "sixSubTitle": "Our Team Six Sub Title"
+      }
+    },
+
+    "privacyPolicy": {
+      "title": "Privacy Policy and T&C",
+
+      "privacy": {
+        "subTitle": "Privacy Policy",
+        "pageText": "Page Text"
+      },
+      "termsConditions": {
+        "title": "Terms & Conditions"
+      }
+    },
+
+    "faQs": {
+      "title": "FAQs Setting",
+
+      "subTitle": {
+        "titleFaQs": "FAQs Page Header"
+      },
+      "LeftColumn": {
+        "faqLeftCol": "FAQs Left Column",
+        "leftImage": "Left Image",
+        "faqTitleOne": "Faq Title One",
+        "title": "FAQ Title",
+        "faqDescriptionOne": "Faq Description One",
+        "faqTitleTwo": "Faq Title Two",
+        "faqDescriptionTwo": "Faq Description Two",
+        "faqTitleThree": "Faq Title Three",
+        "faqDescriptionThree": "Faq Description Three",
+        "faqTitleFour": "Faq Title Four",
+        "faqDescriptionFour": "Faq Description Four",
+        "faqTitleFive": "Faq Title Five",
+        "faqDescriptionFive": "Faq Description Five",
+        "faqTitleSix": "Faq Title Six",
+        "faqDescriptionSix": "Faq Description Six",
+        "faqTitleSeven": "Faq Title Seven",
+        "faqDescriptionSeven": "Faq Description Seven",
+        "faqTitleEight": "Faq Title Eight",
+        "faqDescriptionEight": "Faq Description Eight"
+      }
+    },
+
+    "offers": {
+      "title": "Offers",
+      "subTitle": "Page Header",
+      "superDiscount": "Super Discount Active Coupon Code"
+    },
+
+    "contactUs": {
+      "title": "Contact Us",
+      "pageHeader": {
+        "title": "Page Header",
+        "labelBackground": "Page Header Background",
+        "labelPageTitle": "Page Title",
+        "inputPageTitle": "Add Page Title"
+      },
+
+      "emailUsBox": {
+        "title": "Email Us Box",
+        "labelEmail": "Email",
+        "inputEmail": "Add Email",
+        "labelText": "Text",
+        "inputText": "Add Text"
+      },
+
+      "callUsBox": {
+        "title": "Call Us Box",
+        "labelPhone": "Phone",
+        "inputPhone": "Add Phone +591 33344455",
+        "labelText": "Text",
+        "inputText": "Add Text"
+      },
+
+      "addressBox": {
+        "title": "Address Box",
+        "labelAddressOne": "Address",
+        "inputAddressOne": "Add Address"
+      },
+
+      "middleLeftColum": {
+        "title": "Middle Left Colum",
+        "labelImage": "Middle Left Image"
+      },
+
+      "contactForm": {
+        "title": "Contact Form",
+        "labelTitle": "Contact Form Title",
+        "inputTitle": "Add Contact Form Title",
+        "labelDescription": "Contact Form Description",
+        "inputDescription": "Add Contact Form Description"
+      }
+    },
+
+    "checkOut": {
+      "title": "Checkout",
+      "personalDetails": {
+        "titleInfo": "Personal Details",
+        "inputInfo": "Add Personal Details",
+        "labelFirstName": "First Name",
+        "inputFirstName": "Add First Name",
+        "labelMiddleName": "Middle Name",
+        "inputMiddleName": "Add Middle Name",
+        "labelLastName": "Last Name",
+        "inputLastName": "Add Last Name",
+        "labelEmailAddress": "Email Address",
+        "inputEmailAddress": "Add Email Address",
+        "labelPhone": "Phone",
+        "inputPhone": "Add Phone Number"
+      },
+
+      "shippingDetails": {
+        "titleInfo": "Shipping Details",
+        "inputInfo": "Add Shipping Details",
+        "labelStreetAddress": "Street Address",
+        "inputStreetAddress": "Add Street Address",
+        "labelCity": "City",
+        "inputCity": "Add City",
+        "labelCountry": "Country",
+        "inputCountry": "Add Country",
+        "labelZipCode": "Zip / Postal",
+        "inputZipCode": "Add Zip / Postal",
+        "labelCost": "Shipping Cost",
+        "inputCost": "Add Shipping Cost",
+        "labelNameOne": "Shipping One Name",
+        "inputNameOne": "Add Shipping One Name",
+        "labelOneDescription": "Shipping One Description",
+        "inputOneDescription": "Add Shipping One Description",
+        "labelOneCost": "Shipping One Cost",
+        "inputOneCost": "Add Shipping One Cost",
+        "labelNameTwo": "Shipping Two Name",
+        "inputNameTwo": "Add Shipping Two Name",
+        "labelTwoDescription": "Shipping Two Description",
+        "inputTwoDescription": "Add Shipping Two Description",
+        "labelTwoCost": "Shipping Two Cost",
+        "inputTwoCost": "Add Shipping Two Cost",
+        "labelpaymentMethod": "Payment method",
+        "inputpaymentMethod": "Add Payment method",
+        "labelContinueButton": "Continue Button",
+        "inputContinueButton": "Add Continue Button",
+        "labelConfirmButton": "Confirm Button",
+        "inputConfirmButton": "Add Confirm Button"
+      },
+
+      "cartItemSection": {
+        "title": "Cart Item Section",
+        "labelOrderSummary": "Order Summary",
+        "inputOrderSummary": "Add Order Summary",
+        "labelApplyButton": "Apply Button",
+        "inputApplyButton": "Add Apply Button",
+        "labelSubtotal": "Sub Total",
+        "inputSubtotal": "Add Sub Total",
+        "labelDiscountLower": "Discount",
+        "inputDiscountLower": "Add Discount",
+        "labelTotalCost": "Total Cost",
+        "inputTotalCost": "Add Total Cost"
+      }
+    },
+
+    "dashboardSetting": {
+      "title": "Dashboard Setting",
+
+      "subTitle": {
+        "dashboard": "Dashboard",
+        "invoiceMessage1st": "Invoice Message First Part",
+        "invoiceMessage2nd": "Invoice Message Last Part",
+        "printButton": "Print Button",
+        "downloadButton": "Download Button",
+        "totalOrder": "Total Orders",
+        "pendingOrder": "Pending Order",
+        "processingOrder": "Processing Order",
+        "completeOrder": "Complete Order",
+        "recentOrder": "Recent Order",
+        "myOrder": "My Order"
+      },
+
+      "updateProfile": {
+        "title": "Update Profile",
+        "fullName": "Full Name",
+        "userAddress": "Address",
+        "phoneMobile": "Phone/Mobile",
+        "emailAddress": "Email Address",
+        "updateButton": "Update Button",
+        "currentPassword": "Current Password",
+        "newPassword": "New Password",
+        "changePassword": "Change Password"
+      }
+    },
+
+    "soeSetting": {
+      "title": "Seo Settings",
+      "favicon": "Favicon",
+      "metaTitle": "Meta Title",
+      "metaDescription": "Meta Description",
+      "metaUrl": "Meta Url",
+      "metaKeyword": "Meta Keywords",
+      "metaImage": "Meta Image"
+    }
+  },
+
+  "storeSettingScreen": {
+    "title": "Store Setting",
+
+    "table": {
+      "titleDetails": "Store Details",
+      "enableCOD": "Enable Cash On Delivery",
+      "description": "This is enabled by default",
+      "enableQR": "Enable QR Payment",
+      "qrKey": "QR Key",
+      "qrSecret": "QR Secret",
+      "enableStripe": "Enable Stripe",
+      "stripeKey": "Stripe Key",
+      "stripeSecret": "Stripe Secret",
+      "enableRazorPay": "Enable RazorPay",
+      "razorPayId": "RazorPay ID",
+      "razorPaySecret": "RazorPay Secret",
+      "enableGoogleLogin": "Enable Google Login",
+      "googleClientId": "Google Client ID",
+      "googleSecret": "Google Secret Key",
+      "enableGithub": "Enable Github Login",
+      "githubId": "Github ID",
+      "githubSecret": "Github Secret",
+      "enableFacebook": "Enable Facebook Login",
+      "facebookId": "Facebook ID",
+      "facebookSecret": "Facebook Secret",
+      "enableGoggleAnalytics": "Enable Google Analytics",
+      "googleAnalyticKey": "Google Analytic Key",
+      "enableTawkChat": "Enable Tawk Chat",
+      "tawkChatWidgetID": "Tawk Chat Widget ID",
+      "tawkChatPropertyID": "Tawk Chat Property ID",
+      "provinces": "Provinces",
+      "textProvince": "Type a province and press Enter"
+    }
+  },
+
+  "deliveryPointsScreen": {
+    "title": "Delivery Points",
+    "details": "Details of delivery points",
+    "addDeliveryPointsBtn": "Add new delivery points",
+    "select": "Location",
+
+    "table": {
+      "id": "ID",
+      "location": "LOCATION",
+      "place": "PLACE NAME",
+      "street": "STREET NAME",
+      "details": "DETAILS",
+      "shipingCost": "SHIPPING COST",
+      "free": "Free",
+      "actions": "ACTIONS"
+    },
+
+    "deliveryDrawer": {
+      "titleAdd": "Add new delivery points",
+      "titleUpdate": "Delivery point update",
+      "descriptionAdd": "Click on the map and fill the form",
+      "descriptionUpdate": "Update the necessary information about your delivery point",
+      "labelLocation": "Location",
+      "select": "Select a location",
+      "labelStreetName": "Street Name",
+      "inputStreetName": "Street detected by the map",
+      "labelPlaceName": "Place Name",
+      "inputPlaceName": "Main name of the place of delivery",
+      "labelDetails": "Details",
+      "inputDetails": "Additional details of the delivery point",
+      "shippingCost": "Shipping cost",
+      "titleAddDeliveryPointBtn": "Delivery Point"
+    },
+
+    "message": {
+      "notifySuccessAdd": "Delivery point added",
+      "notifySuccessUpdate": "Delivery point updated",
+      "notifyErrorAdd": "Error adding delivery point",
+      "notifyErrorUpdate": "Error updating delivery point",
+      "notifyError": "Error loading delivery point"
+    },
+
+    "form": {
+      "unnamed": "Unnamed place",
+      "direction": "Address not available",
+      "error": "The address could not be obtained"
+    }
+  },
+
   "DashboardOverview": "Dashboard Overview",
   "TodayOrder": "Today Orders",
   "YesterdayOrder": "Yesterday Orders",
   "ThisMonth": "This Month",
   "AllTimeSales": "All-Time Sales",
-  "TotalOrder": "Total Orders",
+
   "OrderPending": "Orders Pending",
   "OrderProcessing": "Orders Processing",
   "OrderDelivered": "Orders Delivered",
   "POSOrders": "POS Orders",
   "OnlineOrders": "Online Orders",
-  "WeeklySales": "Weekly Sales",
-  "BestSellingProducts": "Best Selling Products",
-  "Cash": "Cash",
-  "Card": "Card",
-  "Credit": "Credit",
+
   "ConversionsThisYear": "Conversions This Year",
   "ConversionsThisWeek": "Conversions This Week",
   "FreshVegetable": "Fresh Vegetable",
   "TopRevenueProduct": "Top Revenue Product",
-  "Sales": "Sales",
-  "RecentOrder": "Recent Order",
+
   "OrderTime": "Order Time",
   "DeliveryAddress": "Delivery Address",
-  "Phone": "Phone",
+
   "Orderamount": "Order amount",
-  "Dashboard": "Dashboard",
-  "Setting": "Settings",
-  "Catalog": "Catalog",
-  "Products": "Products",
+
   "SideMenuCategory": "Category",
-  "Attributes": "Attributes",
+
   "Attribute": "Attribute",
-  "Coupons": "Coupons",
-  "OurStaff": "Our Staff",
+
   "Customers": "Customers",
   "International": "International",
   "Localization": "Localization",
   "Locations": "Locations",
   "Taxes": "Taxes",
   "Translations": "Translations",
-  "OnlineStore": "Online Store",
+
   "Shop": "View your Store ",
   "StoreHome": "Shop Home",
   "GlobalSettings": "Global Settings",
   "UseCompositionProduct": "Use Composition Product",
   "CashiersCanOverrideInuseItems": "Cashiers can override Inuse items",
-  "EditProfile": "Edit Profile",
-  "LogOut": "Log Out",
+
   "StockHandlingMethod": "Stock Handling Method",
   "Pages": "Pages",
+
   "ProductsPage": "Products",
-  "Category": "Category",
+
   "Price": "Price",
   "LowtoHigh": "Low to High",
   "HightoLow": "High to Low",
   "AddProduct": "Add Product",
-  "BulkAction": "Bulk Action",
   "DropCSVfile": "Drop CSV file",
   "Upload": "Upload",
   "Download": "Download",
   "SearchProduct": "Search by product name",
-  "Published": "Published",
+
   "Unpublished": "Unpublished",
   "StatusSelling": "Status - Selling",
   "StatusStock": " Status - Out of Stock",
@@ -81,42 +1358,35 @@
   "PublishedTbl": "PUBLISHED",
   "ActionsTbl": "ACTIONS",
   "Off": "Off",
-  "Selling": "Selling",
-  "SoldOut": "Sold Out",
-  "Delete": "Delete",
-  "Edit": "Edit",
+
   "TypeTbl": "Type",
   "SelectedCountries": "Selected Countries",
-  "ThisProductHaveVariants": "Does this product have variants?",
-  "UpdateProduct": "Update Products",
+
   "UpdateProductDescriptionBulk": "Apply changes to the selected products from the list.",
-  "UpdateProductDescription": "Update products info, combinations and extras.",
+
   "DrawerAddProduct": "Add Product",
   "AddProductDescription": "Add your product and necessary information from here",
   "ProductImage": "Product Images",
-  "DragYourImage": "Drag your images here",
-  "imageFormat": "(Only *.jpeg, *.webp and *.png images will be accepted)",
+
   "ProductID": "Product ID",
   "ProductSKU": "Product SKU",
   "ProductBarcode": "Product Barcode",
-  "ProductTitleName": "Product Title/Name",
-  "ProductSlug": "Product Slug",
+
   "ProductDescription": "Product Description",
-  "ParentCategory": "Parent Category",
+
   "ChildCategory": "Child Category",
   "ProductType": "Product Type",
   "Unit": "Unit (kg/pc/lb/ml/g...etc)",
   "ShowingIn": "Showing In",
   "Store": "Store",
-  "ProductQuantity": "Product Quantity",
   "ProductPrice": "Product Price",
-  "SalePrice": "Sale Price",
-  "ProductTag": "Product Tags",
-  "ProductTagPlaseholder": "Product Tag (Write then press enter to add new tag )",
+
   "AddVariantBtn": "Add Variant",
-  "CancelBtn": "Cancel",
-  "UpdateBtn": "Update",
+  "YesSwitchToggle": "Yes",
   "AddBtn": "Add",
+  "MDY": "MM/DD/YYYY",
+  "DMY": "DD/MM/YYYY",
+  "YMD": "YYYY/MM/DD",
   "Selectparentcategory": "Select parent category",
   "Selectchildcategory": "Select child category",
   "ProductPriceWithTax": "Product Price (tax incl.)",
@@ -165,13 +1435,8 @@
   "foot": "foot",
   "inch": "inch",
   "SelectMeasurement": "Select Measurement",
-  "DeleteModalH2": "Are You Sure! Want to Delete",
-  "DeleteModalPtag": "Do you really want to delete these records? You can't view this in your list anymore if you delete!",
-  "modalKeepBtn": "No, Keep It",
-  "modalDeletBtn": "Yes, Delete It",
   "Processing": "Processing",
   "OrderInvoiceDownload": "Order Invoice & Download",
-  "PrintReceipt": "Print Receipt",
   "DoReStockProducts": "Do you want to Re stock the products?",
   "AreSureWantDeleteItem": " Are you sure you want to delete this Item?",
   "YesDeleteIt": "Yes, Delete It",
@@ -179,72 +1444,40 @@
   "CategoryPageTitle": "Category",
   "CategorySearchplaceholder": "Search by category type",
   "AddCategoryBtn": "Add Category",
-  "AddCategory": "Add Category",
-  "CatTbName": "Name",
-  "CatTbDescription": "Description",
-  "SearchCategory": "Search by Category name",
-  "ParentsOnly": "Parents Only",
-  "All": " All",
+
   "Categoryformenu": "Category for menu",
   "SelectCategory": "Select Category",
-  "catIdTbl": "ID",
-  "catIconTbl": "Icon",
+
   "catParentTbl": "PARENT",
   "catChildrenTbl": "CHILDREN",
   "catTypeTbl": "TYPE",
-  "catPublishedTbl": "PUBLISHED",
-  "catActionsTbl": "ACTIONS",
+
   "VALUES": "VALUES",
-  "UpdateCategory": "Update Category",
-  "UpdateCategoryDescription": "Updated your Product category and necessary information from here",
-  "AddCategoryTitle": "Add Category",
-  "AddCategoryDescription": "Add your Product category and necessary information from here",
-  "CategoryIcon": "Category Image",
+
   "ChildCategoryPlaceholder": "Child category  (Write then press enter to add new child category )",
-  "ParentCategoryPlaceholder": "Category title",
+
   "CatName": "Name",
   "CatDescription": "Description",
-  "CouponspageTitle": "Coupon",
+
   "SelectedCoupon": "Selected Coupon",
+
+  "AddCouponsBtn": "Add Coupon",
   "AttributeTitle": "Attributes",
   "SearchAttributePlaceholder": "Search by attribute name",
   "CouponsAddAttributeBtn": "Add Attribute",
-  "AddCouponsBtn": "Add Coupon",
   "CouponBannerImage": "Coupon Banner Image",
-  "SearchCoupon": "Search by coupon code/name",
+
   "CoupTblId": "Id",
-  "CoupTblStartDate": "START DATE",
-  "CoupTblEndDate": "END DATE",
-  "CoupTblCampaignsName": "CAMPAIGN NAME",
-  "CoupTblCode": "CODE",
+
   "CoupTblPercentage": "PERCENTAGE",
   "CoupTblProductType": "PRODUCT TYPE",
-  "CoupTblStatus": "STATUS",
-  "CoupTblActions": "ACTIONS",
-  "UpdateCoupon": "Update Coupon",
-  "UpdateCouponDescription": "Updated your coupon and necessary information from here",
-  "AddCoupon": "Add Coupon",
-  "AddCouponDescription": "Add your coupon and necessary information from here",
-  "CampaignName": " Campaign Name",
-  "CampaignCode": "Campaign Code",
-  "CouponValidityTime": "Coupon Validity Time",
+
   "DiscountPercentage": "Discount Percentage",
-  "MinimumAmount": "Minimum Amount",
-  "MinimumAmountPlasholder": "Minimum amount required",
-  "DiscountType": "Discount Type",
+
   "Values": "Values",
-  "Id": "ID",
-  "AName": "NAME",
-  "ADisplayName": "DISPLAY NAME",
-  "AOption": "OPTION",
-  "APublished": "PUBLISHED",
-  "Avalues": "VALUES",
-  "AAction": "ACTION",
+
   "UpdateAttribute": "Update Attribute Value",
-  "UpdateAttributeDesc": "Updated your attribute values and necessary information from here",
-  "AddAttribute": "Add Attribute Value",
-  "AddAttributeDesc": "Add your attribute values and necessary information from here",
-  "DrawerAttributeTitle": "Attribute Title",
+
   "DisplayName": "Display Name",
   "DrawerOptions": "Options",
   "DrawerSelecttype": "Select type",
@@ -259,65 +1492,27 @@
   "AddExtraDescription": "Add your Extra values and necessary information from here",
   "OrdersPageTitle": "Orders",
   "OrdersSearchPhone": "Search by phone",
-  "OrderStatus": "Status",
-  "PageOrderDelivered": "Delivered",
-  "PageOrderPending": "Pending",
-  "PageOrderProcessing": "Processing",
-  "OrderCancel": "Cancel",
-  "Orderlimits": "Order limits",
-  "DaysOrders5": "Last 5 days orders",
-  "DaysOrders7": "Last 7 days orders",
-  "DaysOrders15": "Last 15 days orders",
-  "DaysOrders30": "Last 30 days orders",
-  "DownloadOrdersBtn": "Download All Orders",
   "ParkOrders": " Park Orders",
   "POSCompleted": "POS Completed",
   "SearchByInvoice": "Search By Invoice",
   "DeleteAllBarOrders": "Delete All Bar Orders",
   "DeleteAllKitchenOrders": " Delete All Kitchen Orders",
-  "StartDate": "Start Date",
-  "EndDate": "End Date",
-  "CustomerOrderList": "Customer Order List",
   "CustomerOrderEmpty": "This Customer have no order Yet!",
-  "CustomerOrderId": "Order ID",
-  "CustomerOrderTime": "Time",
-  "CustomerShippingAddress": "Shipping Address",
-  "CustomerOrderMethod": "Method",
-  "CustomerOrderStatus": "Status",
-  "CustomerOrderAction": "Action",
   "ParkOrdersTitle": "Park Orders",
   "TableName": "Table Name",
   "SearchCustomerTableName": "Search Customer / Table Name",
-  "InvoiceNo": "INVOICE NO",
-  "TimeTbl": "ORDER TIME",
   "ShippingAddressTbl": "SHIPPING ADDRESS",
   "PhoneTbl": "PHONE",
-  "MethodTbl": "METHOD",
-  "AmountTbl": "AMOUNT",
   "UserTbl": "USER",
-  "OderStatusTbl": "STATUS",
-  "ActionTbl": "ACTION",
-  "InvoiceTbl": "INVOICE",
-  "ViewInvoice": "View Invoice",
-  "CustomerName": "Customer Name",
+  "sorryOrderNotFound": "Sorry, There are no orders right now.",
   "OrderNumber": "Order No.",
   "SearchOrderNumberCustomer": "Search by Order number or customer",
-  "InvoicePageTittle": "Invoice",
+  "InvoicePageTitle": "Invoice",
   "Order": "Order",
   "InvoiceStatus": "Status",
-  "InvoiceDate": "DATE",
-  "InvoiceTo": "INVOICE TO",
-  "Sr": "SR.",
+
   "ProductName": "PRODUCT NAME",
-  "Quantity": "QUANTITY",
-  "ItemPrice": "ITEM PRICE",
-  "Amount": "AMOUNT",
-  "InvoicepaymentMethod": "PAYMENT METHOD",
-  "ShippingCost": "SHIPPING COST",
-  "InvoiceDicount": "DISCOUNT",
-  "InvoiceTotalAmount": "TOTAL AMOUNT",
-  "DownloadInvoice": "Download Rechnung  ",
-  "PrintInvoice": "Print Invoice",
+
   "ShippingCostLower": "Shipping Cost",
   "VATTotal": "VAT Total",
   "GrossTotal": "Gross Total",
@@ -327,8 +1522,7 @@
   "ThankYouMsg": "Thank you for your order. Come Again...!",
   "NoofItems": "No of Items",
   "BillNo": "Bill No",
-  "Discount": "DISCOUNT",
-  "DiscountLower": "Discount",
+
   "TotalAmount": "TOTAL AMOUNT",
   "DownloadInvoiceBtn": "Download Invoice",
   "OrderHistory": "Order History",
@@ -362,49 +1556,22 @@
   "SubTotalWithoutVAT": "Sub Total Without VAT",
   "TotalCost": "Total Cost",
   "ThisOrderAlreadyHadReturnitems": "This Order Already had return items!",
-  "StaffPageTitle": "All Staff",
-  "StaffSearchBy": "Search by name/email/phone",
-  "StaffRole": "Staff Role",
-  "StaffRoleAdmin": "Admin",
-  "StaffRoleCeo": "CEO",
-  "SelectCashiers": "Cashier",
-  "SelectSuperAdmin": "Super Admin",
-  "StaffRoleManager": "Manager",
-  "StaffRoleAccountant": "Accountant",
+  "StaffShopStatusTbl": "Shop Status",
   "StaffRoleDriver": "Driver",
   "StaffRoleSecurity": "Security Guard",
   "StaffRoleDelivery": "Delivery Person",
-  "AddStaff": "Add Staff",
-  "StaffIdTbl": "ID",
-  "StaffNameTbl": "Name",
-  "StaffEmailTbl": "Email",
-  "StaffContactTbl": "Contact",
-  "StaffJoiningDateTbl": "Joining Date",
-  "StaffRoleTbl": "Role",
-  "StaffShopStatusTbl": "Shop Status",
+  "StaffRoleAccountant": "Accountant",
+  "StaffRoleManager": "Manager",
   "StaffPosStatusTbl": "POS Status",
-  "StaffActionsTbl": "ACTIONS",
-  "UpdateStaff": "Update Staff",
-  "UpdateStaffdescription": "Updated your staff necessary information from here",
-  "AddStaffTitle": "Add Staff",
-  "AddStaffdescription": "Add your staff necessary information from here",
+
   "StaffImage": "Staff Image",
   "StaffName": "Name",
   "StaffNamePlaceholder": "Staff Name",
   "StaffEmail": "Email",
   "StaffPassword": "Password",
   "StaffContactNumber": "Contact Number",
-  "StaffJoiningDate": "Joining Date",
   "DrawerStaffRole": "Staff Role",
   "sorryProductNotFound": "Sorry, There are no products right now.",
-  "CustomersPage": "Customers",
-  "CustomersPageSearchPlaceholder": "Search by name/email/phone",
-  "CustomersId": "Id",
-  "CustomersJoiningDate": "Joining Date",
-  "CustomersName": "Name",
-  "CustomersEmail": "Email",
-  "CustomersPhone": "Phone",
-  "CustomersActions": "Actions",
   "CustomerOrderListPageTitle": "Customer Orders List",
   "NoOrder": "This Customer have no order Yet!",
   "OrderIDTbl": "Order ID",
@@ -415,13 +1582,11 @@
   "OrderAmountTbl": "Amount",
   "OrderStatusTbl": "Status",
   "OrderActionsTbl": "Actions",
-  "ViewOrder": "View Order",
-  "NoOrders": "Don't Order",
-  "LoginTitle": "Login",
+
   "labelEmail": "Email",
   "labelPassword": "Password",
   "LoginBtn": "Log in",
-  "ForgotPassword": "Forgot your password",
+
   "CreateAccount": "Create account",
   "updateProfile": " Update Profile",
   "ProfilePicture": "Profile Picture",
@@ -429,16 +1594,14 @@
   "ProfileEmail": "Email",
   "ProfileContactNumber": "Contact Number",
   "ProfileYourRole": "Your Role",
-  "LoginWithGoogle": "Login With Google",
-  "LoginWithFacebook": "Login With Facebook",
-  "CreateAccountTitle": "Create account",
+
   "CreateAccountName": "Name",
   "CreateAccountCompanyName": "Company Name",
   "CreateAccountEmail": "Email",
   "CreateAccountPassword": "Password",
-  "privacyPolicy": "privacy policy",
+
   "TermAndCondition": "Terms and Conditions",
-  "Iagree": "I agree to the",
+
   "CreateAccountBtn": "Create Account",
   "AlreadyAccount": "Already have an account? Login",
   "Welcome": "Welcome to Kachabazar!",
@@ -454,11 +1617,11 @@
   "ForgotpasswordTitle": "Forgot password",
   "RecoverpasswordBtn": "Recover password",
   "InvoiceNumberLength": "Invoice Number Length",
-  "DefaultDateFormat": "Default Date Format",
+
   "PosSetting": "POS Setting",
-  "StoreDetails": "Store Details",
+
   "ShopLogo": "Shop logo",
-  "ShopName": "Shop name",
+
   "CompanyName": "Company name",
   "VATNumber": "VAT number",
   "ShopAddressLine1": "Shop address line 1",
@@ -467,14 +1630,15 @@
   "ContactNumber1": "Contact number 1",
   "ContactNumber2": "Contact number 2",
   "Email": "Email",
-  "WebSite": "Web site",
+
+  "Setting.PHFromEmail": "referring email",
   "AnyInfoDisplayinSlip": "Additional info to display in receipt",
   "AnyInfoDisplayinSlip1": "Any additional info display in the bottom of the receipt",
   "Configuration": "Configuration",
   "ShowImages": "Show images",
   "DefaultPOSCustomer": "Default POS customer",
   "EmailInvoiceToAdmin": "Email Invoice To Admin(S)",
-  "ReceiptSize": "Receipt size (width)",
+
   "PreviewReceipt": "Preview receipt",
   "Alloworderingofoutofstockproducts": "Allow ordering of out of stock products",
   "EnablePinBeforeAction": "Enable pin before any action",
@@ -505,21 +1669,19 @@
   "Defaultposcategory": " Default POS category",
   "DefaultposcategorySmText": "Products in this category will be shown in the POS by default",
   "TableNavigation": "Table navigation",
-  "sorryCategoryNotFound": "Sorry, There are no categories right now.",
+
   "ContactDetails": "Contact Details",
-  "PostCode": "Post Code",
+
   "Theme": "Theme",
   "ICON": "ICON",
   "ThemeSmallText": "Selected theme will shown in POS",
   "EmailRecipients": "Email Recipients",
-  "Languages": "Languages",
-  "Currencies": "Currencies",
+
   "Geolocation": "Geolocation",
-  "DefaultLanguage": "Default language",
+
   "SetLanguageFromBrowser": "Set language from browser",
   "DefaultCountry": "Default country",
-  "DefaultCurrency": "Default currency",
-  "TimeZone": "Default time zone",
+
   "LocalUnits": "Local Units",
   "WeightUnit": "Weight Unit",
   "DistanceUnit": "Distance Unit",
@@ -558,28 +1720,17 @@
   "TotalVolume": "Total Volume",
   "Width": "Width",
   "Height": "Height",
-  "GenerateVariants": "Generate Variants",
-  "ClearVariants": "Clear Variants",
+
   "AttributesFeatures": "Attributes & Features",
   "AddCombinationsDiscription": "Please add combinations or enable your attribute, you first need to create proper attributes and values in",
   "AddCombinationsDiscriptionTwo": ". When done, you may enter the wanted attributes (like \"size\" or \"color\") and their respective values (\"XS\",\"red\", \"all\", etc.) in the field below; or simply select them from the right column. Then click on \"Generate\": it will automatically create all the combinations for you!",
   "GenerateExtras": "Generate Extras",
   "ClearExtras": "Clear Extras",
-  "BulkActions": "Bulk Actions",
+
   "SelectedExtra": "Selected Extra",
-  "LanguagesSr": "SR",
-  "LanguagesNname": "NAME",
-  "LanguagesIsoCode": "ISO CODE",
-  "LanguageCode": "LANGUAGE CODE",
-  "LanguagesFlag": "FLAG",
-  "LanguagesPublished": "PUBLISHED",
-  "LanguagesActions": "ACTIONS",
-  "AddLanguageName": "Language Name",
-  "AddLanguagesIsoCode": "Iso Code",
+
   "AddLanguageCode": "Languages Code",
-  "AddLanguagesFlag": "Flag",
-  "AddLanguagesPublished": "Published",
-  "SearchLanguage": "Search by country name and iso code, language code",
+
   "CurrenciesName": "Name",
   "Currencyisocode": "Iso Code",
   "CurrenciesSymbol": "Symbol",
@@ -588,16 +1739,14 @@
   "CurrenciesEnabled": "Enabled",
   "CurrenciesLiveExchangeRates": "Live Exchange Rates",
   "CurrenciesActions": "Actions",
+
   "SearchIsoCode": "Search by iso code",
   "AddLanguage": "Add Language",
   "AddLanguageText": "Add your Language necessary information from here",
   "UpdateLanguage": "Update Language",
   "UpdateLanguageText": "Updated your Language necessary information from here",
   "LanguageName": "Language Name",
-  "UpdateCurrency": "Update Currency",
-  "UpdateCurrencyText": "Updated your currency and necessary information from here",
-  "AddCurrency": "Add Currency",
-  "AddCurrencyText": "Add your Currency and necessary information from here",
+
   "Countries": "Countries",
   "States": "States",
   "TaxZone": "Tax Zone",
@@ -652,32 +1801,7 @@
   "TaxesBtn": "Taxes",
   "shippingZoneSearch": "Search by shipping zone name",
   "taxNameSearch": "Search by tax name",
-  "HomeSettings": "Home Page",
-  "SingleSetting": "Product Slug Page",
-  "AboutUsSetting": "About Us",
-  "PrivacyTCSetting": "Privacy Policy and T&C",
-  "FAQSetting": "FAQs",
-  "OffersStting": "Offers",
-  "ContactUsStting": "Contact Us",
-  "StoreCustomizationPageTitle": "Store Customizations",
-  "Header": "Header",
-  "HeaderContacts": "Header Contacts",
-  "HeaderText": "Header Text",
-  "PhoneNumber": "Phone Number",
-  "HeaderLogo": "Header Logo",
-  "weAreAvailable": "We are available 24/7, Need help?",
-  "MainSlider": "Main Slider",
-  "Slider": "Slider",
-  "SliderImages": "Slider Images",
-  "SliderTitle": "Slider Title",
-  "SliderDescription": "Slider Description",
-  "SliderButtonName": "Slider Button Name",
-  "SliderButtonLink": "Slider Button Link",
-  "Options": "Options",
-  "LeftRighArrows": "Left and Right Arrows",
-  "BottomDots": "Bottom Dots",
-  "Both": "Both",
-  "DiscountCouponTitle1": "Discount Coupon Code Box",
+
   "DiscountCouponCodeTitle2": "Discount Coupon Code",
   "ShowHide": "Show / Hide",
   "SuperDiscountActiveCouponCode": "Super Discount Active Coupon Code",
@@ -685,53 +1809,27 @@
   "PlaceHolderImage": "Place Holder Image",
   "ImagesResolution": "Images resolution 500X400px",
   "PromotionBanner": "Promotion Banner",
-  "EnableThisBlock": "Enable This Block",
+
   "Title": "Title",
-  "Description": "Description",
+
   "DESCRIPTION": "DESCRIPTION",
-  "PromotionDescription": "Promotion Description",
-  "ButtonName": "Button Name",
-  "ButtonLink": "Button Link",
-  "FeaturedCategories": "Featured Categories",
-  "ProductsLimit": "Products Limit",
-  "PopularProductsTitle": "Popular Products",
+
   "PopularDescription": "Popular Description",
-  "QuickDeliverySectionTitle": "Quick Delivery Section",
-  "SubTitle": "Sub Title",
-  "Image": "Image",
-  "LatestDiscountedProductsTitle": "Latest Discounted Products",
+
   "GetYourDailyNeedsTitle": "Get Your Daily Needs",
-  "LatestDiscountDescription": "Latest Discount Description",
+
   "DailyNeedDescription": "Daily Need Description",
-  "Button1Link": "Button 1 Link",
-  "Button2Link": "Button 2 Link",
-  "Button1image": "Button 1 Image",
-  "Button2image": "Button 2 Image",
-  "ImageLeft": "Image Left",
-  "ImageRight": "Image Right",
-  "FeaturePromoSectionTitle": "Feature Promo Section",
-  "FreeShipping": "Free Shipping",
-  "Support": "Support",
-  "SecurePayment": "Secure Payment",
-  "LatestOffer": "Latest Offer",
+
   "TopCategory": "Top Category",
-  "FooterTitle": "Footer",
-  "Block": "Block",
-  "Link": "Link",
-  "FooterLogo": "Footer Logo",
-  "FooterAddress": "Address",
-  "FooterPhone": "Phone",
-  "FooterEmail": "Email",
+
   "FishAndMeat": "Fish & Meat",
-  "FooterBottomContact": "Footer Bottom Contact Number",
-  "SocialLinksTitle": "Social Links",
-  "PaymentMethod": "Payment Method",
+
   "Statement": "Statement",
   "SearchStaffName": "Search by open or closing staff name",
   "SoftDrinks": "Soft Drinks",
   "BabyCare": "Baby Care",
   "BeautyAndHealth": "Beauty & Health",
-  "MyAccount": "My Account",
+
   "MyOrders": "My Orders",
   "RecentOrders": "Recent Orders",
   "UpdatedProfile": "Updated Profile",
@@ -749,7 +1847,7 @@
   "PaypalPublicKey": "Paypal Public Key",
   "UseMultipleLanguagesInShop": "I'd like to use multiple languages in my shop, admin and POS",
   "UseMultipleCurrenciesInShop": "I'd like to use multiple currencies in my shop, admin and POS",
-  "NumberOfImagesPerProduct": "Number of images per product",
+
   "PosView": "POS view",
   "WorkingHours": "Working Hours",
   "Open": "Open",
@@ -769,7 +1867,6 @@
   "UpdateShippingText": "Update your Shipping and necessary information from here",
   "CarrierLogo": "Carrier Logo",
   "Reports": "Reports",
-  "Orders": "Orders",
   "Source": "Source",
   "SHOP": "SHOP",
   "Actions": "Actions",
@@ -779,24 +1876,20 @@
   "ApplyTheCostTheHighestDefinedRange": "Apply The Cost Of The Highest Defined Range",
   "DisableCarrier": "Disable Carrier",
   "InvoiceNumberType": "Invoice number type",
-  "AddressLine": "Address",
-  "GlobalContactNumber": "Contact",
-  "InvoiceCompanyName": "Company Name",
-  "VatNumber": "Vat Number",
+
   "Vat": "Vat",
   "MenuEditor": "Menu Editor",
-  "Categories": "Categories",
-  "AboutUs": "About Us",
+
   "ContactUs": "Contact Us",
   "Careers": "Careers",
   "LatestNews": "Neuesten Nachrichten",
   "Offers": "Offers",
   "FAQ": "FAQ",
-  "PrivacyPolicy": "Privacy Policy",
-  "TermsConditions": "Terms & Conditions",
+  "RightBox": "Right Box",
   "PageHeader": "Page Header",
   "PageHeaderBg": "Page Header Background",
   "PageTitle": "Page Title",
+
   "AboutPageTopContentLeft": "About Page Top Content Left",
   "TopTitle": "Top Title",
   "TopDescription": "Top Description",
@@ -808,7 +1901,7 @@
   "BoxTwoDescription": "Box Two Description",
   "PageTopContentRight": "Page Top Content Right",
   "TopContentRightImage": "Top Content Right Image",
-  "RightBox": "Right Box",
+
   "MiddleContentSection": "Content Section",
   "MiddleDescriptionOne": "First Paragraph",
   "MiddleDescriptionTwo": "Second Paragraph",
@@ -856,113 +1949,45 @@
   "FaqDescriptionEight": "Faq Description Eight",
   "FAQPageHeader": "FAQs Page Header",
   "FaqLeftCol": "FAQs Left Column",
-  "EmailUs": "Email Us Box",
-  "EboxTitle": "Title",
-  "EboxEmail": "Email",
-  "Eboxtext": "Text",
-  "CallUs": "Call Us Box",
-  "CallusboxTitle": "Title",
-  "CallUsboxPhone": "Phone",
-  "CallUsboxText": "Text",
+
   "Address": "Address Box",
   "AddressboxTitle": "Title",
-  "AddressboxAddressOne": "Address",
+
   "AddressboxAddressTwo": " Address Two",
   "AddressboxAddressThree": " Address Three",
-  "MidLeftCol": "Middle Left Colum",
-  "MidLeftImage": "Middle Left Image",
-  "ContactForm": "Contact Form",
-  "ContactFormTitle": "Contact Form Title",
-  "ContactFormDescription": "Contact Form Description",
+
   "FAQS": "FAQs",
   "ResetPassword": "Reset password",
   "ConfirmPassword": "Confirm Password",
-  "Reset": "Reset",
-  "AlreadyHaveAccount": "Already have an account? Login",
+
   "DoesProductHaveCombinations": " Does this product have combinations?",
   "Export": "Export",
   "Action": "Action",
   "OrginalPrice": "OrginalPrice",
   "SR": "SR",
-  "View": "View",
-  "Name": "Name",
+
   "LastMonth": "Last Month",
-  "Method": "Method",
   "StoreCustomization": "Store Customization",
-  "ViewStore": "View Store",
-  "HomePageDiscountTitle": "Home Page Discount Title",
-  "CheckOut": "Checkout",
-  "Login": "Login",
-  "Logout": "Logout",
-  "PersonalInfo": "Personal Details",
-  "ShippingInfo": "Shipping Details",
+
   "CartItemSection": "Cart Item Section",
-  "firstName": "First Name",
-  "lastName": "Last Name",
-  "emailAddress": "Email Address",
-  "streetAddress": "Street Address",
-  "City": "City",
-  "ZipCode": "Zip / Postal",
-  "Shippingcost": "Shipping Cost",
-  "OrderSummary": "Order Summary",
-  "ApplyButton": "Apply Button",
-  "Subtotal": "Sub Total",
-  "totalCost": "Total Cost",
-  "DashboardSetting": "Dashboard Setting",
-  "InvoiceMessage1st": "Invoice Message First Part",
-  "InvoiceMessage2nd": "Invoice Message Last Part",
-  "PendingOrder": "Pending Order",
-  "ProcessingOrder": "Processing Order",
-  "CompleteOrder": "Complete Order",
-  "MyOrder": "My Order",
-  "UpdateProfile": "Update Profile",
-  "FullName": "Full Name",
-  "UserAddress": "Address",
-  "PhoneMobile": "Phone/Mobile",
-  "EmailAddress": "Email Address",
-  "UpdateButton": "Update Button",
-  "CurrentPassword": "Current Password",
-  "NewPassword": "New Password",
-  "PrintButton": "Print Button",
-  "DownloadButton": "Download Button",
-  "ChangePassword": "Change Password",
+
   "Shippingmethod": "Shipping Method",
-  "ContinueButton": "Continue Button",
-  "ConfirmButton": "Confirm Button",
-  "Checkout": "Checkout",
+
   "ShippingAddress": "Shipping Address",
   "CommonSetting": "Common Settings",
   "AdminSetting": "Admin Settings",
-  "SeoSetting": "Seo Settings",
-  "StoreSetting": "Store Settings",
-  "Settings": "Settings",
-  "MetaTitle": "Meta Title",
-  "MetaDescription": "Meta Description",
-  "MetaKeyword": "Meta Keywords",
-  "MetaImage": "Meta Image",
-  "EnableCOD": "Enable Cash On Delivery",
+
   "EnableStripe": "Enable Stripe Payment",
-  "StripeKey": "Stripe Key",
-  "StripeSecret": "Stripe Secret",
-  "EnableGoogleLogin": "Enable Google Login",
-  "GoogleClientId": "Google Client ID",
-  "GoogleSecret": "Google Secret Key",
-  "EnableGoggleAnalytics": "Enable Goggle Analytics",
-  "GoogleAnalyticKey": "Google Analytic Key",
+
   "EnableFacebookPixel": "Enable Facebook Pixel",
   "FacebookPixelKey": "Facebook Pixel Key",
-  "MetaUrl": "Meta Url",
-  "TawkChatWidgetID": "Tawk Chat Widget ID",
-  "TawkChatPropertyID": "Tawk Chat Property ID",
-  "EnableTawkChat": "Enable Tawk Chat",
-  "Favicon": "Favicon",
-  "StoreSettings": "Store Settings",
+
   "ShippingNameOne": "Shipping One Name",
   "ShippingOneDes": "Shipping One Description",
   "ShippingOneCost": "Shipping One Cost",
   "ShippingNameTwo": "Shipping Two Name",
   "ShippingTwoDes": "Shipping Two Description",
   "ShippingTwoCost": "Shipping Two Cost",
-  "TranslationSecretKey": "Translation Secret Key",
-  "AllowAutoTranslation": "Allow Auto Translation"
+  "Favicon": "Favicon",
+  "StoreSettings": "Store Settings"
 }

@@ -1,26 +1,20 @@
-import React from "react";
-import Scrollbars from "react-custom-scrollbars-2";
+import React from 'react'
+import Scrollbars from 'react-custom-scrollbars-2'
+import { useTranslation } from 'react-i18next'
 
 //internal import
-import Title from "@/components/form/others/Title";
-import Error from "@/components/form/others/Error";
-import InputArea from "@/components/form/input/InputArea";
-import LabelArea from "@/components/form/selectOption/LabelArea";
-import SwitchToggle from "@/components/form/switch/SwitchToggle";
-import DrawerButton from "@/components/form/button/DrawerButton";
-import useAttributeSubmit from "@/hooks/useAttributeSubmit";
+import Title from '@/components/form/others/Title'
+import Error from '@/components/form/others/Error'
+import InputArea from '@/components/form/input/InputArea'
+import LabelArea from '@/components/form/selectOption/LabelArea'
+import SwitchToggle from '@/components/form/switch/SwitchToggle'
+import DrawerButton from '@/components/form/button/DrawerButton'
+import useAttributeSubmit from '@/hooks/useAttributeSubmit'
 
 const AttributeChildDrawer = ({ id }) => {
-  const {
-    handleSubmit,
-    onSubmits,
-    register,
-    errors,
-    published,
-    isSubmitting,
-    setPublished,
-    handleSelectLanguage,
-  } = useAttributeSubmit(id);
+  const { t } = useTranslation()
+  const { handleSubmit, onSubmits, register, errors, published, isSubmitting, setPublished, handleSelectLanguage } =
+    useAttributeSubmit(id)
 
   return (
     <>
@@ -29,15 +23,15 @@ const AttributeChildDrawer = ({ id }) => {
           <Title
             register={register}
             handleSelectLanguage={handleSelectLanguage}
-            title="Add/Update Attribute Valu"
-            description="Add your attribute values and necessary information from here"
+            title={t('attributesScreen.drawer.addUpdateValue')}
+            description={t('attributesScreen.drawer.addValueDescription')}
           />
         ) : (
           <Title
             register={register}
             handleSelectLanguage={handleSelectLanguage}
-            title="Add/Update Attribute Values"
-            description="Add your attribute values and necessary information from here"
+            title={t('attributesScreen.drawer.addUpdateValue')}
+            description={t('attributesScreen.drawer.addValueDescription')}
           />
         )}
       </div>
@@ -46,38 +40,35 @@ const AttributeChildDrawer = ({ id }) => {
         <form onSubmit={handleSubmit(onSubmits)}>
           <div className="px-6 pt-8 flex-grow scrollbar-hide w-full max-h-full pb-40">
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6 items-center">
-              <LabelArea label="Display Name" />
+              <LabelArea label={t('attributesScreen.drawer.displayName')} />
 
               <div className="col-span-8 sm:col-span-4">
                 <InputArea
                   required={true}
                   register={register}
-                  label="Display Name"
+                  label={t('attributesScreen.drawer.displayName')}
                   name="name"
                   type="text"
-                  placeholder="Color or Size or Dimension or Material or Fabric"
+                  placeholder={t('attributesScreen.drawer.addTitlePh')}
                 />
                 <Error errorName={errors.name} />
               </div>
             </div>
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6 items-center">
-              <LabelArea label="Published" />
+              <LabelArea label={t('common.published')} />
 
               <div className="col-span-8 sm:col-span-4">
-                <SwitchToggle
-                  handleProcess={setPublished}
-                  processOption={published}
-                />
+                <SwitchToggle handleProcess={setPublished} processOption={published} />
                 <Error errorName={errors.published} />
               </div>
             </div>
           </div>
 
-          <DrawerButton id={id} title="Attribute" isSubmitting={isSubmitting} />
+          <DrawerButton id={id} title={t('attributesScreen.drawer.singularBtn')} isSubmitting={isSubmitting} />
         </form>
       </Scrollbars>
     </>
-  );
-};
+  )
+}
 
-export default AttributeChildDrawer;
+export default AttributeChildDrawer

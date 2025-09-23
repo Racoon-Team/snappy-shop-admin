@@ -1,17 +1,17 @@
-import notFound from "@/assets/img/404.svg";
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import notFound from '@/assets/img/404.svg'
+import { useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const NotFoundPage = () => {
-  const location = useLocation();
-  const path = location?.pathname;
+  const location = useLocation()
+  const path = location?.pathname
 
   useEffect(() => {
     // Redirect if the path is root '/'
-    if (path === "/") {
-      window.location.replace("/dashboard");
+    if (path === '/') {
+      window.location.replace('/dashboard')
     }
-  }, [path]);
+  }, [path])
 
   return (
     <>
@@ -21,13 +21,11 @@ const NotFoundPage = () => {
           <h2 className="font-bold font-serif dark:text-gray-200 font-2xl lg:text-4xl leading-7 mb-4">
             Page is not found!
           </h2>
-          <p className="text-red-400 text-lg">
-            Sorry you don't have access to this page!
-          </p>
+          <p className="text-red-400 text-lg">Sorry you don't have access to this page!</p>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default NotFoundPage;
+export default NotFoundPage
