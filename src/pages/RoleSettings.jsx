@@ -88,7 +88,7 @@ const RoleSettings = () => {
     <>
       <PageTitle>{t('roleScreen.label')}</PageTitle>
       <MainDrawer>
-        <RoleDrawer />
+        <RoleDrawer id={serviceId} />
       </MainDrawer>
       <DeleteModal id={serviceId} title={title} />
       <AnimatedContent>
@@ -103,7 +103,7 @@ const RoleSettings = () => {
                     disabled={loading}
                     className="px-4 md:py-1 py-2 h-12 text-sm dark:bg-gray-700"
                   >
-                    <option value="">All Roles</option>
+                    <option value="">{t('roleScreen.allRolesFilter')}</option>
                     {roles.map((role) => (
                       <option key={role._id} value={role.name}>
                         {role.name}

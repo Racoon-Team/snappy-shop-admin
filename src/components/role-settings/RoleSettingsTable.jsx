@@ -27,7 +27,7 @@ const RoleTable = ({ roles, handleUpdate, handleModalOpen }) => {
                   ))}
                 </div>
               ) : (
-                <Badge type="neutral">No Permissions</Badge>
+                <Badge type="neutral">{t('roleScreen.noPermissions')}</Badge>
               )}
             </TableCell>
             <TableCell className="text-right">
