@@ -697,6 +697,8 @@
     "sidebarLabel": "Role Settings",
     "label": "ROLE SETTINGS",
     "addBtn": "Add",
+    "noPermissions": "No Permissions",
+    "allRolesFilter": "All Roles",
 
     "table": {
       "name": "NAME",
@@ -706,7 +708,9 @@
 
     "drawer": {
       "titleAdd": "Add Role",
+      "titleUpdate": "Update Role",
       "descriptionAdd": "Configure permissions from here",
+      "descriptionUpdate": "Edit permissions from here",
       "labelName": "Name",
       "inputName": "Role Name",
       "labelPermission": "Select Permissions",

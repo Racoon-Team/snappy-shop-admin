@@ -698,6 +698,8 @@
     "sidebarLabel": "Configuración de roles",
     "label": "CONFIGURACIÓN DE ROLES",
     "addBtn": "Agregar",
+    "noPermissions": "Sin Permisos",
+    "allRolesFilter": "Todos los Roles",
 
     "table": {
       "name": "NOMBRE",
@@ -707,7 +709,9 @@
 
     "drawer": {
       "titleAdd": "Agregar Rol",
+      "titleUpdate": "Actualizar Rol",
       "descriptionAdd": "Configura tus permisos desde aqui",
+      "descriptionUpdate": "Edita tus permisos desde aqui",
       "labelName": "Nombre",
       "inputName": "Nombre del rol",
       "labelPermission": "Selecciona permisos",
