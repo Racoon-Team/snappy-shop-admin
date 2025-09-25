@@ -25,7 +25,6 @@ import MainDrawer from '@/components/drawer/MainDrawer'
 import { SidebarContext } from '@/context/SidebarContext'
 import DeleteModal from '@/components/modal/DeleteModal'
 import useToggleDrawer from '@/hooks/useToggleDrawer'
-import AdminServices from '@/services/AdminServices'
 import useFilter from '@/hooks/useFilter'
 import RoleTable from '@/components/role-settings/RoleSettingsTable'
 import RoleServices from '@/services/RoleServices'
@@ -36,17 +35,15 @@ const RoleSettings = () => {
   const { toggleDrawer, isUpdate, setIsUpdate } = useContext(SidebarContext)
 
   const [roles, setRoles] = useState([])
-  const [filteredRoles, setFilteredRoles] = useState([])
+
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [search, setSearch] = useState('')
 
   const fetchRoles = async () => {
     try {
       setLoading(true)
       const data = await RoleServices.getRoles()
       setRoles(data)
-      setFilteredRoles(data)
     } catch (err) {
       setError('Error loading Roles')
     } finally {
@@ -65,24 +62,9 @@ const RoleSettings = () => {
     }
   }, [isUpdate, setIsUpdate])
 
-  const { dataTable, totalResults, resultsPerPage, handleChangePage } = useFilter(filteredRoles)
+  const { dataTable, totalResults, resultsPerPage, handleChangePage } = useFilter(roles)
 
   const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer()
-
-  const handleFilter = (e) => {
-    e.preventDefault()
-    if (search) {
-      const filtered = roles.filter((role) => role.name.toLowerCase().includes(search.toLowerCase()))
-      setFilteredRoles(filtered)
-    } else {
-      setFilteredRoles(roles)
-    }
-  }
-
-  const handleReset = () => {
-    setSearch('')
-    setFilteredRoles(roles)
-  }
 
   return (
     <>
@@ -94,51 +76,14 @@ const RoleSettings = () => {
       <AnimatedContent>
         <Card className="min-w-0 shadow-xs overflow-hidden bg-white dark:bg-gray-800 mb-5">
           <CardBody>
-            <form onSubmit={handleFilter} className="py-3 grid gap-4 lg:gap-6 xl:gap-6 md:flex xl:flex">
-              <div className="flex items-center gap-2 flex-grow-0 md:flex-grow lg:flex-grow xl:flex-grow">
-                <div className="w-full mx-1">
-                  <Select
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    disabled={loading}
-                    className="px-4 md:py-1 py-2 h-12 text-sm dark:bg-gray-700"
-                  >
-                    <option value="">{t('roleScreen.allRolesFilter')}</option>
-                    {roles.map((role) => (
-                      <option key={role._id} value={role.name}>
-                        {role.name}
-                      </option>
-                    ))}
-                  </Select>
-                </div>
-
-                <div className="w-full mx-1">
-                  <Button type="submit" className="h-12 w-full bg-emerald-700">
-                    {t('common.filter')}
-                  </Button>
-                </div>
-
-                <div className="w-full mx-1">
-                  <Button
-                    layout="outline"
-                    type="button"
-                    onClick={handleReset}
-                    className="px-4 md:py-1 py-2 h-12 text-sm dark:bg-gray-700"
-                  >
-                    <span className="text-black dark:text-gray-200">{t('common.reset')}</span>
-                  </Button>
-                </div>
-
-                <div className="w-full mx-1">
-                  <Button onClick={toggleDrawer} className="h-12 w-full bg-emerald-700">
-                    <span className="mr-2">
-                      <FiPlus />
-                    </span>
-                    {t('roleScreen.addBtn')}
-                  </Button>
-                </div>
-              </div>
-            </form>
+            <div className="flex items-center">
+              <Button onClick={toggleDrawer} className="h-12 w-40 bg-emerald-700">
+                <span className="mr-2">
+                  <FiPlus />
+                </span>
+                {t('roleScreen.addBtn')}
+              </Button>
+            </div>
           </CardBody>
         </Card>
       </AnimatedContent>
