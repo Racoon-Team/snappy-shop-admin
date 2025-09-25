@@ -623,6 +623,7 @@
       "inputContact": "Número de teléfono",
       "labelJoiningDate": "Fecha de incorporación",
       "labelRole": "Rol del personal",
+      "selectRole":"Seleccione Rol",
       "labelSelectAccess": "Seleccionar rutas para el acceso especificado",
 
       "selectAccess": {

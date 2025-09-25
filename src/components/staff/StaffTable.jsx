@@ -1,5 +1,5 @@
 import { Avatar, TableBody, TableCell, TableRow } from '@windmill/react-ui'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FiZoomIn } from 'react-icons/fi'
 
 //internal import
@@ -14,11 +14,25 @@ import DeleteModal from '@/components/modal/DeleteModal'
 import EditDeleteButton from '@/components/table/EditDeleteButton'
 import ActiveInActiveButton from '@/components/table/ActiveInActiveButton'
 import AccessListModal from '@/components/modal/AccessListModal'
+import RoleServices from '@/services/RoleServices'
 
 const StaffTable = ({ staffs, lang }) => {
   const { title, serviceId, handleModalOpen, handleUpdate, isSubmitting, handleResetPassword } = useToggleDrawer()
 
   const { showDateFormat, showingTranslateValue } = useUtilsFunction()
+
+  const [roles, setRoles] = useState([])
+  useEffect(() => {
+    const fetchRoles = async () => {
+      try {
+        const res = await RoleServices.getRoles()
+        setRoles(res)
+      } catch (err) {
+        console.error('Error fetching roles:', err)
+      }
+    }
+    fetchRoles()
+  }, [])
   // State for access list modal
   const [selectedStaff, setSelectedStaff] = useState(null)
   const [isAccessModalOpen, setIsAccessModalOpen] = useState(false)
@@ -78,7 +92,9 @@ const StaffTable = ({ staffs, lang }) => {
               </span>
             </TableCell>
             <TableCell>
-              <span className="text-sm font-semibold">{staff?.role}</span>
+              <span className="text-sm font-semibold">
+                {roles.find((r) => r._id === staff.role)?.name || staff.role}
+              </span>
             </TableCell>
             <TableCell className="text-center text-xs">
               <Status status={staff.status} />

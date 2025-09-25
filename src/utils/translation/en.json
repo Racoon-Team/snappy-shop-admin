@@ -622,6 +622,7 @@
       "inputContact": "Phone number",
       "labelJoiningDate": "Joining Date",
       "labelRole": "Staff Role",
+      "selectRole":"Select Role",
       "labelSelectAccess": "Select Routes to given Access",
 
       "selectAccess": {
