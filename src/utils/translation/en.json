@@ -715,7 +715,8 @@
       "labelName": "Name",
       "inputName": "Role Name",
       "labelPermission": "Select Permissions",
-      "titleBtn": "Role"
+      "titleBtn": "Role",
+      "error":"Error getting roles:"
     },
 
     "message": {

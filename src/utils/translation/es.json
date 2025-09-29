@@ -716,7 +716,8 @@
       "labelName": "Nombre",
       "inputName": "Nombre del rol",
       "labelPermission": "Selecciona permisos",
-      "titleBtn": "Rol"
+      "titleBtn": "Rol",
+      "error":"Error al obtener roles:"
     },
 
     "message": {

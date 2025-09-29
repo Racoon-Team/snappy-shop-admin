@@ -44,7 +44,7 @@ const StaffDrawer = ({ id }) => {
         const res = await RoleServices.getRoles()
         setRoles(res)
       } catch (error) {
-        console.error('Error al obtener roles:', error)
+        console.error(t('roleScreen.drawer.error', error))
       }
     }
     fetchRoles()
