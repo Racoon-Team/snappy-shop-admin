@@ -46,6 +46,10 @@ const AdminServices = {
   getAvailableLocations: async () => {
     return requests.get('/admin/available-locations')
   },
+
+  getAdminPermissions: async (id) => {
+    return requests.get(`/admin/${id}/permissions`)
+  },
 }
 
 export default AdminServices

@@ -17,11 +17,14 @@ import LabelArea from '@/components/form/selectOption/LabelArea'
 import Uploader from '@/components/image-uploader/Uploader'
 
 import RoleServices from '@/services/RoleServices'
+import AdminServices from '@/services/AdminServices'
 
 const StaffDrawer = ({ id }) => {
   const { role } = useGetCData()
   const [roles, setRoles] = useState([])
   const { mode } = useContext(WindmillContext)
+  const [rolePermissions, setRolePermissions] = useState([])
+  const [selectedRole, setSelectedRole] = useState('')
   const {
     register,
     handleSubmit,
@@ -38,6 +41,16 @@ const StaffDrawer = ({ id }) => {
     handleSelectLanguage,
   } = useStaffSubmit(id)
 
+  const handleRoleChange = (e) => {
+    const selectedRoleId = e.target.value
+    setSelectedRole(selectedRoleId)
+
+    register('role').onChange({ target: { value: selectedRoleId } })
+
+    const selectedRole = roles.find((r) => r._id === selectedRoleId)
+    setRolePermissions(selectedRole?.permissions || [])
+  }
+
   useEffect(() => {
     const fetchRoles = async () => {
       try {
@@ -49,7 +62,11 @@ const StaffDrawer = ({ id }) => {
     }
     fetchRoles()
   }, [])
-
+  useEffect(() => {
+    if (id && adminInfo?.role) {
+      setSelectedRole(adminInfo.role._id || adminInfo.role)
+    }
+  }, [id, adminInfo])
   const { t } = useTranslation()
   const translatedRouteAccessList = routeAccessList.map((route) => ({
     ...route,
@@ -194,7 +211,8 @@ const StaffDrawer = ({ id }) => {
                   <div className="col-span-8 sm:col-span-4">
                     <select
                       {...register('role', { required: true })}
-                      defaultValue=""
+                      value={selectedRole}
+                      onChange={handleRoleChange}
                       className="w-full px-3 py-2 border rounded-md dark:bg-gray-700 dark:text-gray-200"
                     >
                       <option value="" disabled>
@@ -206,24 +224,10 @@ const StaffDrawer = ({ id }) => {
                         </option>
                       ))}
                     </select>
+
                     <Error errorName={errors.role} />
                   </div>
                 </div>
-
-                {(role === 'Admin' || role === 'Super Admin') && (
-                  <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                    <LabelArea label={t('staffScreen.drawer.labelSelectAccess')} />
-                    <div className="col-span-8 sm:col-span-4">
-                      <MultiSelect
-                        options={translatedRouteAccessList}
-                        value={accessedRoutes}
-                        className={mode}
-                        onChange={(v) => setAccessedRoutes(v)}
-                        labelledBy={t('staffScreen.drawer.labelSelectAccess')}
-                      />
-                    </div>
-                  </div>
-                )}
               </div>
 
               <DrawerButton id={id} title="Staff" zIndex="z-5" isSubmitting={isSubmitting} />
