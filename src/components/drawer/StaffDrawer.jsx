@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Scrollbars } from 'react-custom-scrollbars-2'
 import { Card, CardBody, Input, WindmillContext } from '@windmill/react-ui'
 import { useTranslation } from 'react-i18next'
@@ -16,8 +16,11 @@ import DrawerButton from '@/components/form/button/DrawerButton'
 import LabelArea from '@/components/form/selectOption/LabelArea'
 import Uploader from '@/components/image-uploader/Uploader'
 
+import RoleServices from '@/services/RoleServices'
+
 const StaffDrawer = ({ id }) => {
   const { role } = useGetCData()
+  const [roles, setRoles] = useState([])
   const { mode } = useContext(WindmillContext)
   const {
     register,
@@ -34,6 +37,18 @@ const StaffDrawer = ({ id }) => {
     setAccessedRoutes,
     handleSelectLanguage,
   } = useStaffSubmit(id)
+
+  useEffect(() => {
+    const fetchRoles = async () => {
+      try {
+        const res = await RoleServices.getRoles()
+        setRoles(res)
+      } catch (error) {
+        console.error(t('roleScreen.drawer.error', error))
+      }
+    }
+    fetchRoles()
+  }, [])
 
   const { t } = useTranslation()
   const translatedRouteAccessList = routeAccessList.map((route) => ({
@@ -168,7 +183,7 @@ const StaffDrawer = ({ id }) => {
                       name="joiningDate"
                       value={selectedDate}
                       type="date"
-                      placeholder
+                      placeholder=""
                     />
                     <Error errorName={errors.joiningDate} />
                   </div>
@@ -177,25 +192,38 @@ const StaffDrawer = ({ id }) => {
                 <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
                   <LabelArea label={t('staffScreen.drawer.labelRole')} />
                   <div className="col-span-8 sm:col-span-4">
-                    <SelectRole register={register} label="Role" name="role" />
+                    <select
+                      {...register('role', { required: true })}
+                      defaultValue=""
+                      className="w-full px-3 py-2 border rounded-md dark:bg-gray-700 dark:text-gray-200"
+                    >
+                      <option value="" disabled>
+                        {t('staffScreen.drawer.selectRole')}
+                      </option>
+                      {roles.map((r) => (
+                        <option key={r._id} value={r._id}>
+                          {r.name}
+                        </option>
+                      ))}
+                    </select>
                     <Error errorName={errors.role} />
                   </div>
                 </div>
-                {role === 'Admin' ||
-                  (role === 'Super Admin' && (
-                    <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-                      <LabelArea label={t('staffScreen.drawer.labelSelectAccess')} />
-                      <div className="col-span-8 sm:col-span-4">
-                        <MultiSelect
-                          options={translatedRouteAccessList}
-                          value={accessedRoutes}
-                          className={mode}
-                          onChange={(v) => setAccessedRoutes(v)}
-                          labelledBy={t('staffScreen.drawer.labelSelectAccess')}
-                        />
-                      </div>
+
+                {(role === 'Admin' || role === 'Super Admin') && (
+                  <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
+                    <LabelArea label={t('staffScreen.drawer.labelSelectAccess')} />
+                    <div className="col-span-8 sm:col-span-4">
+                      <MultiSelect
+                        options={translatedRouteAccessList}
+                        value={accessedRoutes}
+                        className={mode}
+                        onChange={(v) => setAccessedRoutes(v)}
+                        labelledBy={t('staffScreen.drawer.labelSelectAccess')}
+                      />
                     </div>
-                  ))}
+                  </div>
+                )}
               </div>
 
               <DrawerButton id={id} title="Staff" zIndex="z-5" isSubmitting={isSubmitting} />
