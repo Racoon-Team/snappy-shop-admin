@@ -6,6 +6,17 @@ import axios, {
 } from 'axios'
 import Cookies from 'js-cookie'
 
+interface Requests {
+  get: <T>(url: string, config?: AxiosRequestConfig) => Promise<T>
+
+  post: <T>(url: string, body: unknown) => Promise<T>
+
+  put: <T>(url: string, body: unknown, config?: AxiosRequestConfig) => Promise<T>
+
+  patch: <T>(url: string, body: unknown) => Promise<T>
+
+  delete: <T>(url: string, config?: AxiosRequestConfig) => Promise<T>
+}
 interface AdminInfo {
   token: string
 }
@@ -43,18 +54,6 @@ instance.interceptors.request.use(function (config: InternalAxiosRequestConfig) 
 })
 
 const responseBody = <T>(response: AxiosResponse<T>): T => response.data
-
-interface Requests {
-  get: <T>(url: string, config?: AxiosRequestConfig) => Promise<T>
-
-  post: <T>(url: string, body: unknown) => Promise<T>
-
-  put: <T>(url: string, body: unknown, config?: AxiosRequestConfig) => Promise<T>
-
-  patch: <T>(url: string, body: unknown) => Promise<T>
-
-  delete: <T>(url: string, config?: AxiosRequestConfig) => Promise<T>
-}
 
 const requests: Requests = {
   get: <T>(url: string, config?: AxiosRequestConfig) => instance.get<T>(url, config).then(responseBody),
