@@ -2,7 +2,7 @@ import { lazy } from 'react'
 import { ToastContainer } from 'react-toastify'
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import AccessibleNavigationAnnouncer from '@/components/AccessibleNavigationAnnouncer'
-import PrivateRoute from "@/components/login/PrivateRoute";
+import PrivateRoute from '@/components/login/PrivateRoute'
 const Layout = lazy(() => import('@/layout/Layout'))
 const Login = lazy(() => import('@/pages/Login'))
 const SignUp = lazy(() => import('@/pages/SignUp'))
