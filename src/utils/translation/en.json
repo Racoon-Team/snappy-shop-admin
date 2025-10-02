@@ -622,7 +622,7 @@
       "inputContact": "Phone number",
       "labelJoiningDate": "Joining Date",
       "labelRole": "Staff Role",
-      "selectRole":"Select Role",
+      "selectRole": "Select Role",
       "labelSelectAccess": "Select Routes to given Access",
 
       "selectAccess": {
@@ -716,7 +716,7 @@
       "inputName": "Role Name",
       "labelPermission": "Select Permissions",
       "titleBtn": "Role",
-      "error":"Error getting roles:"
+      "error": "Error getting roles:"
     },
 
     "message": {

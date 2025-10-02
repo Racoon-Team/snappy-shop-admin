@@ -623,7 +623,7 @@
       "inputContact": "Número de teléfono",
       "labelJoiningDate": "Fecha de incorporación",
       "labelRole": "Rol del personal",
-      "selectRole":"Seleccione Rol",
+      "selectRole": "Seleccione Rol",
       "labelSelectAccess": "Seleccionar rutas para el acceso especificado",
 
       "selectAccess": {
@@ -717,7 +717,7 @@
       "inputName": "Nombre del rol",
       "labelPermission": "Selecciona permisos",
       "titleBtn": "Rol",
-      "error":"Error al obtener roles:"
+      "error": "Error al obtener roles:"
     },
 
     "message": {
