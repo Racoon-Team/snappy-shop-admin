@@ -9,40 +9,20 @@ import InputArea from '@/components/form/input/InputArea'
 import LabelArea from '@/components/form/selectOption/LabelArea'
 import DrawerButton from '@/components/form/button/DrawerButton'
 import useRoleSubmit from '@/hooks/useRoleSubmit'
-
-const allPermissions = [
-  'dashboard',
-  'products',
-  'product',
-  'categories',
-  'attributes',
-  'coupons',
-  'orders',
-  'order',
-  'our-staff',
-  'settings',
-  'languages',
-  'currencies',
-  'store',
-  'customization',
-  'store-settings',
-  'notifications',
-  'edit-profile',
-  'coming-soon',
-  'customers',
-  'customer-order',
-]
+import { routeAccessList } from '@/routes'
 
 const RoleDrawer = ({ id }) => {
   const { t } = useTranslation()
   const { errors, onSubmit, register, isSubmitting, handleSubmit, selectedPermissions, setSelectedPermissions } =
     useRoleSubmit(id)
 
-  const togglePermission = (perm) => {
-    if (selectedPermissions.includes(perm)) {
-      setSelectedPermissions(selectedPermissions.filter((p) => p !== perm))
+  const togglePermission = (permValues) => {
+    const values = Array.isArray(permValues) ? permValues : [permValues]
+
+    if (values.every((v) => selectedPermissions.includes(v))) {
+      setSelectedPermissions(selectedPermissions.filter((p) => !values.includes(p)))
     } else {
-      setSelectedPermissions([...selectedPermissions, perm])
+      setSelectedPermissions([...new Set([...selectedPermissions, ...values])])
     }
   }
 
@@ -78,17 +58,22 @@ const RoleDrawer = ({ id }) => {
               <LabelArea label={t('roleScreen.drawer.labelPermission')} />
               <div className="col-span-8 sm:col-span-4">
                 <div className="border p-3 rounded-md max-h-64 overflow-y-auto space-y-2">
-                  {allPermissions.map((perm) => (
-                    <label key={perm} className="flex items-center space-x-2 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={selectedPermissions.includes(perm)}
-                        onChange={() => togglePermission(perm)}
-                        className="form-checkbox text-emerald-600"
-                      />
-                      <span className="capitalize">{perm.replace('-', ' ')}</span>
-                    </label>
-                  ))}
+                  {routeAccessList.map((perm) => {
+                    const values = Array.isArray(perm.value) ? perm.value : [perm.value]
+                    const isChecked = values.every((v) => selectedPermissions.includes(v))
+
+                    return (
+                      <label key={values.join('-')} className="flex items-center space-x-2 cursor-pointer">
+                        <input
+                          type="checkbox"
+                          checked={isChecked}
+                          onChange={() => togglePermission(values)}
+                          className="form-checkbox text-emerald-600"
+                        />
+                        <span className="capitalize">{perm.label}</span>
+                      </label>
+                    )
+                  })}
                 </div>
                 <Error errorName={errors.permissions} />
               </div>

@@ -30,8 +30,8 @@ const SidebarContent = () => {
       // Filter sub-routes if they exist
       if (route.routes) {
         const validSubRoutes = route.routes.filter((subRoute) => {
-          const routeKey = subRoute.path.split('?')[0].split('/')[1]
-          // console.log("subRoute", routeKey);
+          const pathSegments = subRoute.path.split('?')[0].split('/')
+          const routeKey = pathSegments[pathSegments.length - 1]
           return accessList.includes(routeKey)
         })
 

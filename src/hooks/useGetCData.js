@@ -52,12 +52,9 @@ const useGetCData = () => {
       if (adminInfo?.data && adminInfo?.iv) {
         try {
           const decryptedString = await decryptData(adminInfo.data, adminInfo.iv)
-          const decryptedArray = JSON.parse(decryptedString) // Assuming the decrypted data is a JSON string
-
-          // Set state: accessList is all except last element, role is last element
-          const lastElement = decryptedArray.pop() // Remove and get the last element
-          setRole(lastElement)
-          setAccessList(decryptedArray)
+          const decryptedData = JSON.parse(decryptedString)
+          setAccessList(decryptedData)
+          setRole(null)
 
           //   console.log("Decrypted Data:", decryptedArray, "Role:", lastElement);
           //   const isAuthorized =
