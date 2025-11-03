@@ -1,16 +1,48 @@
-export interface Notification {
-  _id?: string; 
-  userId: string; 
-  productId?: string; 
+export interface BackendNotification {
+  _id: string;
+  orderId?: string;
+  productId?: string;
+  adminId?: string;
   message: string;
-  status?: 'read' | 'unread' | 'archived';
-  createdAt?: string;
-  updatedAt?: string;
+  image?: string;
+  status: 'read' | 'unread';
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Notification {
+  id: string;
+  orderId?: string;
+  productId?: string;
+  adminId?: string;
+  message: string;
+  image?: string;
+  status: 'read' | 'unread';
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface NotificationInput {
+  orderId?: string;
+  productId?: string;
+  adminId?: string;
+  message: string;
+  image?: string;
+  status?: 'read' | 'unread';
+}
+
+export interface BackendNotificationInput {
+  orderId?: string;
+  productId?: string;
+  adminId?: string;
+  message: string;
+  image?: string;
+  status?: 'read' | 'unread';
 }
 export interface PaginationResponse<T> {
-  docs: T[];
-  totalDocs: number;
-  limit: number;
+  data: T[];
+  total: number;
   page: number;
-  totalPages: number;
+  limit: number;
 }
+

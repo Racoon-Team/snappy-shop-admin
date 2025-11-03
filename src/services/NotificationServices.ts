@@ -1,40 +1,44 @@
-import requests from '@/services/httpService';
-import{ type Notification } from '@/types/notification';
-import {type PaginationResponse} from '@/types/notification';
+import requests from '@/services/httpService'
+import { mapBackendToNotification, mapNotificationInputToBackend } from '@/mappers/notificationMapper'
+import type { NotificationInput, BackendNotification, PaginationResponse } from '@/types/notification'
 
 const NotificationServices = {
-  addNotification: async (body: Notification) => {
-    return requests.post<Notification>('/notification/add', body);
+  addNotification: async (body: NotificationInput) => {
+    const backendBody = mapNotificationInputToBackend(body)
+    const response = await requests.post<BackendNotification>('/notification/add', backendBody)
+    return mapBackendToNotification(response)
   },
 
   getAllNotification: async (page: number) => {
-    return requests.get<PaginationResponse<Notification>>(`/notification?page=${page}`);
+    const response = await requests.get<PaginationResponse<BackendNotification>>(`/notification?page=${page}`)
+    const backendData = Array.isArray(response?.data ?? response) ? (response.data ?? response) : []
+    return {
+      ...response,
+      data: backendData.map(mapBackendToNotification),
+    }
   },
 
-  updateStatusNotification: async (id: string, body: Partial<Notification>) => {
-    return requests.put<Notification>(`/notification/${id}`, body);
+  updateStatusNotification: async (id: string, body: Partial<NotificationInput>) => {
+    const backendBody = mapNotificationInputToBackend(body as NotificationInput)
+    const response = await requests.put<BackendNotification>(`/notification/${id}`, backendBody)
+    return mapBackendToNotification(response)
   },
 
   updateManyStatusNotification: async (body: { ids: string[]; status: 'read' | 'unread' }) => {
-    return requests.patch<{ modifiedCount: number }>('/notification/update/many', body);
+    return requests.patch<{ modifiedCount: number }>('/notification/update/many', body)
   },
 
   deleteNotification: async (id: string) => {
-    return requests.delete<{ acknowledged: boolean; deletedCount: number }>(`/notification/${id}`);
+    return requests.delete<{ acknowledged: boolean; deletedCount: number }>(`/notification/${id}`)
   },
 
   deleteNotificationByProductId: async (id: string) => {
-    return requests.delete<{ acknowledged: boolean; deletedCount: number }>(
-      `/notification/product-id/${id}`
-    );
+    return requests.delete<{ acknowledged: boolean; deletedCount: number }>(`/notification/product-id/${id}`)
   },
 
   deleteManyNotification: async (body: { ids: string[] }) => {
-    return requests.patch<{ acknowledged: boolean; deletedCount: number }>(
-      `/notification/delete/many`,
-      body
-    );
+    return requests.patch<{ acknowledged: boolean; deletedCount: number }>('/notification/delete/many', body)
   },
-};
+}
 
-export default NotificationServices;
+export default NotificationServices
