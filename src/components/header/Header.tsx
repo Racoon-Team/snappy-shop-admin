@@ -155,7 +155,7 @@ const Header: React.FC = () => {
                   </span>
                   <span className="md:hidden uppercase">
                     {/* {currentLanguageCode === "de" ? "DE" : "EN"} */}
-                    {currLang?.iso_code}
+                    {currLang?.isoCode}
                   </span>
                 </button>
 

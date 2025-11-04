@@ -21,15 +21,15 @@ const useLanguageSubmit = (id) => {
     formState: { errors },
   } = useForm()
 
-  const onSubmit = async ({ name, iso_code, language_code }) => {
-    // console.log(name, iso_code, language_code)
+  const onSubmit = async ({ name, isoCode, languageCode }) => {
+    // console.log(name, isoCode, language_code)
     // return notifyError("This option disabled for this option!");
     try {
       setIsSubmitting(true)
       const languageData = {
         name,
-        language_code,
-        iso_code,
+        languageCode,
+        isoCode,
         flag: flagAndName,
         status: languagePublished ? 'show' : 'hide',
       }
@@ -59,12 +59,12 @@ const useLanguageSubmit = (id) => {
   useEffect(() => {
     if (!isDrawerOpen) {
       setValue('name')
-      setValue('iso_code')
+      setValue('isoCode')
       setValue('flag')
       setLanguagePublished(true)
       setFlagAndName('')
       clearErrors('name')
-      clearErrors('iso_code')
+      clearErrors('isoCode')
       clearErrors('flag')
       clearErrors('status')
       return
@@ -75,7 +75,7 @@ const useLanguageSubmit = (id) => {
           const res = await LanguageServices.getLanguageById(id)
           if (res) {
             setValue('name', res.name)
-            setValue('iso_code', res.iso_code)
+            setValue('isoCode', res.isoCode)
             setLanguagePublished(res.status === 'show')
             setFlagAndName(res.flag)
             setValue('status', res.status)

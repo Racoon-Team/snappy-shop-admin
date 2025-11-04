@@ -64,8 +64,8 @@ const LanguageDrawer = ({ id }) => {
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6 relative">
               <LabelArea label={t('languagesScreen.drawer.isoCode')} />
               <div className="col-span-8 sm:col-span-4">
-                <SelectISOCode register={register} label="ISO code" name={'iso_code'} required={true} />
-                <Error errorName={errors.iso_code} />
+                <SelectISOCode register={register} label="ISO code" name={'isoCode'} required={true} />
+                <Error errorName={errors.isoCode} />
               </div>
             </div>
 

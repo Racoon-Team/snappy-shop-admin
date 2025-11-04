@@ -33,14 +33,14 @@ const LanguageTable = ({ languages, isCheck, setIsCheck }) => {
 
       <TableBody>
         {languages?.map((language, i) => (
-          <TableRow key={language._id}>
+          <TableRow key={language.id}>
             <TableCell>
               <CheckBox
                 type="checkbox"
                 name={language.name}
-                id={language._id}
+                id={language.id}
                 handleClick={handleClick}
-                isChecked={isCheck.includes(language._id)}
+                isChecked={isCheck.includes(language.id)}
               />
             </TableCell>
             <TableCell>
@@ -52,7 +52,7 @@ const LanguageTable = ({ languages, isCheck, setIsCheck }) => {
             </TableCell>
 
             <TableCell>
-              <span className="text-sm">{language.iso_code}</span>{' '}
+              <span className="text-sm">{language.isoCode}</span>{' '}
             </TableCell>
 
             <TableCell>
@@ -60,11 +60,11 @@ const LanguageTable = ({ languages, isCheck, setIsCheck }) => {
             </TableCell>
 
             <TableCell className="text-center">
-              <ShowHideButton id={language._id} status={language.status} />
+              <ShowHideButton id={language.id} status={language.status} />
             </TableCell>
 
             <TableCell>
-              <EditDeleteButton id={language._id} handleUpdate={handleUpdate} handleModalOpen={handleModalOpen} />
+              <EditDeleteButton id={language.id} handleUpdate={handleUpdate} handleModalOpen={handleModalOpen} />
             </TableCell>
           </TableRow>
         ))}

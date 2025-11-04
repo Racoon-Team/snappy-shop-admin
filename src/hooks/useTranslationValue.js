@@ -32,7 +32,7 @@ const useTranslationValue = () => {
   }
 
   const hasKeyChanged = (currentData, updatedData) => {
-    const langIsoCodes = languages?.map((lang) => lang?.iso_code)
+    const langIsoCodes = languages?.map((lang) => lang?.isoCode)
     // console.log(
     //   "currentData",
     //   currentData,
@@ -95,20 +95,20 @@ const useTranslationValue = () => {
     // console.log("isKeyUpdated", isKeyUpdated);
     if (!isKeyUpdated) return false
 
-    const filterLanguage = languages?.filter((lan) => lan?.iso_code !== tnsForm)
+    const filterLanguage = languages?.filter((lan) => lan?.isoCode !== tnsForm)
 
     // console.log("filterLanguage", filterLanguage);
     // return;
 
     const promisesArray = filterLanguage.map((lan) => {
-      return text ? handleTranslateCallApi(text?.toLowerCase(), tnsForm, lan?.iso_code) : ''
+      return text ? handleTranslateCallApi(text?.toLowerCase(), tnsForm, lan?.isoCode) : ''
     })
 
     const results = await Promise.all(promisesArray)
 
     // const languageArray = filterLanguage.map((lan, index) => {
     //   return {
-    //     lang: lan?.iso_code,
+    //     lang: lan?.isoCode,
     //     text: results[index],
     //   };
     // });
@@ -121,7 +121,7 @@ const useTranslationValue = () => {
     const languageArray = filterLanguage
       .map((lan, index) => {
         const translation = results[index]
-        return translation ? { lang: lan?.iso_code, text: translation } : null
+        return translation ? { lang: lan?.isoCode, text: translation } : null
       })
       .filter(Boolean) // Remove null values
 

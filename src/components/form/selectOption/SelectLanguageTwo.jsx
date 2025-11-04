@@ -26,8 +26,8 @@ const SelectLanguageTwo = ({ handleSelectLanguage, register }) => {
         {!langError &&
           !langLoading &&
           languages?.map((lang) => (
-            <option key={lang._id} value={lang.iso_code}>
-              {lang.iso_code}{' '}
+            <option key={lang.id} value={lang.isoCode}>
+              {lang.isoCode}{' '}
             </option>
           ))}
       </select>

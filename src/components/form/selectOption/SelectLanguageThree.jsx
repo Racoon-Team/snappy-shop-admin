@@ -11,7 +11,7 @@ const SelectLanguageThree = ({ register, name, label, required, setValue, watch 
   useEffect(() => {
     if (!selectedLanguage && languages?.length) {
       // Set default value if none exists
-      setValue(name, languages[0]?.iso_code)
+      setValue(name, languages[0]?.isoCode)
     }
   }, [languages, selectedLanguage, name, setValue])
 
@@ -32,7 +32,7 @@ const SelectLanguageThree = ({ register, name, label, required, setValue, watch 
         </option>
 
         {languages?.map((language, i) => (
-          <option key={i + 1} value={language.iso_code}>
+          <option key={i + 1} value={language.isoCode}>
             {language.name}
           </option>
         ))}
