@@ -1,3 +1,14 @@
+export const notificationStatus={
+  READ:'read',
+  UNREAD:'unread' 
+} as const 
+export type notificationStatusType=typeof notificationStatus[ keyof typeof notificationStatus]
+export interface BackendCurrencyInput {
+  name: string
+  symbol?: string
+  status?: notificationStatusType
+}
+
 export interface BackendNotification {
   _id: string;
   orderId?: string;
@@ -5,7 +16,7 @@ export interface BackendNotification {
   adminId?: string;
   message: string;
   image?: string;
-  status: 'read' | 'unread';
+  status: notificationStatusType;
   createdAt: string;
   updatedAt: string;
 }
@@ -17,7 +28,7 @@ export interface Notification {
   adminId?: string;
   message: string;
   image?: string;
-  status: 'read' | 'unread';
+  status: notificationStatusType;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -28,7 +39,7 @@ export interface NotificationInput {
   adminId?: string;
   message: string;
   image?: string;
-  status?: 'read' | 'unread';
+  status?: notificationStatusType;
 }
 
 export interface BackendNotificationInput {
@@ -37,7 +48,7 @@ export interface BackendNotificationInput {
   adminId?: string;
   message: string;
   image?: string;
-  status?: 'read' | 'unread';
+  status?: notificationStatusType;
 }
 
 

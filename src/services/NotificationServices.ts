@@ -1,7 +1,7 @@
 import requests from '@/services/httpService'
 import { mapBackendToNotification, mapNotificationInputToBackend } from '@/mappers/notificationMapper'
 import type { NotificationInput, BackendNotification } from '@/types/notification'
-import type { PaginationResponse } from '@/interfaceTypes/notification'
+import type { PaginationResponse } from '@/types/pagination'
 
 
 const NotificationServices = {
