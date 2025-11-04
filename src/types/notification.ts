@@ -39,10 +39,5 @@ export interface BackendNotificationInput {
   image?: string;
   status?: 'read' | 'unread';
 }
-export interface PaginationResponse<T> {
-  data: T[];
-  total: number;
-  page: number;
-  limit: number;
-}
+
 
