@@ -57,8 +57,8 @@ const CurrencyServices = {
     return requests.put<IMessageResponse>(`/currency/status/live-exchange-rates/${id}`, body)
   },
 
-  deleteCurrency: async (id: string, body: unknown = {}): Promise<IMessageResponse> => {
-    return requests.patch<IMessageResponse>(`/currency/${id}`, body)
+  deleteCurrency: async (id: string): Promise<IMessageResponse> => {
+    return requests.delete<IMessageResponse>(`/currency/${id}`)
   },
 
   deleteManyCurrency: async (body: { ids: string[] }): Promise<IMessageResponse> => {
