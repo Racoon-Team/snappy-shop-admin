@@ -26,7 +26,7 @@ const SelectCurrency = ({
           })}
         >
           {data?.map((currency) => (
-            <option key={currency._id} value={`${currency.symbol}`}>
+            <option key={currency.id} value={`${currency.symbol}`}>
               {currency?.name}
             </option>
           ))}

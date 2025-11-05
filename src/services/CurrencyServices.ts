@@ -38,7 +38,11 @@ const CurrencyServices = {
     return requests.put<IMessageResponse>(`/currency/${id}`, backendBody)
   },
 
-  updateManyCurrencies: async (body: { ids: string[]; status: 'show' | 'hide' }): Promise<IMessageResponse> => {
+  updateManyCurrencies: async (body: {
+    ids: string[]
+    enabled?: 'show' | 'hide'
+    live_exchange_rates?: 'show' | 'hide'
+  }): Promise<IMessageResponse> => {
     return requests.patch<IMessageResponse>('currency/update/many', body)
   },
 

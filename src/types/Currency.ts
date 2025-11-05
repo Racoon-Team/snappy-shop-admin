@@ -1,9 +1,16 @@
+export const CurrencyStatus = {
+  SHOW: 'show',
+  HIDE: 'hide',
+} as const
+
+export type CurrencyStatus = (typeof CurrencyStatus)[keyof typeof CurrencyStatus]
+
 export interface BackendCurrency {
   _id: string
   name: string
   symbol?: string
-  status: 'show' | 'hide'
-  live_exchange_rates: 'show' | 'hide'
+  status: CurrencyStatus
+  live_exchange_rates: CurrencyStatus
   createdAt: string
   updatedAt: string
 }
@@ -11,15 +18,15 @@ export interface BackendCurrency {
 export interface BackendCurrencyInput {
   name: string
   symbol?: string
-  status?: 'show' | 'hide'
+  status?: CurrencyStatus
 }
 
 export interface Currency {
   id: string
   name: string
   symbol?: string
-  status: 'show' | 'hide'
-  liveExchangeRates: 'show' | 'hide'
+  status: CurrencyStatus
+  liveExchangeRates: CurrencyStatus
   createdAt: Date
   updatedAt: Date
 }
@@ -27,5 +34,5 @@ export interface Currency {
 export interface CurrencyInput {
   name: string
   symbol?: string
-  status?: 'show' | 'hide'
+  status?: CurrencyStatus
 }

@@ -34,14 +34,14 @@ const CurrencyTable = ({ currency, isCheck, setIsCheck }) => {
 
       <TableBody>
         {currency?.map((currency) => (
-          <TableRow key={currency._id}>
+          <TableRow key={currency.id}>
             <TableCell>
               <CheckBox
                 type="checkbox"
                 name={currency.symbol}
-                id={currency._id}
+                id={currency.id}
                 handleClick={handleClick}
-                isChecked={isCheck.includes(currency._id)}
+                isChecked={isCheck.includes(currency.id)}
               />
             </TableCell>
 
@@ -58,13 +58,13 @@ const CurrencyTable = ({ currency, isCheck, setIsCheck }) => {
             </TableCell>
 
             <TableCell className="text-center">
-              <ShowHideButton id={currency._id} status={currency.status} currencyStatusName="status" />
+              <ShowHideButton id={currency.id} status={currency.status} currencyStatusName="status" />
             </TableCell>
 
             <TableCell>
               <EditDeleteButton
                 title={currency.name}
-                id={currency._id}
+                id={currency.id}
                 handleUpdate={handleUpdate}
                 handleModalOpen={handleModalOpen}
               />
