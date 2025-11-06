@@ -33,8 +33,8 @@ const Header = () => {
   const { showDateTimeFormat } = useUtilsFunction()
 
   const [data, setData] = useState([])
-  const [totalDoc, setTotalDoc] = useState(0)
-  const [totalUnreadDoc, setTotalUnreadDoc] = useState(0)
+  const [total, setTotalDoc] = useState(0)
+  const [totalUnread, setTotalUnreadDoc] = useState(0)
   const [profileOpen, setProfileOpen] = useState(false)
   const [notificationOpen, setNotificationOpen] = useState(false)
 
@@ -64,8 +64,8 @@ const Header = () => {
       })
 
       const getAllRes = await NotificationServices.getAllNotification()
-      setData(getAllRes?.notifications)
-      setTotalUnreadDoc(getAllRes?.totalUnreadDoc)
+      setData(getAllRes?.data)
+      setTotalUnreadDoc(getAllRes?.additionalInfo?.totalUnread)
       window.location.reload(false)
     } catch (err) {
       notifyError(err?.response?.data?.message || err?.message)
@@ -77,9 +77,9 @@ const Header = () => {
     try {
       await NotificationServices.deleteNotification(id)
       const getAllRes = await NotificationServices.getAllNotification()
-      setData(getAllRes?.notifications)
-      setTotalUnreadDoc(getAllRes?.totalUnreadDoc)
-      setTotalDoc(getAllRes?.totalDoc)
+      setData(getAllRes?.data)
+      setTotalUnreadDoc(getAllRes?.totalUnread)
+      setTotalDoc(getAllRes?.total)
     } catch (err) {
       notifyError(err?.response?.data?.message || err?.message)
     }
@@ -90,9 +90,9 @@ const Header = () => {
     try {
       const res = await NotificationServices.getAllNotification()
       // console.log("notifcation api called", res);
-      setData(res?.notifications)
-      setTotalUnreadDoc(res?.totalUnreadDoc)
-      setTotalDoc(res?.totalDoc)
+      setData(res?.data)
+      setTotalUnreadDoc(res?.additionalInfo?.totalUnread)
+      setTotalDoc(res?.total)
       setUpdated(false)
     } catch (err) {
       setUpdated(false)
@@ -188,9 +188,9 @@ const Header = () => {
               <button className="relative align-middle rounded-md focus:outline-none" onClick={handleNotificationOpen}>
                 <FiBell className="w-5 h-5 text-emerald-500" aria-hidden="true" />
 
-                {totalUnreadDoc > 0 && (
+                {totalUnread > 0 && (
                   <span className="absolute z-10 top-0 right-0 inline-flex items-center justify-center p-1 h-5 w-5 text-xs font-medium leading-none text-red-100 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 rounded-full">
-                    {totalUnreadDoc}
+                    {totalUnread}
                   </span>
                 )}
               </button>
@@ -282,7 +282,7 @@ const Header = () => {
                         </ul>
                       )}
 
-                      {totalDoc > 5 && (
+                      {total > 5 && (
                         <div className="text-center py-2">
                           <Link
                             onClick={() => setNotificationOpen(false)}

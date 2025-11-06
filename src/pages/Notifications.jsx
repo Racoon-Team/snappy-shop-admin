@@ -26,8 +26,8 @@ import { notifyError, notifySuccess } from '@/utils/toast'
 const Notifications = () => {
   // react hook
   const [data, setData] = useState([])
-  const [totalDoc, setTotalDoc] = useState(0)
-  const [totalUnreadDoc, setTotalUnreadDoc] = useState(0)
+  const [total, setTotalDoc] = useState(0)
+  const [totalUnread, setTotalUnreadDoc] = useState(0)
   const [page, setPage] = useState(2)
   const [isCheck, setIsCheck] = useState([])
   const [isCheckAll, setIsCheckAll] = useState(false)
@@ -41,8 +41,8 @@ const Notifications = () => {
         status: 'read',
       })
       const getAllRes = await NotificationServices.getAllNotification()
-      setData(getAllRes?.notifications)
-      setTotalUnreadDoc(getAllRes?.totalUnreadDoc)
+      setData(getAllRes?.data)
+      setTotalUnreadDoc(getAllRes?.totalUnread)
       window.location.reload(false)
     } catch (err) {
       // console.log(err);
@@ -55,9 +55,9 @@ const Notifications = () => {
     try {
       await NotificationServices.deleteNotification(id)
       const getAllRes = await NotificationServices.getAllNotification()
-      setData(getAllRes?.notifications)
-      setTotalUnreadDoc(getAllRes?.totalUnreadDoc)
-      setTotalDoc(getAllRes?.totalDoc)
+      setData(getAllRes?.data)
+      setTotalUnreadDoc(getAllRes?.totalUnread)
+      setTotalDoc(getAllRes?.total)
     } catch (err) {
       // console.log(err);
       notifyError(err?.response?.data?.message || err?.message)
@@ -70,8 +70,8 @@ const Notifications = () => {
 
     try {
       const getAllRes = await NotificationServices.getAllNotification(pg)
-      setData((pre) => [...pre, ...(getAllRes?.notifications || [])])
-      setTotalUnreadDoc(getAllRes?.totalUnreadDoc)
+      setData((pre) => [...pre, ...(getAllRes?.data || [])])
+      setTotalUnreadDoc(getAllRes?.totalUnread)
       setPage((pre) => pre + 1)
     } catch (err) {
       // console.log(err);
@@ -92,8 +92,8 @@ const Notifications = () => {
       setPage(1)
       // get all Notification
       const getAllRes = await NotificationServices.getAllNotification()
-      setData(getAllRes?.notifications)
-      setTotalUnreadDoc(getAllRes?.totalUnreadDoc)
+      setData(getAllRes?.data)
+      setTotalUnreadDoc(getAllRes?.totalUnread)
     } catch (err) {
       // notifyError("Server Side Error");
       notifyError(err?.response?.data?.message || err?.message)
@@ -113,8 +113,8 @@ const Notifications = () => {
       setPage(1)
       // get all Notification
       const getAllRes = await NotificationServices.getAllNotification()
-      setData(getAllRes?.notifications)
-      setTotalUnreadDoc(getAllRes?.totalUnreadDoc)
+      setData(getAllRes?.data)
+      setTotalUnreadDoc(getAllRes?.totalUnread)
     } catch (err) {
       // notifyError("Server Side Error");
       notifyError(err?.response?.data?.message || err?.message)
@@ -144,9 +144,9 @@ const Notifications = () => {
     ;(async () => {
       try {
         const res = await NotificationServices.getAllNotification()
-        setData(res?.notifications)
-        setTotalUnreadDoc(res?.totalUnreadDoc)
-        setTotalDoc(res?.totalDoc)
+        setData(res?.data)
+        setTotalUnreadDoc(res?.totalUnread)
+        setTotalDoc(res?.total)
         setPage(1)
       } catch (err) {
         // console.log(err?.response?.data?.message || err?.message);
@@ -192,7 +192,7 @@ const Notifications = () => {
       <Card className="shadow-xs overflow-hidden bg-white dark:bg-gray-800 mb-5">
         <CardBody style={{ padding: 0 }}>
           <div className="p-4 dark:text-gray-300">
-            <p className="text-sm font-semibold text-teal-700">Unread Notification ({totalUnreadDoc})</p>
+            <p className="text-sm font-semibold text-teal-700">Unread Notification ({totalUnread})</p>
           </div>
 
           <div className="border rounded-md">
@@ -311,7 +311,7 @@ const Notifications = () => {
                   </Table>
 
                   <div>
-                    {totalDoc > 5 && data.length !== totalDoc ? (
+                    {total> 5 && data.length !== total ? (
                       <div className="text-center py-2">
                         <button
                           onClick={() => handleSeeMoreNotification(page + 1)}

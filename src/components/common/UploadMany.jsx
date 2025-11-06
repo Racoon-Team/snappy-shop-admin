@@ -14,7 +14,7 @@ import ProductServices from '@/services/ProductServices'
 
 const UploadMany = ({
   title,
-  totalDoc,
+  total,
   filename,
   exportData,
   isDisabled,
@@ -40,7 +40,7 @@ const UploadMany = ({
       setLoadingExport({ name: 'csv', status: true })
       ProductServices.getAllProducts({
         page: 1,
-        limit: totalDoc,
+        limit: total,
         category: null,
         title: null,
         price: 0,
@@ -96,7 +96,7 @@ const UploadMany = ({
       setLoadingExport({ name: 'json', status: true })
       ProductServices.getAllProducts({
         page: 1,
-        limit: totalDoc,
+        limit: total,
         category: null,
         title: null,
         price: 0,

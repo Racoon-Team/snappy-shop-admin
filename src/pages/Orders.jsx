@@ -84,7 +84,7 @@ const Orders = () => {
         endDate: endDate,
         download: true,
         startDate: startDate,
-        limit: data?.totalDoc,
+        limit: data?.total,
         customerName: searchText,
       })
 
@@ -289,7 +289,7 @@ const Orders = () => {
 
           <TableFooter>
             <Pagination
-              totalResults={data?.totalDoc}
+              totalResults={data?.total}
               resultsPerPage={resultsPerPage}
               onChange={handleChangePage}
               label="Table navigation"

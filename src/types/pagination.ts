@@ -1,6 +1,7 @@
 export interface PaginationResponse<T> {
   data: T[];
   total: number;
-  page: number;
+  pages: number;
   limit: number;
+  additionalInfo:{totalUnread:number};
 }
