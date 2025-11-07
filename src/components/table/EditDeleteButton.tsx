@@ -29,7 +29,6 @@ const EditDeleteButton: React.FC<EditDeleteButtonProps> = ({
   children,
 }) => {
   const { t } = useTranslation()
-  // console.log('edite delet button')
 
   return (
     <>

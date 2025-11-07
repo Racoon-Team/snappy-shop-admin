@@ -3,23 +3,15 @@ import { Select } from '@windmill/react-ui'
 //internal import
 import useAsync from '@/hooks/useAsync'
 import CurrencyServices from '@/services/CurrencyServices'
-// import { CODES } from 'currencies-map';
 
 interface SelectCurrencyProps {
   register: any
   name: string
   label: string
   required?: boolean
-  // loading?: boolean
 }
 
-const SelectCurrency: React.FC<SelectCurrencyProps> = ({
-  register,
-  name,
-  label,
-  required,
-  // loading,
-}) => {
+const SelectCurrency: React.FC<SelectCurrencyProps> = ({ register, name, label, required }) => {
   const { data, loading } = useAsync(CurrencyServices.getShowingCurrency)
 
   return (

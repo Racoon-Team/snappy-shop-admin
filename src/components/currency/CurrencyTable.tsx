@@ -10,7 +10,6 @@ import MainDrawer from '@/components/drawer/MainDrawer'
 import CurrencyDrawer from '@/components/drawer/CurrencyDrawer'
 import EditDeleteButton from '@/components/table/EditDeleteButton'
 import ShowHideButton from '@/components/table/ShowHideButton'
-// import { SidebarContext } from '../context/SidebarContext';
 
 interface Currency {
   id: string
@@ -63,10 +62,6 @@ const CurrencyTable: React.FC<CurrencyTableProps> = ({ currency, isCheck, setIsC
             <TableCell className="text-center">
               <span className="font-medium text-sm">{currency.name}</span>
             </TableCell>
-
-            {/* <TableCell className="text-center">
-              <span className="font-medium text-sm">{currency.iso_code}</span>
-            </TableCell> */}
 
             <TableCell className="text-center">
               <span className="font-medium text-sm">{currency.symbol}</span>

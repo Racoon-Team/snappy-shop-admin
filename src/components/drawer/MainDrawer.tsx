@@ -25,8 +25,6 @@ const MainDrawer: React.FC<MainDrawerProps> = ({ children, product }) => {
     }
   }, [])
 
-  // console.log('windowDimension ==========>', windowDimension <= 575);
-
   return (
     <Drawer
       open={isDrawerOpen}

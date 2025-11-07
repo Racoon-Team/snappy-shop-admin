@@ -1,12 +1,10 @@
 import axios from 'axios'
-// import Cookies from 'js-cookie';
 import { SidebarContext } from '@/context/SidebarContext'
 import { useContext, useEffect, useState } from 'react'
 
 function useAsync<T>(asyncFunction: (params?: any) => Promise<T>) {
   const [data, setData] = useState<T | []>([])
   const [error, setError] = useState<string>('')
-  // const [errCode, setErrCode] = useState('');
   const [loading, setLoading] = useState<boolean>(true)
 
   const {

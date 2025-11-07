@@ -27,7 +27,6 @@ const ShowHideButton: React.FC<ShowHideButtonProps> = ({ id, status, category, c
   const { setIsUpdate } = useContext(SidebarContext)
 
   const handleChangeStatus = async (id: string): Promise<void> => {
-    // return notifyError("This option disabled for this option!");
     try {
       let newStatus: 'show' | 'hide'
       if (status === 'show') {
@@ -111,7 +110,6 @@ const ShowHideButton: React.FC<ShowHideButtonProps> = ({ id, status, category, c
       }
 
       if (location.pathname === '/coupons') {
-        // console.log('coupns',id)
         const res = await CouponServices.updateStatus(id, {
           status: newStatus,
         })
@@ -123,7 +121,6 @@ const ShowHideButton: React.FC<ShowHideButtonProps> = ({ id, status, category, c
       }
 
       if (location.pathname === '/our-staff') {
-        // console.log('coupns',id)
         const res = await AdminServices.updateStaffStatus(id, {
           status: newStatus,
         })
