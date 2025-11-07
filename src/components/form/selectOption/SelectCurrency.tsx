@@ -5,7 +5,15 @@ import useAsync from '@/hooks/useAsync'
 import CurrencyServices from '@/services/CurrencyServices'
 // import { CODES } from 'currencies-map';
 
-const SelectCurrency = ({
+interface SelectCurrencyProps {
+  register: any
+  name: string
+  label: string
+  required?: boolean
+  // loading?: boolean
+}
+
+const SelectCurrency: React.FC<SelectCurrencyProps> = ({
   register,
   name,
   label,
@@ -35,4 +43,5 @@ const SelectCurrency = ({
     </>
   )
 }
+
 export default SelectCurrency

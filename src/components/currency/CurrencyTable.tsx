@@ -1,5 +1,6 @@
 import { TableBody, TableCell, TableRow } from '@windmill/react-ui'
 import React from 'react'
+import type { ChangeEvent } from 'react'
 
 //internal import
 import CheckBox from '@/components/form/others/CheckBox'
@@ -11,15 +12,29 @@ import EditDeleteButton from '@/components/table/EditDeleteButton'
 import ShowHideButton from '@/components/table/ShowHideButton'
 // import { SidebarContext } from '../context/SidebarContext';
 
-const CurrencyTable = ({ currency, isCheck, setIsCheck }) => {
-  const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer()
-  // console.log('currency',currency)
+interface Currency {
+  id: string
+  name: string
+  symbol: string
+  status: string
+  iso_code?: string
+}
 
-  const handleClick = (e) => {
+interface CurrencyTableProps {
+  currency: Currency[]
+  isCheck: string[]
+  setIsCheck: React.Dispatch<React.SetStateAction<string[]>>
+}
+
+const CurrencyTable: React.FC<CurrencyTableProps> = ({ currency, isCheck, setIsCheck }) => {
+  const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer()
+
+  const handleClick = (e: ChangeEvent<HTMLInputElement>) => {
     const { id, checked } = e.target
 
-    setIsCheck([...isCheck, id])
-    if (!checked) {
+    if (checked) {
+      setIsCheck([...isCheck, id])
+    } else {
       setIsCheck(isCheck.filter((item) => item !== id))
     }
   }
