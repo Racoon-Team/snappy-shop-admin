@@ -3,7 +3,6 @@ import { mapBackendToNotification, mapNotificationInputToBackend } from '@/mappe
 import type { NotificationInput, BackendNotification } from '@/types/notification'
 import type { PaginationResponse } from '@/types/pagination'
 
-
 const NotificationServices = {
   addNotification: async (body: NotificationInput) => {
     const backendBody = mapNotificationInputToBackend(body)
@@ -12,8 +11,12 @@ const NotificationServices = {
   },
 
   getAllNotification: async (page: number) => {
-    const response = await requests.get<PaginationResponse<BackendNotification>>(`/notification?page=${page}`)
-    const backendData = Array.isArray(response?.data ?? response) ? (response.data ?? response) : []
+    const response = await requests.get<PaginationResponse<BackendNotification, { totalUnread: number }>>(
+      `/notification?page=${page}`
+    )
+
+    const backendData = Array.isArray(response.data) ? response.data : []
+
     return {
       ...response,
       data: backendData.map(mapBackendToNotification),

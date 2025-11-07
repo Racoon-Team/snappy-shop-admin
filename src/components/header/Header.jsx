@@ -57,13 +57,13 @@ const Header = () => {
   }
 
   // handle notification status change
-  const handleNotificationStatusChange = async (id) => {
+  const handleNotificationStatusChange = async (_id) => {
     try {
-      await NotificationServices.updateStatusNotification(id, {
+      await NotificationServices.updateStatusNotification(_id, {
         status: 'read',
       })
 
-      const getAllRes = await NotificationServices.getAllNotification()
+      const getAllRes = await NotificationServices.getAllNotification(1)
       setData(getAllRes?.data)
       setTotalUnreadDoc(getAllRes?.additionalInfo?.totalUnread)
       window.location.reload(false)
@@ -73,10 +73,10 @@ const Header = () => {
   }
 
   // handle notification delete
-  const handleNotificationDelete = async (id) => {
+  const handleNotificationDelete = async (_id) => {
     try {
-      await NotificationServices.deleteNotification(id)
-      const getAllRes = await NotificationServices.getAllNotification()
+      await NotificationServices.deleteNotification(_id)
+      const getAllRes = await NotificationServices.getAllNotification(1)
       setData(getAllRes?.data)
       setTotalUnreadDoc(getAllRes?.totalUnread)
       setTotalDoc(getAllRes?.total)
@@ -88,7 +88,7 @@ const Header = () => {
   //handle get notifications
   const handleGetAllNotifications = async () => {
     try {
-      const res = await NotificationServices.getAllNotification()
+      const res = await NotificationServices.getAllNotification(1)
       // console.log("notifcation api called", res);
       setData(res?.data)
       setTotalUnreadDoc(res?.additionalInfo?.totalUnread)
@@ -222,11 +222,11 @@ const Header = () => {
                                     value.productId
                                       ? `/product/${value.productId}`
                                       : value.orderId
-                                        ? `/order/${value.orderId}`
+                                        ? `/order/${value._id}`
                                         : '/our-staff'
                                   }
                                   className="flex items-center"
-                                  onClick={() => handleNotificationStatusChange(value._id)}
+                                  onClick={() => handleNotificationStatusChange(value.id)}
                                 >
                                   <Avatar
                                     className="mr-2 md:block bg-gray-50 border border-gray-200"
@@ -266,7 +266,7 @@ const Header = () => {
                                 <div className="group inline-block relative">
                                   <button
                                     type="button"
-                                    onClick={() => handleNotificationDelete(value._id)}
+                                    onClick={() => handleNotificationDelete(value.id)}
                                     className="px-2 group-hover:text-blue-500 text-red-500 focus:outline-none"
                                   >
                                     <FiTrash2 />
