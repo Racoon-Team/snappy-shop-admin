@@ -1,5 +1,6 @@
 import { TableBody, TableCell, TableRow } from '@windmill/react-ui'
 import React from 'react'
+import type { ChangeEvent } from 'react'
 
 //internal import
 import CheckBox from '@/components/form/others/CheckBox'
@@ -9,17 +10,30 @@ import MainDrawer from '@/components/drawer/MainDrawer'
 import CurrencyDrawer from '@/components/drawer/CurrencyDrawer'
 import EditDeleteButton from '@/components/table/EditDeleteButton'
 import ShowHideButton from '@/components/table/ShowHideButton'
-// import { SidebarContext } from '../context/SidebarContext';
 
-const CurrencyTable = ({ currency, isCheck, setIsCheck }) => {
+interface Currency {
+  id: string
+  name: string
+  symbol: string
+  status: string
+  iso_code?: string
+}
+
+interface CurrencyTableProps {
+  currency: Currency[]
+  isCheck: string[]
+  setIsCheck: React.Dispatch<React.SetStateAction<string[]>>
+}
+
+const CurrencyTable: React.FC<CurrencyTableProps> = ({ currency, isCheck, setIsCheck }) => {
   const { title, serviceId, handleModalOpen, handleUpdate } = useToggleDrawer()
-  // console.log('currency',currency)
 
-  const handleClick = (e) => {
+  const handleClick = (e: ChangeEvent<HTMLInputElement>) => {
     const { id, checked } = e.target
 
-    setIsCheck([...isCheck, id])
-    if (!checked) {
+    if (checked) {
+      setIsCheck([...isCheck, id])
+    } else {
       setIsCheck(isCheck.filter((item) => item !== id))
     }
   }
@@ -34,14 +48,14 @@ const CurrencyTable = ({ currency, isCheck, setIsCheck }) => {
 
       <TableBody>
         {currency?.map((currency) => (
-          <TableRow key={currency._id}>
+          <TableRow key={currency.id}>
             <TableCell>
               <CheckBox
                 type="checkbox"
                 name={currency.symbol}
-                id={currency._id}
+                id={currency.id}
                 handleClick={handleClick}
-                isChecked={isCheck.includes(currency._id)}
+                isChecked={isCheck.includes(currency.id)}
               />
             </TableCell>
 
@@ -49,22 +63,18 @@ const CurrencyTable = ({ currency, isCheck, setIsCheck }) => {
               <span className="font-medium text-sm">{currency.name}</span>
             </TableCell>
 
-            {/* <TableCell className="text-center">
-              <span className="font-medium text-sm">{currency.iso_code}</span>
-            </TableCell> */}
-
             <TableCell className="text-center">
               <span className="font-medium text-sm">{currency.symbol}</span>
             </TableCell>
 
             <TableCell className="text-center">
-              <ShowHideButton id={currency._id} status={currency.status} currencyStatusName="status" />
+              <ShowHideButton id={currency.id} status={currency.status} currencyStatusName="status" />
             </TableCell>
 
             <TableCell>
               <EditDeleteButton
                 title={currency.name}
-                id={currency._id}
+                id={currency.id}
                 handleUpdate={handleUpdate}
                 handleModalOpen={handleModalOpen}
               />
