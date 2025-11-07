@@ -31,8 +31,9 @@ const MainDrawer: React.FC<MainDrawerProps> = ({ children, product }) => {
     <Drawer
       open={isDrawerOpen}
       onClose={closeDrawer}
-      // parent={null}
-      // level={null}
+      // @ts-expect-error
+      parent={null}
+      level={null}
       placement={'right'}
       width={`${windowDimension <= 575 ? '100%' : product || isProduct ? '40%' : '50%'}`}
     >
