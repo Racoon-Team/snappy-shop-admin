@@ -1,4 +1,10 @@
-import { type BackendLanguage, type BackendLanguageInput, type Language, type LanguageInput, LanguageStatus } from '../types/Language'
+import {
+  type BackendLanguage,
+  type BackendLanguageInput,
+  type Language,
+  type LanguageInput,
+  LanguageStatus,
+} from '../types/Language'
 
 export function mapBackendToLanguage(backendLang: BackendLanguage): Language {
   return {
@@ -6,7 +12,7 @@ export function mapBackendToLanguage(backendLang: BackendLanguage): Language {
     name: backendLang.name,
     isoCode: backendLang.iso_code,
     flag: backendLang.flag,
-    status: backendLang.status === 'show' ? LanguageStatus.SHOW : LanguageStatus.HIDE,
+    status: backendLang.status === LanguageStatus.SHOW ? LanguageStatus.SHOW : LanguageStatus.HIDE,
     createdAt: new Date(backendLang.createdAt),
     updatedAt: new Date(backendLang.updatedAt),
   }

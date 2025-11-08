@@ -1,15 +1,20 @@
 import { useContext, useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { set, useForm, type SubmitHandler } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 //internal import
 import { SidebarContext } from '@/context/SidebarContext'
 import LanguageServices from '@/services/LanguageServices'
 import { notifyError, notifySuccess } from '@/utils/toast'
+import { LanguageStatus, type LanguageInput } from '@/types/Language'
 
-const useLanguageSubmit = (id) => {
-  const [flagAndName, setFlagAndName] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [languagePublished, setLanguagePublished] = useState(true)
+interface UseLanguageSubmitProps {
+  id?: string
+}
+
+const useLanguageSubmit = ({ id }: UseLanguageSubmitProps) => {
+  const [flagAndName, setFlagAndName] = useState<string>('')
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
+  const [languagePublished, setLanguagePublished] = useState<boolean>(true)
   const { t } = useTranslation()
   const { isDrawerOpen, closeDrawer, setIsUpdate } = useContext(SidebarContext)
 
@@ -21,17 +26,16 @@ const useLanguageSubmit = (id) => {
     formState: { errors },
   } = useForm()
 
-  const onSubmit = async ({ name, isoCode, languageCode }) => {
+  const onSubmit: SubmitHandler<LanguageInput> = async ({ name, isoCode }) => {
     // console.log(name, isoCode, language_code)
     // return notifyError("This option disabled for this option!");
     try {
       setIsSubmitting(true)
       const languageData = {
         name,
-        languageCode,
         isoCode,
         flag: flagAndName,
-        status: languagePublished ? 'show' : 'hide',
+        status: languagePublished ? LanguageStatus.SHOW : LanguageStatus.HIDE,
       }
 
       if (id) {
@@ -39,18 +43,17 @@ const useLanguageSubmit = (id) => {
         setIsUpdate(true)
         setIsSubmitting(false)
         notifySuccess(res.message)
-        setFlagAndName('')
-        closeDrawer()
       } else {
         const res = await LanguageServices.addLanguage(languageData)
         setIsUpdate(true)
         setIsSubmitting(false)
         notifySuccess(t('languagesScreen.message.addNotification'))
-        setFlagAndName('')
-        closeDrawer()
       }
-    } catch (err) {
-      notifyError(err ? err?.response?.data?.message : err?.message)
+      setFlagAndName('')
+      closeDrawer()
+
+    } catch (err: any) {
+      notifyError(err?.response?.data?.message?? err?.message)
       closeDrawer()
       setIsSubmitting(false)
     }
@@ -58,15 +61,12 @@ const useLanguageSubmit = (id) => {
 
   useEffect(() => {
     if (!isDrawerOpen) {
-      setValue('name')
-      setValue('isoCode')
-      setValue('flag')
+      setValue('name','')
+      setValue('isoCode','')
+      setValue('flag','')
       setLanguagePublished(true)
       setFlagAndName('')
-      clearErrors('name')
-      clearErrors('isoCode')
-      clearErrors('flag')
-      clearErrors('status')
+      clearErrors(['name', 'isoCode', 'flag', 'status'])
       return
     }
     if (id) {
@@ -76,12 +76,13 @@ const useLanguageSubmit = (id) => {
           if (res) {
             setValue('name', res.name)
             setValue('isoCode', res.isoCode)
-            setLanguagePublished(res.status === 'show')
-            setFlagAndName(res.flag)
+            setValue('flag', res.flag ?? '')
             setValue('status', res.status)
+            setLanguagePublished(res.status === LanguageStatus.SHOW)
+            setFlagAndName(res.flag ?? '')
           }
-        } catch (err) {
-          notifyError(err ? err?.response?.data?.message : err?.message)
+        } catch (err: any) {
+          notifyError(err?.response?.data?.message ?? err?.message)
         }
       })()
     }

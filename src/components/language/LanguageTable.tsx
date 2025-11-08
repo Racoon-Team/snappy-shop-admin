@@ -1,8 +1,7 @@
-import { TableBody, TableCell, TableRow } from '@windmill/react-ui'
 import React from 'react'
+import { TableBody, TableCell, TableRow } from '@windmill/react-ui'
 
-//internal import
-
+// Internal imports
 import useToggleDrawer from '@/hooks/useToggleDrawer'
 import CheckBox from '@/components/form/others/CheckBox'
 import MainDrawer from '@/components/drawer/MainDrawer'
@@ -11,15 +10,23 @@ import ShowHideButton from '@/components/table/ShowHideButton'
 import LanguageDrawer from '@/components/drawer/LanguageDrawer'
 import EditDeleteButton from '@/components/table/EditDeleteButton'
 
-const LanguageTable = ({ languages, isCheck, setIsCheck }) => {
+import { type Language } from '@/types/Language'
+
+interface LanguageTableProps {
+  languages: Language[]
+  isCheck: string[]
+  setIsCheck: React.Dispatch<React.SetStateAction<string[]>>
+}
+
+const LanguageTable: React.FC<LanguageTableProps> = ({ languages, isCheck, setIsCheck }) => {
   const { serviceId, handleModalOpen, handleUpdate, title } = useToggleDrawer()
-  // console.log("language", languages);
-  const handleClick = (e) => {
+
+  const handleClick = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, checked } = e.target
-    // console.log('click all id', id, checked);
-    setIsCheck([...isCheck, id])
-    if (!checked) {
-      setIsCheck(isCheck.filter((item) => item !== id))
+    if (checked) {
+      setIsCheck((prev) => [...prev, id])
+    } else {
+      setIsCheck((prev) => prev.filter((item) => item !== id))
     }
   }
 
@@ -43,20 +50,21 @@ const LanguageTable = ({ languages, isCheck, setIsCheck }) => {
                 isChecked={isCheck.includes(language.id)}
               />
             </TableCell>
+
             <TableCell>
-              <span className="font-semibold uppercase text-xs"> {i + 1}</span>
+              <span className="font-semibold uppercase text-xs">{i + 1}</span>
             </TableCell>
 
             <TableCell>
-              <span className="text-sm">{language.name}</span>{' '}
+              <span className="text-sm">{language.name}</span>
             </TableCell>
 
             <TableCell>
-              <span className="text-sm">{language.isoCode}</span>{' '}
+              <span className="text-sm">{language.isoCode}</span>
             </TableCell>
 
             <TableCell>
-              <div className={`text-sm flag ${language?.flag?.toLowerCase()}`}></div>{' '}
+              <div className={`text-sm flag ${language?.flag?.toLowerCase() || ''}`}></div>
             </TableCell>
 
             <TableCell className="text-center">
@@ -64,7 +72,10 @@ const LanguageTable = ({ languages, isCheck, setIsCheck }) => {
             </TableCell>
 
             <TableCell>
-              <EditDeleteButton id={language.id} handleUpdate={handleUpdate} handleModalOpen={handleModalOpen} />
+              <EditDeleteButton
+                id={language.id}
+                handleUpdate={handleUpdate}
+                handleModalOpen={handleModalOpen} title={''}              />
             </TableCell>
           </TableRow>
         ))}

@@ -26,7 +26,7 @@ const LanguageDrawer = ({ id }) => {
     isSubmitting,
     languagePublished,
     setLanguagePublished,
-  } = useLanguageSubmit(id)
+  } = useLanguageSubmit({id})
 
   const { t } = useTranslation()
 
