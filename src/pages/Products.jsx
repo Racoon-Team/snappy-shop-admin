@@ -106,7 +106,7 @@ const Products = () => {
                   title="Products"
                   filename={filename}
                   isDisabled={isDisabled}
-                  totalDoc={data?.totalDoc}
+                  total={data?.total}
                   handleSelectFile={handleSelectFile}
                   handleUploadMultiple={handleUploadMultiple}
                   handleRemoveSelectFile={handleRemoveSelectFile}
@@ -237,7 +237,7 @@ const Products = () => {
           </Table>
           <TableFooter>
             <Pagination
-              totalResults={data?.totalDoc}
+              totalResults={data?.total}
               resultsPerPage={limitData}
               onChange={handleChangePage}
               label="Product Page Navigation"

@@ -12,23 +12,39 @@ import spinnerLoadingImage from '@/assets/img/spinner.gif'
 import { SidebarContext } from '@/context/SidebarContext'
 import ProductServices from '@/services/ProductServices'
 
-const UploadMany = ({
+interface UploadManyProps {
+  title: string
+  total: number
+  filename?: string
+  exportData: any[]
+  isDisabled?: boolean
+  handleSelectFile: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleRemoveSelectFile: () => void
+  handleUploadMultiple: () => void
+}
+
+interface LoadingExportState {
+  name: string
+  status: boolean
+}
+
+const UploadMany: React.FC<UploadManyProps> = ({
   title,
-  totalDoc,
+  total,
   filename,
   exportData,
-  isDisabled,
+  isDisabled = false,
   handleSelectFile,
   handleRemoveSelectFile,
   handleUploadMultiple,
 }) => {
   const location = useLocation()
   const { t } = useTranslation()
-  const dRef = useRef()
+  const dRef = useRef<HTMLDivElement>(null)
   const [dropDown, setDropDown] = useState(false)
   const [isImportBoxShown, setIsImportBoxShown] = useState(false)
   const { loading } = useContext(SidebarContext)
-  const [loadingExport, setLoadingExport] = useState({
+  const [loadingExport, setLoadingExport] = useState<LoadingExportState>({
     name: '',
     status: false,
   })
@@ -36,16 +52,17 @@ const UploadMany = ({
   // console.log(exportData);
 
   const handleExportCSV = () => {
-    if (location.pathname === '/products') {
+    const path = location.pathname
+    if (path === '/products') {
       setLoadingExport({ name: 'csv', status: true })
       ProductServices.getAllProducts({
         page: 1,
-        limit: totalDoc,
+        limit: total,
         category: null,
         title: null,
         price: 0,
       })
-        .then((res) => {
+        .then((res: any) => {
           setDropDown(false)
           setLoadingExport({ name: '', status: false })
           exportFromJSON({
@@ -54,54 +71,32 @@ const UploadMany = ({
             exportType: exportFromJSON.types.csv,
           })
         })
-        .catch((err) => {
+        .catch(() => {
           setLoadingExport({ name: '', status: false })
           setDropDown(false)
-          // console.log(err);
         })
-    }
-    if (location.pathname === '/categories') {
+    } else if (['/categories', '/attributes', '/coupons', '/customers'].includes(path)) {
+      const fileName = path.replace('/', '')
       exportFromJSON({
         data: exportData,
-        fileName: 'categories',
-        exportType: exportFromJSON.types.csv,
-      })
-    }
-    if (location.pathname === '/attributes') {
-      exportFromJSON({
-        data: exportData,
-        fileName: 'attributes',
-        exportType: exportFromJSON.types.csv,
-      })
-    }
-
-    if (location.pathname === '/coupons') {
-      exportFromJSON({
-        data: exportData,
-        fileName: 'coupons',
-        exportType: exportFromJSON.types.csv,
-      })
-    }
-    if (location.pathname === '/customers') {
-      exportFromJSON({
-        data: exportData,
-        fileName: 'customers',
+        fileName,
         exportType: exportFromJSON.types.csv,
       })
     }
   }
 
   const handleExportJSON = () => {
-    if (location.pathname === '/products') {
+    const path = location.pathname
+    if (path === '/products') {
       setLoadingExport({ name: 'json', status: true })
       ProductServices.getAllProducts({
         page: 1,
-        limit: totalDoc,
+        limit: total,
         category: null,
         title: null,
         price: 0,
       })
-        .then((res) => {
+        .then((res: any) => {
           setDropDown(false)
           setLoadingExport({ name: 'json', status: true })
           exportFromJSON({
@@ -110,51 +105,30 @@ const UploadMany = ({
             exportType: exportFromJSON.types.json,
           })
         })
-        .catch((err) => {
+        .catch(() => {
           setDropDown(false)
           setLoadingExport({ name: 'json', status: true })
           // console.log(err);
         })
-    }
-    if (location.pathname === '/categories') {
+    } else if (['/categories', '/attributes', '/coupons', '/customers'].includes(path)) {
+      const fileName = path.replace('/', '')
       exportFromJSON({
         data: exportData,
-        fileName: 'categories',
-        exportType: exportFromJSON.types.json,
-      })
-    }
-    if (location.pathname === '/attributes') {
-      exportFromJSON({
-        data: exportData,
-        fileName: 'attributes',
-        exportType: exportFromJSON.types.json,
-      })
-    }
-
-    if (location.pathname === '/coupons') {
-      exportFromJSON({
-        data: exportData,
-        fileName: 'coupons',
-        exportType: exportFromJSON.types.json,
-      })
-    }
-    if (location.pathname === '/customers') {
-      exportFromJSON({
-        data: exportData,
-        fileName: 'customers',
+        fileName,
         exportType: exportFromJSON.types.json,
       })
     }
   }
 
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (!dRef?.current?.contains(e.target)) {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dRef.current && !dRef.current.contains(e.target as Node)) {
         setDropDown(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
-  }, [dRef])
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   return (
     <div className=" lg:flex md:flex flex-grow-0">
@@ -229,7 +203,12 @@ const UploadMany = ({
           <div className="w-full my-2 lg:my-0 md:my-0 flex">
             <div className="h-10 border border-dashed border-emerald-500 rounded-md">
               <label className="w-full rounded-lg h-10 flex justify-center items-center text-xs dark:text-gray-400 leading-none">
-                <Input disabled={isDisabled} type="file" accept=".csv,.xls,.json" onChange={handleSelectFile} />
+                <Input
+                  {...({ type: 'file' } as any)}
+                  disabled={isDisabled}
+                  accept=".csv,.xls,.json"
+                  onChange={handleSelectFile}
+                />
                 {filename ? (
                   filename
                 ) : (
@@ -240,11 +219,7 @@ const UploadMany = ({
                   </>
                 )}
                 {filename && (
-                  <span
-                    onClick={handleRemoveSelectFile}
-                    type="button"
-                    className="text-red-500 focus:outline-none mx-4 text-lg"
-                  >
+                  <span onClick={handleRemoveSelectFile} className="text-red-500 focus:outline-none mx-4 text-lg">
                     <FiXCircle />
                   </span>
                 )}
