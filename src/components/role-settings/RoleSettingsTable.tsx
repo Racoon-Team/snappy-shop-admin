@@ -1,26 +1,33 @@
-import { Badge, TableBody, TableCell, TableRow } from '@windmill/react-ui'
 import React from 'react'
-import EditDeleteButton from '@/components/table/EditDeleteButton'
+import { Badge, TableBody, TableCell, TableRow } from '@windmill/react-ui'
 import { useTranslation } from 'react-i18next'
-import useToggleDrawer from '@/hooks/useToggleDrawer'
+
+import EditDeleteButton from '@/components/table/EditDeleteButton'
 import DeleteModal from '../modal/DeleteModal'
 
-const RoleTable = ({ roles, handleUpdate, handleModalOpen }) => {
+import { type Role } from '@/types/Role'
+
+interface RoleTableProps {
+  roles: Role[]
+  handleUpdate: (id: string) => void
+  handleModalOpen: (id: string) => void
+}
+
+const RoleTable: React.FC<RoleTableProps> = ({ roles, handleUpdate, handleModalOpen }) => {
   const { t } = useTranslation()
-  const { title, serviceId } = useToggleDrawer()
 
   return (
     <>
       <TableBody>
         {roles?.map((role) => (
-          <TableRow key={role._id}>
+          <TableRow key={role.id}>
             <TableCell>
               <span className="text-sm font-medium">{role.name}</span>
             </TableCell>
             <TableCell>
               {role.permissions?.length > 0 ? (
                 <div className="flex flex-wrap gap-1">
-                  {role.permissions.map((perm, idx) => (
+                  {role.permissions.map((perm: string, idx: number) => (
                     <Badge key={idx} type="primary">
                       {perm}
                     </Badge>
@@ -32,7 +39,7 @@ const RoleTable = ({ roles, handleUpdate, handleModalOpen }) => {
             </TableCell>
             <TableCell className="text-right">
               <EditDeleteButton
-                id={role._id}
+                id={role.id}
                 title={role.name}
                 handleUpdate={handleUpdate}
                 handleModalOpen={handleModalOpen}
