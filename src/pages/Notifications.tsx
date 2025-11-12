@@ -35,12 +35,9 @@ const Notifications: React.FC = () => {
 
   const { showDateTimeFormat } = useUtilsFunction()
 
- 
   const markNotificationAsReadLocal = (id: string) => {
     setData((prev) =>
-      prev.map((notif) =>
-        notif._id === id ? { ...notif, status: 'read' as notificationStatusType } : notif
-      )
+      prev.map((notif) => (notif._id === id ? { ...notif, status: 'read' as notificationStatusType } : notif))
     )
     setTotalUnreadDoc((prev) => prev - 1)
   }
@@ -59,7 +56,7 @@ const Notifications: React.FC = () => {
       await NotificationServices.deleteNotification(id)
       setData((prev) => prev.filter((notif) => notif._id !== id))
       setTotalDoc((prev) => prev - 1)
-      
+
       const deletedNotif = data.find((notif) => notif._id === id)
       if (deletedNotif?.status === 'unread') setTotalUnreadDoc((prev) => prev - 1)
     } catch (err: any) {
@@ -70,7 +67,7 @@ const Notifications: React.FC = () => {
   const handleSeeMoreNotification = async (pg: number) => {
     try {
       const getAllRes = await NotificationServices.getAllNotification(pg)
-      setData((prev) => [...prev, ...(((getAllRes.data as unknown as BackendNotification[]) || []))])
+      setData((prev) => [...prev, ...((getAllRes.data as unknown as BackendNotification[]) || [])])
       setTotalUnreadDoc(getAllRes.additionalInfo?.totalUnread || 0)
       setPage(pg)
     } catch (err: any) {
@@ -81,9 +78,7 @@ const Notifications: React.FC = () => {
   const handleMarkIsRead = async () => {
     try {
       await NotificationServices.updateManyStatusNotification({ ids: isCheck, status: 'read' })
-      setData((prev) =>
-        prev.map((notif) => (isCheck.includes(notif._id) ? { ...notif, status: 'read' } : notif))
-      )
+      setData((prev) => prev.map((notif) => (isCheck.includes(notif._id) ? { ...notif, status: 'read' } : notif)))
       setTotalUnreadDoc((prev) => prev - isCheck.length)
       setIsCheck([])
       notifySuccess('Selected notifications marked as read')
@@ -157,9 +152,7 @@ const Notifications: React.FC = () => {
       <Card className="shadow-xs overflow-hidden bg-white dark:bg-gray-800 mb-5">
         <CardBody style={{ padding: 0 }}>
           <div className="p-4 dark:text-gray-300">
-            <p className="text-sm font-semibold text-teal-700">
-              Unread Notification ({totalUnreadDoc})
-            </p>
+            <p className="text-sm font-semibold text-teal-700">Unread Notification ({totalUnreadDoc})</p>
           </div>
 
           <div className="border rounded-md">
@@ -178,9 +171,7 @@ const Notifications: React.FC = () => {
               </div>
 
               <div className="text-right">
-                <p className="text-xs font-semibold text-gray-500 my-auto dark:text-gray-300 mr-2 uppercase">
-                  Action
-                </p>
+                <p className="text-xs font-semibold text-gray-500 my-auto dark:text-gray-300 mr-2 uppercase">Action</p>
               </div>
             </div>
 

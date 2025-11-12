@@ -19,16 +19,13 @@ import NotificationServices from '@/services/NotificationServices'
 import { notifyError } from '@/utils/toast'
 import type { Notification } from '@/types/notification'
 
-
-
-const Header:React.FC = () => {
+const Header: React.FC = () => {
   const { toggleSidebar, handleLanguageChange, setNavBar, navBar, currLang } = useContext(SidebarContext)
   const { state, dispatch } = useContext(AdminContext)
   const { adminInfo } = state
   const { mode, toggleMode } = useContext(WindmillContext)
   const pRef = useRef<HTMLLIElement>(null)
   const nRef = useRef<HTMLLIElement>(null)
-
 
   const { t } = useTranslation()
   const { updated, setUpdated } = useNotification()
@@ -59,7 +56,7 @@ const Header:React.FC = () => {
   }
 
   // handle notification status change
-  
+
   const handleNotificationStatusChange = async (id: string) => {
     try {
       await NotificationServices.updateStatusNotification(id, { status: 'read' })
@@ -98,7 +95,7 @@ const Header:React.FC = () => {
   }
 
   useEffect(() => {
-     const handleClickOutside = (e: MouseEvent) => {
+    const handleClickOutside = (e: MouseEvent) => {
       if (pRef.current && !pRef.current.contains(e.target as Node)) setProfileOpen(false)
       if (nRef.current && !nRef.current.contains(e.target as Node)) setNotificationOpen(false)
     }
@@ -223,11 +220,11 @@ const Header:React.FC = () => {
                                   className="flex items-center"
                                   onClick={() => handleNotificationStatusChange(value.id)}
                                 >
-                               <Avatar
-                                className="mr-2 md:block bg-gray-50 border border-gray-200"
-                                src={value.image ?? ''}
-                                alt="image"
-                              />
+                                  <Avatar
+                                    className="mr-2 md:block bg-gray-50 border border-gray-200"
+                                    src={value.image ?? ''}
+                                    alt="image"
+                                  />
 
                                   <div className="notification-content">
                                     <h6 className="font-medium text-gray-500">

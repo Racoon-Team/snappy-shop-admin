@@ -12,15 +12,15 @@ import spinnerLoadingImage from '@/assets/img/spinner.gif'
 import { SidebarContext } from '@/context/SidebarContext'
 import ProductServices from '@/services/ProductServices'
 
-interface UploadManyProps{
-title: string
-total:number
-filename?:string
-exportData: any[]
-isDisabled?: boolean
-handleSelectFile: (e: React.ChangeEvent<HTMLInputElement>) => void
-handleRemoveSelectFile: () => void
-handleUploadMultiple: () => void
+interface UploadManyProps {
+  title: string
+  total: number
+  filename?: string
+  exportData: any[]
+  isDisabled?: boolean
+  handleSelectFile: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleRemoveSelectFile: () => void
+  handleUploadMultiple: () => void
 }
 
 interface LoadingExportState {
@@ -28,12 +28,12 @@ interface LoadingExportState {
   status: boolean
 }
 
-const UploadMany:React.FC<UploadManyProps> = ({
+const UploadMany: React.FC<UploadManyProps> = ({
   title,
   total,
   filename,
   exportData,
-  isDisabled= false,
+  isDisabled = false,
   handleSelectFile,
   handleRemoveSelectFile,
   handleUploadMultiple,
@@ -52,7 +52,7 @@ const UploadMany:React.FC<UploadManyProps> = ({
   // console.log(exportData);
 
   const handleExportCSV = () => {
-    const path =location.pathname
+    const path = location.pathname
     if (path === '/products') {
       setLoadingExport({ name: 'csv', status: true })
       ProductServices.getAllProducts({
@@ -62,7 +62,7 @@ const UploadMany:React.FC<UploadManyProps> = ({
         title: null,
         price: 0,
       })
-        .then((res:any) => {
+        .then((res: any) => {
           setDropDown(false)
           setLoadingExport({ name: '', status: false })
           exportFromJSON({
@@ -71,7 +71,7 @@ const UploadMany:React.FC<UploadManyProps> = ({
             exportType: exportFromJSON.types.csv,
           })
         })
-       .catch(() => {
+        .catch(() => {
           setLoadingExport({ name: '', status: false })
           setDropDown(false)
         })
@@ -86,7 +86,7 @@ const UploadMany:React.FC<UploadManyProps> = ({
   }
 
   const handleExportJSON = () => {
-     const path = location.pathname
+    const path = location.pathname
     if (path === '/products') {
       setLoadingExport({ name: 'json', status: true })
       ProductServices.getAllProducts({
@@ -96,7 +96,7 @@ const UploadMany:React.FC<UploadManyProps> = ({
         title: null,
         price: 0,
       })
-        .then((res:any) => {
+        .then((res: any) => {
           setDropDown(false)
           setLoadingExport({ name: 'json', status: true })
           exportFromJSON({
@@ -110,7 +110,7 @@ const UploadMany:React.FC<UploadManyProps> = ({
           setLoadingExport({ name: 'json', status: true })
           // console.log(err);
         })
-      } else if (['/categories', '/attributes', '/coupons', '/customers'].includes(path)) {
+    } else if (['/categories', '/attributes', '/coupons', '/customers'].includes(path)) {
       const fileName = path.replace('/', '')
       exportFromJSON({
         data: exportData,
@@ -121,8 +121,8 @@ const UploadMany:React.FC<UploadManyProps> = ({
   }
 
   useEffect(() => {
-    const handleClickOutside = (e:MouseEvent) => {
-          if (dRef.current && !dRef.current.contains(e.target as Node)) {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dRef.current && !dRef.current.contains(e.target as Node)) {
         setDropDown(false)
       }
     }
@@ -203,7 +203,12 @@ const UploadMany:React.FC<UploadManyProps> = ({
           <div className="w-full my-2 lg:my-0 md:my-0 flex">
             <div className="h-10 border border-dashed border-emerald-500 rounded-md">
               <label className="w-full rounded-lg h-10 flex justify-center items-center text-xs dark:text-gray-400 leading-none">
-               <Input {...({ type: 'file' } as any)} disabled={isDisabled} accept=".csv,.xls,.json" onChange={handleSelectFile}/>
+                <Input
+                  {...({ type: 'file' } as any)}
+                  disabled={isDisabled}
+                  accept=".csv,.xls,.json"
+                  onChange={handleSelectFile}
+                />
                 {filename ? (
                   filename
                 ) : (
@@ -214,10 +219,7 @@ const UploadMany:React.FC<UploadManyProps> = ({
                   </>
                 )}
                 {filename && (
-                  <span
-                    onClick={handleRemoveSelectFile}
-                    className="text-red-500 focus:outline-none mx-4 text-lg"
-                  >
+                  <span onClick={handleRemoveSelectFile} className="text-red-500 focus:outline-none mx-4 text-lg">
                     <FiXCircle />
                   </span>
                 )}
