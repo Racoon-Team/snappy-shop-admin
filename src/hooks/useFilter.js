@@ -222,7 +222,7 @@ const useFilter = (data) => {
       services = services.filter(
         (cou) =>
           cou?.name?.toLowerCase().includes(country.toLowerCase()) ||
-          cou?.iso_code?.toLowerCase().includes(country.toLowerCase())
+          cou?.isoCode?.toLowerCase().includes(country.toLowerCase())
       )
     }
 
@@ -236,13 +236,13 @@ const useFilter = (data) => {
       services = services.filter(
         (lan) =>
           lan.name.toLowerCase().includes(language.toLowerCase()) ||
-          lan.iso_code.toLowerCase().includes(language.toLowerCase()) ||
+          lan.isoCode.toLowerCase().includes(language.toLowerCase()) ||
           lan.language_code.toLowerCase().includes(language.toLowerCase())
       )
     }
 
     if (currency) {
-      services = services.filter((cur) => cur.iso_code.toLowerCase().includes(currency.toLowerCase()))
+      services = services.filter((cur) => cur.isoCode.toLowerCase().includes(currency.toLowerCase()))
     }
     // console.log("render", data, "categoryRef", categoryRef);
 

@@ -1,9 +1,11 @@
-import LanguageServices from '@/services/LanguageServices'
-import SettingServices from '@/services/SettingServices'
 import { useQuery } from '@tanstack/react-query'
 import Cookies from 'js-cookie'
 import { createContext, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+
+//internal import
+import LanguageServices from '@/services/LanguageServices'
+import SettingServices from '@/services/SettingServices'
 
 // create context
 export const SidebarContext = createContext()
@@ -22,7 +24,7 @@ export const SidebarProvider = ({ children }) => {
   const [isUpdate, setIsUpdate] = useState(false)
   const [lang, setLang] = useState('en')
   const [currLang, setCurrLang] = useState({
-    iso_code: 'en',
+    isoCode: 'en',
     name: 'English',
     flag: 'US',
   })
@@ -72,12 +74,12 @@ export const SidebarProvider = ({ children }) => {
   const handleLanguageChange = (value) => {
     // console.log("handleChangeLang", value);
 
-    Cookies.set('i18next', value?.iso_code, {
+    Cookies.set('i18next', value?.isoCode, {
       sameSite: 'None',
       secure: true, // Include the "secure" attribute
     })
-    i18n.changeLanguage(value?.iso_code)
-    setLang(value?.iso_code)
+    i18n.changeLanguage(value?.isoCode)
+    setLang(value?.isoCode)
     Cookies.set('_currLang', JSON.stringify(value), {
       sameSite: 'None',
       secure: true, // Include the "secure" attribute
@@ -133,7 +135,7 @@ export const SidebarProvider = ({ children }) => {
 
     // Find the corresponding language object
     if (languages?.length && !pathname && !currLang) {
-      const result = languages?.find((lang) => lang?.iso_code === selectedLang)
+      const result = languages?.find((lang) => lang?.isoCode === selectedLang)
       setCurrLang(result)
     }
   }, [globalSetting?.default_language, languages]) // Add `languages` as a dependency

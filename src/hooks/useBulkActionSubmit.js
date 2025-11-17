@@ -174,20 +174,20 @@ const useBulkActionSubmit = (ids, lang = 'en', childId) => {
       clearErrors('name')
 
       setValue('name')
-      setValue('iso_code')
+      setValue('isoCode')
       setValue('call_prefix')
       setValue('currency')
       setValue('zone')
       // setValue('status');
       clearErrors('name')
-      clearErrors('iso_code')
+      clearErrors('isoCode')
       clearErrors('call_prefix')
       clearErrors('currency')
       clearErrors('zone')
       clearErrors('status')
 
       setValue('name')
-      setValue('iso_code')
+      setValue('isoCode')
       setValue('country')
       setValue('zone')
 
@@ -195,7 +195,7 @@ const useBulkActionSubmit = (ids, lang = 'en', childId) => {
 
       //   setValue('status');
       clearErrors('name')
-      clearErrors('iso_code')
+      clearErrors('isoCode')
       clearErrors('country')
       clearErrors('zone')
       clearErrors('status')
