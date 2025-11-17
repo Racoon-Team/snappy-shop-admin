@@ -70,7 +70,7 @@ const useBulkActionSubmit = (ids, lang = 'en', childId) => {
       // currencies data
       const currenciesData = {
         ids: ids,
-        enabled: published ? 'show' : 'hide',
+        status: published ? 'show' : 'hide',
         live_exchange_rates: published2 ? 'show' : 'hide',
       }
       // category data
