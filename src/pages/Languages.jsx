@@ -60,7 +60,7 @@ const Languages = () => {
         <LanguageDrawer />
       </MainDrawer>
 
-      <BulkActionDrawer ids={allId} title="Languages" />
+      <BulkActionDrawer ids={allId} title="Languages" data={data} />
 
       <DeleteModal ids={allId} setIsCheck={setIsCheck} title="Selected Currencies" />
 

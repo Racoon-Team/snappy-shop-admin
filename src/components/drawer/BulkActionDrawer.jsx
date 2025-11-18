@@ -46,7 +46,7 @@ const BulkActionDrawer = ({ type, ids, title, label, lang, data, childId, attrib
     setDefaultCategory,
     selectCategoryName,
     setSelectCategoryName,
-  } = useBulkActionSubmit(ids, lang, childId)
+  } = useBulkActionSubmit(ids, lang, childId, data)
 
   const motion = {
     motionName: 'node-motion',

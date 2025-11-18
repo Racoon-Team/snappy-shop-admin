@@ -14,7 +14,7 @@ import ProductServices from '@/services/ProductServices'
 import { notifyError, notifySuccess } from '@/utils/toast'
 import { useTranslation } from 'react-i18next'
 
-const useBulkActionSubmit = (ids, lang = 'en', childId) => {
+const useBulkActionSubmit = (ids, lang = 'en', childId, data) => {
   const { t } = useTranslation()
   const [children, setChildren] = useState('')
   const [tag, setTag] = useState([])
@@ -206,6 +206,22 @@ const useBulkActionSubmit = (ids, lang = 'en', childId) => {
       return
     }
   }, [setValue, isBulkDrawerOpen, clearErrors])
+
+  // items status lecture
+  useEffect(() => {
+    if (!isBulkDrawerOpen || location.pathname !== '/languages' || !data) return
+
+    const selected = data.filter((item) => ids.includes(item.id))
+
+    if (selected.length === 0) return
+
+    const allShow = selected.every((item) => item.status === 'show')
+    const allHide = selected.every((item) => item.status === 'hide')
+
+    if (allShow) setPublished(true)
+    else if (allHide) setPublished(false)
+    else setPublished(true)
+  }, [isBulkDrawerOpen, ids, data, location.pathname])
 
   useEffect(() => {
     setChildren(watch('children'))
