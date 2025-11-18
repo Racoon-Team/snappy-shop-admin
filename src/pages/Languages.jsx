@@ -34,7 +34,7 @@ import AnimatedContent from '@/components/common/AnimatedContent'
 const Languages = () => {
   const { toggleDrawer } = useContext(SidebarContext)
 
-  const { allId, handleUpdateMany, handleDeleteMany } = useToggleDrawer()
+  const { allId, handleUpdateMany, handleDeleteMany, serviceId, handleOpenDrawer } = useToggleDrawer()
   const { data, loading, error } = useAsync(LanguageServices.getAllLanguages)
   // console.log("data-language", data);
   const { totalResults, resultsPerPage, dataTable, languageRef, handleSubmitLanguage, handleChangePage } =
@@ -57,7 +57,7 @@ const Languages = () => {
     <>
       <PageTitle>{t('languagesScreen.title')}</PageTitle>
       <MainDrawer>
-        <LanguageDrawer />
+        <LanguageDrawer id={serviceId} />
       </MainDrawer>
 
       <BulkActionDrawer ids={allId} title="Languages" />
@@ -97,7 +97,7 @@ const Languages = () => {
                   {t('common.delete')}
                 </Button>
               </div>
-              <Button onClick={toggleDrawer} className="rounded-md h-12 w-64">
+              <Button onClick={handleOpenDrawer} className="rounded-md h-12 w-64">
                 <span className="mr-2">
                   <FiPlus />
                 </span>
