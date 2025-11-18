@@ -87,6 +87,7 @@ const StockDrawer = ({ id, onSuccess }) => {
               <LabelArea label={t('productsScreen.drawer.labelQuantity')} />
               <div className="col-span-8 sm:col-span-4 flex gap-2">
                 <InputArea
+                  label={t('productsScreen.drawer.labelQuantity')}
                   register={register}
                   name="quantity"
                   placeholder={t('productsScreen.drawer.inputQuantity')}
