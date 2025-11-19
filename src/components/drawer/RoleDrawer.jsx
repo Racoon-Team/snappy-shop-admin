@@ -45,7 +45,7 @@ const RoleDrawer = ({ id }) => {
                 <InputArea
                   required={true}
                   register={register}
-                  label="Role Name"
+                  label={t('roleScreen.drawer.inputName')}
                   name="name"
                   type="text"
                   placeholder={t('roleScreen.drawer.inputName')}
