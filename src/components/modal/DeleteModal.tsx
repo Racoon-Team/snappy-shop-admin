@@ -196,7 +196,7 @@ const DeleteModal: React.FC<DeleteModalProps> = ({ id, ids, setIsCheck, category
             ids: ids,
           })
           setIsUpdate(true)
-          notifySuccess(res.message)
+          notifySuccess(t('languagesScreen.message.deleteNotis'))
           setIsCheck?.([])
           closeModal()
           setIsSubmitting(false)

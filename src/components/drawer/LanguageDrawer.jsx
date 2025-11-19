@@ -26,7 +26,7 @@ const LanguageDrawer = ({ id }) => {
     isSubmitting,
     languagePublished,
     setLanguagePublished,
-  } = useLanguageSubmit({id})
+  } = useLanguageSubmit({ id })
 
   const { t } = useTranslation()
 
@@ -52,7 +52,7 @@ const LanguageDrawer = ({ id }) => {
                 <InputArea
                   required={true}
                   register={register}
-                  label="Language name"
+                  label={t('languagesScreen.drawer.languageName')}
                   name="name"
                   type="text"
                   placeholder={t('languagesScreen.drawer.languageName')}
@@ -64,7 +64,12 @@ const LanguageDrawer = ({ id }) => {
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6 relative">
               <LabelArea label={t('languagesScreen.drawer.isoCode')} />
               <div className="col-span-8 sm:col-span-4">
-                <SelectISOCode register={register} label="ISO code" name={'isoCode'} required={true} />
+                <SelectISOCode
+                  register={register}
+                  label={t('languagesScreen.drawer.isoCode')}
+                  name={'isoCode'}
+                  required={true}
+                />
                 <Error errorName={errors.isoCode} />
               </div>
             </div>
