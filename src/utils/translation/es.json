@@ -594,10 +594,11 @@
     "table": {
       "name": "Nombre",
       "email": "Correo",
+      "password": "Contraseña",
       "contact": "Contacto",
       "joiningDate": "Fecha de incorporación",
       "role": "Rol",
-      "oderStatus": "ESTADO",
+      "orderStatus": "ESTADO",
       "published": "PUBLICADO",
       "actions": "ACCIONES"
     },

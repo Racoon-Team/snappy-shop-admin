@@ -593,6 +593,7 @@
     "table": {
       "name": "Name",
       "email": "Email",
+      "password": "Password",
       "contact": "Contact",
       "joiningDate": "Joining Date",
       "role": "Role",
