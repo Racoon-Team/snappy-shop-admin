@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Input, Label, Button } from '@windmill/react-ui'
 import { ImFacebook, ImGoogle } from 'react-icons/im'
@@ -12,10 +12,38 @@ import SelectRole from '@/components/form/selectOption/SelectRole'
 import useLoginSubmit from '@/hooks/useLoginSubmit'
 import ImageLight from '@/assets/img/create-account-office.jpeg'
 import ImageDark from '@/assets/img/create-account-office-dark.jpeg'
+import RoleServices from '@/services/RoleServices'
+
 
 const SignUp = () => {
+  const [selectedRole, setselectdRole] = useState('')
+  const [roles, setRoles] = useState([])
   const { t } = useTranslation()
   const { onSubmit, register, handleSubmit, errors, loading } = useLoginSubmit()
+
+  const handleRoleChange = (e) => {
+    const selectedRoleId = e.target.value
+    setselectdRole(selectedRoleId)
+
+    register('role').onChange({ target: { value: selectedRoleId } })
+
+    const selectedRole = roles.find((r) => r.id === selectedRoleId)
+    setselectdRole(selectedRole?.permissions || [])
+  }
+
+  useEffect (()=>{
+    const fetchRoles = async () => {
+      try{
+        const res = await RoleServices.getRoles()
+        setRoles(res)
+      }catch (error){
+        console.error(t('rolesScreen.drawer.error'), error)
+      }
+    }
+    fetchRoles()
+  },[])
+
+
 
   return (
     <div className="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
@@ -35,7 +63,8 @@ const SignUp = () => {
               <h1 className="mb-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                 {t('loginScreen.createAccount.title')}
               </h1>
-              <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
+
                 <LabelArea label={t('loginScreen.createAccount.name')} />
                 <InputArea
                   required={true}
@@ -71,7 +100,22 @@ const SignUp = () => {
 
                 <LabelArea label={t('loginScreen.createAccount.staffRoleLbl')} />
                 <div className="col-span-8 sm:col-span-4">
-                  <SelectRole register={register} label="Role" name="role" />
+                  <select
+                    {...register('role', { required: true })}
+                    value={selectedRole}
+                    onChange={handleRoleChange}
+                    className="w-full px-3 py-2 border rounded-md dark:bg-gray-700 dark:text-gray-200"
+                  >
+                    <option value="" disabled>
+                      {t('staffScreen.drawer.selectRole')}
+                    </option>
+                    {roles.map((r) => (
+                      <option key={r.id} value={r.id}>
+                        {r.name}
+                      </option>
+                    ))}
+                  </select>
+
                   <Error errorName={errors.role} />
                 </div>
 
@@ -83,9 +127,13 @@ const SignUp = () => {
                   </span>
                 </Label>
 
-                <Button disabled={loading} type="submit" className="mt-4 h-12 w-full" to="/dashboard" block>
+                <Button 
+                disabled={loading} type="submit" className="mt-4 h-12 w-full" 
+                to="/login" block>
                   {t('loginScreen.createAccount.btn')}
                 </Button>
+
+                
               </form>
 
               <hr className="my-10" />

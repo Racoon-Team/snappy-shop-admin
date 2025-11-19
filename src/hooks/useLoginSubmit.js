@@ -57,7 +57,7 @@ const useLoginSubmit = () => {
             sameSite: 'None',
             secure: true,
           })
-          history.replace('/')
+          history.replace('/login')
         }
       }
 
