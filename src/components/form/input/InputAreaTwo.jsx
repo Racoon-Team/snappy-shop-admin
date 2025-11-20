@@ -1,11 +1,13 @@
 import { Input } from '@windmill/react-ui'
+import { useTranslation } from 'react-i18next'
 
 const InputAreaTwo = ({ register, defaultValue, required, name, label, type, placeholder }) => {
+   const { t } = useTranslation()
   return (
     <>
       <Input
         {...register(`${name}`, {
-          required: required ? `${label} is required!` : false,
+          required: required ? `${label} ${t('common.isRequired')}` : false,
         })}
         defaultValue={defaultValue}
         type={type}

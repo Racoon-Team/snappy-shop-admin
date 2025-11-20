@@ -143,7 +143,7 @@ const StoreSetting = () => {
                       <InputAreaTwo
                         required={enabledQR}
                         register={register}
-                        label={t('QRSecret')}
+                        label={t('storeSettingScreen.table.qrSecret')}
                         name="qr_secret"
                         type="password"
                         placeholder={t('storeSettingScreen.table.qrSecret')}
@@ -221,7 +221,7 @@ const StoreSetting = () => {
                       <InputAreaTwo
                         required={enabledRazorPay}
                         register={register}
-                        label="RazorPay ID"
+                        label={t('storeSettingScreen.table.razorPayId')}
                         name="razorpay_id"
                         type="password"
                         placeholder={t('storeSettingScreen.table.razorPayId')}
@@ -235,7 +235,7 @@ const StoreSetting = () => {
                       <InputAreaTwo
                         required={enabledRazorPay}
                         register={register}
-                        label="RazorPay Secret"
+                        label={t('storeSettingScreen.table.razorPaySecret')}
                         name="razorpay_secret"
                         type="password"
                         placeholder={t('storeSettingScreen.table.razorPaySecret')}
@@ -318,7 +318,7 @@ const StoreSetting = () => {
                       <InputAreaTwo
                         required={enabledGoogleLogin}
                         register={register}
-                        label={t('GoogleClientId')}
+                        label={t('storeSettingScreen.table.googleClientId')}
                         name="google_id"
                         type="password"
                         placeholder={t('storeSettingScreen.table.googleClientId')}
@@ -332,7 +332,7 @@ const StoreSetting = () => {
                       <InputAreaTwo
                         required={enabledGoogleLogin}
                         register={register}
-                        label={t('GoogleSecret')}
+                        label={t('storeSettingScreen.table.googleSecret')}
                         name="google_secret"
                         type="password"
                         placeholder={t('storeSettingScreen.table.googleSecret')}
@@ -368,7 +368,7 @@ const StoreSetting = () => {
                       <InputAreaTwo
                         required={enabledGithubLogin}
                         register={register}
-                        label="Github ID"
+                        label={t('storeSettingScreen.table.githubId')}
                         name="github_id"
                         type="password"
                         placeholder={t('storeSettingScreen.table.githubId')}
@@ -382,7 +382,7 @@ const StoreSetting = () => {
                       <InputAreaTwo
                         required={enabledGithubLogin}
                         register={register}
-                        label="Github Secret"
+                        label={t('storeSettingScreen.table.githubSecret')}
                         name="github_secret"
                         type="password"
                         placeholder={t('storeSettingScreen.table.githubSecret')}
@@ -419,7 +419,7 @@ const StoreSetting = () => {
                       <InputAreaTwo
                         required={enabledFacebookLogin}
                         register={register}
-                        label="Facebook ID"
+                        label={t('storeSettingScreen.table.facebookId')}
                         name="facebook_id"
                         type="password"
                         placeholder={t('storeSettingScreen.table.facebookId')}
@@ -433,7 +433,7 @@ const StoreSetting = () => {
                       <InputAreaTwo
                         required={enabledFacebookLogin}
                         register={register}
-                        label="Facebook Secret"
+                        label={t('storeSettingScreen.table.facebookSecret')}
                         name="facebook_secret"
                         type="password"
                         placeholder={t('storeSettingScreen.table.facebookSecret')}
@@ -474,7 +474,7 @@ const StoreSetting = () => {
                     <InputAreaTwo
                       required={enabledGoogleAnalytics}
                       register={register}
-                      label={t('GoogleAnalyticKey')}
+                      label={t('storeSettingScreen.table.googleAnalyticKey')}
                       name="google_analytic_key"
                       type="password"
                       placeholder={t('storeSettingScreen.table.googleAnalyticKey')}
@@ -549,7 +549,7 @@ const StoreSetting = () => {
                       <InputAreaTwo
                         required={enabledTawkChat}
                         register={register}
-                        label={t('TawkChatPropertyID')}
+                        label={t('storeSettingScreen.table.tawkChatPropertyID')}
                         name="tawk_chat_property_id"
                         type="password"
                         placeholder={t('storeSettingScreen.table.tawkChatPropertyID')}
@@ -563,7 +563,7 @@ const StoreSetting = () => {
                       <InputAreaTwo
                         required={enabledTawkChat}
                         register={register}
-                        label={t('TawkChatWidgetID')}
+                        label={t('storeSettingScreen.table.tawkChatWidgetID')}
                         name="tawk_chat_widget_id"
                         type="password"
                         placeholder={t('storeSettingScreen.table.tawkChatWidgetID')}
