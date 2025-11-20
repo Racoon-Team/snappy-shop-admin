@@ -772,7 +772,7 @@
       "nameTbl": "NOMBRE",
       "symbolTbl": "SÍMBOLO",
       "enabledTbl": "ACTIVADO",
-      "actionsTbl": "ACTIONES"
+      "actionsTbl": "ACCIONES"
     },
     "drawer": {
       "updateCurrency": "Actualizar moneda",
@@ -788,6 +788,7 @@
     "message": {
       "published": "¡Moneda publicada exitosamente!",
       "unpublished": "¡Moneda no publicada exitosamente!",
+      "addCurrency":"¡moneda agregada exitosa!",
       "updateCurrency": "¡Actualización de moneda exitosa!",
       "deleteCurrency": "¡Moneda eliminada con éxito!"
     }
