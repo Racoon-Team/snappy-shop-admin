@@ -128,7 +128,7 @@ const StaffDrawer: React.FC<StaffDrawerProps> = ({ id }) => {
                     <InputArea
                       required
                       register={register}
-                      label="Name"
+                      label={t('staffScreen.table.name')}
                       name="name"
                       type="text"
                       autoComplete="username"
@@ -144,7 +144,7 @@ const StaffDrawer: React.FC<StaffDrawerProps> = ({ id }) => {
                     <InputArea
                       required
                       register={register}
-                      label="Email"
+                      label={t('staffScreen.table.email')}
                       name="email"
                       type="text"
                       autoComplete="username"
@@ -163,7 +163,7 @@ const StaffDrawer: React.FC<StaffDrawerProps> = ({ id }) => {
                     <InputArea
                       required={!id}
                       register={register}
-                      label="Password"
+                      label={t('staffScreen.table.password')}
                       name="password"
                       type="password"
                       autoComplete="current-password"
@@ -179,7 +179,7 @@ const StaffDrawer: React.FC<StaffDrawerProps> = ({ id }) => {
                     <InputArea
                       required
                       register={register}
-                      label="Contact Number"
+                      label={t('staffScreen.table.contact')}
                       name="phone"
                       pattern={/^[+]?\d*$/}
                       minLength={6}
