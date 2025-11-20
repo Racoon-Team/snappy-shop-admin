@@ -232,13 +232,17 @@ const useFilter = (data) => {
     }
 
     //language filtering
+    // language filtering
     if (language) {
-      services = services.filter(
-        (lan) =>
-          lan.name.toLowerCase().includes(language.toLowerCase()) ||
-          lan.isoCode.toLowerCase().includes(language.toLowerCase()) ||
-          lan.language_code.toLowerCase().includes(language.toLowerCase())
-      )
+      const search = language.toLowerCase()
+
+      services = services.filter((lan) => {
+        const name = lan?.name?.toLowerCase() || ''
+        const iso = lan?.isoCode?.toLowerCase() || ''
+        const code = lan?.language_code?.toLowerCase() || ''
+
+        return name.includes(search) || iso.includes(search) || code.includes(search)
+      })
     }
 
     if (currency) {

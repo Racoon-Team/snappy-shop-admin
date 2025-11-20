@@ -113,43 +113,42 @@ const Languages = () => {
         <TableLoading row={12} col={7} width={163} height={20} />
       ) : error ? (
         <span className="text-center mx-auto text-red-500">{error}</span>
+      ) : dataTable.length > 0 ? (
+        <TableContainer className="mb-8 rounded-b-lg">
+          <Table>
+            <TableHeader>
+              <tr>
+                <TableCell>
+                  <CheckBox
+                    type="checkbox"
+                    name="selectAll"
+                    id="selectAll"
+                    handleClick={handleSelectAll}
+                    isChecked={isCheckAll}
+                  />
+                </TableCell>
+                <TableCell>{t('languagesScreen.table.languagesSr')}</TableCell>
+                <TableCell>{t('languagesScreen.table.languagesNname')}</TableCell>
+                <TableCell>{t('languagesScreen.table.languagesIsoCode')}</TableCell>
+                <TableCell>{t('languagesScreen.table.languagesFlag')}</TableCell>
+                <TableCell className="text-center">{t('languagesScreen.table.languagesPublished')}</TableCell>
+                <TableCell className="text-right">{t('languagesScreen.table.languagesActions')}</TableCell>
+              </tr>
+            </TableHeader>
+            <LanguageTable languages={dataTable} isCheck={isCheck} setIsCheck={setIsCheck} />
+          </Table>
+          <TableFooter>
+            <Pagination
+              totalResults={totalResults}
+              resultsPerPage={resultsPerPage}
+              onChange={handleChangePage}
+              label="Table navigation"
+            />
+          </TableFooter>
+        </TableContainer>
       ) : (
-        data.length !== 0 && (
-          <TableContainer className="mb-8 rounded-b-lg">
-            <Table>
-              <TableHeader>
-                <tr>
-                  <TableCell>
-                    <CheckBox
-                      type="checkbox"
-                      name="selectAll"
-                      id="selectAll"
-                      handleClick={handleSelectAll}
-                      isChecked={isCheckAll}
-                    />
-                  </TableCell>
-                  <TableCell>{t('languagesScreen.table.languagesSr')}</TableCell>
-                  <TableCell>{t('languagesScreen.table.languagesNname')}</TableCell>
-                  <TableCell>{t('languagesScreen.table.languagesIsoCode')}</TableCell>
-                  <TableCell>{t('languagesScreen.table.languagesFlag')}</TableCell>
-                  <TableCell className="text-center">{t('languagesScreen.table.languagesPublished')}</TableCell>
-                  <TableCell className="text-right">{t('languagesScreen.table.languagesActions')}</TableCell>
-                </tr>
-              </TableHeader>
-              <LanguageTable languages={dataTable} isCheck={isCheck} setIsCheck={setIsCheck} />
-            </Table>
-            <TableFooter>
-              <Pagination
-                totalResults={totalResults}
-                resultsPerPage={resultsPerPage}
-                onChange={handleChangePage}
-                label="Table navigation"
-              />
-            </TableFooter>
-          </TableContainer>
-        )
+        <NotFound title="Sorry, There are no languages right now." />
       )}
-      {!loading && data.length === 0 && !error && <NotFound title="Sorry, There are no languages right now." />}
     </>
   )
 }
