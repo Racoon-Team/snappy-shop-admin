@@ -10,17 +10,22 @@ interface UseToggleDrawerReturn {
   handleModalOpen: (id: string, title: string) => void
   handleDeleteMany: (id: string[], products?: any) => Promise<void>
   handleUpdateMany: (id: string[]) => void
+  handleOpenDrawer: () => void
 }
 
 const useToggleDrawer = (): UseToggleDrawerReturn => {
   const [serviceId, _setServiceId] = useState<string>('')
   const [allId, setAllId] = useState<string[]>([])
   const [title, setTitle] = useState<string>('')
-
-  const { toggleDrawer, isDrawerOpen, toggleModal, toggleBulkDrawer } = useContext(SidebarContext)
+  const { toggleDrawer, isDrawerOpen, toggleModal, toggleBulkDrawer, isModalOpen } = useContext(SidebarContext)
 
   const setServiceId = (id?: string) => {
     _setServiceId(id ?? '')
+  }
+
+  const handleOpenDrawer = (): void => {
+    setServiceId()
+    toggleDrawer()
   }
 
   const handleUpdate = (id: string, title: string) => {
@@ -46,6 +51,12 @@ const useToggleDrawer = (): UseToggleDrawerReturn => {
     }
   }, [isDrawerOpen])
 
+  useEffect(() => {
+    if (!isModalOpen) {
+      setServiceId()
+    }
+  }, [isModalOpen])
+
   const handleDeleteMany = async (id: string[], products?: any): Promise<void> => {
     setAllId(id)
     toggleModal()
@@ -61,6 +72,7 @@ const useToggleDrawer = (): UseToggleDrawerReturn => {
     handleModalOpen,
     handleDeleteMany,
     handleUpdateMany,
+    handleOpenDrawer,
   }
 }
 
