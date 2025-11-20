@@ -757,7 +757,9 @@
       "published": "Idioma publicado exitosamente",
       "unPublished": "Idioma no publicado exitosamente",
       "addNotification": "¡Idioma agregado exitosamente!",
-      "deleteNotification": "¡Idioma eliminado con éxito!"
+      "deleteNotification": "¡Idioma eliminado con éxito!",
+      "deleteNotis": "¡Idiomas eliminados correctamente!",
+      "updateLanguage": "¡Idioma actualizado exitosamente!"
     }
   },
 

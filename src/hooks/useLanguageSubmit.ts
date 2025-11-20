@@ -42,7 +42,7 @@ const useLanguageSubmit = ({ id }: UseLanguageSubmitProps) => {
         const res = await LanguageServices.updateLanguage(id, languageData)
         setIsUpdate(true)
         setIsSubmitting(false)
-        notifySuccess(res.message)
+        notifySuccess(t('languagesScreen.message.updateLanguage'))
       } else {
         const res = await LanguageServices.addLanguage(languageData)
         setIsUpdate(true)
@@ -51,9 +51,8 @@ const useLanguageSubmit = ({ id }: UseLanguageSubmitProps) => {
       }
       setFlagAndName('')
       closeDrawer()
-
     } catch (err: any) {
-      notifyError(err?.response?.data?.message?? err?.message)
+      notifyError(err?.response?.data?.message ?? err?.message)
       closeDrawer()
       setIsSubmitting(false)
     }
@@ -61,9 +60,9 @@ const useLanguageSubmit = ({ id }: UseLanguageSubmitProps) => {
 
   useEffect(() => {
     if (!isDrawerOpen) {
-      setValue('name','')
-      setValue('isoCode','')
-      setValue('flag','')
+      setValue('name', '')
+      setValue('isoCode', '')
+      setValue('flag', '')
       setLanguagePublished(true)
       setFlagAndName('')
       clearErrors(['name', 'isoCode', 'flag', 'status'])

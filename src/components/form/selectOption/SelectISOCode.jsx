@@ -148,7 +148,7 @@ const SelectISOCode = ({ name, register, required, label }) => {
     <Select
       name={name}
       {...register(`${name}`, {
-        required: required ? `${label} is required!` : false,
+        required: required ? `${label} ${t('common.isRequired')}` : false,
       })}
     >
       <option value="" defaultValue hidden>

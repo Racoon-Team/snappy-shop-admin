@@ -756,7 +756,9 @@
       "published": "Language Published Successfully",
       "unPublished": "Language Un-Published Successfully",
       "addNotification": "Language added successfully!",
-      "deleteNotification": "Delete language successfully!"
+      "deleteNotification": "Delete language successfully!",
+      "deleteNotis": "Languages deleted successfully!",
+      "updateLanguage": "Language updated successfully!"
     }
   },
 
