@@ -142,6 +142,8 @@ const DeliveryPointsDrawer = ({ id, onSuccess }) => {
                   value={address}
                   register={register}
                   name="streetName"
+                  label={t('deliveryPointsScreen.deliveryDrawer.inputStreetName')}
+                  required={true}
                   placeholder={t('deliveryPointsScreen.deliveryDrawer.inputStreetName')}
                 />
                 <Error errorName={errors.streetName} />
@@ -154,6 +156,8 @@ const DeliveryPointsDrawer = ({ id, onSuccess }) => {
                 <InputArea
                   register={register}
                   name="placeName"
+                  label={t('deliveryPointsScreen.deliveryDrawer.inputPlaceName')}
+                  required={true}
                   placeholder={t('deliveryPointsScreen.deliveryDrawer.inputPlaceName')}
                 />
                 <Error errorName={errors.placeName} />
@@ -165,7 +169,9 @@ const DeliveryPointsDrawer = ({ id, onSuccess }) => {
               <div className="col-span-8 sm:col-span-4">
                 <InputArea
                   register={register}
+                  label={t('deliveryPointsScreen.deliveryDrawer.inputDetails')}
                   name="details"
+                  required={true}
                   placeholder={t('deliveryPointsScreen.deliveryDrawer.inputDetails')}
                 />
                 <Error errorName={errors.details} />
