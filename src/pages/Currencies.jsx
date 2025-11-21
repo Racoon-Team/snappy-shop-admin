@@ -54,7 +54,7 @@ const Currencies = () => {
   return (
     <>
       <PageTitle>{t('currenciesScreen.title')}</PageTitle>
-      <BulkActionDrawer ids={allId} title="Currencies" />
+      <BulkActionDrawer ids={allId} title="Currencies" data={data} />
       <MainDrawer>
         <CurrencyDrawer />
       </MainDrawer>

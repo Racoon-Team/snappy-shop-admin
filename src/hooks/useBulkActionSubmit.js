@@ -20,7 +20,7 @@ const useBulkActionSubmit = (ids, lang = 'en', childId) => {
   const [tag, setTag] = useState([])
   const location = useLocation()
   const [checked, setChecked] = useState('')
-  const [published, setPublished] = useState(true)
+  const [published, setPublished] = useState(null)
   const [published2, setPublished2] = useState(true)
   const [selectedCategory, setSelectedCategory] = useState([])
   const [defaultCategory, setDefaultCategory] = useState([])

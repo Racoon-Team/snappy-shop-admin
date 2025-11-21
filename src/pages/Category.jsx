@@ -89,7 +89,7 @@ const Category = () => {
       <BulkActionDrawer
         ids={allId}
         lang={lang}
-        data={data}
+        data={data?.[0]?.children || []}
         isCheck={isCheck}
         type="categories"
         title={t('categoriesScreen.title')}

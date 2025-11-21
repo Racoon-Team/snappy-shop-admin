@@ -111,7 +111,7 @@ const Products = () => {
     <>
       <PageTitle>{t('productsScreen.productsPage')}</PageTitle>
       <DeleteModal ids={allId} setIsCheck={setIsCheck} title={title} />
-      <BulkActionDrawer ids={allId} title="Products" />
+      <BulkActionDrawer ids={allId} title="Products" data={data?.products} />
       <MainDrawer>
         <ProductDrawer id={serviceId} />
       </MainDrawer>

@@ -3,7 +3,7 @@ import { Button, Input, Select } from '@windmill/react-ui'
 import Multiselect from 'multiselect-react-dropdown'
 import Drawer from 'rc-drawer'
 import Tree from 'rc-tree'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Scrollbars } from 'react-custom-scrollbars-2'
 import { FiX } from 'react-icons/fi'
 import { useTranslation } from 'react-i18next'
@@ -47,6 +47,27 @@ const BulkActionDrawer = ({ type, ids, title, label, lang, data, childId, attrib
     selectCategoryName,
     setSelectCategoryName,
   } = useBulkActionSubmit(ids, lang, childId)
+
+  useEffect(() => {
+    if (!isBulkDrawerOpen) return
+    if (!ids || !data) return
+
+    const selectedItems = data.filter((item) => {
+      const itemId = item.id ?? item._id
+      return ids.includes(itemId)
+    })
+
+    if (selectedItems.length === 0) return
+
+    const statuses = selectedItems.map((item) => item.status)
+
+    const allShow = statuses.every((s) => s === 'show')
+    const allHide = statuses.every((s) => s === 'hide')
+
+    if (allShow) setPublished(true)
+    else if (allHide) setPublished(false)
+    else setPublished(false)
+  }, [isBulkDrawerOpen, ids, data])
 
   const motion = {
     motionName: 'node-motion',
