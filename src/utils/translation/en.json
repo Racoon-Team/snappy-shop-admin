@@ -531,6 +531,7 @@
       "label": "Method",
       "cash": "Cash",
       "card": "Card",
+      "qr":"QR",
       "credit": "Credit"
     },
 

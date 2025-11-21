@@ -532,6 +532,7 @@
       "label": "Método",
       "cash": "Efectivo",
       "card": "Tarjeta",
+      "qr":"QR",
       "credit": "Credito"
     },
 
