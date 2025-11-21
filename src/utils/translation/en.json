@@ -785,6 +785,7 @@
     "message": {
       "published": "Currency Published Successfully!",
       "unpublished": "Currency Un-Published Successfully!",
+      "addCurrency": "Currency added successfully!",
       "updateCurrency": "Currency update successfully!",
       "deleteCurrency": "Delete currency successfully!"
     }

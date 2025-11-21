@@ -40,7 +40,7 @@ const useCurrencySubmit = (id) => {
         const res = await CurrencyServices.addCurrency(currencyData)
         setIsUpdate(true)
         setIsSubmitting(false)
-        notifySuccess(res.message)
+        notifySuccess(t('currenciesScreen.message.addCurrency'))
         closeDrawer()
       }
     } catch (err) {
