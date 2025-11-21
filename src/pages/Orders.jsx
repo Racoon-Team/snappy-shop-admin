@@ -179,8 +179,7 @@ const Orders = () => {
                     </option>
 
                     <option value="Cash">{t('ordersScreen.method.cash')}</option>
-                    <option value="Card">{t('ordersScreen.method.card')}</option>
-                    <option value="Credit">{t('ordersScreen.method.credit')}</option>
+                    <option value="QR">{t('ordersScreen.method.qr')}</option>
                   </Select>
                 </div>
                 <div>
