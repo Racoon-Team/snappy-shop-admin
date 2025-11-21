@@ -161,6 +161,7 @@ const Uploader: React.FC<UploaderProps> = ({
   )
 
   const handleRemoveImage = async (_img: string) => {
+    setFiles((prev) => prev.filter((f) => f.preview !== _img))
     try {
       setLoading(false)
       notifyError(t('common.imageDeleteMessage'))
@@ -171,6 +172,11 @@ const Uploader: React.FC<UploaderProps> = ({
       setLoading(false)
     }
   }
+  const imageList = product
+    ? [...files.map((file) => file.preview), ...(Array.isArray(imageUrl) ? imageUrl : [])]
+    : imageUrl
+      ? [imageUrl]
+      : []
 
   return (
     <div className="w-full text-center">
@@ -190,7 +196,7 @@ const Uploader: React.FC<UploaderProps> = ({
       <aside className="flex flex-row flex-wrap mt-4">
         {product ? (
           <DndProvider backend={HTML5Backend}>
-            <Container setImageUrl={setImageUrl} imageUrl={imageUrl} handleRemoveImage={handleRemoveImage} />
+            <Container setImageUrl={setImageUrl} imageUrl={imageList} handleRemoveImage={handleRemoveImage} />
           </DndProvider>
         ) : !product && imageUrl ? (
           <div className="relative">
