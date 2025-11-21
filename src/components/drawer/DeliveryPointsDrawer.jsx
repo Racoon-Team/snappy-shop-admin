@@ -103,7 +103,6 @@ const DeliveryPointsDrawer = ({ id, onSuccess }) => {
           })}
         >
           <div className="px-6 pt-8 flex-grow scrollbar-hide w-full max-h-full">
-            {/* Map */}
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
               <div className="col-span-8 sm:col-span-4">
                 <MapContainer
@@ -121,7 +120,6 @@ const DeliveryPointsDrawer = ({ id, onSuccess }) => {
               </div>
             </div>
 
-            {/* Location */}
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
               <LabelArea label={t('deliveryPointsScreen.deliveryDrawer.labelLocation')} />
               <div className="col-span-8 sm:col-span-4">
@@ -137,7 +135,6 @@ const DeliveryPointsDrawer = ({ id, onSuccess }) => {
               </div>
             </div>
 
-            {/* Street Name */}
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
               <LabelArea label={t('deliveryPointsScreen.deliveryDrawer.labelStreetName')} />
               <div className="col-span-8 sm:col-span-4">
@@ -151,7 +148,6 @@ const DeliveryPointsDrawer = ({ id, onSuccess }) => {
               </div>
             </div>
 
-            {/* Place Name */}
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
               <LabelArea label={t('deliveryPointsScreen.deliveryDrawer.labelPlaceName')} />
               <div className="col-span-8 sm:col-span-4">
@@ -164,7 +160,6 @@ const DeliveryPointsDrawer = ({ id, onSuccess }) => {
               </div>
             </div>
 
-            {/* Details */}
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
               <LabelArea label={t('deliveryPointsScreen.deliveryDrawer.labelDetails')} />
               <div className="col-span-8 sm:col-span-4">
@@ -184,6 +179,7 @@ const DeliveryPointsDrawer = ({ id, onSuccess }) => {
                   register={register}
                   maxValue={200}
                   minValue={0}
+                  label={t('deliveryPointsScreen.deliveryDrawer.shippingCost')}
                   name="shippingCost"
                   type="number"
                   defaultValue={0.0}
@@ -196,7 +192,6 @@ const DeliveryPointsDrawer = ({ id, onSuccess }) => {
             </div>
           </div>
 
-          {/* Button */}
           <DrawerButton
             id={id}
             title={t('deliveryPointsScreen.deliveryDrawer.titleAddDeliveryPointBtn')}
