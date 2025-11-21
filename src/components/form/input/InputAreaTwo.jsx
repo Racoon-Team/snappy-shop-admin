@@ -2,7 +2,7 @@ import { Input } from '@windmill/react-ui'
 import { useTranslation } from 'react-i18next'
 
 const InputAreaTwo = ({ register, defaultValue, required, name, label, type, placeholder }) => {
-   const { t } = useTranslation()
+  const { t } = useTranslation()
   return (
     <>
       <Input

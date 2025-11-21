@@ -207,7 +207,7 @@ const Setting = () => {
                       <InputArea
                         required={enableInvoice}
                         register={register}
-                        label="From Email"
+                        label={t('settingScreen.phFromEmail')}
                         name="from_email"
                         type="email"
                         placeholder={t('settingScreen.phFromEmail')}
@@ -273,7 +273,7 @@ const Setting = () => {
                     <InputAreaTwo
                       required={true}
                       register={register}
-                      label="Address"
+                      label={t('settingScreen.addressLine')}
                       name="address"
                       type="text"
                       placeholder={t('settingScreen.addressLine')}
@@ -306,7 +306,7 @@ const Setting = () => {
                     <InputAreaTwo
                       required={true}
                       register={register}
-                      label="Phone"
+                      label={t('settingScreen.phGlobalContactNumber')}
                       name="contact"
                       type="text"
                       placeholder={t('settingScreen.phGlobalContactNumber')}
@@ -323,7 +323,7 @@ const Setting = () => {
                     <InputAreaTwo
                       required={true}
                       register={register}
-                      label="Email"
+                      label={t('settingScreen.footerEmail')}
                       name="email"
                       type="text"
                       placeholder={t('settingScreen.footerEmail')}
