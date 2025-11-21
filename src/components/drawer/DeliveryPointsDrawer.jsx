@@ -95,14 +95,14 @@ const DeliveryPointsDrawer = ({ id, onSuccess }) => {
         <Title title={drawerTitle} description={drawerDesc} />
       </div>
 
-      <Scrollbars className="w-full md:w-7/12 lg:w-8/12 xl:w-8/12 relative dark:bg-gray-700 dark:text-gray-200">
+      <Scrollbars className="track-horizontal thumb-horizontal w-full md:w-7/12 lg:w-8/12 xl:w-8/12 relative dark:bg-gray-700 dark:text-gray-200">
         <form
           onSubmit={handleSubmit(async (formData) => {
             await onSubmit(formData)
             if (onSuccess) onSuccess()
           })}
         >
-          <div className="px-6 pt-8 flex-grow scrollbar-hide w-full max-h-full">
+          <div className="px-6 pt-8 flex-grow w-full h-full max-h-full pb-40 md:pb-32 lg:pb-32 xl:pb-32">
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
               <div className="col-span-8 sm:col-span-4">
                 <MapContainer
