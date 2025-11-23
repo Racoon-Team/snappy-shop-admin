@@ -76,7 +76,7 @@ const Coupons = () => {
     <>
       <PageTitle>{t('couponsScreen.title')}</PageTitle>
       <DeleteModal ids={allId} setIsCheck={setIsCheck} title="Selected Coupon" />
-      <BulkActionDrawer ids={allId} type="Coupons" title={t('couponsScreen.title')} />
+      <BulkActionDrawer ids={allId} type="Coupons" title={t('couponsScreen.title')} data={data} />
 
       <MainDrawer>
         <CouponDrawer id={serviceId} />

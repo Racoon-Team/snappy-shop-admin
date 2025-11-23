@@ -84,6 +84,7 @@ const ChildAttributes = () => {
         title="Attribute Value(s)"
         label={t('attributesScreen.labelValues')}
         childId={id}
+        data={data?.variants}
       />
 
       <MainDrawer>
