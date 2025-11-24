@@ -93,9 +93,7 @@ export const SidebarProvider = ({ children }) => {
 
   const handleSubmitForAll = (e) => {
     e.preventDefault()
-    if (!searchRef?.current?.value) return setSearchText(null)
     setSearchText(searchRef?.current?.value)
-    setCategory(null)
   }
 
   // console.log("globalSetting", globalSetting, "languages", languages);

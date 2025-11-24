@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {
   Table,
   TableHeader,
@@ -49,22 +49,40 @@ const Products = () => {
     category,
     setCategory,
     searchRef,
-    handleSubmitForAll,
     sortedField,
     setSortedField,
     limitData,
   } = useContext(SidebarContext)
+  const [originalProducts, setOriginalProducts] = useState([])
+  const [filteredProducts, setFilteredProducts] = useState([])
 
-  const { data, loading, error } = useAsync(() =>
-    ProductServices.getAllProducts({
+  const handleSubmitForAll = (e) => {
+    e.preventDefault()
+    const filtered = originalProducts.filter((p) => {
+      const matchText = p.title.en.toLowerCase().includes(searchRef.current.value.toLowerCase())
+      const matchCategory = category ? p.category._id === category : true
+      return matchText && matchCategory
+    })
+    setFilteredProducts(filtered)
+  }
+  const { data, loading, error } = useAsync(async () => {
+    const res = await ProductServices.getAllProducts({
       page: currentPage,
       limit: limitData,
       category: category,
       title: searchText,
       price: sortedField,
     })
-  )
-
+    setOriginalProducts(res.products)
+    setFilteredProducts(res.products)
+    return res
+  })
+  useEffect(() => {
+    if (data?.products) {
+      setOriginalProducts(data.products)
+      setFilteredProducts(data.products)
+    }
+  }, [data])
   // console.log("product page", data);
 
   // react hooks
@@ -78,13 +96,13 @@ const Products = () => {
       setIsCheck([])
     }
   }
-  // handle reset field
+
   const handleResetField = () => {
     setCategory('')
     setSortedField('')
     searchRef.current.value = ''
+    setFilteredProducts(originalProducts)
   }
-
   // console.log('productss',products)
   const { serviceData, filename, isDisabled, handleSelectFile, handleUploadMultiple, handleRemoveSelectFile } =
     useProductFilter(data?.products)
@@ -233,7 +251,7 @@ const Products = () => {
                 <TableCell className="text-right">{t('productsScreen.table.actionsTbl')}</TableCell>
               </tr>
             </TableHeader>
-            <ProductTable lang={lang} isCheck={isCheck} products={data?.products} setIsCheck={setIsCheck} />
+            <ProductTable lang={lang} isCheck={isCheck} products={filteredProducts} setIsCheck={setIsCheck} />
           </Table>
           <TableFooter>
             <Pagination
