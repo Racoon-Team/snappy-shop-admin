@@ -194,7 +194,7 @@ const useAttributeSubmit = (id) => {
           notifyError(err?.response?.data?.message || err?.message)
         }
       })()
-    } else if (location.pathname === `/attributes/${location.pathname.split('/')[2]}`) {
+    } else if (location.pathname.includes('/values')) {
       ;(async () => {
         try {
           const res = await AttributeServices.getChildAttributeById({
