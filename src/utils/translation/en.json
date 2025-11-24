@@ -230,7 +230,7 @@
       "productTagPlaseholder": "Product Tag (Write then press enter to add new tag )",
       "validationTitle": "Title is required!",
       "validationSlug": "Slug is required",
-      "validationMinumum": "Minimum value 1!",
+      "validationMinumum": "Minimum value 10!",
       "validationPrice": "Original Price is required!",
       "validationMin": "Minimumm valueee 0!",
       "quantityValidation": "Quantity is required!",
