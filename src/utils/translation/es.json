@@ -231,7 +231,7 @@
       "productTagPlaseholder": "Etiqueta del producto (Escriba y presione Enter para agregar una nueva etiqueta)",
       "validationTitle": "¡El título es obligatorio!",
       "validationSlug": "El slug es obligatorio",
-      "validationMinumum": "¡Valor mínimo 1!",
+      "validationMinumum": "¡Valor mínimo 10!",
       "validationPrice": "¡Se requiere precio original!",
       "validationMin": "¡Valor mínimo 0!",
       "quantityValidation": "¡Se requiere cantidad!",

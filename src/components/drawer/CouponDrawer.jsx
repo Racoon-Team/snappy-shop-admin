@@ -154,7 +154,7 @@ const CouponDrawer = ({ id }) => {
                   required={true}
                   register={register}
                   maxValue={200000}
-                  minValue={1}
+                  minValue={10}
                   label={t('couponsScreen.couponDrawer.minimumAmount')}
                   name="minimumAmount"
                   type="number"
