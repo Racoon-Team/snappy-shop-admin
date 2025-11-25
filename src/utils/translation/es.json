@@ -107,7 +107,21 @@
 
   "profileMenu": {
     "dashboardPM": "Panel",
-    "editProfile": "Editar perfil",
+
+    "editProfile": {
+      "labelMenu": "Editar perfil",
+      "labelProfile": "Imagen de perfil",
+      "labelName": "Nombre",
+      "inputName": "Tu nombre",
+      "labelEmail": "Correo electronico",
+      "inputEmail": "Correo electronico",
+      "labelNumber": "Numero de contacto",
+      "inputNumber": "Numero de contacto",
+      "labelRole": "Tu Rol",
+      "selectRole": "Selecciona un rol",
+      "updateBtn": "Actualizar perfil"
+    },
+
     "logOut": "Cerrar sesion"
   },
 
@@ -532,7 +546,7 @@
       "label": "Método",
       "cash": "Efectivo",
       "card": "Tarjeta",
-      "qr":"QR",
+      "qr": "QR",
       "credit": "Credito"
     },
 
@@ -789,7 +803,7 @@
     "message": {
       "published": "¡Moneda publicada exitosamente!",
       "unpublished": "¡Moneda no publicada exitosamente!",
-      "addCurrency":"¡moneda agregada exitosa!",
+      "addCurrency": "¡moneda agregada exitosa!",
       "updateCurrency": "¡Actualización de moneda exitosa!",
       "deleteCurrency": "¡Moneda eliminada con éxito!"
     }

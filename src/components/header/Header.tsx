@@ -319,7 +319,7 @@ const Header: React.FC = () => {
                     <Link to="/edit-profile">
                       <span className="flex items-center text-sm">
                         <FiSettings className="w-4 h-4 mr-3" aria-hidden="true" />
-                        <span>{t('profileMenu.editProfile')}</span>
+                        <span>{t('profileMenu.editProfile.labelMenu')}</span>
                       </span>
                     </Link>
                   </li>

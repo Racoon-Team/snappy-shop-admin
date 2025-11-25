@@ -107,7 +107,21 @@
 
   "profileMenu": {
     "dashboardPM": "Dashboard",
-    "editProfile": "Edit profile",
+
+    "editProfile": {
+      "labelMenu": "Edit profile",
+      "labelProfile": "Profile Picture",
+      "labelName": "Name",
+      "inputName": "Your Name",
+      "labelEmail": "Email",
+      "inputEmail": "Email",
+      "labelNumber": "Contact Number",
+      "inputNumber": "Contact Number",
+      "labelRole": "Your Role",
+      "selectRole": "Select Role",
+      "updateBtn": "Update Profile"
+    },
+
     "logOut": "Log out"
   },
 
@@ -531,7 +545,7 @@
       "label": "Method",
       "cash": "Cash",
       "card": "Card",
-      "qr":"QR",
+      "qr": "QR",
       "credit": "Credit"
     },
 
