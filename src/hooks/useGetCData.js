@@ -11,7 +11,7 @@ const useGetCData = () => {
   const path = location?.pathname?.split('?')[0].split('/')[1]
   //   console.log("location", location?.pathname?.split("/")[1]);
 
-  const [role, setRole] = useState()
+  const [role, setRole] = useState(null)
   const [accessList, setAccessList] = useState([])
 
   // Function to decrypt data
@@ -54,7 +54,7 @@ const useGetCData = () => {
           const decryptedString = await decryptData(adminInfo.data, adminInfo.iv)
           const decryptedData = JSON.parse(decryptedString)
           setAccessList(decryptedData)
-          setRole(null)
+          setRole(adminInfo?.role)
 
           //   console.log("Decrypted Data:", decryptedArray, "Role:", lastElement);
           //   const isAuthorized =
