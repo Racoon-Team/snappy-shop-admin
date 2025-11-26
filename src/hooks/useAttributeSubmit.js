@@ -195,7 +195,8 @@ const useAttributeSubmit = (id) => {
         }
       })()
     } else if (location.pathname === `/attributes/${location.pathname.split('/')[2]}`) {
-      ;(async () => {
+      if (!id) return; 
+      (async () => {
         try {
           const res = await AttributeServices.getChildAttributeById({
             id: location.pathname.split('/')[2],
