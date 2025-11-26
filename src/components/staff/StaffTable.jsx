@@ -93,7 +93,7 @@ const StaffTable = ({ staffs, lang }) => {
             </TableCell>
             <TableCell>
               <span className="text-sm font-semibold">
-                {roles.find((r) => r._id === staff.role)?.name || staff.role}
+                {roles.find((r) => r.id === staff.role)?.name || staff.role}
               </span>
             </TableCell>
             <TableCell className="text-center text-xs">
