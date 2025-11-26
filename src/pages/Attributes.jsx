@@ -85,7 +85,7 @@ const Attributes = () => {
     <>
       <PageTitle>{t('attributesScreen.label')}</PageTitle>
       <DeleteModal ids={allId} setIsCheck={setIsCheck} />
-      <BulkActionDrawer ids={allId} title="Attributes" label={t('attributesScreen.label')} />
+      <BulkActionDrawer ids={allId} title="Attributes" label={t('attributesScreen.label')} data={data} />
       <MainDrawer>
         <AttributeDrawer />
       </MainDrawer>
