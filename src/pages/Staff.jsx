@@ -37,14 +37,24 @@ const Staff = () => {
 
   const { data, loading, error } = useAsync(() => AdminServices.getAllStaff({ email: adminInfo.email }))
 
-  const { userRef, setRole, totalResults, resultsPerPage, dataTable, serviceData, handleChangePage, handleSubmitUser } =
-    useFilter(data)
+  const {
+    userRef,
+    setRole,
+    totalResults,
+    setSearchUser,
+    resultsPerPage,
+    dataTable,
+    serviceData,
+    handleChangePage,
+    handleSubmitUser,
+  } = useFilter(data)
 
   const { t } = useTranslation()
 
   // handle reset filed
   const handleResetField = () => {
     setRole('')
+    setSearchUser('')
     userRef.current.value = ''
   }
 
