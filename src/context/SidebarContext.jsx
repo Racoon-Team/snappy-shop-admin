@@ -2,19 +2,15 @@ import { useQuery } from '@tanstack/react-query'
 import Cookies from 'js-cookie'
 import { createContext, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-
-//internal import
 import LanguageServices from '@/services/LanguageServices'
 import SettingServices from '@/services/SettingServices'
 
-// create context
 export const SidebarContext = createContext()
 
 export const SidebarProvider = ({ children }) => {
   const resultsPerPage = 20
   const searchRef = useRef('')
   const invoiceRef = useRef('')
-  // const dispatch = useDispatch();
 
   const [limitData, setLimitData] = useState(20)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -45,104 +41,125 @@ export const SidebarProvider = ({ children }) => {
   const [navBar, setNavBar] = useState(true)
   const { i18n } = useTranslation()
   const [tabIndex, setTabIndex] = useState(0)
+
   const { data: globalSetting } = useQuery({
     queryKey: ['globalSetting'],
     queryFn: async () => await SettingServices.getGlobalSetting(),
-    staleTime: 20 * 60 * 1000, //cache for 20 minutes,
+    staleTime: 20 * 60 * 1000,
     gcTime: 25 * 60 * 1000,
   })
 
   const { data: languages } = useQuery({
     queryKey: ['languages'],
     queryFn: async () => await LanguageServices.getShowingLanguage(),
-    staleTime: 20 * 60 * 1000, //cache for 20 minutes,
+    staleTime: 20 * 60 * 1000,
     gcTime: 25 * 60 * 1000,
   })
 
-  const closeSidebar = () => setIsSidebarOpen(false)
-  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen)
-
-  const closeDrawer = () => setIsDrawerOpen(false)
-  const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen)
-
-  const closeBulkDrawer = () => setIsBulkDrawerOpen(false)
-  const toggleBulkDrawer = () => setIsBulkDrawerOpen(!isBulkDrawerOpen)
-
-  const closeModal = () => setIsModalOpen(false)
-  const toggleModal = () => setIsModalOpen(!isModalOpen)
+  const persistCurrLang = (value) => {
+    try {
+      localStorage.setItem('_currLang', JSON.stringify(value))
+    } catch (err) {
+      // ignore storage errors
+    }
+  }
 
   const handleLanguageChange = (value) => {
-    // console.log("handleChangeLang", value);
+    try {
+      Cookies.set('i18next', value?.isoCode || 'en', {
+        sameSite: 'Lax',
+      })
+    } catch (err) {}
 
-    Cookies.set('i18next', value?.isoCode, {
-      sameSite: 'None',
-      secure: true, // Include the "secure" attribute
-    })
     i18n.changeLanguage(value?.isoCode)
     setLang(value?.isoCode)
-    Cookies.set('_currLang', JSON.stringify(value), {
-      sameSite: 'None',
-      secure: true, // Include the "secure" attribute
-    })
     setCurrLang(value)
+    persistCurrLang(value)
   }
 
-  const handleChangePage = (p) => {
-    setCurrentPage(p)
-  }
-
+  const closeSidebar = () => setIsSidebarOpen(false)
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen)
+  const closeDrawer = () => setIsDrawerOpen(false)
+  const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen)
+  const closeBulkDrawer = () => setIsBulkDrawerOpen(false)
+  const toggleBulkDrawer = () => setIsBulkDrawerOpen(!isBulkDrawerOpen)
+  const closeModal = () => setIsModalOpen(false)
+  const toggleModal = () => setIsModalOpen(!isModalOpen)
+  const handleChangePage = (p) => setCurrentPage(p)
   const handleSubmitForAll = (e) => {
     e.preventDefault()
     setSearchText(searchRef?.current?.value)
   }
 
-  // console.log("globalSetting", globalSetting, "languages", languages);
-
   useEffect(() => {
-    const pathname = window?.location.pathname === '/login'
-
-    // if (pathname) return;
-    const defaultLang = globalSetting?.default_language || 'en'
-    const cookieLang = Cookies.get('i18next')
-    const currLang = Cookies.get('_currLang')
-
-    const removeRegion = (langCode) => langCode?.split('-')[0]
-
-    let selectedLang = removeRegion(cookieLang || defaultLang)
-
-    // Ensure language consistency with global settings
-    if (globalSetting?.default_language) {
-      selectedLang = removeRegion(globalSetting.default_language)
+    const pathnameIsLogin = window?.location.pathname === '/login'
+    if (pathnameIsLogin) {
+      // no bloquear; si quieres evitar, descomenta return
     }
 
-    // Update state with selected language
+    let parsedStored = null
+    try {
+      const stored = localStorage.getItem('_currLang')
+      parsedStored = stored ? JSON.parse(stored) : null
+    } catch {
+      parsedStored = null
+    }
+
+    const defaultLang = globalSetting?.default_language || 'en'
+    const cookieLang = Cookies.get('i18next') || defaultLang
+    const removeRegion = (lc) => (lc ? lc.split('-')[0] : 'en')
+    let selectedLang = removeRegion(cookieLang)
+
+    if (parsedStored) {
+      setCurrLang(parsedStored)
+      selectedLang = parsedStored.isoCode || selectedLang
+    } else {
+      if (languages?.length) {
+        const found = languages.find((l) => l.isoCode === selectedLang)
+        if (found) setCurrLang(found)
+      } else {
+        setCurrLang((prev) => ({ ...prev, isoCode: selectedLang }))
+      }
+    }
+
     setLang(selectedLang)
 
-    // Set i18next language & update cookies **only when needed**
-    if (!cookieLang || cookieLang !== selectedLang) {
-      Cookies.set('i18next', selectedLang, {
-        sameSite: 'None',
-        secure: true,
-      })
-    }
-
-    // Change i18n language **only if it differs**
-    if (i18n.language !== selectedLang && !currLang) {
+    if (i18n.language !== selectedLang) {
       i18n.changeLanguage(selectedLang)
     }
 
-    // Find the corresponding language object
-    if (languages?.length && !pathname && !currLang) {
-      const result = languages?.find((lang) => lang?.isoCode === selectedLang)
-      setCurrLang(result)
+    try {
+      Cookies.set('i18next', selectedLang, { sameSite: 'Lax' })
+    } catch {}
+
+    const handler = (lng) => {
+      const code = removeRegion(lng)
+      setLang(code)
+
+      if (languages?.length) {
+        const found = languages.find((l) => l.isoCode === code)
+        if (found) {
+          setCurrLang(found)
+          persistCurrLang(found)
+        } else {
+          setCurrLang((prev) => ({ ...prev, isoCode: code }))
+          persistCurrLang({ isoCode: code, name: code, flag: code.toUpperCase() })
+        }
+      } else {
+        setCurrLang((prev) => ({ ...prev, isoCode: code }))
+      }
     }
-  }, [globalSetting?.default_language, languages]) // Add `languages` as a dependency
+    i18n.on('languageChanged', handler)
+
+    return () => {
+      i18n.off('languageChanged', handler)
+    }
+  }, [globalSetting?.default_language, languages, i18n])
 
   useEffect(() => {
     function handleResize() {
       setWindowDimension(window.innerWidth)
     }
-
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
