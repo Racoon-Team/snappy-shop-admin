@@ -246,8 +246,17 @@ const useFilter = (data) => {
     }
 
     if (currency) {
-      services = services.filter((cur) => cur.isoCode.toLowerCase().includes(currency.toLowerCase()))
+      const search = currency.toLowerCase()
+
+      services = services.filter((cur) => {
+        const name = cur?.name?.toLowerCase() || ''
+        const symbol = cur?.symbol?.toLowerCase() || ''
+        const iso = cur?.isoCode?.toLowerCase() || ''
+
+        return name.includes(search) || symbol.includes(search) || iso.includes(search)
+      })
     }
+
     // console.log("render", data, "categoryRef", categoryRef);
 
     return services
