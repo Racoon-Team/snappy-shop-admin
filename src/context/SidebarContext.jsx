@@ -60,7 +60,7 @@ export const SidebarProvider = ({ children }) => {
     try {
       localStorage.setItem('_currLang', JSON.stringify(value))
     } catch (err) {
-      // ignore storage errors
+      console.error('Error persisting _currLang in localStorage:', err)
     }
   }
 
@@ -69,7 +69,9 @@ export const SidebarProvider = ({ children }) => {
       Cookies.set('i18next', value?.isoCode || 'en', {
         sameSite: 'Lax',
       })
-    } catch (err) {}
+    } catch (err) {
+      console.error('Error setting language cookie:', err)
+    }
 
     i18n.changeLanguage(value?.isoCode)
     setLang(value?.isoCode)
@@ -93,10 +95,6 @@ export const SidebarProvider = ({ children }) => {
 
   useEffect(() => {
     const pathnameIsLogin = window?.location.pathname === '/login'
-    if (pathnameIsLogin) {
-      // no bloquear; si quieres evitar, descomenta return
-    }
-
     let parsedStored = null
     try {
       const stored = localStorage.getItem('_currLang')
@@ -130,7 +128,9 @@ export const SidebarProvider = ({ children }) => {
 
     try {
       Cookies.set('i18next', selectedLang, { sameSite: 'Lax' })
-    } catch {}
+    } catch (err) {
+      console.error('Error setting i18next cookie:', err)
+    }
 
     const handler = (lng) => {
       const code = removeRegion(lng)
