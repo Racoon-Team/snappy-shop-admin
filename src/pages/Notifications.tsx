@@ -194,7 +194,13 @@ const Notifications: React.FC = () => {
 
                           <TableCell className="md:w-full w-1/5" style={{ paddingRight: 0 }}>
                             <Link
-                              to={value.productId ? `/product/${value.productId}` : `/order/${value.orderId}`}
+                              to={
+                                value.productId
+                                  ? `/product/${value.productId}`
+                                  : value.orderId
+                                    ? `/order/${value.orderId}`
+                                    : '#'
+                              }
                               className="flex items-center"
                               onClick={() => handleNotificationStatusChange(value._id)}
                             >
