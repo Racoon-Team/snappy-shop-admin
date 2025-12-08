@@ -56,6 +56,7 @@ const StaffTable = ({ staffs, lang }) => {
       {isAccessModalOpen && (
         <AccessListModal
           staff={selectedStaff}
+          roles={roles}
           isOpen={isAccessModalOpen}
           onClose={handleAccessModalClose}
           showingTranslateValue={showingTranslateValue}
