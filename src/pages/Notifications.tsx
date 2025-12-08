@@ -23,10 +23,10 @@ import PageTitle from '@/components/Typography/PageTitle'
 import useUtilsFunction from '@/hooks/useUtilsFunction'
 import NotificationServices from '@/services/NotificationServices'
 import { notifyError, notifySuccess } from '@/utils/toast'
-import type { BackendNotification, notificationStatusType } from '@/types/notification'
+import type { Notification, notificationStatusType } from '@/types/notification'
 
 const Notifications: React.FC = () => {
-  const [data, setData] = useState<BackendNotification[]>([])
+  const [data, setData] = useState<Notification[]>([])
   const [totalDoc, setTotalDoc] = useState<number>(0)
   const [totalUnreadDoc, setTotalUnreadDoc] = useState<number>(0)
   const [page, setPage] = useState<number>(1)
@@ -37,7 +37,7 @@ const Notifications: React.FC = () => {
 
   const markNotificationAsReadLocal = (id: string) => {
     setData((prev) =>
-      prev.map((notif) => (notif._id === id ? { ...notif, status: 'read' as notificationStatusType } : notif))
+      prev.map((notif) => (notif.id === id ? { ...notif, status: 'read' as notificationStatusType } : notif))
     )
     setTotalUnreadDoc((prev) => prev - 1)
   }
@@ -54,10 +54,10 @@ const Notifications: React.FC = () => {
   const handleNotificationDelete = async (id: string) => {
     try {
       await NotificationServices.deleteNotification(id)
-      setData((prev) => prev.filter((notif) => notif._id !== id))
+      setData((prev) => prev.filter((notif) => notif.id !== id))
       setTotalDoc((prev) => prev - 1)
 
-      const deletedNotif = data.find((notif) => notif._id === id)
+      const deletedNotif = data.find((notif) => notif.id === id)
       if (deletedNotif?.status === 'unread') setTotalUnreadDoc((prev) => prev - 1)
     } catch (err: any) {
       notifyError(err?.response?.data?.message || err?.message)
@@ -67,7 +67,7 @@ const Notifications: React.FC = () => {
   const handleSeeMoreNotification = async (pg: number) => {
     try {
       const getAllRes = await NotificationServices.getAllNotification(pg)
-      setData((prev) => [...prev, ...((getAllRes.data as unknown as BackendNotification[]) || [])])
+      setData((prev) => [...prev, ...((getAllRes.data as unknown as Notification[]) || [])])
       setTotalUnreadDoc(getAllRes.additionalInfo?.totalUnread || 0)
       setPage(pg)
     } catch (err: any) {
@@ -78,7 +78,7 @@ const Notifications: React.FC = () => {
   const handleMarkIsRead = async () => {
     try {
       await NotificationServices.updateManyStatusNotification({ ids: isCheck, status: 'read' })
-      setData((prev) => prev.map((notif) => (isCheck.includes(notif._id) ? { ...notif, status: 'read' } : notif)))
+      setData((prev) => prev.map((notif) => (isCheck.includes(notif.id) ? { ...notif, status: 'read' } : notif)))
       setTotalUnreadDoc((prev) => prev - isCheck.length)
       setIsCheck([])
       notifySuccess('Selected notifications marked as read')
@@ -90,9 +90,9 @@ const Notifications: React.FC = () => {
   const handleDeleteMany = async () => {
     try {
       await NotificationServices.deleteManyNotification({ ids: isCheck })
-      setData((prev) => prev.filter((notif) => !isCheck.includes(notif._id)))
+      setData((prev) => prev.filter((notif) => !isCheck.includes(notif.id)))
       setTotalDoc((prev) => prev - isCheck.length)
-      const unreadDeleted = data.filter((notif) => isCheck.includes(notif._id) && notif.status === 'unread').length
+      const unreadDeleted = data.filter((notif) => isCheck.includes(notif.id) && notif.status === 'unread').length
       setTotalUnreadDoc((prev) => prev - unreadDeleted)
       setIsCheck([])
       notifySuccess('Selected notifications deleted')
@@ -103,7 +103,7 @@ const Notifications: React.FC = () => {
 
   const handleSelectAll = () => {
     setIsCheckAll(!isCheckAll)
-    setIsCheck(!isCheckAll ? data.map((li) => li._id) : [])
+    setIsCheck(!isCheckAll ? data.map((li) => li.id) : [])
   }
 
   const handleClick = (e: ChangeEvent<HTMLInputElement>) => {
@@ -115,7 +115,7 @@ const Notifications: React.FC = () => {
     ;(async () => {
       try {
         const res = await NotificationServices.getAllNotification(1)
-        setData((res.data as unknown as BackendNotification[]) || [])
+        setData((res.data as unknown as Notification[]) || [])
         setTotalUnreadDoc(res.additionalInfo?.totalUnread || 0)
         setTotalDoc(res.total || 0)
         setPage(1)
@@ -181,14 +181,14 @@ const Notifications: React.FC = () => {
                   <Table>
                     <TableBody className="w-full h-440">
                       {data.map((value) => (
-                        <TableRow className="border-none" key={value._id}>
+                        <TableRow className="border-none" key={value.id}>
                           <TableCell style={{ padding: 0 }}>
                             <CheckBox
                               type="checkbox"
-                              name={value._id}
-                              id={value._id}
+                              name={value.id}
+                              id={value.id}
                               handleClick={handleClick}
-                              isChecked={isCheck.includes(value._id)}
+                              isChecked={isCheck.includes(value.id)}
                             />
                           </TableCell>
 
@@ -202,7 +202,7 @@ const Notifications: React.FC = () => {
                                     : '#'
                               }
                               className="flex items-center"
-                              onClick={() => handleNotificationStatusChange(value._id)}
+                              onClick={() => handleNotificationStatusChange(value.id)}
                             >
                               <Avatar
                                 className="mr-2 md:block hidden bg-gray-50 border border-gray-200"
@@ -250,7 +250,7 @@ const Notifications: React.FC = () => {
                           >
                             <div className="group inline-block relative">
                               <button
-                                onClick={() => handleNotificationDelete(value._id)}
+                                onClick={() => handleNotificationDelete(value.id)}
                                 type="button"
                                 className="px-2 group-hover:text-blue-500 text-red-500 focus:outline-none"
                               >
