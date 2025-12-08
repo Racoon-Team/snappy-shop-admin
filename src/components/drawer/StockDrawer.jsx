@@ -104,20 +104,34 @@ const StockDrawer = ({ id, onSuccess }) => {
       <Scrollbars className="w-full md:w-7/12 lg:w-8/12 xl:w-8/12 relative dark:bg-gray-700 dark:text-gray-200">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="px-6 pt-8 flex-grow scrollbar-hide w-full max-h-full">
-            <LabelArea label={`${t('productsScreen.drawer.inbound')} ${inbound}`} />
-            <LabelArea label={`${t('productsScreen.drawer.outbound')} ${outbound}`} />
-            <LabelArea label={`${t('productsScreen.drawer.stockTotal')} ${stockTotal}`} />
-            <br />
-            <div className="grid md:grid-cols-5 sm:grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
-              <label className="block text-sm text-gray-600 font-semibold dark:text-gray-400 mb-1 sm:col-span-2">
-                {t('productsScreen.drawer.labelRemove')}
-              </label>
-              <div className="md:col-span-3 sm:col-span-4">
-                <SwitchToggle title={''} handleProcess={setIsRemoveProduct} processOption={isRemoveProduct} />
+            <div className="mb-6">
+              <p className="block text-sm text-gray-600 font-semibold dark:text-gray-400 mb-2">Seleccionar acción</p>
+
+              <div className="flex gap-3">
+                <button
+                  type="button"
+                  onClick={() => setIsRemoveProduct(false)}
+                  className="px-4 py-2 rounded-lg text-sm font-semibold transition-all text-white"
+                  style={{
+                    backgroundColor: !isRemoveProduct ? 'rgb(47, 133, 90)' : 'rgba(0,0,0,0.25)',
+                  }}
+                >
+                  {t('productsScreen.drawer.buttonQuantity')}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setIsRemoveProduct(true)}
+                  className="px-4 py-2 rounded-lg text-sm font-semibold transition-all text-white"
+                  style={{
+                    backgroundColor: isRemoveProduct ? 'rgba(220, 53, 69, 1)' : 'rgba(0,0,0,0.25)',
+                  }}
+                >
+                  {t('productsScreen.drawer.buttonremove')}
+                </button>
               </div>
             </div>
+
             <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6 items-end">
-              <LabelArea label={t('productsScreen.drawer.labelQuantity')} />
               <div className="col-span-8 sm:col-span-4 flex gap-2">
                 <InputArea
                   label={t('productsScreen.drawer.labelQuantity')}
@@ -175,6 +189,10 @@ const StockDrawer = ({ id, onSuccess }) => {
                           </p>
                         </div>
                       </div>
+                      <LabelArea label={`${t('productsScreen.drawer.inbound')} ${inbound}`} />
+                      <LabelArea label={`${t('productsScreen.drawer.outbound')} ${outbound}`} />
+                      <LabelArea label={`${t('productsScreen.drawer.stockTotal')} ${stockTotal}`} />
+                      <br />
                       <TableContainer className="mb-8">
                         <Table>
                           <TableHeader>
@@ -204,6 +222,10 @@ const StockDrawer = ({ id, onSuccess }) => {
               </TabsComponent>
             ) : (
               <div className="mt-8">
+                <LabelArea label={`${t('productsScreen.drawer.inbound')} ${inbound}`} />
+                <LabelArea label={`${t('productsScreen.drawer.outbound')} ${outbound}`} />
+                <LabelArea label={`${t('productsScreen.drawer.stockTotal')} ${stockTotal}`} />
+                <br />
                 <TableContainer className="mb-8">
                   <Table>
                     <TableHeader>
