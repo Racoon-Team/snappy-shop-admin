@@ -24,11 +24,14 @@ const AccessListModal = ({ isOpen, onClose, staff, roles, showingTranslateValue 
       <ModalBody>
         {accessList.length > 0 ? (
           <ol className="list-disc pl-5">
-            {accessList.map((route, index) => (
-              <li key={index} className="text-sm text-gray-700 dark:text-gray-300 capitalize">
-                {t(`staffScreen.drawer.selectAccess.${route}`)}
-              </li>
-            ))}
+            {accessList.map((route, index) => {
+              const camelCaseKey = route.replace(/-([a-z])/g, (g) => g[1].toUpperCase())
+              return (
+                <li key={index} className="text-sm text-gray-700 dark:text-gray-300 ">
+                  {t(`staffScreen.drawer.selectAccess.${camelCaseKey}`)}
+                </li>
+              )
+            })}
           </ol>
         ) : (
           <p className="text-orange-500 py-10 text-lg text-center">{t('staffScreen.accesslistModal.message')}</p>
