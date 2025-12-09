@@ -29,36 +29,6 @@ const ProductTable = ({ products, isCheck, setIsCheck }) => {
       setIsCheck(isCheck.filter((item) => item !== id))
     }
   }
-  const [totalsMap, setTotalsMap] = useState({})
-  const [orderOutboundMap, setOrderOutboundMap] = useState({})
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const newTotals = {}
-      const newOutbound = {}
-
-      for (const product of products) {
-        try {
-          const stockRes = await OrderServices.getProductStock(product._id)
-          newTotals[product._id] = stockRes?.totals || {}
-        } catch (err) {
-          newTotals[product._id] = {}
-        }
-
-        try {
-          const outRes = await OrderServices.getTotalSoldByProduct(product._id)
-          newOutbound[product._id] = outRes?.totalQuantity || 0
-        } catch (err) {
-          newOutbound[product._id] = 0
-        }
-      }
-
-      setTotalsMap(newTotals)
-      setOrderOutboundMap(newOutbound)
-    }
-
-    fetchData()
-  }, [products])
 
   return (
     <>
@@ -76,8 +46,20 @@ const ProductTable = ({ products, isCheck, setIsCheck }) => {
 
       <TableBody>
         {products?.map((product, i) => {
-          const totals = totalsMap[product._id] || {}
-          const orderOutbound = orderOutboundMap[product._id] || 0
+          const { totals } = useStock(product._id)
+          const [orderOutbound, setOrderOutbound] = useState(0)
+
+          useEffect(() => {
+            const fetchOutbound = async () => {
+              try {
+                const res = await OrderServices.getTotalSoldByProduct(product._id)
+                setOrderOutbound(res?.totalQuantity || 0)
+              } catch (err) {
+                console.error('Error fetching outbound:', err)
+              }
+            }
+            fetchOutbound()
+          }, [product._id])
 
           const inbound = totals?.inbound || 0
           const outbound = (totals?.outbound || 0) + orderOutbound
