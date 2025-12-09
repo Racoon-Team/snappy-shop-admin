@@ -107,12 +107,6 @@ const Header: React.FC = () => {
   // notification api calling
   useEffect(() => {
     handleGetAllNotifications()
-
-    const interval = setInterval(() => {
-      handleGetAllNotifications()
-    }, 15000)
-
-    return () => clearInterval(interval)
   }, [updated])
   // const onChange = (event) => {
   //     i18next.changeLanguage(event.target.value);
