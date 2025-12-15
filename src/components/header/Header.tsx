@@ -5,7 +5,7 @@ import { Scrollbars } from 'react-custom-scrollbars-2'
 
 import { useTranslation } from 'react-i18next'
 import { FiBell, FiGrid, FiLogOut, FiMenu, FiMoon, FiSettings, FiSun, FiTrash2 } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 //internal import
 import ellipse from '@/assets/img/icons/ellipse.svg'
@@ -103,11 +103,11 @@ const Header: React.FC = () => {
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
-
+  const location = useLocation()
   // notification api calling
   useEffect(() => {
     handleGetAllNotifications()
-  }, [updated])
+  }, [location, updated])
   // const onChange = (event) => {
   //     i18next.changeLanguage(event.target.value);
 
