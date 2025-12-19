@@ -710,7 +710,9 @@
     "globalContactNumber": "Contacto",
     "phGlobalContactNumber": "Numero de contacto",
     "footerEmail": "Correo Electronico",
-    "webSite": "Sitio Web"
+    "webSite": "Sitio Web",
+    "whatsAppNumber": "Número de Whatsapp",
+    "whatsAppMessage": "Mensaje de WhatsApp"
   },
 
   "roleScreen": {

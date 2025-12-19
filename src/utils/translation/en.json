@@ -709,7 +709,9 @@
     "globalContactNumber": "Contact",
     "phGlobalContactNumber": "Contact Number",
     "footerEmail": "Email",
-    "webSite": "Web site"
+    "webSite": "Web site",
+    "whatsAppNumber": "WhatsApp Number",
+    "whatsAppMessage": "WhatsApp Message"
   },
 
   "roleScreen": {
