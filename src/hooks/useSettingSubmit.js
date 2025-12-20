@@ -56,6 +56,8 @@ const useSettingSubmit = (id) => {
           from_email: data.from_email,
           allow_auto_trans: isAllowAutoTranslation,
           translation_key: data.translation_key,
+          whatsapp_phone: data.whatsapp_phone,
+          whatsapp_message: data.whatsapp_message,
         },
       }
 
@@ -116,6 +118,8 @@ const useSettingSubmit = (id) => {
           setEnableInvoice(res?.email_to_customer || false)
           setValue('translation_key', res?.translation_key)
           setIsAllowAutoTranslation(res?.allow_auto_trans || false)
+          setValue('whatsapp_phone', res.whatsapp_phone || '')
+          setValue('whatsapp_message', res.whatsapp_message || '')
         }
       } catch (err) {
         notifyError(err?.response?.data?.message || err?.message)

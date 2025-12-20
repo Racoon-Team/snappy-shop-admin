@@ -346,6 +346,35 @@ const Setting = () => {
                     <Error errorName={errors.website} />
                   </div>
                 </div>
+                <div className="grid md:grid-cols-5 items-center sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
+                  <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
+                    {t('settingScreen.whatsAppNumber')}
+                  </label>
+                  <div className="sm:col-span-3">
+                    <InputAreaTwo
+                      register={register}
+                      label= {t('settingScreen.whatsAppNumber')}
+                      name="whatsapp_phone"
+                      type="text"
+                      placeholder="59171234567"
+                    />
+                    <Error errorName={errors.whatsapp_phone} />
+                  </div>
+                </div>
+                <div className="grid md:grid-cols-5 items-start sm:grid-cols-12 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6">
+                  <label className="block text-sm font-semibold text-gray-600 dark:text-gray-400 mb-1 sm:col-span-2">
+                     {t('settingScreen.whatsAppMessage')}
+                  </label>
+                  <div className="sm:col-span-3">
+                    <textarea
+                      {...register('whatsapp_message')}
+                      rows={3}
+                      placeholder={t('settingScreen.whatsAppMessage')}
+                      className="w-full px-3 py-2 border rounded-md bg-white dark:bg-gray-800 dark:text-white"
+                    />
+                    <Error errorName={errors.whatsapp_message} />
+                  </div>
+                </div>
               </div>
             </SettingContainer>
           </form>
