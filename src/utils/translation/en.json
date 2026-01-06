@@ -264,8 +264,8 @@
       "stockTotal": "Stock Total:",
       "labelQuantity": "Quantity",
       "inputQuantity": "Add quantity",
-      "buttonQuantity": "Add",
-      "buttonremove": "Remove",
+      "buttonQuantity": "Add Product",
+      "buttonremove": "Remove Product",
       "labelRemove": "REMOVE PRODUCT",
       "titleTable": "stock entries",
 
