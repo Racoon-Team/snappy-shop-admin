@@ -21,8 +21,6 @@ const StockDrawer = ({ id, onSuccess }) => {
   const [isRemoveProduct, setIsRemoveProduct] = useState(false)
   const [activeTabIndex, setActiveTabIndex] = useState(0)
   const [product, setProduct] = useState(null)
-  const [variantTotals, setVariantTotals] = useState({})
-  const [totals, setTotals] = useState({ inbound: 0, outbound: 0, stockTotal: 0 })
   const [orderOutbound, setOrderOutbound] = useState(0)
 
   const {
@@ -31,10 +29,11 @@ const StockDrawer = ({ id, onSuccess }) => {
     formState: { errors, isSubmitting },
     reset,
   } = useForm()
-  const { stocks, addStock } = useStock(id)
-  const { dataTable, totalResults, resultsPerPage, handleChangePage } = useFilter(stocks)
 
   const hasVariants = product?.variants?.length > 0
+  const activeVariantId = hasVariants ? product.variants[activeTabIndex]?.productId : null
+  const { stocks, totals, addStock } = useStock(id, activeVariantId)
+  const { dataTable, totalResults, resultsPerPage, handleChangePage } = useFilter(stocks)
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -62,61 +61,14 @@ const StockDrawer = ({ id, onSuccess }) => {
     fetchOrderOutbound()
   }, [id])
 
-  const fetchVariantTotals = async () => {
-    if (!product || !hasVariants) return
-    const totalsObj = {}
-    for (const variant of product.variants) {
-      try {
-        const res = await ProductServices.getStockTotals(product._id, variant.productId)
-        totalsObj[variant.productId] = res
-      } catch (err) {
-        console.error(`Error fetching totals for variant ${variant.productId}:`, err)
-      }
-    }
-    setVariantTotals(totalsObj)
-  }
-
-  useEffect(() => {
-    fetchVariantTotals()
-  }, [product])
-
-  const fetchTotals = async () => {
-    if (!product || hasVariants) return
-    try {
-      const res = await ProductServices.getStockTotals(id)
-      setTotals({
-        inbound: res.inbound,
-        outbound: (res.outbound || 0) + orderOutbound,
-        stockTotal: res.inbound - ((res.outbound || 0) + orderOutbound),
-      })
-    } catch (err) {
-      console.error('Error fetching totals:', err)
-    }
-  }
-
-  useEffect(() => {
-    fetchTotals()
-  }, [product, stocks, orderOutbound])
-
   const onSubmit = async (formData) => {
     try {
       const quantity = Number(formData.quantity)
-      const variantId = hasVariants ? product.variants[activeTabIndex]?.productId : undefined
-
       await addStock({
-        productId: id,
-        variantId,
         quantity: Math.abs(quantity),
         type: isRemoveProduct ? 'outbound' : 'inbound',
       })
-
       reset()
-      if (hasVariants) {
-        await fetchVariantTotals()
-      } else {
-        await fetchTotals()
-      }
-
       if (onSuccess) onSuccess()
     } catch (err) {
       console.error(err)
@@ -157,70 +109,59 @@ const StockDrawer = ({ id, onSuccess }) => {
                     <Tab key={variant.productId || index}>Variante {index + 1}</Tab>
                   ))}
                 </TabList>
-              </TabsComponent>
-            )}
-            <div className="mb-6">
-              <p className="block text-sm text-gray-600 font-semibold dark:text-gray-400 mb-2">Seleccionar acción</p>
-              <div className="flex gap-3">
-                <button
-                  type="button"
-                  onClick={() => setIsRemoveProduct(false)}
-                  className="px-4 py-2 rounded-lg text-sm font-semibold text-white"
-                  style={{
-                    backgroundColor: !isRemoveProduct ? 'rgb(47, 133, 90)' : 'rgba(0,0,0,0.25)',
-                  }}
-                >
-                  {t('productsScreen.drawer.buttonQuantity')}
-                </button>
 
-                <button
-                  type="button"
-                  onClick={() => setIsRemoveProduct(true)}
-                  className="px-4 py-2 rounded-lg text-sm font-semibold text-white"
-                  style={{
-                    backgroundColor: isRemoveProduct ? 'rgba(220, 53, 69, 1)' : 'rgba(0,0,0,0.25)',
-                  }}
-                >
-                  {t('productsScreen.drawer.buttonremove')}
-                </button>
-              </div>
-            </div>
-            <div className="grid grid-cols-6 gap-3 mb-6 items-end">
-              <div className="col-span-8 sm:col-span-4 flex gap-2">
-                <InputArea
-                  label={t('productsScreen.drawer.labelQuantity')}
-                  register={register}
-                  name="quantity"
-                  placeholder={t('productsScreen.drawer.inputQuantity')}
-                  type="number"
-                  required
-                />
-
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="mx-2 hover:opacity-90"
-                  style={{
-                    backgroundColor: isRemoveProduct ? 'rgba(220, 53, 69, 1)' : 'rgb(47, 133, 90)',
-                  }}
-                >
-                  <span className="text-xs">
-                    {isRemoveProduct
-                      ? t('productsScreen.drawer.buttonremove')
-                      : t('productsScreen.drawer.buttonQuantity')}
-                  </span>
-                </Button>
-              </div>
-
-              <Error errorName={errors.quantity} />
-            </div>
-            {hasVariants ? (
-              <TabsComponent selectedIndex={activeTabIndex}>
                 {variants.map((variant, index) => (
                   <TabPanel key={variant.productId || index}>
                     <div className="mt-6">
+                      <div className="mb-6">
+                        <p className="block text-sm text-gray-600 font-semibold dark:text-gray-400 mb-2">
+                          Seleccionar acción
+                        </p>
+                        <div className="flex gap-3">
+                          <button
+                            type="button"
+                            onClick={() => setIsRemoveProduct(false)}
+                            className="px-4 py-2 rounded-lg text-sm font-semibold text-white"
+                            style={{ backgroundColor: !isRemoveProduct ? 'rgb(47, 133, 90)' : 'rgba(0,0,0,0.25)' }}
+                          >
+                            {t('productsScreen.drawer.buttonQuantity')}
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setIsRemoveProduct(true)}
+                            className="px-4 py-2 rounded-lg text-sm font-semibold text-white"
+                            style={{ backgroundColor: isRemoveProduct ? 'rgba(220, 53, 69, 1)' : 'rgba(0,0,0,0.25)' }}
+                          >
+                            {t('productsScreen.drawer.buttonremove')}
+                          </button>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-6 gap-3 mb-6 items-end">
+                        <div className="col-span-8 sm:col-span-4 flex gap-2">
+                          <InputArea
+                            label={t('productsScreen.drawer.labelQuantity')}
+                            register={register}
+                            name="quantity"
+                            placeholder={t('productsScreen.drawer.inputQuantity')}
+                            type="number"
+                            required
+                          />
+                          <Button
+                            type="submit"
+                            disabled={isSubmitting}
+                            className="mx-2 hover:opacity-90"
+                            style={{ backgroundColor: isRemoveProduct ? 'rgba(220, 53, 69, 1)' : 'rgb(47, 133, 90)' }}
+                          >
+                            <span className="text-xs">
+                              {isRemoveProduct
+                                ? t('productsScreen.drawer.buttonremove')
+                                : t('productsScreen.drawer.buttonQuantity')}
+                            </span>
+                          </Button>
+                        </div>
+                        <Error errorName={errors.quantity} />
+                      </div>
                       <h3 className="text-lg font-semibold mb-4">Variante {index + 1}</h3>
-
                       <div className="flex items-center gap-4 mb-4">
                         <img
                           src={variant.image}
@@ -236,17 +177,13 @@ const StockDrawer = ({ id, onSuccess }) => {
                           </p>
                         </div>
                       </div>
-
+                      <LabelArea label={`${t('productsScreen.drawer.inbound')} ${totals.inbound || 0}`} />
                       <LabelArea
-                        label={`${t('productsScreen.drawer.inbound')} ${variantTotals[variant.productId]?.inbound || 0}`}
+                        label={`${t('productsScreen.drawer.outbound')} ${totals.outbound + orderOutbound || 0}`}
                       />
                       <LabelArea
-                        label={`${t('productsScreen.drawer.outbound')} ${variantTotals[variant.productId]?.outbound || 0}`}
+                        label={`${t('productsScreen.drawer.stockTotal')} ${totals.inbound - (totals.outbound + orderOutbound) || 0}`}
                       />
-                      <LabelArea
-                        label={`${t('productsScreen.drawer.stockTotal')} ${variantTotals[variant.productId]?.stockTotal || 0}`}
-                      />
-
                       <TableContainer className="mb-8">
                         <Table>
                           <TableHeader>
@@ -259,10 +196,8 @@ const StockDrawer = ({ id, onSuccess }) => {
                               <TableCell>{t('productsScreen.drawer.table.quantity')}</TableCell>
                             </tr>
                           </TableHeader>
-
                           <StockTable products={dataTable.filter((p) => p.variantId === variant.productId)} />
                         </Table>
-
                         <TableFooter>
                           <Pagination
                             totalResults={totalResults}
@@ -276,11 +211,14 @@ const StockDrawer = ({ id, onSuccess }) => {
                   </TabPanel>
                 ))}
               </TabsComponent>
-            ) : (
-              <div className="mt-8">
+            )}
+            {!hasVariants && (
+              <>
                 <LabelArea label={`${t('productsScreen.drawer.inbound')} ${totals.inbound}`} />
-                <LabelArea label={`${t('productsScreen.drawer.outbound')} ${totals.outbound}`} />
-                <LabelArea label={`${t('productsScreen.drawer.stockTotal')} ${totals.stockTotal}`} />
+                <LabelArea label={`${t('productsScreen.drawer.outbound')} ${totals.outbound + orderOutbound}`} />
+                <LabelArea
+                  label={`${t('productsScreen.drawer.stockTotal')} ${totals.inbound - (totals.outbound + orderOutbound)}`}
+                />
 
                 <TableContainer className="mb-8 mt-4">
                   <Table>
@@ -305,7 +243,7 @@ const StockDrawer = ({ id, onSuccess }) => {
                     />
                   </TableFooter>
                 </TableContainer>
-              </div>
+              </>
             )}
           </div>
         </form>
