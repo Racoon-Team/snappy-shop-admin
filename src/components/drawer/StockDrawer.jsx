@@ -87,6 +87,18 @@ const StockDrawer = ({ id, onSuccess }) => {
 
   const variants = product.variants || []
 
+  const getVariantStockTotal = (variantId) => {
+    const inbound = stocks
+      .filter((s) => s.variantId === variantId && s.type === 'inbound')
+      .reduce((acc, s) => acc + s.quantity, 0)
+
+    const outbound = stocks
+      .filter((s) => s.variantId === variantId && s.type === 'outbound')
+      .reduce((acc, s) => acc + s.quantity, 0)
+
+    return inbound - outbound
+  }
+
   return (
     <>
       <div className="w-full relative p-6 border-b border-gray-100 bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">
@@ -173,7 +185,7 @@ const StockDrawer = ({ id, onSuccess }) => {
                             <strong>Product ID:</strong> {variant.productId}
                           </p>
                           <p>
-                            <strong>Cantidad:</strong> {variant.quantity}
+                            <strong>Cantidad:</strong> {getVariantStockTotal(variant.productId)}
                           </p>
                         </div>
                       </div>
@@ -214,6 +226,54 @@ const StockDrawer = ({ id, onSuccess }) => {
             )}
             {!hasVariants && (
               <>
+                <div className="mb-6">
+                  <p className="block text-sm text-gray-600 font-semibold dark:text-gray-400 mb-2">
+                    Seleccionar acción
+                  </p>
+                  <div className="flex gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setIsRemoveProduct(false)}
+                      className="px-4 py-2 rounded-lg text-sm font-semibold text-white"
+                      style={{ backgroundColor: !isRemoveProduct ? 'rgb(47, 133, 90)' : 'rgba(0,0,0,0.25)' }}
+                    >
+                      {t('productsScreen.drawer.buttonQuantity')}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setIsRemoveProduct(true)}
+                      className="px-4 py-2 rounded-lg text-sm font-semibold text-white"
+                      style={{ backgroundColor: isRemoveProduct ? 'rgba(220, 53, 69, 1)' : 'rgba(0,0,0,0.25)' }}
+                    >
+                      {t('productsScreen.drawer.buttonremove')}
+                    </button>
+                  </div>
+                </div>
+                <div className="grid grid-cols-6 gap-3 mb-6 items-end">
+                  <div className="col-span-8 sm:col-span-4 flex gap-2">
+                    <InputArea
+                      label={t('productsScreen.drawer.labelQuantity')}
+                      register={register}
+                      name="quantity"
+                      placeholder={t('productsScreen.drawer.inputQuantity')}
+                      type="number"
+                      required
+                    />
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="mx-2 hover:opacity-90"
+                      style={{ backgroundColor: isRemoveProduct ? 'rgba(220, 53, 69, 1)' : 'rgb(47, 133, 90)' }}
+                    >
+                      <span className="text-xs">
+                        {isRemoveProduct
+                          ? t('productsScreen.drawer.buttonremove')
+                          : t('productsScreen.drawer.buttonQuantity')}
+                      </span>
+                    </Button>
+                  </div>
+                  <Error errorName={errors.quantity} />
+                </div>
                 <LabelArea label={`${t('productsScreen.drawer.inbound')} ${totals.inbound}`} />
                 <LabelArea label={`${t('productsScreen.drawer.outbound')} ${totals.outbound + orderOutbound}`} />
                 <LabelArea
