@@ -146,6 +146,19 @@ const StockDrawer = ({ id, onSuccess }) => {
       <Scrollbars className="w-full md:w-7/12 lg:w-8/12 xl:w-8/12 relative dark:bg-gray-700 dark:text-gray-200">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="px-6 pt-8 flex-grow scrollbar-hide w-full max-h-full">
+            {hasVariants && (
+              <TabsComponent
+                className="mb-6"
+                selectedIndex={activeTabIndex}
+                onSelect={(index) => setActiveTabIndex(index)}
+              >
+                <TabList>
+                  {variants.map((variant, index) => (
+                    <Tab key={variant.productId || index}>Variante {index + 1}</Tab>
+                  ))}
+                </TabList>
+              </TabsComponent>
+            )}
             <div className="mb-6">
               <p className="block text-sm text-gray-600 font-semibold dark:text-gray-400 mb-2">Seleccionar acción</p>
               <div className="flex gap-3">
@@ -159,6 +172,7 @@ const StockDrawer = ({ id, onSuccess }) => {
                 >
                   {t('productsScreen.drawer.buttonQuantity')}
                 </button>
+
                 <button
                   type="button"
                   onClick={() => setIsRemoveProduct(true)}
@@ -171,8 +185,7 @@ const StockDrawer = ({ id, onSuccess }) => {
                 </button>
               </div>
             </div>
-
-            <div className="grid grid-cols-6 gap-3 md:gap-5 xl:gap-6 lg:gap-6 mb-6 items-end">
+            <div className="grid grid-cols-6 gap-3 mb-6 items-end">
               <div className="col-span-8 sm:col-span-4 flex gap-2">
                 <InputArea
                   label={t('productsScreen.drawer.labelQuantity')}
@@ -182,6 +195,7 @@ const StockDrawer = ({ id, onSuccess }) => {
                   type="number"
                   required
                 />
+
                 <Button
                   type="submit"
                   disabled={isSubmitting}
@@ -197,25 +211,16 @@ const StockDrawer = ({ id, onSuccess }) => {
                   </span>
                 </Button>
               </div>
+
               <Error errorName={errors.quantity} />
             </div>
-
             {hasVariants ? (
-              <TabsComponent
-                className="md:mt-10 mt-3"
-                selectedIndex={activeTabIndex}
-                onSelect={(index) => setActiveTabIndex(index)}
-              >
-                <TabList>
-                  {variants.map((variant, index) => (
-                    <Tab key={variant.productId || index}>{`Variante ${index + 1}`}</Tab>
-                  ))}
-                </TabList>
-
+              <TabsComponent selectedIndex={activeTabIndex}>
                 {variants.map((variant, index) => (
                   <TabPanel key={variant.productId || index}>
                     <div className="mt-6">
                       <h3 className="text-lg font-semibold mb-4">Variante {index + 1}</h3>
+
                       <div className="flex items-center gap-4 mb-4">
                         <img
                           src={variant.image}
@@ -254,8 +259,10 @@ const StockDrawer = ({ id, onSuccess }) => {
                               <TableCell>{t('productsScreen.drawer.table.quantity')}</TableCell>
                             </tr>
                           </TableHeader>
+
                           <StockTable products={dataTable.filter((p) => p.variantId === variant.productId)} />
                         </Table>
+
                         <TableFooter>
                           <Pagination
                             totalResults={totalResults}
@@ -275,7 +282,7 @@ const StockDrawer = ({ id, onSuccess }) => {
                 <LabelArea label={`${t('productsScreen.drawer.outbound')} ${totals.outbound}`} />
                 <LabelArea label={`${t('productsScreen.drawer.stockTotal')} ${totals.stockTotal}`} />
 
-                <TableContainer className="mb-8">
+                <TableContainer className="mb-8 mt-4">
                   <Table>
                     <TableHeader>
                       <tr>
