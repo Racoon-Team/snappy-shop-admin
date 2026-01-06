@@ -12,7 +12,6 @@ import InputArea from '@/components/form/input/InputArea'
 import Error from '@/components/form/others/Error'
 import useStock from '@/hooks/useStock'
 import StockTable from '@/components/stock/StockTable'
-import SwitchToggle from '@/components/form/switch/SwitchToggle'
 import useFilter from '@/hooks/useFilter'
 import OrderServices from '@/services/OrderServices'
 import ProductServices from '@/services/ProductServices'
@@ -20,9 +19,11 @@ import ProductServices from '@/services/ProductServices'
 const StockDrawer = ({ id, onSuccess }) => {
   const { t } = useTranslation()
   const [isRemoveProduct, setIsRemoveProduct] = useState(false)
-  const [orderOutbound, setOrderOutbound] = useState(0)
   const [activeTabIndex, setActiveTabIndex] = useState(0)
   const [product, setProduct] = useState(null)
+  const [variantTotals, setVariantTotals] = useState({})
+  const [totals, setTotals] = useState({ inbound: 0, outbound: 0, stockTotal: 0 })
+  const [orderOutbound, setOrderOutbound] = useState(0)
 
   const {
     register,
@@ -30,17 +31,17 @@ const StockDrawer = ({ id, onSuccess }) => {
     formState: { errors, isSubmitting },
     reset,
   } = useForm()
-
-  const { stocks, totals, addStock } = useStock(id)
+  const { stocks, addStock } = useStock(id)
   const { dataTable, totalResults, resultsPerPage, handleChangePage } = useFilter(stocks)
+
+  const hasVariants = product?.variants?.length > 0
 
   useEffect(() => {
     const fetchProduct = async () => {
+      if (!id) return
       try {
-        if (id) {
-          const res = await ProductServices.getProductById(id)
-          setProduct(res)
-        }
+        const res = await ProductServices.getProductById(id)
+        setProduct(res)
       } catch (err) {
         console.error('Error fetching product:', err)
       }
@@ -50,11 +51,10 @@ const StockDrawer = ({ id, onSuccess }) => {
 
   useEffect(() => {
     const fetchOrderOutbound = async () => {
+      if (!id) return
       try {
-        if (id) {
-          const res = await OrderServices.getTotalSoldByProduct(id)
-          setOrderOutbound(res?.totalQuantity || 0)
-        }
+        const res = await OrderServices.getTotalSoldByProduct(id)
+        setOrderOutbound(res?.totalQuantity || 0)
       } catch (err) {
         console.error('Error fetching order outbound:', err)
       }
@@ -62,19 +62,61 @@ const StockDrawer = ({ id, onSuccess }) => {
     fetchOrderOutbound()
   }, [id])
 
-  const inbound = totals.inbound || 0
-  const outbound = (totals.outbound || 0) + orderOutbound
-  const stockTotal = inbound - outbound
+  const fetchVariantTotals = async () => {
+    if (!product || !hasVariants) return
+    const totalsObj = {}
+    for (const variant of product.variants) {
+      try {
+        const res = await ProductServices.getStockTotals(product._id, variant.productId)
+        totalsObj[variant.productId] = res
+      } catch (err) {
+        console.error(`Error fetching totals for variant ${variant.productId}:`, err)
+      }
+    }
+    setVariantTotals(totalsObj)
+  }
+
+  useEffect(() => {
+    fetchVariantTotals()
+  }, [product])
+
+  const fetchTotals = async () => {
+    if (!product || hasVariants) return
+    try {
+      const res = await ProductServices.getStockTotals(id)
+      setTotals({
+        inbound: res.inbound,
+        outbound: (res.outbound || 0) + orderOutbound,
+        stockTotal: res.inbound - ((res.outbound || 0) + orderOutbound),
+      })
+    } catch (err) {
+      console.error('Error fetching totals:', err)
+    }
+  }
+
+  useEffect(() => {
+    fetchTotals()
+  }, [product, stocks, orderOutbound])
 
   const onSubmit = async (formData) => {
     try {
       const quantity = Number(formData.quantity)
+      const variantId = hasVariants ? product.variants[activeTabIndex]?.productId : undefined
+
       await addStock({
         productId: id,
+        variantId,
         quantity: Math.abs(quantity),
         type: isRemoveProduct ? 'outbound' : 'inbound',
       })
+
       reset()
+      if (hasVariants) {
+        await fetchVariantTotals()
+      } else {
+        await fetchTotals()
+      }
+
       if (onSuccess) onSuccess()
     } catch (err) {
       console.error(err)
@@ -106,12 +148,11 @@ const StockDrawer = ({ id, onSuccess }) => {
           <div className="px-6 pt-8 flex-grow scrollbar-hide w-full max-h-full">
             <div className="mb-6">
               <p className="block text-sm text-gray-600 font-semibold dark:text-gray-400 mb-2">Seleccionar acción</p>
-
               <div className="flex gap-3">
                 <button
                   type="button"
                   onClick={() => setIsRemoveProduct(false)}
-                  className="px-4 py-2 rounded-lg text-sm font-semibold transition-all text-white"
+                  className="px-4 py-2 rounded-lg text-sm font-semibold text-white"
                   style={{
                     backgroundColor: !isRemoveProduct ? 'rgb(47, 133, 90)' : 'rgba(0,0,0,0.25)',
                   }}
@@ -121,7 +162,7 @@ const StockDrawer = ({ id, onSuccess }) => {
                 <button
                   type="button"
                   onClick={() => setIsRemoveProduct(true)}
-                  className="px-4 py-2 rounded-lg text-sm font-semibold transition-all text-white"
+                  className="px-4 py-2 rounded-lg text-sm font-semibold text-white"
                   style={{
                     backgroundColor: isRemoveProduct ? 'rgba(220, 53, 69, 1)' : 'rgba(0,0,0,0.25)',
                   }}
@@ -158,7 +199,8 @@ const StockDrawer = ({ id, onSuccess }) => {
               </div>
               <Error errorName={errors.quantity} />
             </div>
-            {variants.length > 0 ? (
+
+            {hasVariants ? (
               <TabsComponent
                 className="md:mt-10 mt-3"
                 selectedIndex={activeTabIndex}
@@ -189,10 +231,17 @@ const StockDrawer = ({ id, onSuccess }) => {
                           </p>
                         </div>
                       </div>
-                      <LabelArea label={`${t('productsScreen.drawer.inbound')} ${inbound}`} />
-                      <LabelArea label={`${t('productsScreen.drawer.outbound')} ${outbound}`} />
-                      <LabelArea label={`${t('productsScreen.drawer.stockTotal')} ${stockTotal}`} />
-                      <br />
+
+                      <LabelArea
+                        label={`${t('productsScreen.drawer.inbound')} ${variantTotals[variant.productId]?.inbound || 0}`}
+                      />
+                      <LabelArea
+                        label={`${t('productsScreen.drawer.outbound')} ${variantTotals[variant.productId]?.outbound || 0}`}
+                      />
+                      <LabelArea
+                        label={`${t('productsScreen.drawer.stockTotal')} ${variantTotals[variant.productId]?.stockTotal || 0}`}
+                      />
+
                       <TableContainer className="mb-8">
                         <Table>
                           <TableHeader>
@@ -205,7 +254,7 @@ const StockDrawer = ({ id, onSuccess }) => {
                               <TableCell>{t('productsScreen.drawer.table.quantity')}</TableCell>
                             </tr>
                           </TableHeader>
-                          <StockTable products={dataTable.filter((p) => p.productId === variant.productId)} />
+                          <StockTable products={dataTable.filter((p) => p.variantId === variant.productId)} />
                         </Table>
                         <TableFooter>
                           <Pagination
@@ -222,10 +271,10 @@ const StockDrawer = ({ id, onSuccess }) => {
               </TabsComponent>
             ) : (
               <div className="mt-8">
-                <LabelArea label={`${t('productsScreen.drawer.inbound')} ${inbound}`} />
-                <LabelArea label={`${t('productsScreen.drawer.outbound')} ${outbound}`} />
-                <LabelArea label={`${t('productsScreen.drawer.stockTotal')} ${stockTotal}`} />
-                <br />
+                <LabelArea label={`${t('productsScreen.drawer.inbound')} ${totals.inbound}`} />
+                <LabelArea label={`${t('productsScreen.drawer.outbound')} ${totals.outbound}`} />
+                <LabelArea label={`${t('productsScreen.drawer.stockTotal')} ${totals.stockTotal}`} />
+
                 <TableContainer className="mb-8">
                   <Table>
                     <TableHeader>
